@@ -16,14 +16,10 @@ export function plant(content, type, config) {
   var content = content
   var urlPrefix = (config.serverPath || '//kroki.io/') + type + '/svg/'
 
-  console.log(content)
-
-
   var data = textEncode(content)
   var compressed = pako.deflate(data, { level: 9, to: 'string' })
   var result = btoa(compressed)
     .replace(/\+/g, '-').replace(/\//g, '_')
-  console.log(result)
   var svgUrl = urlPrefix + result
 
   return `<object type="image/svg+xml" data="${svgUrl}" />`
@@ -42,7 +38,6 @@ export function replace(content, config) {
     (dom.findAll($, selector) || []).forEach(function (element) {
       var parent = element.parentNode;
       var planted = dom.create('p', plant(element.innerText, LANG, config));
-      console.log(planted)
       if (parent) {
         planted.dataset.lang = LANG;
         element.parentNode.replaceChild(planted, element);

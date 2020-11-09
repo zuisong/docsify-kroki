@@ -19,7 +19,7 @@
 2. Insert script into docsify document:
 
     ```html
-    <script src="//unpkg.com/docsify-kroki/@latest"></script>
+    <script src="//unpkg.com/docsify-kroki"></script>
     ```
 
 
