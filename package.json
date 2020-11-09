@@ -1,0 +1,38 @@
+{
+  "name": "docsify-kroki",
+  "version": "1.0.1",
+  "description": "kroki plugin of docsify",
+  "main": "disy/docsify-kroki.js",
+  "scripts": {
+		"build":"parcel build src/index.js -o docsify-kroki.js",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/zuisong/docsify-kroki.git"
+  },
+  "keywords": [
+		"docsify",
+		"kroki",
+		"mermaid",
+    "plantuml"
+  ],
+  "files": [
+    "src",
+    "dist",
+    "example",
+    "README.md"
+  ],
+  "author": "zuisong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zuisong/docsify-kroki/issues"
+  },
+  "homepage": "https://github.com/zuisong/docsify-kroki#readme",
+  "dependencies": {
+    "pako": "^1.0.11"
+  },
+  "devDependencies": {
+    "parcel": "^1.12.4"
+  }
+}
