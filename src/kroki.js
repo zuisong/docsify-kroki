@@ -14,7 +14,7 @@ function textEncode(str) {
 
 export function plant(content, type, config) {
   var content = content
-  var urlPrefix = (config.serverPath || '//kroki.io/' + type + '/svg/')
+  var urlPrefix = (config.serverPath || '//kroki.io/') + type + '/svg/'
 
   console.log(content)
 
@@ -57,5 +57,5 @@ export function install(hook, vm) {
   const config = Object.assign({}, {
     langs: ['plantuml', 'mermaid'],
   }, vm.config.kroki)
-  hook.afterEach((content) =>replace(content, config))
+  hook.afterEach((content) => replace(content, config))
 }

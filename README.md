@@ -1,14 +1,14 @@
-# docsify-plantuml
-[![npm](https://img.shields.io/npm/v/docsify-plantuml.svg?style=flat-square)](https://www.npmjs.com/package/docsify-plantuml)
+# docsify-kroki
 
 ## Install
-1. Configure docsify-plantuml (optional):
+1. Configure docsify-kroki (optional):
 
     ```html
     <script>
     window.$docsify = {
-      plantuml: {
-        skin: 'default',
+      kroki: {
+        // default support plantuml and mermaid, kroki support more
+        langs: ['plantuml','mermaid'],
       },
     }
     </script>
@@ -19,12 +19,12 @@
 2. Insert script into docsify document:
 
     ```html
-    <script src="//unpkg.com/docsify-plantuml/dist/docsify-plantuml.min.js"></script>
+    <script src="//unpkg.com/docsify-kroki/@latest"></script>
     ```
 
 
 ## Usage
-Write your plantuml code into a code block marked ``plantuml``:
+Write your plantuml code into a code block marked ``plantuml`` or ``mermaid``:
 
 ````markdown
 ### Section X
@@ -39,26 +39,20 @@ Alice <-- Bob: another authentication Response
 ```
 ````
 
+````markdown
+### Section X
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+````
+
+
 
 ## Options
-## skin
-By default, we set the skin of the plantuml to [a cleaner version](https://github.com/matthewjosephtaylor/plantuml-style) for you.
-However, You can still switch with this option (`skin`) if you prefer the classic one.
-
-All available values are:
-- `default`
-- `classic`
-
-For example:
-```
-<script>
-window.$docsify = {
-  plantuml: {
-    skin: 'classic',
-  },
-}
-</script>
-```
 
 ## serverPath
 By default, the official PlantUML server is used. If you have your own, configure it using the `serverPath` option:
@@ -66,27 +60,14 @@ By default, the official PlantUML server is used. If you have your own, configur
 ```
 <script>
 window.$docsify = {
-  plantuml: {
-    serverPath: 'https://custom-server.local/plantuml/png/',
+  kroki: {
+    // default
+    serverPath: '//kroki.io/',
   },
 }
 </script>
 ```
 
-## renderSvgAsObject
-By default, the svg is renderd inside an `<img src=''/>` tag. 
-If you want interactive svg (like links) configure the `renderSvgAsObject` option:
-This will render like: `<object type='image/svg+xml' data=''/>`
-
-```
-<script>
-window.$docsify = {
-  plantuml: {
-    renderSvgAsObject: true,
-  },
-}
-</script>
-```
 Please note that relative urls should start with `$`
 ````markdown
 ```plantuml
@@ -99,17 +80,4 @@ Bob --> Alice: Authentication Response [[$../other-file docs]]
 
 ## Example
 ### Basic Usage
-- [index.html](example/basic/index.html)
-- [README.md](https://raw.githubusercontent.com/imyelo/docsify-plantuml/master/example/basic/README.md)
-
-### Render as SVG Object
-- [index.html](example/svg-object/index.html)
-
-
-## Related
-- [docsify](https://github.com/QingWei-Li/docsify/)
-- [PlantUML](http://plantuml.com/)
-
-
-## License
-MIT &copy; yelo, 2017 - present
+- [index.html](example/index.html)
