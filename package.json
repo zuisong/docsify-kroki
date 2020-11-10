@@ -1,38 +1,56 @@
 {
-  "name": "docsify-kroki",
-  "version": "1.0.4",
-  "description": "kroki plugin of docsify",
-  "main": "dist/docsify-kroki.js",
-  "scripts": {
-		"build":"parcel build src/index.js -o docsify-kroki.js",
-    "prepublishOnly": "npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/zuisong/docsify-kroki.git"
-  },
-  "keywords": [
+	"name": "docsify-kroki",
+	"version": "1.0.5",
+	"description": "kroki plugin of docsify",
+	"main": "dist/docsify-kroki.js",
+	"scripts": {
+		"build": "parcel build src/index.js -o docsify-kroki.js --no-source-maps",
+		"prepublishOnly": "npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/zuisong/docsify-kroki.git"
+	},
+	"keywords": [
 		"docsify",
 		"kroki",
+		"plantuml",
 		"mermaid",
-    "plantuml"
-  ],
-  "files": [
-    "src",
-    "dist",
-    "example",
-    "README.md"
-  ],
-  "author": "zuisong",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/zuisong/docsify-kroki/issues"
-  },
-  "homepage": "https://github.com/zuisong/docsify-kroki#readme",
-  "dependencies": {
-    "pako": "^1.0.11"
-  },
-  "devDependencies": {
-    "parcel": "^1.12.4"
-  }
+		"svgbob",
+		"vega",
+		"vegalite",
+		"wavedrom",
+		"nomnoml",
+		"graphviz",
+		"erd",
+		"ditaa",
+		"c4plantuml",
+		"packetdiag",
+		"nwdiag",
+		"actdiag",
+		"seqdiag",
+		"bytefield",
+		"bpmn",
+		"blockdiag",
+		"rackdiag"
+	],
+	"files": [
+		"src",
+		"dist",
+		"example",
+		"README.md"
+	],
+	"author": "zuisong",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/zuisong/docsify-kroki/issues"
+	},
+	"homepage": "https://github.com/zuisong/docsify-kroki#readme",
+	"dependencies": {
+		"pako": "^1.0.11"
+	},
+	"devDependencies": {
+		"parcel": "^1.12.4",
+		"parcel-plugin-nuke-dist": "^1.0.1"
+	}
 }

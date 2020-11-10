@@ -1,19 +1,40 @@
 # docsify-kroki
 
 ## Install
+
 1. Configure docsify-kroki (optional):
 
     ```html
     <script>
     window.$docsify = {
       kroki: {
-        // default support plantuml and mermaid, kroki support more
-        langs: ['plantuml','mermaid'],
+        // default setting
+        langs:  [
+          "plantuml",
+          "mermaid",
+          "svgbob",
+          "vega",
+          "vegalite",
+          "wavedrom",
+          "nomnoml",
+          "graphviz",
+          "erd",
+          "ditaa",
+          "c4plantuml",
+          "packetdiag",
+          "nwdiag",
+          "actdiag",
+          "seqdiag",
+          "bytefield",
+          "bpmn",
+          "blockdiag",
+          "rackdiag",
+        ],
       },
     }
     </script>
     ```
-    
+
     See [Options](#Options) for more details.
 
 2. Insert script into docsify document:
@@ -24,6 +45,7 @@
 
 
 ## Usage
+
 Write your plantuml code into a code block marked ``plantuml`` or ``mermaid``:
 
 ````markdown
@@ -57,7 +79,7 @@ graph TD;
 ## serverPath
 By default, the official PlantUML server is used. If you have your own, configure it using the `serverPath` option:
 
-```
+```html
 <script>
 window.$docsify = {
   kroki: {
@@ -68,16 +90,7 @@ window.$docsify = {
 </script>
 ```
 
-Please note that relative urls should start with `$`
-````markdown
-```plantuml
-@startuml
-Alice -> Bob: Authentication Request [[$./other-file docs]]
-Bob --> Alice: Authentication Response [[$../other-file docs]]
-@enduml
-```
-````
 
 ## Example
-### Basic Usage
+
 - [index.html](example/index.html)
