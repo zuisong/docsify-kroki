@@ -1,11 +1,11 @@
 {
 	"name": "docsify-kroki",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "kroki plugin of docsify",
 	"main": "dist/docsify-kroki.js",
 	"scripts": {
-		"build": "parcel build src/index.js -o docsify-kroki.js --no-source-maps",
-		"prepublishOnly": "npm run build"
+		"build": "webpack",
+		"prepublishOnly": "yarn run build"
 	},
 	"repository": {
 		"type": "git",
@@ -47,10 +47,14 @@
 	},
 	"homepage": "https://github.com/zuisong/docsify-kroki#readme",
 	"dependencies": {
+		"@babel/core": "^7.12.13",
 		"pako": "^1.0.11"
 	},
 	"devDependencies": {
-		"parcel": "^1.12.4",
-		"parcel-plugin-nuke-dist": "^1.0.1"
+		"@babel/preset-env": "^7.12.13",
+		"babel-loader": "^8.2.2",
+		"clean-webpack-plugin": "^3.0.0",
+		"webpack": "^5.21.1",
+		"webpack-cli": "^4.5.0"
 	}
 }

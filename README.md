@@ -38,7 +38,7 @@ graph TD;
 
 ## serverPath
 
-By default, the official PlantUML server is used. If you have your own, configure it using the `serverPath` option:
+By default, the official Kroki server is used. If you have your own, configure it using the `serverPath` option:
 
 ```html
 <script>
