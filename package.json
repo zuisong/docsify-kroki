@@ -1,60 +1,63 @@
 {
-	"name": "docsify-kroki",
-	"version": "1.0.6",
-	"description": "kroki plugin of docsify",
-	"main": "dist/docsify-kroki.js",
-	"scripts": {
-		"build": "webpack",
-		"prepublishOnly": "yarn run build"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+ssh://git@github.com/zuisong/docsify-kroki.git"
-	},
-	"keywords": [
-		"docsify",
-		"kroki",
-		"plantuml",
-		"mermaid",
-		"svgbob",
-		"vega",
-		"vegalite",
-		"wavedrom",
-		"nomnoml",
-		"graphviz",
-		"erd",
-		"ditaa",
-		"c4plantuml",
-		"packetdiag",
-		"nwdiag",
-		"actdiag",
-		"seqdiag",
-		"bytefield",
-		"bpmn",
-		"blockdiag",
-		"rackdiag"
-	],
-	"files": [
-		"src",
-		"dist",
-		"example",
-		"README.md"
-	],
-	"author": "zuisong",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/zuisong/docsify-kroki/issues"
-	},
-	"homepage": "https://github.com/zuisong/docsify-kroki#readme",
-	"dependencies": {
-		"@babel/core": "^7.12.13",
-		"pako": "^1.0.11"
-	},
-	"devDependencies": {
-		"@babel/preset-env": "^7.12.13",
-		"babel-loader": "^8.2.2",
-		"clean-webpack-plugin": "^3.0.0",
-		"webpack": "^5.21.1",
-		"webpack-cli": "^4.5.0"
-	}
+  "name": "docsify-kroki",
+  "version": "1.0.7",
+  "description": "kroki plugin of docsify",
+  "main": "dist/docsify-kroki.js",
+  "scripts": {
+    "build": "webpack",
+    "prepublishOnly": "yarn run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/zuisong/docsify-kroki.git"
+  },
+  "keywords": [
+    "docsify",
+    "kroki",
+    "plantuml",
+    "mermaid",
+    "svgbob",
+    "vega",
+    "vegalite",
+    "wavedrom",
+    "nomnoml",
+    "graphviz",
+    "erd",
+    "ditaa",
+    "c4plantuml",
+    "packetdiag",
+    "nwdiag",
+    "actdiag",
+    "seqdiag",
+    "bytefield",
+    "bpmn",
+    "blockdiag",
+    "rackdiag"
+  ],
+  "files": [
+    "src",
+    "dist",
+    "example",
+    "README.md"
+  ],
+  "author": "zuisong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zuisong/docsify-kroki/issues"
+  },
+  "homepage": "https://github.com/zuisong/docsify-kroki#readme",
+  "dependencies": {
+    "pako": "^1.0.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-typescript": "^7.12.17",
+    "@types/pako": "^1.0.1",
+    "@types/webpack": "^4.41.26",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "webpack": "^5.21.1",
+    "webpack-cli": "^4.5.0"
+  }
 }
