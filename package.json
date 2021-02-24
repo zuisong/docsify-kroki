@@ -47,17 +47,16 @@
   },
   "homepage": "https://github.com/zuisong/docsify-kroki#readme",
   "dependencies": {
-    "pako": "^1.0.11"
+    "pako": "~1.0.11"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",
     "@babel/preset-env": "^7.12.13",
     "@babel/preset-typescript": "^7.12.17",
-    "@types/pako": "^1.0.1",
     "@types/webpack": "^4.41.26",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^3.0.0",
-    "webpack": "^5.21.1",
+    "webpack": "^5.24.1",
     "webpack-cli": "^4.5.0"
   }
 }

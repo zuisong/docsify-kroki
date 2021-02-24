@@ -1,4 +1,5 @@
-import {deflate} from "pako";
+// @ts-ignore
+import {deflate} from "pako/lib/deflate";
 
 
 function textEncode(str: string) {
@@ -13,11 +14,12 @@ interface DocsifyKrokiOption {
 export function plant(content: string, type: string, config: DocsifyKrokiOption) {
     const urlPrefix: string = `${config?.serverPath + type}/svg/`;
 
-    const data = textEncode(content);
-    const compressed = deflate(data, {level: 9, to: "string"});
-    const result = btoa(compressed)
-        .replace(/\+/g, "-").replace(/\//g, "_");
-    const svgUrl = urlPrefix + result;
+    const data: Uint8Array = textEncode(content);
+    const compressed: string = deflate(data, {level: 9, to: "string"});
+    const result: string = btoa(compressed)
+        .replace(/\+/g, "-")
+        .replace(/\//g, "_");
+    const svgUrl: string = urlPrefix + result;
 
     return `<object type="image/svg+xml" data="${svgUrl}" />`;
 }

@@ -1,5 +1,5 @@
 const path = require("path");
-const webpack = require("webpack");
+const {ProgressPlugin} = require("webpack");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 module.exports = {
     entry: "./src/index.ts",
@@ -29,7 +29,7 @@ module.exports = {
         ],
     },
     plugins: [
-        new webpack.ProgressPlugin(),
+        new ProgressPlugin(),
         new CleanWebpackPlugin({
             verbose: true,
         }),
