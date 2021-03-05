@@ -1,6 +1,6 @@
-const path = require("path");
-const {ProgressPlugin} = require("webpack");
-const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+import { Configuration, ProgressPlugin } from "webpack";
+import { CleanWebpackPlugin } from "clean-webpack-plugin";
+import * as path from "path";
 module.exports = {
     entry: "./src/index.ts",
     mode: "production",
@@ -17,13 +17,7 @@ module.exports = {
                 test: /\.(js|ts|jsx)$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: [
-                            ["@babel/preset-env", {}],
-                            ["@babel/preset-typescript"]
-                        ],
-                    },
+                    loader: "babel-loader"
                 },
             },
         ],
@@ -34,4 +28,4 @@ module.exports = {
             verbose: true,
         }),
     ],
-};
+} as Configuration;
