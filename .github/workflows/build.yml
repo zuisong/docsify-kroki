@@ -21,7 +21,7 @@ jobs:
         node-version: ${{ env.NODE_VERSION }}
     - name: npm install, build and test
       run: |
-        yarn install
-        yarn run build
+        npx pnpm install
+        npx pnpm run build
 
 
