@@ -21,6 +21,7 @@ jobs:
         node-version: ${{ env.NODE_VERSION }}
     - name: npm install, build and test
       run: |
+        npx -y mirror-config-china
         npm i -g -y pnpm
         pnpm install
         pnpm run build
