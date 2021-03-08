@@ -6,19 +6,31 @@ on:
     - release/*
 
 jobs:
-  build-and-deploy:
-    name: Build and Deploy
-    runs-on: ubuntu-latest
-    environment: production
-    steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ env.NODE_VERSION }}
-      uses: actions/setup-node@v1
-    - name: npm install, build and test
-      run: |
-        npx -y mirror-config-china
-        npm i -g -y pnpm
-        pnpm install
-        pnpm run build
+  test:
+    name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+    strategy:
+      matrix:
+        node_version: ['10', '12', '14']
+        os: [ubuntu-latest, windows-latest, macOS-latest]
 
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node_version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node_version }}
+    - name: Setup Mirror
+      run: |
+        npm i -g mirror-config-china
+    - name: Setup PNPM
+      uses: pnpm/action-setup@v1.2.0
+      with:
+        version: latest
+        run_install: true
+    - name: Build
+      run: |
+        npm run build
 
