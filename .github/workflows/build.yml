@@ -6,7 +6,7 @@ on:
     - release/*
 
 jobs:
-  test:
+  build:
     name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     env:
@@ -22,9 +22,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node_version }}
-    - name: Setup Mirror
-      run: |
-        npm i -g mirror-config-china
     - name: Setup PNPM
       uses: pnpm/action-setup@v1.2.0
       with:
