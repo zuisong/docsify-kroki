@@ -1,6 +1,5 @@
 import {install} from "./kroki";
 
-
 if (!window?.$docsify) {
     window.$docsify = {};
 }

@@ -1,4 +1,4 @@
-import {deflate} from "pako/lib/deflate";
+import {strFromU8, zlibSync} from 'fflate';
 
 
 function textEncode(str: string) {
@@ -9,7 +9,7 @@ export function plant(content: string, type: string, config: DocsifyKrokiOption)
     const urlPrefix: string = `${config?.serverPath + type}/svg/`;
 
     const data: Uint8Array = textEncode(content);
-    const compressed: string = deflate(data, {level: 9, to: "string"});
+    const compressed: string = strFromU8(zlibSync(data, {level: 9}), true);
     const result: string = btoa(compressed)
         .replace(/\+/g, "-")
         .replace(/\//g, "_");
