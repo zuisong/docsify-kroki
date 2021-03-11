@@ -5,6 +5,7 @@ devDependencies:
   '@babel/preset-env': 7.13.9_@babel+core@7.13.8
   '@babel/preset-typescript': 7.13.0_@babel+core@7.13.8
   '@babel/register': 7.13.8_@babel+core@7.13.8
+  '@types/pako': 1.0.1
   '@types/webpack': 4.41.26
   babel-loader: 8.2.2_69db794c318707266a4dc85e46aa7443
   clean-webpack-plugin: 3.0.0_webpack@5.24.3
@@ -1134,6 +1135,11 @@ packages:
     resolution:
       integrity: sha1-cihr0z0TeqDRUtR+x8F2JWPTQFU=
       tarball: '@types/node/download/@types/node-14.14.31.tgz'
+  /@types/pako/1.0.1:
+    dev: true
+    resolution:
+      integrity: sha1-M7I388mv9E0Pgv5jrP+ko2XvSmE=
+      tarball: '@types/pako/download/@types/pako-1.0.1.tgz'
   /@types/source-list-map/0.1.2:
     dev: true
     resolution:
@@ -2912,6 +2918,7 @@ specifiers:
   '@babel/preset-env': ^7.13.9
   '@babel/preset-typescript': ^7.13.0
   '@babel/register': ^7.13.8
+  '@types/pako': ^1.0.1
   '@types/webpack': ^4.41.26
   babel-loader: ^8.2.2
   clean-webpack-plugin: ^3.0.0

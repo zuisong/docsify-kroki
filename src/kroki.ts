@@ -1,14 +1,8 @@
-// @ts-ignore
 import {deflate} from "pako/lib/deflate";
 
 
 function textEncode(str: string) {
     return new TextEncoder().encode(str);
-}
-
-interface DocsifyKrokiOption {
-    serverPath: string
-    langs: string[]
 }
 
 export function plant(content: string, type: string, config: DocsifyKrokiOption) {
@@ -25,7 +19,6 @@ export function plant(content: string, type: string, config: DocsifyKrokiOption)
 }
 
 export function replace(content: string, config: DocsifyKrokiOption) {
-    // @ts-ignore
     let dom = window.Docsify.dom;
     let $ = dom.create("span", content);
 
