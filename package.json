@@ -1,11 +1,11 @@
 {
     "name": "docsify-kroki",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "description": "kroki plugin of docsify",
     "main": "dist/docsify-kroki.js",
     "scripts": {
         "build": "webpack",
-        "prepublishOnly": "yarn run build"
+        "prepublishOnly": "npm run build"
     },
     "repository": {
         "type": "git",
