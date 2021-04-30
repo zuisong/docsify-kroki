@@ -1,9 +1,8 @@
 interface Window {
-    Docsify: any;
-    $docsify: any
+  $docsify: any;
 }
 
 interface DocsifyKrokiOption {
-    serverPath: string
-    langs: string[]
+  serverPath: string;
+  langs: string[];
 }
