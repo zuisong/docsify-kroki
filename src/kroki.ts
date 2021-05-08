@@ -1,4 +1,5 @@
 import { strFromU8, zlibSync } from "fflate";
+import "fast-text-encoding";
 
 function textEncode(str: string) {
   return new TextEncoder().encode(str);
@@ -9,8 +10,8 @@ export function plant(
   type: string,
   config: DocsifyKrokiOption,
 ) {
+  content = content.trim();
   const urlPrefix: string = `${config?.serverPath + type}/svg/`;
-
   const data: Uint8Array = textEncode(content);
   const compressed: string = strFromU8(zlibSync(data, { level: 9 }), true);
   const result: string = btoa(compressed)
@@ -34,7 +35,7 @@ export function replace(content: string, config: DocsifyKrokiOption) {
         const parent = element.parentNode;
         const planted: HTMLParagraphElement = create(
           "p",
-          plant(element.innerText, LANG, config),
+          plant(element.textContent ?? element.innerText, LANG, config),
         );
         if (parent) {
           planted.dataset.lang = LANG;
@@ -57,31 +58,33 @@ function create<K extends keyof HTMLElementTagNameMap>(
   return node;
 }
 
+export const defaultConfig: DocsifyKrokiOption = {
+  langs: [
+    "plantuml",
+    "mermaid",
+    "svgbob",
+    "vega",
+    "vegalite",
+    "wavedrom",
+    "nomnoml",
+    "graphviz",
+    "erd",
+    "ditaa",
+    "c4plantuml",
+    "packetdiag",
+    "nwdiag",
+    "actdiag",
+    "seqdiag",
+    "bytefield",
+    "bpmn",
+    "blockdiag",
+    "rackdiag",
+  ],
+  serverPath: "//kroki.io/",
+};
+
 export function install(hook: any, vm: any) {
-  const config: DocsifyKrokiOption = {
-    langs: [
-      "plantuml",
-      "mermaid",
-      "svgbob",
-      "vega",
-      "vegalite",
-      "wavedrom",
-      "nomnoml",
-      "graphviz",
-      "erd",
-      "ditaa",
-      "c4plantuml",
-      "packetdiag",
-      "nwdiag",
-      "actdiag",
-      "seqdiag",
-      "bytefield",
-      "bpmn",
-      "blockdiag",
-      "rackdiag",
-    ],
-    serverPath: "//kroki.io/",
-    ...vm.config.kroki,
-  };
-  hook.afterEach((content: string) => replace(content, config));
+  hook.afterEach((content: string) => {
+    return replace(content, { ...defaultConfig, ...vm.config.kroki });
+  });
 }
