@@ -25,19 +25,18 @@ const config = {
   serverPath: "//kroki.io/",
 };
 
-describe("docsify kroki test", function () {
-  it("render plantuml", function () {
-    let res = replace(
-      `
+
+it("render plantuml", function () {
+  let res = replace(
+    `
 <pre data-lang="plantuml"><code class="lang-plantuml">
 @startuml
 A -> B
 @enduml
 </code></pre>
 `.trim(),
-      config
-    );
+    config
+  );
 
-    expect(res).toBe('<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eNpzKC5JLCopzc3hclTQtVNw4nJIzUsBcgFi-gfE"></object></p>')
-  });
-});
+  expect(res).toBe('<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eNpzKC5JLCopzc3hclTQtVNw4nJIzUsBcgFi-gfE"></object></p>')
+})

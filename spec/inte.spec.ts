@@ -1,8 +1,7 @@
 import { defaultConfig, replace } from "../src/kroki";
 
-describe("集成测试", () => {
-  it("渲染一个网页", () => {
-    const readmeContent = `
+it("multi markdown integration test", () => {
+  const readmeContent = `
 <h1 id="example"><a href="#/?id=example" data-id="example" class="anchor"><span>Example</span></a></h1>
 <hr>
 <h2 id="plantuml"><a href="#/?id=plantuml" data-id="plantuml" class="anchor"><span>plantuml</span></a></h2>
@@ -471,8 +470,8 @@ rackdiag {
 }</code></pre>
 
 `
-    const result = replace(readmeContent, defaultConfig)
-    const expectResult = `
+  const result = replace(readmeContent, defaultConfig)
+  const expectResult = `
 <h1 id="example"><a href="#/?id=example" data-id="example" class="anchor"><span>Example</span></a></h1>
 <hr>
 <h2 id="plantuml"><a href="#/?id=plantuml" data-id="plantuml" class="anchor"><span>plantuml</span></a></h2>
@@ -534,7 +533,7 @@ rackdiag {
 <p data-lang="seqdiag"><object type="image/svg+xml" data="//kroki.io/seqdiag/svg/eNorTi1MyUxMV6jmUlBIKsovL04tUlDQtVMoT00CMsuAvOicxKTUHAVbBSV31xAFfagG_eKydP2kxOJUMxOlWGugZoQGkPaCovzk1OLifGTtzvl5QOkShZLUCiCRr5CZm5ieiq7ZRlcXoRkkBXMUSAKuzJqrFgA13z1R"></object></p>
 
 `
-    console.log(result)
-    expect(result).toEqual(expectResult)
-  })
+  console.log(result)
+  expect(result).toEqual(expectResult)
 })
+
