@@ -1,6 +1,7 @@
 /.pnpm-store
-
-
+.*
+!.github
+!.gitignore
 # Created by https://www.toptal.com/developers/gitignore/api/yarn,node,jetbrains,vscode
 # Edit at https://www.toptal.com/developers/gitignore?templates=yarn,node,jetbrains,vscode
 
