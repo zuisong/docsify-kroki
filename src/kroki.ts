@@ -13,7 +13,7 @@ export function plant(
   content = content.trim();
   const urlPrefix: string = `${config?.serverPath + type}/svg/`;
   const data: Uint8Array = textEncode(content);
-  const compressed: string = strFromU8(zlibSync(data, { level: 9 }), true);
+  const compressed: string = strFromU8(zlibSync(data, {level: 9}), true);
   const result: string = btoa(compressed)
     .replace(/\+/g, "-")
     .replace(/\//g, "_");
@@ -24,9 +24,6 @@ export function plant(
 
 export function replace(content: string, config: DocsifyKrokiOption) {
   let spanElement: HTMLSpanElement = create("span", content);
-  if (!spanElement.querySelectorAll) {
-    return content;
-  }
 
   for (const LANG of config.langs) {
     let selector = `pre[data-lang="${LANG}"]`;
@@ -85,6 +82,6 @@ export const defaultConfig: DocsifyKrokiOption = {
 
 export function install(hook: any, vm: any) {
   hook.afterEach((content: string) => {
-    return replace(content, { ...defaultConfig, ...vm.config.kroki });
+    return replace(content, {...defaultConfig, ...vm?.config?.kroki});
   });
 }
