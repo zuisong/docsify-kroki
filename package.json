@@ -5,7 +5,7 @@
   "main": "dist/docsify-kroki.js",
   "scripts": {
     "build": "npm run test && webpack",
-    "test": "jest",
+    "test": "jest --coverage",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -49,7 +49,7 @@
   "homepage": "https://github.com/zuisong/docsify-kroki#readme",
   "dependencies": {
     "fast-text-encoding": "^1.0.3",
-    "fflate": "^0.6.10"
+    "fflate": "^0.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
