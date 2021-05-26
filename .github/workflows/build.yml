@@ -20,3 +20,7 @@ jobs:
     - name: Build
       run: |
         docker run -t --rm -v $PWD:/data -w /data node:${{ matrix.node_version }} sh -c " npm i -g pnpm && pnpm i  && pnpm run build "
+    - uses: codecov/codecov-action@v1
+      with:
+        fail_ci_if_error: true
+        verbose: true
