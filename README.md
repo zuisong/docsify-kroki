@@ -1,5 +1,14 @@
 # docsify-kroki
 
+![npm](https://img.shields.io/npm/v/docsify-kroki)
+![Codecov](https://img.shields.io/codecov/c/github/zuisong/docsify-kroki)
+![GitHub branch checks state](https://img.shields.io/github/checks-status/zuisong/docsify-kroki/master)
+![npm bundle size](https://img.shields.io/bundlephobia/min/docsify-kroki)
+![npm bundle size(ziped)](https://img.shields.io/bundlephobia/minzip/docsify-kroki)
+![GitHub top language](https://img.shields.io/github/languages/top/zuisong/docsify-kroki)
+![GitHub last commit](https://img.shields.io/github/last-commit/zuisong/docsify-kroki)
+![npm download count](https://img.shields.io/npm/dm/docsify-kroki)
+
 ## Install
 
 1. Insert script into docsify document:
