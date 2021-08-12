@@ -1,5 +1,4 @@
 import { Configuration, ProgressPlugin } from "webpack";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import * as path from "path";
 module.exports = {
     entry: "./src/index.ts",
@@ -7,6 +6,7 @@ module.exports = {
     output: {
         filename: "docsify-kroki.js",
         path: path.resolve(__dirname, "dist"),
+        clean: true,
     },
     resolve: {
         extensions: ['.js', '.ts', '.json']
@@ -24,8 +24,5 @@ module.exports = {
     },
     plugins: [
         new ProgressPlugin(),
-        new CleanWebpackPlugin({
-            verbose: true,
-        }),
     ],
 } as Configuration;
