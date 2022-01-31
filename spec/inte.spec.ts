@@ -469,8 +469,8 @@ rackdiag {
   browser &lt;-- webserver;
 }</code></pre>
 
-`
-  const result = replace(readmeContent, defaultConfig)
+`;
+  const result = replace(readmeContent, defaultConfig);
   const expectResult = `
 <h1 id="example"><a href="#/?id=example" data-id="example" class="anchor"><span>Example</span></a></h1>
 <hr>
@@ -532,8 +532,7 @@ rackdiag {
 <h2 id="seqdiag"><a href="#/?id=seqdiag" data-id="seqdiag" class="anchor"><span>seqdiag</span></a></h2>
 <p data-lang="seqdiag"><object type="image/svg+xml" data="//kroki.io/seqdiag/svg/eNorTi1MyUxMV6jmUlBIKsovL04tUlDQtVMoT00CMsuAvOicxKTUHAVbBSV31xAFfagG_eKydP2kxOJUMxOlWGugZoQGkPaCovzk1OLifGTtzvl5QOkShZLUCiCRr5CZm5ieiq7ZRlcXoRkkBXMUSAKuzJqrFgA13z1R"></object></p>
 
-`
-  console.log(result)
-  expect(result).toEqual(expectResult)
-})
-
+`;
+  console.log(result);
+  expect(result).toEqual(expectResult);
+});

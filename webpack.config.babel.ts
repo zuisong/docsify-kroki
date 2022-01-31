@@ -10,7 +10,7 @@ module.exports = {
     clean: true,
   },
   resolve: {
-    extensions: ['.js', '.ts', '.json']
+    extensions: [".js", ".ts", ".json"],
   },
   module: {
     rules: [
@@ -18,7 +18,7 @@ module.exports = {
         test: /\.(js|ts|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
+          loader: "babel-loader",
         },
       },
     ],
