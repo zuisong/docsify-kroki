@@ -48,7 +48,6 @@
   },
   "homepage": "https://github.com/zuisong/docsify-kroki#readme",
   "dependencies": {
-    "fast-text-encoding": "^1.0.3",
     "fflate": "^0.7.3"
   },
   "devDependencies": {
@@ -60,10 +59,14 @@
     "@types/webpack": "^5.28.0",
     "babel-loader": "^8.2.3",
     "jest": "^27.5.0",
+    "jest-environment-jsdom": "^27.5.0",
     "webpack": "^5.68.0",
     "webpack-cli": "^4.9.2"
   },
   "jest": {
-    "testEnvironment": "jsdom"
-  }
+    "testEnvironment": "./custom-jsdom-env"
+  },
+  "browserslist": [
+    "> 2%"
+  ]
 }

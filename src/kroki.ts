@@ -1,5 +1,4 @@
 import { strFromU8, zlibSync } from "fflate";
-import "fast-text-encoding";
 
 function textEncode(str: string) {
   return new TextEncoder().encode(str);
