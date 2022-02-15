@@ -75,7 +75,9 @@ export const defaultConfig: DocsifyKrokiOption = {
     "bpmn",
     "blockdiag",
     "rackdiag",
-  ],
+    "pikchr",
+    "excalidraw",
+],
   serverPath: "//kroki.io/",
 };
 
