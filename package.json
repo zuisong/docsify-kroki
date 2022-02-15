@@ -1,6 +1,6 @@
 {
   "name": "docsify-kroki",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "kroki plugin of docsify",
   "main": "dist/docsify-kroki.js",
   "scripts": {
@@ -51,15 +51,15 @@
     "fflate": "^0.7.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.0",
+    "@babel/core": "^7.17.2",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
     "@babel/register": "^7.17.0",
     "@types/jest": "^27.4.0",
     "@types/webpack": "^5.28.0",
     "babel-loader": "^8.2.3",
-    "jest": "^27.5.0",
-    "jest-environment-jsdom": "^27.5.0",
+    "jest": "^27.5.1",
+    "jest-environment-jsdom": "^27.5.1",
     "webpack": "^5.68.0",
     "webpack-cli": "^4.9.2"
   },
