@@ -45,20 +45,48 @@ graph TD;
 
 ## Options
 
-## serverPath
-
-By default, the official Kroki server is used. If you have your own, configure it using the `serverPath` option:
-
 ```html
 <script>
 window.$docsify = {
+  // default
   kroki: {
+    langs: [
+      "plantuml",
+      "mermaid",
+      "svgbob",
+      "vega",
+      "vegalite",
+      "wavedrom",
+      "nomnoml",
+      "graphviz",
+      "erd",
+      "ditaa",
+      "c4plantuml",
+      "packetdiag",
+      "nwdiag",
+      "actdiag",
+      "seqdiag",
+      "bytefield",
+      "bpmn",
+      "blockdiag",
+      "rackdiag",
+      "pikchr",
+      "excalidraw",
+    ],
     // default
-    serverPath: '//kroki.io/',
+    serverPath: "//kroki.io/",
   },
 }
 </script>
 ```
+
+### langs
+
+By default, those markdown language render by kroki: `plantuml`,`mermaid`,`svgbob`,`vega`,`vegalite`,`wavedrom`,`nomnoml`,`graphviz`,`erd`,`ditaa`,`c4plantuml`,`packetdiag`,`nwdiag`,`actdiag`,`seqdiag`,`bytefield`,`bpmn`,`blockdiag`,`rackdiag`,`pikchr`,`excalidraw`, you can add more to langs array.
+
+### serverPath
+
+By default, the official Kroki server is used. If you have your own, configure it using the `serverPath` option:
 
 ## Example
 

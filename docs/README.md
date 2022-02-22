@@ -2079,10 +2079,13 @@ arrow
 box "print-args" italic fit
 line right until even with X9 - ($r,0) \
   then up until even with X9 then to X9
+
 ```
 
-```markdown
+````markdown
+
 ```pikchr
+
 $r = 0.2in
 linerad = 0.75*$r
 linewid = 0.25
@@ -2139,11 +2142,9 @@ arrow
 box "print-args" italic fit
 line right until even with X9 - ($r,0) \
   then up until even with X9 then to X9
-```
 
 ```
-```
-
+````
 ---
 
 ## excalidraw
@@ -2846,7 +2847,7 @@ line right until even with X9 - ($r,0) \
 }
 ```
 
-```markdown
+````markdown
 
 ```excalidraw
 {
@@ -3546,4 +3547,4 @@ line right until even with X9 - ($r,0) \
 }
 ```
 
-```
+````
