@@ -51,22 +51,22 @@
     "fflate": "^0.7.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.2",
+    "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
     "@babel/register": "^7.17.0",
-    "@types/jest": "^27.4.0",
+    "@types/jest": "^27.4.1",
     "@types/webpack": "^5.28.0",
     "babel-loader": "^8.2.3",
     "jest": "^27.5.1",
     "jest-environment-jsdom": "^27.5.1",
-    "webpack": "^5.68.0",
+    "webpack": "^5.69.1",
     "webpack-cli": "^4.9.2"
   },
   "jest": {
     "testEnvironment": "./custom-jsdom-env"
   },
   "browserslist": [
-    "> 2%"
+    "> 0.5%"
   ]
 }

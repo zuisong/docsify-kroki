@@ -2145,6 +2145,7 @@ line right until even with X9 - ($r,0) \
 
 ```
 ````
+
 ---
 
 ## excalidraw
@@ -2845,6 +2846,7 @@ line right until even with X9 - ($r,0) \
     "gridSize": 20
   }
 }
+
 ```
 
 ````markdown
