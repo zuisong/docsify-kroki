@@ -1,9 +1,8 @@
-const Environment = require("jest-environment-jsdom");
-
+import { TestEnvironment } from 'jest-environment-jsdom'
 /**
  * A custom environment to set the TextEncoder
  */
-module.exports = class CustomTestEnvironment extends Environment {
+module.exports = class CustomTestEnvironment extends TestEnvironment {
   async setup() {
     await super.setup();
     if (typeof this.global.TextEncoder === "undefined") {

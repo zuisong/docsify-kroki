@@ -1,9 +1,11 @@
+name: docsify-kroki build action
+
 on:
   push:
     branches:
-    - main
-    - master
-    - release/*
+      - main
+      - master
+      - release/*
 
 jobs:
   build:
@@ -14,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node_version: ['12-alpine', '14-alpine', '15-alpine', 'latest']
+        node_version: ['latest']
     steps:
     - uses: actions/checkout@v1
     - name: Build
