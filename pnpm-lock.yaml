@@ -3872,7 +3872,7 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      lru-cache: 6.0.0
+      lru-cache: 7.8.1
     dev: true
 
   /serialize-javascript/6.0.0:
