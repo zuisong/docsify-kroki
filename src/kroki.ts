@@ -21,7 +21,7 @@ export function plant(
   return `<object type="image/svg+xml" data="${svgUrl}" />`;
 }
 
-export function replace(content: string, config: DocsifyKrokiOption) {
+export function replace(content: string, config: DocsifyKrokiOption): string {
   let spanElement: HTMLSpanElement = create("span", content);
 
   for (const LANG of config.langs) {
@@ -77,7 +77,7 @@ export const defaultConfig: DocsifyKrokiOption = {
     "rackdiag",
     "pikchr",
     "excalidraw",
-],
+  ],
   serverPath: "//kroki.io/",
 };
 
