@@ -72,28 +72,28 @@ main_ts ==> (main.view)
 
 ````markdown
 ```svgbob
-                  .-,(  ),-.
-   ___  _      .-(          )-.
-  [___]|=| -->(                )      __________
-  /::/ |_|     '-(          ).-' --->[_...__... ]
-                  '-.( ).-'
-                          \      ____   __
-                           '--->|    | |==|
-                                |____| |  |
-                                /::::/ |__|
+                .-,(  ),-.
+ ___  _      .-(          )-.
+[___]|=| -->(                )      __________
+/::/ |_|     '-(          ).-' --->[_...__... ]
+                '-.( ).-'
+                        \      ____   __
+                         '--->|    | |==|
+                              |____| |  |
+                              /::::/ |__|
 ```
 ````
 
 ```svgbob
-                  .-,(  ),-.
-   ___  _      .-(          )-.
-  [___]|=| -->(                )      __________
-  /::/ |_|     '-(          ).-' --->[_...__... ]
-                  '-.( ).-'
-                          \      ____   __
-                           '--->|    | |==|
-                                |____| |  |
-                                /::::/ |__|
+                .-,(  ),-.
+ ___  _      .-(          )-.
+[___]|=| -->(                )      __________
+/::/ |_|     '-(          ).-' --->[_...__... ]
+                '-.( ).-'
+                        \      ____   __
+                         '--->|    | |==|
+                              |____| |  |
+                              /::::/ |__|
 ```
 
 ---
@@ -320,8 +320,6 @@ graph TD
     }
   ]
 }
-
-
 ```
 
 ---
@@ -329,7 +327,6 @@ graph TD
 ## vegalite
 
 ````markdown
-
 ```vegalite
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
@@ -460,7 +457,6 @@ graph TD
     }
   }
 }
-
 ```
 ````
 
@@ -594,7 +590,6 @@ graph TD
     }
   }
 }
-
 ```
 
 ---
@@ -642,7 +637,6 @@ graph TD
 [Pirate]-> *[rum|tastiness: Int|swig()]
 [Pirate]->[singing]
 [singing]<->[rum]
-
 ```
 ````
 
@@ -660,7 +654,6 @@ graph TD
 [Pirate]-> *[rum|tastiness: Int|swig()]
 [Pirate]->[singing]
 [singing]<->[rum]
-
 ```
 
 ---
@@ -669,7 +662,6 @@ graph TD
 
 ````markdown
 ```graphviz
-
 digraph D {
   subgraph cluster_p {
     label = "Kroki";
@@ -693,12 +685,10 @@ digraph D {
     }
   }
 }
-
 ```
 ````
 
 ```graphviz
-
 digraph D {
   subgraph cluster_p {
     label = "Kroki";
@@ -722,7 +712,6 @@ digraph D {
     }
   }
 }
-
 ```
 
 ---
@@ -769,60 +758,58 @@ Person *--1 Location
 
 ````markdown
 ```ditaa
-      +--------+
-      |        |
-      |  User  |
-      |        |
-      +--------+
-          ^
-  request |
-          v
-  +-------------+
-  |             |
-  |    Kroki    |
-  |             |---+
-  +-------------+   |
-       ^  ^         | inflate
-       |  |         |
-       v  +---------+
-  +-------------+
-  |             |
-  |    Ditaa    |
-  |             |----+
-  +-------------+    |
-             ^       | process
-             |       |
-             +-------+
-
+    +--------+
+    |        |
+    |  User  |
+    |        |
+    +--------+
+        ^
+request |
+        v
++-------------+
+|             |
+|    Kroki    |
+|             |---+
++-------------+   |
+     ^  ^         | inflate
+     |  |         |
+     v  +---------+
++-------------+
+|             |
+|    Ditaa    |
+|             |----+
++-------------+    |
+           ^       | process
+           |       |
+           +-------+
 ```
 ````
 
 ```ditaa
-      +--------+
-      |        |
-      |  User  |
-      |        |
-      +--------+
-          ^
-  request |
-          v
-  +-------------+
-  |             |
-  |    Kroki    |
-  |             |---+
-  +-------------+   |
-       ^  ^         | inflate
-       |  |         |
-       v  +---------+
-  +-------------+
-  |             |
-  |    Ditaa    |
-  |             |----+
-  +-------------+    |
-             ^       | process
-             |       |
-             +-------+
-
+    +--------+
+    |        |
+    |  User  |
+    |        |
+    +--------+
+        ^
+request |
+        v
++-------------+
+|             |
+|    Kroki    |
+|             |---+
++-------------+   |
+     ^  ^         | inflate
+     |  |         |
+     v  +---------+
++-------------+
+|             |
+|    Ditaa    |
+|             |----+
++-------------+    |
+           ^       | process
+           |       |
+           +-------+
 ```
 
 ---
@@ -889,7 +876,6 @@ rackdiag {
 ````
 
 ```rackdiag
-
 rackdiag {
   16U;
   1: UPS [2U];
@@ -980,7 +966,6 @@ nwdiag {
     db02;
   }
 }
-
 ```
 ````
 
@@ -1001,7 +986,6 @@ nwdiag {
     db02;
   }
 }
-
 ```
 
 ---
@@ -1098,7 +1082,6 @@ seqdiag {
 
 ````markdown
 ```bytefield
-
 (defattrs :bg-green {:fill "#a0ffa0"})
 (defattrs :bg-yellow {:fill "#ffffa0"})
 (defattrs :bg-pink {:fill "#ffb0a0"})
@@ -1164,12 +1147,10 @@ seqdiag {
 (draw-box (text "length" [:math] [:sub 2]) {:span 4})
 (draw-gap "Unknown bytes" {:min-label-columns 6})
 (draw-bottom)
-
 ```
 ````
 
 ```bytefield
-
 (defattrs :bg-green {:fill "#a0ffa0"})
 (defattrs :bg-yellow {:fill "#ffffa0"})
 (defattrs :bg-pink {:fill "#ffb0a0"})
@@ -1235,7 +1216,6 @@ seqdiag {
 (draw-box (text "length" [:math] [:sub 2]) {:span 4})
 (draw-gap "Unknown bytes" {:min-label-columns 6})
 (draw-bottom)
-
 ```
 
 ---
@@ -1627,9 +1607,7 @@ seqdiag {
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </semantic:definitions>
-
 ```
-
 ````
 
 ```bpmn
@@ -2079,13 +2057,10 @@ arrow
 box "print-args" italic fit
 line right until even with X9 - ($r,0) \
   then up until even with X9 then to X9
-
 ```
 
 ````markdown
-
 ```pikchr
-
 $r = 0.2in
 linerad = 0.75*$r
 linewid = 0.25
@@ -2142,7 +2117,6 @@ arrow
 box "print-args" italic fit
 line right until even with X9 - ($r,0) \
   then up until even with X9 then to X9
-
 ```
 ````
 
@@ -2846,11 +2820,9 @@ line right until even with X9 - ($r,0) \
     "gridSize": 20
   }
 }
-
 ```
 
 ````markdown
-
 ```excalidraw
 {
   "type": "excalidraw",
@@ -3548,5 +3520,4 @@ line right until even with X9 - ($r,0) \
   }
 }
 ```
-
 ````

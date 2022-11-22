@@ -27,15 +27,17 @@ export function replace(content: string, config: DocsifyKrokiOption): string {
   for (const LANG of config.langs) {
     let selector = `pre[data-lang="${LANG}"]`;
     spanElement.querySelectorAll(selector)
-      .forEach((element: HTMLElement) => {
-        const parent = element.parentNode;
-        const planted: HTMLParagraphElement = create(
-          "p",
-          plant(element.textContent ?? element.innerText, LANG, config),
-        );
-        if (parent) {
-          planted.dataset.lang = LANG;
-          element.parentNode.replaceChild(planted, element);
+      .forEach((element: Element) => {
+        if (element instanceof HTMLElement) {
+          const parent = element.parentNode;
+          const planted: HTMLParagraphElement = create(
+            "p",
+            plant(element.textContent ?? element.innerText, LANG, config),
+          );
+          if (parent) {
+            planted.dataset.lang = LANG;
+            element.parentNode.replaceChild(planted, element);
+          }
         }
       });
   }

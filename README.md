@@ -14,13 +14,14 @@
 1. Insert script into docsify document:
 
 ```html
-    <script src="//unpkg.com/docsify-kroki"></script>
+<script src="//unpkg.com/docsify-kroki"></script>
 ```
 
 ## Usage
 
 ````markdown
 ### Section X
+
 ```plantuml
 @startuml
 Alice -> Bob: Authentication Request
@@ -34,6 +35,7 @@ Alice <-- Bob: another authentication Response
 
 ````markdown
 ### Section X
+
 ```mermaid
 graph TD;
     A-->B;
@@ -82,11 +84,14 @@ window.$docsify = {
 
 ### langs
 
-By default, those markdown language render by kroki: `plantuml`,`mermaid`,`svgbob`,`vega`,`vegalite`,`wavedrom`,`nomnoml`,`graphviz`,`erd`,`ditaa`,`c4plantuml`,`packetdiag`,`nwdiag`,`actdiag`,`seqdiag`,`bytefield`,`bpmn`,`blockdiag`,`rackdiag`,`pikchr`,`excalidraw`, you can add more to langs array.
+By default, those markdown language render by kroki:
+`plantuml`,`mermaid`,`svgbob`,`vega`,`vegalite`,`wavedrom`,`nomnoml`,`graphviz`,`erd`,`ditaa`,`c4plantuml`,`packetdiag`,`nwdiag`,`actdiag`,`seqdiag`,`bytefield`,`bpmn`,`blockdiag`,`rackdiag`,`pikchr`,`excalidraw`,
+you can add more to langs array.
 
 ### serverPath
 
-By default, the official Kroki server is used. If you have your own, configure it using the `serverPath` option:
+By default, the official Kroki server is used. If you have your own, configure
+it using the `serverPath` option:
 
 ## Example
 

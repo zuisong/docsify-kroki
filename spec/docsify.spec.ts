@@ -1,5 +1,5 @@
 import { replace } from "../src/kroki";
-
+import { assert, describe, expect, it, vi } from "vitest";
 const config = {
   langs: [
     "plantuml",
@@ -42,10 +42,10 @@ A -> B
   );
 });
 
-it("install test", () => {
-  const kroki = require("../src/kroki");
-  const hook = { afterEach: jest.fn() };
-  const vm = jest.fn();
+it("install test", async () => {
+  const kroki = await import("../src/kroki");
+  const hook = { afterEach: vi.fn() };
+  const vm = vi.fn();
 
   kroki.install(hook, vm);
 

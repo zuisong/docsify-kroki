@@ -1,5 +1,5 @@
 import { defaultConfig, replace } from "../src/kroki";
-
+import { assert, describe, expect, it, vi } from "vitest";
 it("multi markdown integration test", () => {
   const readmeContent = `
 <h1 id="example"><a href="#/?id=example" data-id="example" class="anchor"><span>Example</span></a></h1>
@@ -495,7 +495,7 @@ rackdiag {
 <p data-lang="wavedrom"><object type="image/svg+xml" data="//kroki.io/wavedrom/svg/eNpdTs0KwjAMvu8pQs8jdKiXgQfBJ_AqO8S1zLG6KZuusu7dTaBDXSCE5PvJN0FfVy25HM4JwAQt3WwOqnSNSmGpkV5yvKNU4FYwp7_0Iw305Ue6x81258MePUOGGfxDXS0ZXtWlM2-ZA9VOpuCqWNme7ONp-yE6R1uNGaIOGeolxb_oUDZtNzprKsvCKGKJRNeZRE-K-QOPW0Gr"></object></p>
 <hr>
 <h2 id="nomnoml"><a href="#/?id=nomnoml" data-id="nomnoml" class="anchor"><span>nomnoml</span></a></h2>
-<p data-lang="nomnoml"><object type="image/svg+xml" data="//kroki.io/nomnoml/svg/eNpdjzELgzAQhff8ioxasHQrWHHp1KHQPWQ4NWpKNHK5UIT8-CpWmhZueLz73j1OPDQCqaBmdbV-pJzfRgoIuknSy6SNgU4laWCci0oBNjLLxASIlmTk5aVorTd8sJ56ySRjooDKEUJN5R0QfKNQFvkS3vok20XGT8fjWQza1b1W7bJ4WmPmUTkns_KL_7joh3_L6bFbJjpc8sMKBgJHesW239xLd0kac1F2V8Wn5A2ROWWs"></object></p>
+<p data-lang="nomnoml"><object type="image/svg+xml" data="//kroki.io/nomnoml/svg/eNpdjzELgzAQhff8ikxFC5ZuBQWXTh0K3UOGU6OmRCOXC0Xwx9dgpWnhhuPdd-_diYdGILWoWV2tHynnt5EWBN0kaTFpY6BTSbowzkWlABuZZWICREsy0vJStNYbPlhPvWSSMXEwVEDlCKGm8g4IvlEog5qvFluqZHuT8fPpdBGDdnWvVbsOntaYeVTOyaz84j8q-uFfcnrs1oqMS34M4ELgSAds-9C9dJekMRft7l249pPzBhzmaLs="></object></p>
 <hr>
 <h2 id="graphviz"><a href="#/?id=graphviz" data-id="graphviz" class="anchor"><span>graphviz</span></a></h2>
 <p data-lang="graphviz"><object type="image/svg+xml" data="//kroki.io/graphviz/svg/eNp9kMsKwjAQRff9iiEfoOhWXLUoPhH8gJKmQxubmjB9bKT_LjZ9xBa6GbiXuWcuE8uEuEkhgI8HUFSRlUJVRYkUmtYGUDxCBXtgF9KZZLvWnG2LTbfuBJ5INVKXADhIhRHystczRiLCkeJwAi0ypPUEB3DmNe9VswDdLkBvSDmXsUNldx3j6lW41qMyBkv8u878lHSOg2Mb2Dl_z9hhaOBfT0P4qBV_J1b9EI3XfAEntHCb"></object></p>
@@ -530,7 +530,7 @@ rackdiag {
 <hr>
 
 <h2 id="seqdiag"><a href="#/?id=seqdiag" data-id="seqdiag" class="anchor"><span>seqdiag</span></a></h2>
-<p data-lang="seqdiag"><object type="image/svg+xml" data="//kroki.io/seqdiag/svg/eNorTi1MyUxMV6jmUlBIKsovL04tUlDQtVMoT00CMsuAvOicxKTUHAVbBSV31xAFfagG_eKydP2kxOJUMxOlWGugZoQGkPaCovzk1OLifGTtzvl5QOkShZLUCiCRr5CZm5ieiq7ZRlcXoRkkBXMUSAKuzJqrFgA13z1R"></object></p>
+<p data-lang="seqdiag"><object type="image/svg+xml" data="//kroki.io/seqdiag/svg/eNorTi1MyUxMV6jmUlBIKsovL04tUlDQtVMoT00CMsuAvOicxKTUHAVbBSV31xAFfagG_eKydP2kxOJUMxOlWGugZoQGkPaCovzk1OLifGTtzvl5QOkShZLUCiCRr5CZm5ieiq5ZLafEWlcXoR8kC3MXVA6u2JqrFgCt8T9b"></object></p>
 
 `;
   console.log(result);
