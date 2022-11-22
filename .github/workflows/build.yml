@@ -9,19 +9,22 @@ on:
 
 jobs:
   build:
-    name: Build on node ${{ matrix.node_version }}
+    name: Build on node ${{ matrix.node_version }} on ubuntu-latest
     runs-on: ubuntu-latest
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     strategy:
       fail-fast: false
       matrix:
-        node_version: ['latest']
+        node_version: ['latest', 'lts/*']
     steps:
     - uses: actions/checkout@v1
+    - uses: actions/setup-node@v3.5.1
+      with:
+        node-version: ${{ matrix.node_version }}
     - name: Build
       run: |
-        docker run -t --rm -v $PWD:/data -w /data node:${{ matrix.node_version }} sh -c " npm i -g pnpm && pnpm i  && pnpm run build "
+        npm i -g pnpm && pnpm i  && pnpm run build
     - uses: codecov/codecov-action@v1
       with:
         fail_ci_if_error: true
