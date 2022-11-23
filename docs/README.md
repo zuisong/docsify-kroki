@@ -1608,7 +1608,6 @@ seqdiag {
   </bpmndi:BPMNDiagram>
 </semantic:definitions>
 ```
-
 ````
 
 ```bpmn
@@ -2824,7 +2823,6 @@ line right until even with X9 - ($r,0) \
 }
 ```
 ````
-
 
 ```excalidraw
 {

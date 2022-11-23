@@ -4,11 +4,11 @@ function textEncode(str: string) {
   return new TextEncoder().encode(str);
 }
 
-export function plant(
+function plant(
   content: string,
   type: string,
   config: DocsifyKrokiOption,
-) {
+): string {
   content = content.trim();
   const urlPrefix: string = `${config?.serverPath + type}/svg/`;
   const data: Uint8Array = textEncode(content);
@@ -32,7 +32,7 @@ export function replace(content: string, config: DocsifyKrokiOption): string {
           const parent = element.parentNode;
           const planted: HTMLParagraphElement = create(
             "p",
-            plant(element.textContent ?? element.innerText, LANG, config),
+            plant(element.textContent, LANG, config),
           );
           if (parent) {
             planted.dataset.lang = LANG;
