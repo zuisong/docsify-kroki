@@ -1,6 +1,6 @@
 import { defineConfig } from "vitest/config";
 import { resolve } from "path";
-
+import dts from "vite-plugin-dts";
 export default defineConfig({
   build: {
     lib: {
@@ -16,4 +16,5 @@ export default defineConfig({
       reporter: ["lcovonly", "html"],
     },
   },
+  plugins: [dts()],
 });

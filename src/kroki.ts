@@ -4,7 +4,7 @@ function textEncode(str: string) {
   return new TextEncoder().encode(str);
 }
 
-function plant(
+export function plant(
   content: string,
   type: string,
   config: DocsifyKrokiOption,

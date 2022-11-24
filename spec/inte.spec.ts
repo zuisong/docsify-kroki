@@ -1,4 +1,4 @@
-import { defaultConfig, replace } from "../src/kroki";
+import { defaultConfig, plant, replace } from "../src/kroki";
 import { assert, describe, expect, it, vi } from "vitest";
 it("multi markdown integration test", () => {
   const readmeContent = `
@@ -534,5 +534,34 @@ rackdiag {
 
 `;
   console.log(result);
+  expect(result).toEqual(expectResult);
+});
+
+it("plant", () => {
+  let md = `
+@startuml
+!include C4_Context.puml
+
+title System Context diagram for Internet Banking System
+
+Person(customer, "Banking Customer", "A customer of the bank, with personal bank accounts.")
+System(banking_system, "Internet Banking System", "Allows customers to check their accounts.")
+
+System_Ext(mail_system, "E-mail system", "The internal Microsoft Exchange e-mail system.")
+System_Ext(mainframe, "Mainframe Banking System", "Stores all of the core banking information.")
+
+Rel(customer, banking_system, "Uses")
+Rel_Back(customer, mail_system, "Sends e-mails to")
+Rel_Neighbor(banking_system, mail_system, "Sends e-mails", "SMTP")
+Rel(banking_system, mainframe, "Uses")
+@enduml
+  `;
+
+  const result = plant(md, "plantuml", defaultConfig);
+  console.log(result);
+
+  const expectResult =
+    `<object type="image/svg+xml" data="//kroki.io/plantuml/svg/eNp9UktuwjAQ3ecUU1ZUoqx6AApi0QUVKnQdGTNJLBwPsieC3r5j4_ARlF38_H5-SjEJrDx3rS1ejNO22yLM3ssZOcYjj_fxomDDFmH1GxhbyFewNar2qoWKPHwK5B0yTJXbGVdnblEs0QdyQ90Fphb9CAY9Y5ahgWAf0BOAKuAGYSOsERwMN7BPFsomDJTW1DkO48FrcQoZRlwcy5COYvdPm5RkLR3COS4AE-gG9S6mGn9jn_3L-ZGHrTL2EjB_i2c4naPtWiqblCo9F0Z7ClQxzI-6Ua5GwGvBpXpv7SoZEsVn0X8_qL5i8hhAWduPpAVIq0SiCMm3ig25VP4b7dXsdxv9BAxCE1Y5VXp3Rb196grdNuT-ca2s-UJTNxvyd-M_UadHLNbLk8Uj5XmH3G4i8vgDAvwBDXntsg==" />`;
+
   expect(result).toEqual(expectResult);
 });
