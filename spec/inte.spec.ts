@@ -480,37 +480,37 @@ rackdiag {
 <hr>
 <h2 id="svgbob"><a href="#/?id=svgbob" data-id="svgbob" class="anchor"><span>svgbob</span></a></h2>
 
-<p data-lang="svgbob"><object type="image/svg+xml" data="//kroki.io/svgbob/svg/eNqFj0EKg1AMRPc9xey-gol74XsRkVxkDt9JtFBL0Vn8BOb9SeI2DcA4mb8ARIQeNZKbjI_G8jf5Ozthtn6ZJ3IUIaf0YV6WGQyW0y6Bbk0xtm7h7pEP9lzhR818KPiPd1WOrHJHthxZ6xDsnY-pzFix6h5ZXXvcG3wDvW475w=="></object></p>
+<p data-lang="svgbob"><object type="image/svg+xml" data="//kroki.io/svgbob/svg/eNqFj0sOgDAIRPeegl01Edyb1IsYw0Xm8A6oib_oLEqbNx1AHjLtW5GuV2v4cnceByE41CWfyRdUiOp0grtlK7Ts4odhHAeBI0m5BJoWxug0u5l5HLLECDcVtTbNL-yqaJnly1miZY4DQa34TUXE0svbr5fbbvs6VtbNPic="></object></p>
 <hr>
 <h2 id="mermaid"><a href="#/?id=mermaid" data-id="mermaid" class="anchor"><span>mermaid</span></a></h2>
 <p data-lang="mermaid"><object type="image/svg+xml" data="//kroki.io/mermaid/svg/eNpNzr0OwiAcBPDdp7hRh9o30PTDj1ndmg6UEiBV_gRBU63vLnQwzr-7y0nHrMKlXgBFg8KMZARaZNlmqpiBEleLCeUSB4InSO1V6NacbvkYXsELrvLB0aCxigtl6qF640jPlOZkvNNdjG3xiV7NXjc4CUvOayPRBXlH-7Ndg7NiLonuBfunfbzXP4izudd-Aa8aOC8="></object></p>
 <hr>
 <h2 id="vega"><a href="#/?id=vega" data-id="vega" class="anchor"><span>vega</span></a></h2>
-<p data-lang="vega"><object type="image/svg+xml" data="//kroki.io/vega/svg/eNqNVUuSmzAQ3c8pKCVLx8b2uDLjKi_yzy4HSM1CBgFKBKJAOHa5fPeoG4QkPp7xBtN6_X2vxfUhCMj7OspYTsk-IJlSZb1frU4spcuUq6w5LrlctQC0rk675Z9aFmQBrv94rDLt-BiG-J4xnmZKGzadoaRxzItUW3aLBzDEVEGm3_p_EEB6-JGC5gzyK3oUDEOj-URFw-oeji4kooqlsroA_hNZBITmsikw6dPNuA6Bnz3gbjcL_OIBH7ezwK8e8Hk9C_zmAZ_mgd_9GudT__CA6-dZ4E8_9cdbh3vBJ7y9tKzUPC2osJMeEyOlULwcUKNPrn1yokXhM8VOrFAQlFQsUntdR83kiVVQVVNqJWBo_Wxy4vUw6dgo7ec6Xm9kvqGICkc5o37OCLDtqEuJ9iMtYmuNZU45dHU1ujUKDUjCmYjB0g_cTqKiRYrh2v3o7XYbwmWoF8LANUEQSlUNaxtpj0ZVXwZVv6m-jn9bXcEjiAbZxhV3GzycJz2709RcV1xThBOTSskcMrbF2eH2bbhwwRLg0YK7ntxkOa3-TnBnOAJN2Bkklc5uJ9ANwHbLikjGqNReYNqmtApdkzaeMcqwiftMo6O5BCedUVB6SX0X2E4Hbni9w1rrtpnzM-sYmo3oRYSO_dJ4HSdcCAxovEmtGBNHeJmOk-H6vhqmYrEboPvXPofaNqwqdnZYfTNrVOiry88etUB_dEdaM8ELDGmhnXh96Lifd9vtdmYi05Od1VJ70To36rIXlRVLuHS_T_fkMg7X6UafySSpGezch40fDSeNAee8x_P4VdKIK6jDXvDtXa1YjYuN13hwOByC_lvhytKNCG7mZG3Haq7xCc3A3fBw-w_9mzZl"></object></p>
+<p data-lang="vega"><object type="image/svg+xml" data="//kroki.io/vega/svg/eNqNVUuSmzAQ3fsUlJLlxMb2uDLjKi_yzy4HSM1CBgFKBKJAOHa5fPeoG4QkPp7xBtN6_X2vxXURBOR9HWUsp2QfkEypst6vVieW0mXKVdYcl1yuWgBaV6fd8k8tC_IArv94rDLt-BiG-J4xnmZKGzadoaRxzItUW3YPCzDEVEGm3_p_EEB6-JGC5gzyK3oUDEOj-URFw-oeji4kooqlsroA_hN5CAjNZVNg0qebcR0CP3vA3W4W-MUDPm5ngV894PN6FvjNAz7NA7_7Nc6n_uEB18-zwJ9-6o-3DveCT3h7aVmpeVpQYSc9JkZKoXg5oEafXPvkRIvCZ4qdWKEgKKlYpPa6jprJE6ugqqbUSsDQ-tnkxOth0rFR2s91vN7IfEMRFY5yRv2cEWDbUZcS7UdaxNYay5xy6OpqdGsUGpCEMxGDpR-4nURFixTDtfvR2-02hMtQL4SBa4IglKoa1jbSHo2qvgyqflN9Hf-2uoJHEA2yjSvuNng4T3p2p6m5rrimCCcmlZI5ZGyLs8Pt23DhgiXAowV3PbnJclr9neDOcASasDNIKp3dTqAbgO2WFZGMUam9wLRNaRW6Jm08Y5RhE_eZRkdzCU46o6D0kvousJ0O3PB6h7XWbTPnZ9YxNBvRiwgd-6XxOk64EBjQeJNaMSaO8DIdJ8P1fTVMxWI3QPevfQ61bVhV7Oyw-mbWqNBXl589aoH-6I60ZoIXGNJCO_H60HE_77bb7cxEpic7q6X2onVu1GUvKiuWcOl-n-7JZRyu040-k0lSM9i5Dxs_Gk4aA855j-fxq6QRV1CHveDbu1qxGhcbr_HgcDgE_bfClaUbEdzMydqO1VzjE5qBu2FxWyz-A2qSNnk="></object></p>
 <hr>
 <h2 id="vegalite"><a href="#/?id=vegalite" data-id="vegalite" class="anchor"><span>vegalite</span></a></h2>
-<p data-lang="vegalite"><object type="image/svg+xml" data="//kroki.io/vegalite/svg/eNrtVklz0zAUvvdXaDQcQ_bStDf2cmSGW6YHRZbtR2UpSIoh6eS_8yTbiu2UQjhAO9ODZel9b19s3Z0RQl9YnouC0StCc-fW9mo0KkXGhhm4fLMagh5VDIH6UoITo3I-_Gq1ogMvnwjLDawdIAF1XGsDO60ck3JLuFacOaHwSQjPmXGWuJw5YnP9nSSQpsII5YjbroUlOkUSKhMOdqAyYjmTwg5rM8x5H73LeCqZ3AiL52U4E3JHQwSv6YDQFe6mi70Xa0FvGuj8vA-9baD5rA-9a6DLSR9630CLI-hDtHWk8GMDTS770HVUeNGHPkWF031AbnANTDSvkhxzUWUIgYKZWy_LwXApQhYDXSiuE8xvzGagbjtHJKQgZOLlV1E00H2tPFnpAhSTXdBq4z1RGyk7dPYDfLXaBrwq4LeenDJpRZvf11sXDHxH3Qc6cBhRZaeFVKkJu4MAtbDzvCcF923DFBphDspD5iptvinvCaUjiAZ_6xbXUpt_71cvkzthNOLObETb445qKTKhvFdH5auqQD8_HHS9q9616ucu_f9d2kp3jRumMs-wXIwHZPIKl-kcl9kUl_l47D86j6-pj8MIP6zAUbAMf20nd3aqTRE-qTTp6-41Pe6fm_5pNL3LjcB7Byr_VTzLGfb5xfjmoamYjquBeGyz8NfRHYalBAN4ATt9XOJMfIlO_MlQ4BqcoSikJcYbr3f9WGMuKahErNEJvDUexqZuow4YTezP9j8BacF4MA=="></object></p>
+<p data-lang="vegalite"><object type="image/svg+xml" data="//kroki.io/vegalite/svg/eNrtVklz2yAUvvtXMEyPrvc0Tm7d02NnevPkgBGSXoPABezWzvi_94EkLMlpWveQZSYHIXjf2xeJ2x4h9JXluSgYvSQ0d25lL4fDjcjYIAOXr5cD0MOSIVBfS3BiuJkNvlutaN_LJ8JyAysHSEAdV9rATivHpNwSrhVnTih8EsJzZpwlLmeO2Fz_JAmkqTBCOeK2K2GJTpGEyoSDHaiMWM6ksIPKDHPeR-8ynjZMroXF8yKcCbmlIYK3tE_oEneT-d6LNaB3NXR21oXe19Bs2oU-1NDFuAt9rKH5EfQp2jpS-LmGxhdd6CoqPO9CX6LCyT4g17gGJpqXSY65KDOEQMHMjZflYLgUIYuBLhTXCeY3ZjNQt60jElIQMvHyyyga6L5Wnqx0AYrJNmi18Z6otZQtOvsFvlpNA14V8BtPTpm0osnv660LBr6j7gIdOIyotNNAytSE3UGAWth53pOC-7FmCo0wB5tD5kptvinvCKUliAb_6hbXUpuH96uTyZ0wGnFn1qLpcUu1FJlQ3quj8pVVoF_vD7rale9K9UuXPn6XNtJd4YapzDMs5qM-Gb_BZTLDZTrBZTYa-Y_O02vq4zDCDytwFCzDX9vJnZ1qU4RPKk26ujtNj_uXpn8eTe9yI_Degcr_FM9iin1-Prq-byomo3Igntos_Hd0h2HZgAG8gJ0-LnEmvkUn_mUocA3OUBTSEuON17turDGXFFQiVugE3hoPY1O1UQuMJva9fe834ft4Og=="></object></p>
 <hr>
 <h2 id="wavedrom"><a href="#/?id=wavedrom" data-id="wavedrom" class="anchor"><span>wavedrom</span></a></h2>
 <p data-lang="wavedrom"><object type="image/svg+xml" data="//kroki.io/wavedrom/svg/eNpdTs0KwjAMvu8pQs8jdKiXgQfBJ_AqO8S1zLG6KZuusu7dTaBDXSCE5PvJN0FfVy25HM4JwAQt3WwOqnSNSmGpkV5yvKNU4FYwp7_0Iw305Ue6x81258MePUOGGfxDXS0ZXtWlM2-ZA9VOpuCqWNme7ONp-yE6R1uNGaIOGeolxb_oUDZtNzprKsvCKGKJRNeZRE-K-QOPW0Gr"></object></p>
 <hr>
 <h2 id="nomnoml"><a href="#/?id=nomnoml" data-id="nomnoml" class="anchor"><span>nomnoml</span></a></h2>
-<p data-lang="nomnoml"><object type="image/svg+xml" data="//kroki.io/nomnoml/svg/eNpdjzELgzAQhff8ikxFC5ZuBQWXTh0K3UOGU6OmRCOXC0Xwx9dgpWnhhuPdd-_diYdGILWoWV2tHynnt5EWBN0kaTFpY6BTSbowzkWlABuZZWICREsy0vJStNYbPlhPvWSSMXEwVEDlCKGm8g4IvlEog5qvFluqZHuT8fPpdBGDdnWvVbsOntaYeVTOyaz84j8q-uFfcnrs1oqMS34M4ELgSAds-9C9dJekMRft7l249pPzBhzmaLs="></object></p>
+<p data-lang="nomnoml"><object type="image/svg+xml" data="//kroki.io/nomnoml/svg/eNpdjzELgzAQhff8ikxFC0q3goJLpw6F7iHDqVFTopHLhSL442sQaVq44Xj33Xt34qkRSK1qUTfrJyr4faIVQbdJWs7aGOhVkq6Mc1ErwFZmmZgB0ZKMtKISnfWGj9bTIJlkTJwMlVA7QmioegCCbxXKoBabxZ4q2dFk_JLnVzFq1wxaddvgZY1ZJuWczKov_qOiH_8lp6d-q8i44ucArgSOdMD2D91b90kac9Hu0YVrj5wPhatoxQ=="></object></p>
 <hr>
 <h2 id="graphviz"><a href="#/?id=graphviz" data-id="graphviz" class="anchor"><span>graphviz</span></a></h2>
-<p data-lang="graphviz"><object type="image/svg+xml" data="//kroki.io/graphviz/svg/eNp9kMsKwjAQRff9iiEfoOhWXLUoPhH8gJKmQxubmjB9bKT_LjZ9xBa6GbiXuWcuE8uEuEkhgI8HUFSRlUJVRYkUmtYGUDxCBXtgF9KZZLvWnG2LTbfuBJ5INVKXADhIhRHystczRiLCkeJwAi0ypPUEB3DmNe9VswDdLkBvSDmXsUNldx3j6lW41qMyBkv8u878lHSOg2Mb2Dl_z9hhaOBfT0P4qBV_J1b9EI3XfAEntHCb"></object></p>
+<p data-lang="graphviz"><object type="image/svg+xml" data="//kroki.io/graphviz/svg/eNp9kMsKwjAQRff5iiEfoOhWXFkUnwh-QEnToY1NTZg-NtJ_F5s-ooVuBu5l7pnLsFglJGwKAbwZQFFFTkpdFSVSaFsbQIsINWyBn8lkim9ac7ItV926F3gg1UhdAmCvNEYoyl5PGIkMR4rHCYzMkJZ_OICTqEWvmhnoegZ6RcqFij0qv5kYF8_Ct-6VtVjiz3W-S8nkODiugZvT94wdhga7y3EIH4wWr8SpL6JhDfsAqKRwrw=="></object></p>
 <hr>
 <h2 id="erd"><a href="#/?id=erd" data-id="erd" class="anchor"><span>erd</span></a></h2>
 <p data-lang="erd"><object type="image/svg+xml" data="//kroki.io/erd/svg/eNqLDkgtKs7Pi-XSykvMTeXKSM1MzyjhKodQ2kmZRSUZ8Tn5yYklmfl58ZkpXFzRPlAeUAuQn5xZUslVXJJYksqVnF-aV1JUycUFMVJBS1fXUAGmGgCFAiQX"></object></p>
 <hr>
 <h2 id="ditaa"><a href="#/?id=ditaa" data-id="ditaa" class="anchor"><span>ditaa</span></a></h2>
-<p data-lang="ditaa"><object type="image/svg+xml" data="//kroki.io/ditaa/svg/eNrT1oUCbS4FMKiBUEAGQiC0OLUIRQBVBYYZIBAHZBelFpamFpfAFYJAGZAN1wDXBTcTbjBYxLsoPzsTRQShBqoTzSwkZynEgRFMvUJmXlpOYkkqTBZoHMJEuJ4yZBOxmI_brS6ZJYmJuN2Kw7EoYQNxM9R1BUX5yanFxajSMHPRdMHM1QYA4JNTDQ=="></object></p>
+<p data-lang="ditaa"><object type="image/svg+xml" data="//kroki.io/ditaa/svg/eNpTAANtXSjQ5oII1EAoIAMhEFqcWoQigKoCwwwQiAOyi1ILS1OLS-AKQaAMyIZrgOuCmwk3GCziXZSfnYkiglAD1YlmFpKzFOLACKZeITMvLSexJBUmCzQOYSJcTxmyiVjMx-1Wl8ySxETcbsXhWJSwgbgZ6rqCovzk1OJiVGmYuWi6YOZqcwEAkm5T1w=="></object></p>
 <hr>
 <h2 id="c4plantuml"><a href="#/?id=c4plantuml" data-id="c4plantuml" class="anchor"><span>c4plantuml</span></a></h2>
 <p data-lang="c4plantuml"><object type="image/svg+xml" data="//kroki.io/c4plantuml/svg/eNp9UktuwjAQ3ecUU1ZUoqx6AApi0QUVKnQdGTNJLBwPsieC3r5j4_ARlF38_H5-yiSw8ty1tngxTttuizB7L2fkGI883seLgg1bhNVvYGwhX8HWqNqrFiry8CmQd8gwVW5nXJ25RbFEH8gNdReYWvQjGPSMWYYGgn1ATwCqgBuEjbBGcDDcwD5ZKJswUFpT5ziMB6_FKWQYcXEsQzqK3T9tUpK1dAjnuABMoBvUu5hq_I199i_nRx62ythLwPwtnuF0jrZrqWxSqvRcGO0pUMUwP-pGuRoBrwWX6r21q2RIFJ9F__2g-orJYwBlbT-SFiCtEokiJN8qNuRS-W-0V7PfbfQTMAhNWOVU6d0V9fapK3TbkPvHtbLmC03dbMjfjf9EnR6xWC9PFo-U5x1yu4nI5Qf8Ayot7V4="></object></p>
 <hr>
 <h2 id="rackdiag"><a href="#/?id=rackdiag" data-id="rackdiag" class="anchor"><span>rackdiag</span></a></h2>
-<p data-lang="rackdiag"><object type="image/svg+xml" data="//kroki.io/rackdiag/svg/eNorSkzOTslMTFeo5lJQMDQLtQZRVgqhAcEK0UahsSCusZWCi5NCcGpRWWoRiG9ipRCemoQkYIouYIYuYG6l4JOfmKLglJiTmJcMEbMAihkrBJdnliRnWHPVAgDhXSWB"></object></p>
+<p data-lang="rackdiag"><object type="image/svg+xml" data="//kroki.io/rackdiag/svg/eNrjKkpMzk7JTExXqOZSUDA0C7UGUVYKoQHBCtFGobEgrrGVgouTQnBqUVlqEYhvYqUQnpqEJGCKLmCGLmBupeCTn5ii4JSYk5iXDBGzAIoZKwSXZ5YkZ1hz1QIA5sIliw=="></object></p>
 <hr>
 
 <h2 id="packetdiag"><a href="#/?id=packetdiag" data-id="packetdiag" class="anchor"><span>packetdiag</span></a></h2>
@@ -518,7 +518,7 @@ rackdiag {
 <hr>
 
 <h2 id="nwdiag"><a href="#/?id=nwdiag" data-id="nwdiag" class="anchor"><span>nwdiag</span></a></h2>
-<p data-lang="nwdiag"><object type="image/svg+xml" data="//kroki.io/nwdiag/svg/eNrLK0_JTExXqOZSUMhLLSnPL8pWSMmtAvMVFBJTUopSi4sVbBWUjAwN9CpAUN_IRIkLLFuemmRgqBCNRZGhUqw1XIkRViVGECW1SPZm5pWkFuUl5mBabmhuhLDcGpftMFV4bIcpgdquoJACNATOMoK4qBYAQm5JTA=="></object></p>
+<p data-lang="nwdiag"><object type="image/svg+xml" data="//kroki.io/nwdiag/svg/eNrLK0_JTExXqOZSUMhLLSnPL8pWSMmtAvMVFBJTUopSi4sVbBWUjAwN9CpAUN_IRIkLLFuemmRgqBCNRZGhUqw1XIkRViVGECW1SPZm5pWkFuUl5mBabmhuhLDcGpftMFV4bIcpgdquoJACNATOMoK4qJYLAIvESVY="></object></p>
 <hr>
 
 <h2 id="actdiag"><a href="#/?id=actdiag" data-id="actdiag" class="anchor"><span>actdiag</span></a></h2>

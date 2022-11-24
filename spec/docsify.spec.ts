@@ -38,7 +38,7 @@ A -> B
   );
 
   expect(res).toBe(
-    '<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eNpzKC5JLCopzc3hclTQtVNw4nJIzUsBcgFi-gfE"></object></p>',
+    '<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eNrjciguSSwqKc3N4XJU0LVTcOJySM1LAXEBa80H2A=="></object></p>',
   );
 });
 
@@ -65,7 +65,7 @@ A -> B
     krokiPlugin(hook, vm);
   });
   expect(document.body?.innerHTML.trim()).toBe(
-    '<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eNpzKC5JLCopzc3hclTQtVNw4nJIzUsBcgFi-gfE"></object></p>',
+    '<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eNrjciguSSwqKc3N4XJU0LVTcOJySM1LAXEBa80H2A=="></object></p>',
   );
 });
 

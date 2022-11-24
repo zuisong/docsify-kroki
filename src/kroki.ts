@@ -9,7 +9,6 @@ function plant(
   type: string,
   config: DocsifyKrokiOption,
 ): string {
-  content = content.trim();
   const urlPrefix: string = `${config?.serverPath + type}/svg/`;
   const data: Uint8Array = textEncode(content);
   const compressed: string = strFromU8(zlibSync(data, { level: 9 }), true);
