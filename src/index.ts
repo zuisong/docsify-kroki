@@ -1,8 +1,13 @@
 import { install } from "./kroki";
-export { plant, replace } from "./kroki";
 
-if (!window?.$docsify) {
+declare global {
+  var $docsify: { plugins?: any[] };
+}
+
+if (!window.$docsify) {
   window.$docsify = {};
 }
 
-window.$docsify.plugins = (window.$docsify.plugins ?? []).concat(install);
+window.$docsify.plugins = (window.$docsify.plugins ?? []).concat(
+  install,
+);

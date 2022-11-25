@@ -87,3 +87,8 @@ export function install(hook: any, vm: any) {
     return replace(content, { ...defaultConfig, ...vm?.config?.kroki });
   });
 }
+
+interface DocsifyKrokiOption {
+  serverPath: string;
+  langs: string[];
+}
