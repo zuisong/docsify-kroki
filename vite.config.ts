@@ -9,6 +9,7 @@ export default defineConfig({
       formats: ["es", "cjs", "umd"],
       fileName: "docsify-kroki",
     },
+    sourcemap: true,
   },
   test: {
     environment: "happy-dom",

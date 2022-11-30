@@ -20,7 +20,10 @@ export function plant(
   return `<object type="image/svg+xml" data="${svgUrl}" />`;
 }
 
-export function replace(content: string, config: DocsifyKrokiOption): string {
+export async function replace(
+  content: string,
+  config: DocsifyKrokiOption,
+): Promise<string> {
   let spanElement: HTMLSpanElement = create("span", content);
 
   for (const LANG of config.langs) {
@@ -39,6 +42,31 @@ export function replace(content: string, config: DocsifyKrokiOption): string {
           }
         }
       });
+
+    let imgSelector = `img[alt="kroki-${LANG}"]`;
+    const elements = Array.from(spanElement.querySelectorAll(imgSelector));
+
+    for (const element of elements) {
+      if (element instanceof HTMLImageElement) {
+        const img = element as HTMLImageElement;
+        try {
+          const code = await ((await fetch(img.getAttribute("src"))).text());
+          console.log(element)
+          const parent = element.parentNode;
+          const planted: HTMLParagraphElement = create(
+            "p",
+            plant(code, LANG, config),
+          );
+          if (parent) {
+            planted.dataset.lang = LANG;
+            element.parentNode.replaceChild(planted, element);
+          }
+        } catch (e) {
+          console.error("error",e)
+          continue
+        }
+      }
+    }
   }
 
   return spanElement.innerHTML;
@@ -83,8 +111,14 @@ export const defaultConfig: DocsifyKrokiOption = {
 };
 
 export function install(hook: any, vm: any) {
-  hook.afterEach((content: string) => {
-    return replace(content, { ...defaultConfig, ...vm?.config?.kroki });
+  hook.afterEach((content: string, next) => {
+    (async () => {
+      const newContent = await replace(content, {
+        ...defaultConfig,
+        ...vm?.config?.kroki,
+      });
+      next(newContent);
+    })();
   });
 }
 

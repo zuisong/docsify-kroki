@@ -20,7 +20,17 @@
 ## Usage
 
 ````markdown
-### Section X
+#Demo
+
+## embedding it directly
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
 
 ```plantuml
 @startuml
@@ -31,18 +41,10 @@ Alice -> Bob: Another authentication Request
 Alice <-- Bob: another authentication Response
 @enduml
 ```
-````
 
-````markdown
-### Section X
+## load from external files
 
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
+![kroki-excalidraw](./docs/excalidraw.json)
 ````
 
 ## Options

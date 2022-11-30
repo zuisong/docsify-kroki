@@ -1,8 +1,10 @@
-# Example
+## Example
+
+## Embedding code in markdown example
 
 ---
 
-## plantuml
+### plantuml
 
 ````markdown
 ```plantuml
@@ -68,7 +70,7 @@ main_ts ==> (main.view)
 
 ---
 
-## svgbob
+### svgbob
 
 ````markdown
 ```svgbob
@@ -98,7 +100,7 @@ main_ts ==> (main.view)
 
 ---
 
-## mermaid
+### mermaid
 
 ````markdown
 ```mermaid
@@ -122,7 +124,7 @@ graph TD
 
 ---
 
-## vega
+### vega
 
 ````markdown
 ```vega
@@ -324,7 +326,7 @@ graph TD
 
 ---
 
-## vegalite
+### vegalite
 
 ````markdown
 ```vegalite
@@ -594,7 +596,7 @@ graph TD
 
 ---
 
-## wavedrom
+### wavedrom
 
 ````markdown
 ```wavedrom
@@ -620,7 +622,7 @@ graph TD
 
 ---
 
-## nomnoml
+### nomnoml
 
 ````markdown
 ```nomnoml
@@ -658,7 +660,7 @@ graph TD
 
 ---
 
-## graphviz
+### graphviz
 
 ````markdown
 ```graphviz
@@ -716,7 +718,7 @@ digraph D {
 
 ---
 
-## erd
+### erd
 
 ````markdown
 ```erd
@@ -754,7 +756,7 @@ Person *--1 Location
 
 ---
 
-## ditaa
+### ditaa
 
 ````markdown
 ```ditaa
@@ -814,7 +816,7 @@ request |
 
 ---
 
-## c4plantuml
+### c4plantuml
 
 ````markdown
 ```c4plantuml
@@ -858,7 +860,7 @@ Rel(banking_system, mainframe, "Uses")
 
 ---
 
-## rackdiag
+### rackdiag
 
 ````markdown
 ```rackdiag
@@ -890,7 +892,7 @@ rackdiag {
 
 ---
 
-## packetdiag
+### packetdiag
 
 ````markdown
 ```packetdiag
@@ -946,7 +948,7 @@ packetdiag {
 
 ---
 
-## nwdiag
+### nwdiag
 
 ````markdown
 ```nwdiag
@@ -990,7 +992,7 @@ nwdiag {
 
 ---
 
-## actdiag
+### actdiag
 
 ````markdown
 ```actdiag
@@ -1026,7 +1028,7 @@ actdiag {
 
 ---
 
-## blockdiag
+### blockdiag
 
 ````markdown
 ```blockdiag
@@ -1054,7 +1056,7 @@ blockdiag {
 
 ---
 
-## seqdiag
+### seqdiag
 
 ````markdown
 ```seqdiag
@@ -1078,7 +1080,7 @@ seqdiag {
 
 ---
 
-## bytefield
+### bytefield
 
 ````markdown
 ```bytefield
@@ -1220,7 +1222,7 @@ seqdiag {
 
 ---
 
-## bpmn
+### bpmn
 
 ````markdown
 ```bpmn
@@ -1998,7 +2000,7 @@ seqdiag {
 
 ---
 
-## pikchr
+### pikchr
 
 ````markdown
 ```pikchr
@@ -2122,7 +2124,7 @@ line right until even with X9 - ($r,0) \
 
 ---
 
-## excalidraw
+### excalidraw
 
 ````markdown
 ```excalidraw
@@ -3521,3 +3523,15 @@ line right until even with X9 - ($r,0) \
   }
 }
 ```
+
+---
+
+## Load diagrams from external files
+
+### Excalidraw from external files
+
+```markdown
+![kroki-excalidraw](./excalidraw.json)
+```
+
+![kroki-excalidraw](./excalidraw.json)

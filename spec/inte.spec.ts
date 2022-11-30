@@ -1,6 +1,6 @@
 import { defaultConfig, plant, replace } from "../src/kroki";
 import { assert, describe, expect, it, vi } from "vitest";
-it("multi markdown integration test", () => {
+it("multi markdown integration test", async () => {
   const readmeContent = `
 <h1 id="example"><a href="#/?id=example" data-id="example" class="anchor"><span>Example</span></a></h1>
 <hr>
@@ -470,7 +470,7 @@ rackdiag {
 }</code></pre>
 
 `;
-  const result = replace(readmeContent, defaultConfig);
+  const result = await replace(readmeContent, defaultConfig);
   const expectResult = `
 <h1 id="example"><a href="#/?id=example" data-id="example" class="anchor"><span>Example</span></a></h1>
 <hr>
@@ -537,7 +537,7 @@ rackdiag {
   expect(result).toEqual(expectResult);
 });
 
-it("plant", () => {
+it("plant", async () => {
   let md = `
 @startuml
 !include C4_Context.puml
