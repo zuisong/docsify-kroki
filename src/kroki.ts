@@ -1,4 +1,5 @@
 import { strFromU8, zlibSync } from "fflate";
+import { DocsifyKrokiOption, DocsifyPlugin } from "./types";
 
 function textEncode(str: string) {
   return new TextEncoder().encode(str);
@@ -51,7 +52,6 @@ export async function replace(
         const img = element as HTMLImageElement;
         try {
           const code = await ((await fetch(img.getAttribute("src"))).text());
-          console.log(element)
           const parent = element.parentNode;
           const planted: HTMLParagraphElement = create(
             "p",
@@ -62,8 +62,8 @@ export async function replace(
             element.parentNode.replaceChild(planted, element);
           }
         } catch (e) {
-          console.error("error",e)
-          continue
+          console.error("error", e);
+          continue;
         }
       }
     }
@@ -110,8 +110,8 @@ export const defaultConfig: DocsifyKrokiOption = {
   serverPath: "//kroki.io/",
 };
 
-export function install(hook: any, vm: any) {
-  hook.afterEach((content: string, next) => {
+export const docsifyKrokiPlugin: DocsifyPlugin = (hook, vm) => {
+  hook.afterEach((content, next) => {
     (async () => {
       const newContent = await replace(content, {
         ...defaultConfig,
@@ -120,9 +120,4 @@ export function install(hook: any, vm: any) {
       next(newContent);
     })();
   });
-}
-
-interface DocsifyKrokiOption {
-  serverPath: string;
-  langs: string[];
-}
+};

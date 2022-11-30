@@ -1,4 +1,6 @@
 import { expect, it } from "vitest";
+import { DocsifyVM, Hooks } from "../src/types";
+import { sleep } from "./utils";
 
 it("from external files", async () => {
   const imageSrc =
@@ -8,56 +10,45 @@ it("from external files", async () => {
   document.body.innerHTML = `${imageSrc}`;
   await import("../src/index");
 
-  const hook = {
-    afterEach: function (
-      f: (body: Element, next: (str: string) => void) => void,
-    ) {
-      f(document.body.firstElementChild!!, (str) => {
+  const hook: Hooks = {
+    afterEach(f) {
+      f(document.body.firstElementChild!!.outerHTML, (str) => {
         document.body.innerHTML = str;
       });
     },
   };
-  const vm = { config: { kroki: {} } };
+  const vm: DocsifyVM = { config: {} };
 
-  // @ts-ignore
-  window.$docsify.plugins.forEach((krokiPlugin) => {
+  window.$docsify.plugins?.forEach((krokiPlugin) => {
     krokiPlugin(hook, vm);
   });
 
   // wait for fetch data
-  await new Promise((res) => {
-    setTimeout(res, 3000);
-  });
+  await sleep(2000);
   expect(document.body?.innerHTML.trim()).toBe(
     '<p data-lang="mermaid"><object type="image/svg+xml" data="//kroki.io/mermaid/svg/eNodjLsOgjAUhnee4h91QN5AAyXR2bgRBto0bYOe09TTGBTf3eL8XVyaosetr4B2QEsLk8WIuj6uaiJ4e49Y0e1wZgjDBfFZHww_miW_s1jjmznxHLAvh27roD648GuzDZOkoIt2wrdw9ef9gKuNnCSQg87uibH6ASlWKgI="></object></p>',
   );
 });
 
 it("from external files with a erroe", async () => {
-  const imageSrc = `<img src="https://error-link.com"
+  const imageSrc = `<img src="https://httpbin.errordomain/status/404"
   alt="kroki-mermaid">`;
 
   document.body.innerHTML = `${imageSrc}`;
   await import("../src/index");
 
-  const hook = {
-    afterEach: function (
-      f: (body: Element, next: (str: string) => void) => void,
-    ) {
-      f(document.body.firstElementChild!!, (str) => {
-        document.body.innerHTML = str;
-      });
-    },
-  };
-  const vm = { config: { kroki: {} } };
+  const vm: DocsifyVM = { config: {} };
 
-  // @ts-ignore
-  window.$docsify.plugins.forEach((krokiPlugin) => {
-    krokiPlugin(hook, vm);
+  window.$docsify.plugins?.forEach((krokiPlugin) => {
+    krokiPlugin({
+      afterEach(param) {
+        param(document.body.firstElementChild!!.outerHTML, (str) => {
+          document.body.innerHTML = str;
+        });
+      },
+    } as Hooks, vm);
   });
 
   // wait for fetch data
-  await new Promise((res) => {
-    setTimeout(res, 3000);
-  });
+  await sleep(2000);
 });
