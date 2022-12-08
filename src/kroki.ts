@@ -1,15 +1,34 @@
 import { strFromU8, zlibSync } from "fflate";
 import { DocsifyKrokiOption, DocsifyPlugin } from "./types";
 
+import { decode, encode } from "js-base64";
 function textEncode(str: string) {
   return new TextEncoder().encode(str);
 }
+const contentType = "image/svg+xml";
 
-export function plant(
+export async function plantWithPost(
   content: string,
   type: string,
   config: DocsifyKrokiOption,
-): string {
+): Promise<string> {
+  const urlPrefix: string = `${config?.serverPath + type}/svg/`;
+  return fetch(urlPrefix, {
+    method: "POST",
+    body: content,
+  })
+    .then((resp) => resp.text())
+    .then((svg) => `
+    <object data="data:${contentType};base64,${encode(svg)}"
+    type="${contentType}"></object>
+    `);
+}
+
+export async function plant(
+  content: string,
+  type: string,
+  config: DocsifyKrokiOption,
+): Promise<string> {
   const urlPrefix: string = `${config?.serverPath + type}/svg/`;
   const data: Uint8Array = textEncode(content);
   const compressed: string = strFromU8(zlibSync(data, { level: 9 }), true);
@@ -17,8 +36,11 @@ export function plant(
     .replace(/\+/g, "-")
     .replace(/\//g, "_");
   const svgUrl: string = urlPrefix + result;
-
-  return `<object type="image/svg+xml" data="${svgUrl}" />`;
+  const svgContent = `<object type="image/svg+xml" data="${svgUrl}" />`;
+  if (svgContent.length < 4000) {
+    return svgContent;
+  }
+  return plantWithPost(content, type, config);
 }
 
 export async function replace(
@@ -26,46 +48,64 @@ export async function replace(
   config: DocsifyKrokiOption,
 ): Promise<string> {
   let spanElement: HTMLSpanElement = create("span", content);
+  const fetaures: Promise<void>[] = [];
 
   for (const LANG of config.langs) {
     let selector = `pre[data-lang="${LANG}"]`;
-    spanElement.querySelectorAll(selector)
-      .forEach((element: Element) => {
-        if (element instanceof HTMLElement) {
-          const parent = element.parentNode;
-          const planted: HTMLParagraphElement = create(
-            "p",
-            plant(element.textContent, LANG, config),
-          );
-          if (parent) {
+    const codeElements = Array.from(spanElement.querySelectorAll(selector));
+
+    for (const element of codeElements) {
+      if (element instanceof HTMLElement) {
+        const parent = element.parentNode;
+        if (!parent) continue;
+
+        const promise = plant(element.textContent, LANG, config).then(
+          (graphStr) => {
+            const planted: HTMLParagraphElement = create(
+              "p",
+              graphStr,
+            );
             planted.dataset.lang = LANG;
             element.parentNode.replaceChild(planted, element);
-          }
-        }
-      });
+          },
+        );
+        fetaures.push(promise);
+      }
+    }
 
     let imgSelector = `img[alt="kroki-${LANG}"]`;
-    const elements = Array.from(spanElement.querySelectorAll(imgSelector));
+    const imgElements = Array.from(spanElement.querySelectorAll(imgSelector));
 
-    for (const element of elements) {
+    for (const element of imgElements) {
       if (element instanceof HTMLImageElement) {
         const img = element as HTMLImageElement;
-        try {
-          const code = await ((await fetch(img.getAttribute("src"))).text());
-          const parent = element.parentNode;
-          const planted: HTMLParagraphElement = create(
-            "p",
-            plant(code, LANG, config),
-          );
-          if (parent) {
-            planted.dataset.lang = LANG;
-            element.parentNode.replaceChild(planted, element);
-          }
-        } catch (e) {
-          console.error("error", e);
-          continue;
-        }
+        const parent = element.parentNode;
+        if (!parent) continue;
+
+        const promise = fetch(img.getAttribute("src"))
+          .then((it) => it.text())
+          .then((code) => plant(code, LANG, config))
+          .then((graphStr) => {
+            const planted: HTMLParagraphElement = create(
+              "p",
+              graphStr,
+            );
+            if (parent) {
+              planted.dataset.lang = LANG;
+              element.parentNode.replaceChild(planted, element);
+            }
+          });
+        fetaures.push(promise);
       }
+    }
+  }
+
+  for (let p of fetaures) {
+    try {
+      await p;
+    } catch (e) {
+      console.error("error", e);
+      continue;
     }
   }
 

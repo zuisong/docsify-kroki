@@ -557,7 +557,7 @@ Rel(banking_system, mainframe, "Uses")
 @enduml
   `;
 
-  const result = plant(md, "plantuml", defaultConfig);
+  const result = await plant(md, "plantuml", defaultConfig);
   console.log(result);
 
   const expectResult =
