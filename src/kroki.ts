@@ -7,13 +7,13 @@ function textEncode(str: string) {
 }
 const contentType = "image/svg+xml";
 
-export async function plantWithPost(
+async function plantWithPost(
   content: string,
   type: string,
   config: DocsifyKrokiOption,
 ): Promise<string> {
-  const urlPrefix: string = `${config?.serverPath + type}/svg/`;
-  return fetch(urlPrefix, {
+  const krokiServerRenderUrl: string = `${config?.serverPath + type}/svg/`;
+  return fetch(krokiServerRenderUrl, {
     method: "POST",
     body: content,
   })
@@ -56,8 +56,7 @@ export async function replace(
 
     for (const element of codeElements) {
       if (element instanceof HTMLElement) {
-        const parent = element.parentNode;
-        if (!parent) continue;
+        const parent = element.parentNode!!;
 
         const promise = plant(element.textContent, LANG, config).then(
           (graphStr) => {
@@ -79,8 +78,7 @@ export async function replace(
     for (const element of imgElements) {
       if (element instanceof HTMLImageElement) {
         const img = element as HTMLImageElement;
-        const parent = element.parentNode;
-        if (!parent) continue;
+        const parent = element.parentNode!!;
 
         const promise = fetch(img.getAttribute("src"))
           .then((it) => it.text())

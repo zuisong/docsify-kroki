@@ -27,6 +27,6 @@ export interface DocsifyPlugin {
 }
 
 export interface DocsifyKrokiOption {
-  serverPath: string;
-  langs: string[];
+  serverPath?: string;
+  langs?: string[];
 }
