@@ -16,7 +16,7 @@ it("from external files with a erroe", async () => {
     randomstring.generate(10000),
   );
 
-  const krokiReturnBody = "kroki with long url"
+  const krokiReturnBody = "kroki with long url";
 
   mockPost("https://kroki.io/mermaid/svg/").willResolve(
     krokiReturnBody,
@@ -43,5 +43,7 @@ it("from external files with a erroe", async () => {
 
   await sleep(30);
 
-  expect(document.body.querySelector("object")?.getAttribute('data')).eq(`data:image/svg+xml;base64,${toBase64(krokiReturnBody)}`)
+  expect(document.body.querySelector("object")?.getAttribute("data")).eq(
+    `data:image/svg+xml;base64,${toBase64(krokiReturnBody)}`,
+  );
 });

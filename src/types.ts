@@ -10,7 +10,7 @@ declare global {
 
 export interface Hooks {
   afterEach(
-    param: (content: string, next: (content: string) => void) => void,
+    afterEachHook: (content: string, next: (content: string) => void) => void,
   ): void;
 
   // afterEach(param: (content: string) => string): void;

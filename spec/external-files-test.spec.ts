@@ -19,9 +19,9 @@ it("from external files", async () => {
   document.body.innerHTML = `${imageSrc}`;
   await import("../src/index");
 
-  const hook: Hooks = {
-    afterEach(f) {
-      f(document.body.firstElementChild!!.outerHTML, (str) => {
+  const hooks: Hooks = {
+    afterEach(afterEachHook) {
+      afterEachHook(document.body.firstElementChild!!.outerHTML, (str) => {
         document.body.innerHTML = str;
       });
     },
@@ -29,7 +29,7 @@ it("from external files", async () => {
   const vm: DocsifyVM = { config: {} };
 
   window.$docsify.plugins?.forEach((krokiPlugin) => {
-    krokiPlugin(hook, vm);
+    krokiPlugin(hooks, vm);
   });
   await sleep(50);
 
@@ -39,9 +39,9 @@ it("from external files", async () => {
   );
 });
 
-it("from external files with a erroe", async () => {
+it("from external files with a error", async () => {
   const mock = mockGet("https://httpbin.errordomain/status/404").willThrow(
-    "error",
+    "from external files with a error link",
   );
 
   const imageSrc = `<img src="https://httpbin.errordomain/status/404"
@@ -54,8 +54,8 @@ it("from external files with a erroe", async () => {
 
   window.$docsify.plugins?.forEach((krokiPlugin) => {
     krokiPlugin({
-      afterEach(param) {
-        param(document.body.firstElementChild!!.outerHTML, (str) => {
+      afterEach(afterEachHook) {
+        afterEachHook(document.body.firstElementChild!!.outerHTML, (str) => {
           document.body.innerHTML = str;
         });
       },
