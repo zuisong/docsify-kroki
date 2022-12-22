@@ -1,7 +1,7 @@
 import { strFromU8, zlibSync } from "fflate";
 import { DocsifyKrokiOption, DocsifyPlugin } from "./types";
+import { encode } from "js-base64";
 
-import { decode, encode } from "js-base64";
 function textEncode(str: string) {
   return new TextEncoder().encode(str);
 }
