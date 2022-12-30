@@ -1,19 +1,23 @@
-import { beforeEach, expect, it } from "vitest";
-import { DocsifyVM, Hooks } from "../src/types";
-import { sleep } from "./utils";
-import { mockFetch, mockGet, mockPost } from "vi-fetch";
+import * as asserts from "deno_std/testing/asserts.ts";
+import { beforeEach, it } from "deno_std/testing/bdd.ts";
+import { DocsifyVM, Hooks } from "../src/types.ts";
+import { sleep } from "./utils.ts";
+import { mockFetch, mockGet, mockPost } from "npm:vi-fetch";
 
-import * as randomstring from "randomstring";
+import { generate } from "https://esm.sh/randomstring@1.2.3";
 
-import "vi-fetch/setup";
-import { toBase64 } from "js-base64";
+import "npm:vi-fetch/setup";
+import { toBase64 } from "npm:js-base64";
+import { init } from "./common/jdsom-env-init.ts";
+
 beforeEach(() => {
+  init();
   mockFetch.clearAll();
 });
 
-it("from external files with a erroe", async () => {
+it("from external files with a error", async () => {
   mockGet("https://long-text.txt").willResolve(
-    randomstring.generate(10000),
+    generate(10000),
   );
 
   const krokiReturnBody = "kroki with long url";
@@ -25,7 +29,7 @@ it("from external files with a erroe", async () => {
   const imageSrc = `<img src="https://long-text.txt" alt="kroki-mermaid">`;
 
   document.body.innerHTML = `${imageSrc}`;
-  await import("../src/index");
+  await import("../src/index.ts");
 
   const vm: DocsifyVM = {
     config: { kroki: { serverPath: "https://kroki.io/" } },
@@ -43,7 +47,8 @@ it("from external files with a erroe", async () => {
 
   await sleep(30);
 
-  expect(document.body.querySelector("object")?.getAttribute("data")).eq(
+  asserts.assertEquals(
+    document.body.querySelector("object")?.getAttribute("data"),
     `data:image/svg+xml;base64,${toBase64(krokiReturnBody)}`,
   );
 });

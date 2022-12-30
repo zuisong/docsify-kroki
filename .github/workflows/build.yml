@@ -1,31 +1,39 @@
-name: docsify-kroki build action
-
 on:
+  workflow_dispatch:
   push:
-    branches:
-      - main
-      - master
-      - release/*
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
 
 jobs:
-  build:
-    name: Build on node ${{ matrix.node_version }} on ubuntu-latest
-    runs-on: ubuntu-latest
+  test:
+    name: Test on deno ${{ matrix.node_version }} and ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     strategy:
-      fail-fast: false
       matrix:
-        node_version: ['latest', 'lts/*']
+        os: [
+            ubuntu-latest,
+            # windows-latest,
+            macOS-latest,
+          ]
+
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v3.5.1
-      with:
-        node-version: ${{ matrix.node_version }}
-    - name: Build
-      run: |
-        npm i -g pnpm && pnpm i  && pnpm run build
-    - uses: codecov/codecov-action@v1
-      with:
-        fail_ci_if_error: true
-        verbose: true
+      - run: git config --global core.autocrlf false
+
+      - uses: actions/checkout@v3
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+
+      - name: Load .env file
+        uses: xom9ikk/dotenv@v2
+
+      - name: Run build
+        run: deno task build
+
+      - name: "codecov coverage"
+        uses: codecov/codecov-action@v3
+        with:
+          files: coverage/lcov.info

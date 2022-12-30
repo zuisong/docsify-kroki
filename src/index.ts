@@ -1,4 +1,4 @@
-import { docsifyKrokiPlugin } from "./kroki";
+import { docsifyKrokiPlugin } from "./kroki.ts";
 
 if (!window.$docsify) {
   window.$docsify = {};

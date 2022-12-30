@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "deno_std/": "https://deno.land/std@0.170.0/",
+    "https://deno.land/std@0.170.0/node/vm.ts": "./lib/std/node/vm.ts",
+    "jsdom": "npm:jsdom"
+  }
+}

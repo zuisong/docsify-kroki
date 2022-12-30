@@ -1,0 +1,72 @@
+{
+  "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "strict": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "dom.asynciterable",
+      "deno.ns"
+    ]
+  },
+  "lock": true,
+  "tasks": {
+    "build": " deno task clean && deno task test-cov && deno task vite-build ",
+    "vite-build": "deno run -A npm:vite build",
+    "clean": "rm -rf dist/ coverage/",
+    "fmt": "deno fmt",
+    "test-cov": "deno test --coverage=coverage --no-check -A && deno coverage coverage --lcov --output=coverage/lcov.info"
+  },
+  "importMap": "import_map.json",
+  "lint": {
+    "files": {
+      "include": [
+        "src/",
+        "build.ts",
+        "dev_deps.ts"
+      ],
+      "exclude": [
+        "dist/",
+        "notion-kroki.user.js"
+      ]
+    },
+    "rules": {
+      "tags": [
+        "recommended"
+      ],
+      "include": [
+        "ban-untagged-todo"
+      ],
+      "exclude": [
+        "no-unused-vars"
+      ]
+    }
+  },
+  "fmt": {
+    "files": {
+      "include": [
+        "src/",
+        "test/",
+        "vite.config.mts",
+        "deno.jsonc",
+        "README.md",
+        "import_map.json"
+      ],
+      "exclude": [
+        "src/testdata/"
+      ]
+    },
+    "options": {
+      "useTabs": false
+    }
+  },
+  "test": {
+    "files": {
+      "include": [
+        "test/"
+      ],
+      "exclude": []
+    }
+  }
+}

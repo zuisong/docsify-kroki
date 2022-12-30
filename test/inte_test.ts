@@ -1,5 +1,13 @@
-import { defaultConfig, plant, replace } from "../src/kroki";
-import { assert, describe, expect, it, vi } from "vitest";
+import { beforeEach, it } from "deno_std/testing/bdd.ts";
+import * as asserts from "deno_std/testing/asserts.ts";
+import "npm:vi-fetch/setup";
+import { init } from "./common/jdsom-env-init.ts";
+import { defaultConfig, plant, replace } from "../src/kroki.ts";
+
+beforeEach(() => {
+  init();
+});
+
 it("multi markdown integration test", async () => {
   const readmeContent = `
 <h1 id="example"><a href="#/?id=example" data-id="example" class="anchor"><span>Example</span></a></h1>
@@ -495,7 +503,7 @@ rackdiag {
 <p data-lang="wavedrom"><object type="image/svg+xml" data="//kroki.io/wavedrom/svg/eNpdTs0KwjAMvu8pQs8jdKiXgQfBJ_AqO8S1zLG6KZuusu7dTaBDXSCE5PvJN0FfVy25HM4JwAQt3WwOqnSNSmGpkV5yvKNU4FYwp7_0Iw305Ue6x81258MePUOGGfxDXS0ZXtWlM2-ZA9VOpuCqWNme7ONp-yE6R1uNGaIOGeolxb_oUDZtNzprKsvCKGKJRNeZRE-K-QOPW0Gr"></object></p>
 <hr>
 <h2 id="nomnoml"><a href="#/?id=nomnoml" data-id="nomnoml" class="anchor"><span>nomnoml</span></a></h2>
-<p data-lang="nomnoml"><object type="image/svg+xml" data="//kroki.io/nomnoml/svg/eNpdjzELgzAQhff8ikxFC0q3goJLpw6F7iHDqVFTopHLhSL442sQaVq44Xj33Xt34qkRSK1qUTfrJyr4faIVQbdJWs7aGOhVkq6Mc1ErwFZmmZgB0ZKMtKISnfWGj9bTIJlkTJwMlVA7QmioegCCbxXKoBabxZ4q2dFk_JLnVzFq1wxaddvgZY1ZJuWczKov_qOiH_8lp6d-q8i44ucArgSOdMD2D91b90kac9Hu0YVrj5wPhatoxQ=="></object></p>
+<p data-lang="nomnoml"><object type="image/svg+xml" data="//kroki.io/nomnoml/svg/eNpdjzELgzAQhff8ioxaULoVrLh06lDoHjKcGjUlGrlcKEJ-fBWRpoUbHu--d48TT41AKqhF3ayfqOD3iQKCbpP0OmtjoFdJGhjnolaArcwyMQOiJRl5RSU66w0fradBMsmYKKF2hNBQ9QAE3yqUZbGG9z7JDpHxc55fxKhdM2jVrYuXNWaZlHMyq774j4t-_Lecnvp1osMVP21gIHCkN2z_zb11n6QxF2UPVR4lH_bvZbY="></object></p>
 <hr>
 <h2 id="graphviz"><a href="#/?id=graphviz" data-id="graphviz" class="anchor"><span>graphviz</span></a></h2>
 <p data-lang="graphviz"><object type="image/svg+xml" data="//kroki.io/graphviz/svg/eNp9kMsKwjAQRff5iiEfoOhWXFkUnwh-QEnToY1NTZg-NtJ_F5s-ooVuBu5l7pnLsFglJGwKAbwZQFFFTkpdFSVSaFsbQIsINWyBn8lkim9ac7ItV926F3gg1UhdAmCvNEYoyl5PGIkMR4rHCYzMkJZ_OICTqEWvmhnoegZ6RcqFij0qv5kYF8_Ct-6VtVjiz3W-S8nkODiugZvT94wdhga7y3EIH4wWr8SpL6JhDfsAqKRwrw=="></object></p>
@@ -530,11 +538,11 @@ rackdiag {
 <hr>
 
 <h2 id="seqdiag"><a href="#/?id=seqdiag" data-id="seqdiag" class="anchor"><span>seqdiag</span></a></h2>
-<p data-lang="seqdiag"><object type="image/svg+xml" data="//kroki.io/seqdiag/svg/eNorTi1MyUxMV6jmUlBIKsovL04tUlDQtVMoT00CMsuAvOicxKTUHAVbBSV31xAFfagG_eKydP2kxOJUMxOlWGugZoQGkPaCovzk1OLifGTtzvl5QOkShZLUCiCRr5CZm5ieiq5ZLafEWlcXoR8kC3MXVA6u2JqrFgCt8T9b"></object></p>
+<p data-lang="seqdiag"><object type="image/svg+xml" data="//kroki.io/seqdiag/svg/eNorTi1MyUxMV6jmUlBIKsovL04tUlDQtVMoT00CMsuAvOicxKTUHAVbBSV31xAFfagG_eKydP2kxOJUMxOlWGugZoQGkPaCovzk1OLifGTtzvl5QOkShZLUCiCRr5CZm5ieiq7ZRlcXoRkkBXMUSAKuzJqrFgA13z1R"></object></p>
 
 `;
   console.log(result);
-  expect(result).toEqual(expectResult);
+  asserts.assertEquals(result, expectResult);
 });
 
 it("plant", async () => {
@@ -563,5 +571,5 @@ Rel(banking_system, mainframe, "Uses")
   const expectResult =
     `<object type="image/svg+xml" data="//kroki.io/plantuml/svg/eNp9UktuwjAQ3ecUU1ZUoqx6AApi0QUVKnQdGTNJLBwPsieC3r5j4_ARlF38_H5-SjEJrDx3rS1ejNO22yLM3ssZOcYjj_fxomDDFmH1GxhbyFewNar2qoWKPHwK5B0yTJXbGVdnblEs0QdyQ90Fphb9CAY9Y5ahgWAf0BOAKuAGYSOsERwMN7BPFsomDJTW1DkO48FrcQoZRlwcy5COYvdPm5RkLR3COS4AE-gG9S6mGn9jn_3L-ZGHrTL2EjB_i2c4naPtWiqblCo9F0Z7ClQxzI-6Ua5GwGvBpXpv7SoZEsVn0X8_qL5i8hhAWduPpAVIq0SiCMm3ig25VP4b7dXsdxv9BAxCE1Y5VXp3Rb196grdNuT-ca2s-UJTNxvyd-M_UadHLNbLk8Uj5XmH3G4i8vgDAvwBDXntsg==" />`;
 
-  expect(result).toEqual(expectResult);
+  asserts.assertEquals(result, expectResult);
 });
