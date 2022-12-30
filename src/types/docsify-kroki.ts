@@ -1,10 +1,9 @@
-declare module "./docsify" {
+declare global {
   interface DocsifyConfig {
     kroki?: DocsifyKrokiOption;
   }
 }
-
 export interface DocsifyKrokiOption {
   serverPath?: string;
-  langs?: string[];
+  langs: string[];
 }

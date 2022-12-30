@@ -1,5 +1,5 @@
-import { docsifyKrokiPlugin } from "./kroki";
-import type {} from "./types/docsify";
+import { docsifyKrokiPlugin } from "./kroki.ts";
+import type {} from "./types/docsify.ts";
 if (!window.$docsify) {
   window.$docsify = {};
 }

@@ -1,0 +1,16 @@
+{
+  "name": "deno-devcontainer",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/deno:1": {},
+    "ghcr.io/meaningful-ooo/devcontainer-features/fish:1": {},
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {},
+      "extensions": [
+        "denoland.vscode-deno"
+      ]
+    },
+  },
+}

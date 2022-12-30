@@ -1,0 +1,80 @@
+{
+  "$schema": "https://cdn.jsdelivr.net/gh/denoland/deno/cli/schemas/config-file.v1.json",
+  "imports": {
+    "vite-deno-import-map-plugin": "https://cdn.jsdelivr.net/gh/zuisong/vite-deno-import-map-plugin@0.2.0/vite-deno-import-map-plugin.ts",
+    "deno_std/": "https://deno.land/std@0.182.0/",
+    "https://deno.land/std@0.170.0/": "https://deno.land/std@0.182.0/",
+    "fflate": "https://esm.sh/fflate@0.7.4?pin=v112&target=es2022&dev",
+    "deno_mock_fetch": "https://deno.land/x/deno_mock_fetch@1.0.1/mod.ts",
+    "$/": "./"
+  },
+  "compilerOptions": {
+    "allowJs": true,
+    "strict": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "dom.asynciterable",
+      "deno.ns"
+    ]
+  },
+  "lock": true,
+  "tasks": {
+    "build": " deno task clean && deno task fmt && deno task test-cov && deno task vite-build ",
+    "vite-build": "deno run --node-modules-dir=false -A npm:vite build",
+    "clean": "rm -rf dist/ coverage/",
+    "fmt": "deno fmt",
+    "test-cov": "deno test --coverage=coverage/json --node-modules-dir=false --no-check -A && deno coverage coverage/json --lcov --output=coverage/lcov.info"
+  },
+  "lint": {
+    "files": {
+      "include": [
+        "src/",
+        "build.ts",
+        "dev_deps.ts"
+      ],
+      "exclude": [
+        "dist/",
+        "notion-kroki.user.js"
+      ]
+    },
+    "rules": {
+      "tags": [
+        "recommended"
+      ],
+      "include": [
+        "ban-untagged-todo"
+      ],
+      "exclude": [
+        "no-unused-vars"
+      ]
+    }
+  },
+  "fmt": {
+    "files": {
+      "include": [
+        "src/",
+        "test/",
+        "vite.config.mts",
+        "deno.jsonc",
+        "README.md",
+        "import_map.json"
+      ],
+      "exclude": [
+        "src/testdata/"
+      ]
+    },
+    "options": {
+      "useTabs": false,
+      "semiColons": true
+    }
+  },
+  "test": {
+    "files": {
+      "include": [
+        "test/"
+      ],
+      "exclude": []
+    }
+  }
+}

@@ -1,9 +1,12 @@
 coverage/
 /.pnpm-store
 .*
+!.env
 !.github
 !.gitignore
 !.envrc
+!.devcontainer
+!.vscode
 
 # Created by https://www.toptal.com/developers/gitignore/api/yarn,node,jetbrains,vscode
 # Edit at https://www.toptal.com/developers/gitignore?templates=yarn,node,jetbrains,vscode
@@ -184,11 +187,6 @@ typings/
 
 # Yarn Integrity file
 .yarn-integrity
-
-# dotenv environment variables file
-.env
-.env.test
-.env*.local
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache

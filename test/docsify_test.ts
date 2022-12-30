@@ -1,7 +1,18 @@
-import { replace } from "../src/kroki";
-import { expect, it } from "vitest";
-import { sleep } from "./utils";
-import { AsyncAfterEachHook, DocsifyVM, Hooks } from "../src/types/docsify";
+import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
+import { sleep } from "$/test/utils.ts";
+import * as asserts from "deno_std/testing/asserts.ts";
+import { init, tearDown } from "$/test/common/jdsom-env-init.ts";
+import { replace } from "$/src/kroki.ts";
+import type {} from "$/src/types/docsify-kroki.ts";
+import { AsyncAfterEachHook, DocsifyVM, Hooks } from "../src/types/docsify.ts";
+
+beforeEach(() => {
+  init();
+});
+
+afterEach(async () => {
+  await tearDown();
+});
 
 const config = {
   langs: [
@@ -40,7 +51,8 @@ A -> B
     config,
   );
 
-  expect(res).toBe(
+  asserts.assertEquals(
+    res,
     '<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eNrjciguSSwqKc3N4XJU0LVTcOJySM1LAXEBa80H2A=="></object></p>',
   );
 });
@@ -53,7 +65,7 @@ A -> B
 @enduml
 </code></pre>
 `;
-  await import("../src/index");
+  await import("$/src/index.ts");
 
   const hook = {
     afterEach(f: AsyncAfterEachHook) {
@@ -72,7 +84,8 @@ A -> B
   // wait for fetch data
   await sleep(100);
 
-  expect(document.body?.innerHTML.trim()).toBe(
+  asserts.assertEquals(
+    document.body?.innerHTML.trim(),
     '<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eNrjciguSSwqKc3N4XJU0LVTcOJySM1LAXEBa80H2A=="></object></p>',
   );
 });

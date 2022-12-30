@@ -1,5 +1,12 @@
-import { defaultConfig, plant, replace } from "../src/kroki";
-import { assert, describe, expect, it, vi } from "vitest";
+import { beforeEach, it } from "deno_std/testing/bdd.ts";
+import * as asserts from "deno_std/testing/asserts.ts";
+import { init } from "$/test/common/jdsom-env-init.ts";
+import { defaultConfig, plant, replace } from "$/src/kroki.ts";
+
+beforeEach(() => {
+  init();
+});
+
 it("multi markdown integration test", async () => {
   const readmeContent = `
 <h1 id="example"><a href="#/?id=example" data-id="example" class="anchor"><span>Example</span></a></h1>
@@ -534,7 +541,7 @@ rackdiag {
 
 `;
   console.log(result);
-  expect(result).toEqual(expectResult);
+  asserts.assertEquals(result, expectResult);
 });
 
 it("plant", async () => {
@@ -563,5 +570,5 @@ Rel(banking_system, mainframe, "Uses")
   const expectResult =
     `<object type="image/svg+xml" data="//kroki.io/plantuml/svg/eNp9UktuwjAQ3ecUU1ZUoqx6AApi0QUVKnQdGTNJLBwPsieC3r5j4_ARlF38_H5-SjEJrDx3rS1ejNO22yLM3ssZOcYjj_fxomDDFmH1GxhbyFewNar2qoWKPHwK5B0yTJXbGVdnblEs0QdyQ90Fphb9CAY9Y5ahgWAf0BOAKuAGYSOsERwMN7BPFsomDJTW1DkO48FrcQoZRlwcy5COYvdPm5RkLR3COS4AE-gG9S6mGn9jn_3L-ZGHrTL2EjB_i2c4naPtWiqblCo9F0Z7ClQxzI-6Ua5GwGvBpXpv7SoZEsVn0X8_qL5i8hhAWduPpAVIq0SiCMm3ig25VP4b7dXsdxv9BAxCE1Y5VXp3Rb196grdNuT-ca2s-UJTNxvyd-M_UadHLNbLk8Uj5XmH3G4i8vgDAvwBDXntsg==" />`;
 
-  expect(result).toEqual(expectResult);
+  asserts.assertEquals(result, expectResult);
 });

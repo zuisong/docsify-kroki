@@ -2,13 +2,10 @@
   "name": "docsify-kroki",
   "version": "1.0.22",
   "description": "kroki plugin of docsify",
-  "main": "dist/docsify-kroki.js",
+  "main": "dist/docsify-kroki.umd.js",
   "module": "dist/docsify-kroki.mjs",
-  "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "npm run coverage && vite build",
-    "test": "vitest",
-    "coverage": "vitest run --coverage",
+    "build": "deno task build",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -41,7 +38,9 @@
   "files": [
     "src",
     "dist",
-    "example",
+    "deno.jsonc",
+    "import_map.json",
+    "vite.config.mts",
     "README.md"
   ],
   "author": "zuisong",
@@ -50,24 +49,6 @@
     "url": "https://github.com/zuisong/docsify-kroki/issues"
   },
   "homepage": "https://github.com/zuisong/docsify-kroki#readme",
-  "dependencies": {
-    "@babel/core": "^7.21.3",
-    "core-js": "^3.29.1",
-    "fflate": "^0.7.4"
-  },
-  "devDependencies": {
-    "@babel/preset-env": "^7.20.2",
-    "@rollup/plugin-babel": "^6.0.3",
-    "@types/babel__core": "^7.20.0",
-    "@types/babel__preset-env": "^7.9.2",
-    "@types/randomstring": "^1.1.8",
-    "@vitest/coverage-c8": "^0.29.8",
-    "happy-dom": "^8.9.0",
-    "randomstring": "^1.2.3",
-    "vi-fetch": "^0.8.0",
-    "vite": "^4.2.1",
-    "vitest": "^0.29.8"
-  },
   "browserslist": [
     "defaults or supports es6-module-dynamic-import",
     "not ie 6-11"

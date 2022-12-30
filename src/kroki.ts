@@ -1,6 +1,6 @@
 import { zlibSync } from "fflate";
-import { AsyncAfterEachHook, DocsifyPlugin } from "./types/docsify";
-import { DocsifyKrokiOption } from "./types/docsify-kroki";
+import { AsyncAfterEachHook, DocsifyPlugin } from "./types/docsify.ts";
+import { DocsifyKrokiOption } from "./types/docsify-kroki.ts";
 
 export function urlSafeBase64Encode(str: string) {
   return btoa(encodeURI(str));
@@ -9,14 +9,15 @@ export function urlSafeBase64Encode(str: string) {
 function textEncode(str: string) {
   return new TextEncoder().encode(str);
 }
+
 const contentType = "image/svg+xml";
 
-async function plantWithPost(
+function plantWithPost(
   content: string,
   type: string,
   config: DocsifyKrokiOption,
 ): Promise<string> {
-  const krokiServerRenderUrl: string = `${config?.serverPath + type}/svg/`;
+  const krokiServerRenderUrl = `${config?.serverPath + type}/svg/`;
   return fetch(krokiServerRenderUrl, {
     method: "POST",
     body: content,
@@ -28,12 +29,13 @@ async function plantWithPost(
     `);
 }
 
+// deno-lint-ignore require-await
 export async function plant(
   content: string,
   type: string,
   config: DocsifyKrokiOption,
 ): Promise<string> {
-  const urlPrefix: string = `${config?.serverPath + type}/svg/`;
+  const urlPrefix = `${config?.serverPath + type}/svg/`;
   const data: Uint8Array = textEncode(content);
   const compressed: string = strFromU8(zlibSync(data, { level: 9 }));
   const result: string = btoa(compressed)
@@ -60,16 +62,15 @@ export async function replace(
 
     for (const element of codeElements) {
       if (element instanceof HTMLElement) {
-        const parent = element.parentNode!!;
-
-        const promise = plant(element.textContent, LANG, config).then(
+        // deno-lint-ignore no-extra-non-null-assertion
+        const promise = plant(element.textContent!!, LANG, config).then(
           (graphStr) => {
             const planted: HTMLParagraphElement = create(
               "p",
               graphStr,
             );
             planted.dataset.lang = LANG;
-            element.parentNode.replaceChild(planted, element);
+            element.parentNode?.replaceChild(planted, element);
           },
         );
         fetaures.push(promise);
@@ -82,9 +83,10 @@ export async function replace(
     for (const element of imgElements) {
       if (element instanceof HTMLImageElement) {
         const img = element as HTMLImageElement;
-        const parent = element.parentNode!!;
+        const parent = element.parentNode;
 
-        const promise = fetch(img.getAttribute("src"))
+        // deno-lint-ignore no-extra-non-null-assertion
+        const promise = fetch(img.getAttribute("src")!!)
           .then((it) => it.text())
           .then((code) => plant(code, LANG, config))
           .then((graphStr) => {
@@ -94,7 +96,7 @@ export async function replace(
             );
             if (parent) {
               planted.dataset.lang = LANG;
-              element.parentNode.replaceChild(planted, element);
+              parent.replaceChild(planted, element);
             }
           });
         fetaures.push(promise);
@@ -107,7 +109,6 @@ export async function replace(
       await p;
     } catch (e) {
       console.error("error", e);
-      continue;
     }
   }
 
@@ -157,7 +158,7 @@ export const defaultConfig: DocsifyKrokiOption = {
 };
 
 export const docsifyKrokiPlugin: DocsifyPlugin = (hook, vm) => {
-  hook.afterEach(
+  hook.afterEach?.(
     ((content, next) => {
       (async () => {
         const newContent = await replace(content, {
@@ -176,5 +177,5 @@ function strFromU8(dat: Uint8Array): string {
   for (let i = 0; i < dat.length; i += s) {
     chunks.push(String.fromCharCode(...dat.subarray(i, i + s)));
   }
-  return chunks.join('');
+  return chunks.join("");
 }

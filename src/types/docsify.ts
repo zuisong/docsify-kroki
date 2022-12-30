@@ -38,16 +38,17 @@ export interface AsyncAfterEachHook {
   (html: string, next: (html: string) => void): void;
 }
 
-export interface DocsifyConfig {
-  // Scrolls to the top of the screen when the route is changed.
-  auto2top?: boolean;
+declare global {
+  export interface DocsifyConfig {
+    // Scrolls to the top of the screen when the route is changed.
+    auto2top?: boolean;
 
-  // Base path of the website. You can set it to another directory or another domain name.
-  basePath?: string;
+    // Base path of the website. You can set it to another directory or another domain name.
+    basePath?: string;
 
-  [key: string]: unknown;
+    [key: string]: unknown;
+  }
 }
-
 export interface DocsifyVM {
   config?: DocsifyConfig;
 }
