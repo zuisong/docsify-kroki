@@ -1,7 +1,7 @@
 import { defineConfig } from "vitest/config";
 import { resolve } from "path";
 import dts from "vite-plugin-dts";
-import { Options } from '@babel/preset-env'
+import { Options } from "@babel/preset-env";
 import { getBabelOutputPlugin } from "@rollup/plugin-babel";
 export default defineConfig({
   build: {
@@ -21,7 +21,7 @@ export default defineConfig({
               "@babel/preset-env",
               {
                 corejs: 3,
-                useBuiltIns: 'entry',
+                useBuiltIns: "entry",
               } as Options,
             ],
           ],
