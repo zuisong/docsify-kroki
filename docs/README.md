@@ -3511,7 +3511,7 @@ line right until even with X9 - ($r,0) \
       ],
       "fontSize": 36,
       "fontFamily": 1,
-      "text": "GC",
+      "text": "GC😁",
       "baseline": 32,
       "textAlign": "left",
       "verticalAlign": "top"

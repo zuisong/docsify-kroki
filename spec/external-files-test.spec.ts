@@ -1,5 +1,4 @@
 import { beforeEach, expect, it } from "vitest";
-import { DocsifyVM, Hooks } from "../src/types";
 import { sleep } from "./utils";
 import { mockFetch, mockGet } from "vi-fetch";
 import "vi-fetch/setup";

@@ -1,12 +1,11 @@
 import { beforeEach, expect, it } from "vitest";
-import { DocsifyVM, Hooks } from "../src/types";
 import { sleep } from "./utils";
 import { mockFetch, mockGet, mockPost } from "vi-fetch";
 
-import * as randomstring from "randomstring";
+import randomstring from "randomstring";
 
 import "vi-fetch/setup";
-import { toBase64 } from "js-base64";
+import { urlSafeBase64Encode } from "../src/kroki";
 beforeEach(() => {
   mockFetch.clearAll();
 });
@@ -44,6 +43,6 @@ it("from external files with a erroe", async () => {
   await sleep(30);
 
   expect(document.body.querySelector("object")?.getAttribute("data")).eq(
-    `data:image/svg+xml;base64,${toBase64(krokiReturnBody)}`,
+    `data:image/svg+xml;base64,${urlSafeBase64Encode(krokiReturnBody)}`,
   );
 });

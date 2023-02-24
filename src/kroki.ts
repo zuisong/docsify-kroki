@@ -1,6 +1,17 @@
-import { strFromU8, zlibSync } from "fflate";
-import { DocsifyKrokiOption, DocsifyPlugin } from "./types";
-import { encode } from "js-base64";
+import { zlibSync } from "fflate";
+
+export function urlSafeBase64Encode(str: string) {
+  return btoa(encodeURI(str));
+}
+
+interface DocsifyConfig {
+  kroki?: DocsifyKrokiOption;
+}
+
+interface DocsifyKrokiOption {
+  serverPath?: string;
+  langs?: string[];
+}
 
 function textEncode(str: string) {
   return new TextEncoder().encode(str);
@@ -19,7 +30,7 @@ async function plantWithPost(
   })
     .then((resp) => resp.text())
     .then((svg) => `
-    <object data="data:${contentType};base64,${encode(svg)}"
+    <object data="data:${contentType};base64,${urlSafeBase64Encode(svg)}"
     type="${contentType}"></object>
     `);
 }
@@ -31,7 +42,7 @@ export async function plant(
 ): Promise<string> {
   const urlPrefix: string = `${config?.serverPath + type}/svg/`;
   const data: Uint8Array = textEncode(content);
-  const compressed: string = strFromU8(zlibSync(data, { level: 9 }), true);
+  const compressed: string = strFromU8(zlibSync(data, { level: 9 }));
   const result: string = btoa(compressed)
     .replace(/\+/g, "-")
     .replace(/\//g, "_");
@@ -47,11 +58,11 @@ export async function replace(
   content: string,
   config: DocsifyKrokiOption,
 ): Promise<string> {
-  let spanElement: HTMLSpanElement = create("span", content);
+  const spanElement: HTMLSpanElement = create("span", content);
   const fetaures: Promise<void>[] = [];
 
   for (const LANG of config.langs) {
-    let selector = `pre[data-lang="${LANG}"]`;
+    const selector = `pre[data-lang="${LANG}"]`;
     const codeElements = Array.from(spanElement.querySelectorAll(selector));
 
     for (const element of codeElements) {
@@ -72,7 +83,7 @@ export async function replace(
       }
     }
 
-    let imgSelector = `img[alt="kroki-${LANG}"]`;
+    const imgSelector = `img[alt="kroki-${LANG}"]`;
     const imgElements = Array.from(spanElement.querySelectorAll(imgSelector));
 
     for (const element of imgElements) {
@@ -98,7 +109,7 @@ export async function replace(
     }
   }
 
-  for (let p of fetaures) {
+  for (const p of fetaures) {
     try {
       await p;
     } catch (e) {
@@ -149,13 +160,22 @@ export const defaultConfig: DocsifyKrokiOption = {
 };
 
 export const docsifyKrokiPlugin: DocsifyPlugin = (hook, vm) => {
-  hook.afterEach((content, next) => {
+  hook.afterEach((content: string, next: (html: string) => void) => {
     (async () => {
       const newContent = await replace(content, {
         ...defaultConfig,
-        ...vm?.config?.kroki,
+        ...(vm?.config?.kroki as Object) ?? {},
       });
       next(newContent);
     })();
   });
 };
+
+function strFromU8(dat: Uint8Array) {
+  let result = "";
+  const s = 2 ** 14;
+  for (let i = 0; i < dat.length; i += s) {
+    result += String.fromCharCode(...dat.subarray(i, i + s));
+  }
+  return result;
+}

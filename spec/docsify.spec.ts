@@ -1,6 +1,5 @@
 import { replace } from "../src/kroki";
 import { expect, it } from "vitest";
-import { DocsifyVM, Hooks } from "../src/types";
 import { sleep } from "./utils";
 
 const config = {
