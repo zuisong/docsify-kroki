@@ -1,16 +1,9 @@
 import { zlibSync } from "fflate";
+import { DocsifyPlugin } from "./types/docsify";
+import { DocsifyKrokiOption } from "./types/docsify-kroki";
 
 export function urlSafeBase64Encode(str: string) {
   return btoa(encodeURI(str));
-}
-
-interface DocsifyConfig {
-  kroki?: DocsifyKrokiOption;
-}
-
-interface DocsifyKrokiOption {
-  serverPath?: string;
-  langs?: string[];
 }
 
 function textEncode(str: string) {
@@ -164,7 +157,7 @@ export const docsifyKrokiPlugin: DocsifyPlugin = (hook, vm) => {
     (async () => {
       const newContent = await replace(content, {
         ...defaultConfig,
-        ...(vm?.config?.kroki as Object) ?? {},
+        ...(vm?.config?.kroki) ?? {},
       });
       next(newContent);
     })();

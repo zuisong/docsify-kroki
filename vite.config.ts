@@ -1,6 +1,5 @@
 import { defineConfig } from "vitest/config";
 import { resolve } from "path";
-import dts from "vite-plugin-dts";
 import { Options } from "@babel/preset-env";
 import { getBabelOutputPlugin } from "@rollup/plugin-babel";
 export default defineConfig({
@@ -8,7 +7,7 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       name: "docsify-kroki",
-      formats: ["es", "cjs", "umd"],
+      formats: ["es", "cjs"],
       fileName: "docsify-kroki",
     },
     sourcemap: true,
@@ -35,7 +34,5 @@ export default defineConfig({
       reporter: ["lcovonly", "html"],
     },
   },
-  plugins: [
-    dts(),
-  ],
+  plugins: [],
 });

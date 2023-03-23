@@ -4,8 +4,6 @@
   "description": "kroki plugin of docsify",
   "main": "dist/docsify-kroki.js",
   "module": "dist/docsify-kroki.mjs",
-  "unpkg": "dist/docsify-kroki.umd.js",
-  "jsdelivr": "dist/docsify-kroki.umd.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "npm run coverage && vite build",
@@ -53,8 +51,8 @@
   },
   "homepage": "https://github.com/zuisong/docsify-kroki#readme",
   "dependencies": {
-    "@babel/core": "^7.21.0",
-    "core-js": "^3.28.0",
+    "@babel/core": "^7.21.3",
+    "core-js": "^3.29.1",
     "fflate": "^0.7.4"
   },
   "devDependencies": {
@@ -63,16 +61,15 @@
     "@types/babel__core": "^7.20.0",
     "@types/babel__preset-env": "^7.9.2",
     "@types/randomstring": "^1.1.8",
-    "@vitest/coverage-c8": "^0.28.5",
-    "happy-dom": "^8.7.2",
+    "@vitest/coverage-c8": "^0.29.7",
+    "happy-dom": "^8.9.0",
     "randomstring": "^1.2.3",
     "vi-fetch": "^0.8.0",
-    "vite": "^4.1.4",
-    "vite-plugin-dts": "^2.0.2",
-    "vitest": "^0.28.5"
+    "vite": "^4.2.1",
+    "vitest": "^0.29.7"
   },
   "browserslist": [
-    "defaults  or supports es6-module-dynamic-import",
+    "defaults or supports es6-module-dynamic-import",
     "not ie 6-11"
   ]
 }
