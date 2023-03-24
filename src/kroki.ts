@@ -1,5 +1,5 @@
 import { zlibSync } from "fflate";
-import { DocsifyPlugin } from "./types/docsify";
+import { AsyncAfterEachHook, DocsifyPlugin } from "./types/docsify";
 import { DocsifyKrokiOption } from "./types/docsify-kroki";
 
 export function urlSafeBase64Encode(str: string) {
@@ -127,27 +127,50 @@ function create<K extends keyof HTMLElementTagNameMap>(
 
 export const defaultConfig: DocsifyKrokiOption = {
   langs: [
-    "actdiag", "blockdiag", "bpmn", "bytefield", "c4plantuml", "d2",
-    "dbml", "ditaa", "erd", "excalidraw", "graphviz", "mermaid",
-    "nomnoml", "nwdiag", "packetdiag", "pikchr", "plantuml", "rackdiag",
-    "seqdiag", "structurizr", "svgbob", "vega", "vegalite", "wavedrom", "wireviz"
+    "actdiag",
+    "blockdiag",
+    "bpmn",
+    "bytefield",
+    "c4plantuml",
+    "d2",
+    "dbml",
+    "ditaa",
+    "erd",
+    "excalidraw",
+    "graphviz",
+    "mermaid",
+    "nomnoml",
+    "nwdiag",
+    "packetdiag",
+    "pikchr",
+    "plantuml",
+    "rackdiag",
+    "seqdiag",
+    "structurizr",
+    "svgbob",
+    "vega",
+    "vegalite",
+    "wavedrom",
+    "wireviz",
   ],
   serverPath: "//kroki.io/",
 };
 
 export const docsifyKrokiPlugin: DocsifyPlugin = (hook, vm) => {
-  hook.afterEach((content: string, next: (html: string) => void) => {
-    (async () => {
-      const newContent = await replace(content, {
-        ...defaultConfig,
-        ...(vm?.config?.kroki) ?? {},
-      });
-      next(newContent);
-    })();
-  });
+  hook.afterEach(
+    ((content, next) => {
+      (async () => {
+        const newContent = await replace(content, {
+          ...defaultConfig,
+          ...(vm?.config?.kroki) ?? {},
+        });
+        next(newContent);
+      })();
+    }) as AsyncAfterEachHook,
+  );
 };
 
-function strFromU8(dat: Uint8Array) {
+function strFromU8(dat: Uint8Array): string {
   let result = "";
   const s = 2 ** 14;
   for (let i = 0; i < dat.length; i += s) {

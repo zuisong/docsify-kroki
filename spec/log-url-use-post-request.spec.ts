@@ -1,7 +1,7 @@
 import { beforeEach, expect, it } from "vitest";
 import { sleep } from "./utils";
 import { mockFetch, mockGet, mockPost } from "vi-fetch";
-
+import { AsyncAfterEachHook, DocsifyVM, Hooks } from "../src/types/docsify";
 import randomstring from "randomstring";
 
 import "vi-fetch/setup";
@@ -30,9 +30,9 @@ it("from external files with a erroe", async () => {
     config: { kroki: { serverPath: "https://kroki.io/" } },
   };
 
-  window.$docsify.plugins?.forEach((krokiPlugin) => {
+  window.$docsify?.plugins?.forEach((krokiPlugin) => {
     krokiPlugin({
-      afterEach(param) {
+      afterEach(param: AsyncAfterEachHook) {
         param(document.body.firstElementChild!!.outerHTML, (str) => {
           document.body.innerHTML = str;
         });

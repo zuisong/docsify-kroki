@@ -3,10 +3,10 @@ declare global {
     $docsify?: Docsify;
   }
 }
-interface Docsify {
+export interface Docsify {
   plugins?: DocsifyPlugin[];
 }
-interface Hooks {
+export interface Hooks {
   init?(initHook: () => void): void;
 
   // Invoked one time when the docsify instance has mounted on the DOM
@@ -24,7 +24,7 @@ interface Hooks {
   // Call this function with the final markdown value when ready.
   // To prevent errors from affecting docsify and other plugins, wrap async code in a try/catch/finally block.
   afterEach?(
-    afterEachHook: (html: string, next: (html: string) => void) => void,
+    afterEachHook: AsyncAfterEachHook,
   ): void;
 
   // Invoked on each page load after new HTML has been appended to the DOM
@@ -32,6 +32,10 @@ interface Hooks {
 
   // Invoked one time after rendering the initial page
   ready?(readyHook: () => void): void;
+}
+
+export interface AsyncAfterEachHook {
+  (html: string, next: (html: string) => void): void;
 }
 
 export interface DocsifyConfig {
@@ -44,7 +48,7 @@ export interface DocsifyConfig {
   [key: string]: unknown;
 }
 
-interface DocsifyVM {
+export interface DocsifyVM {
   config?: DocsifyConfig;
 }
 

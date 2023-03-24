@@ -1,6 +1,6 @@
 declare module "./docsify" {
   interface DocsifyConfig {
-    kroki: DocsifyKrokiOption;
+    kroki?: DocsifyKrokiOption;
   }
 }
 

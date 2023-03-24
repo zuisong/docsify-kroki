@@ -1,6 +1,7 @@
 import { beforeEach, expect, it } from "vitest";
 import { sleep } from "./utils";
 import { mockFetch, mockGet } from "vi-fetch";
+import { AsyncAfterEachHook, DocsifyVM, Hooks } from "../src/types/docsify";
 import "vi-fetch/setup";
 beforeEach(() => {
   mockFetch.clearAll();
@@ -19,7 +20,7 @@ it("from external files", async () => {
   await import("../src/index");
 
   const hooks: Hooks = {
-    afterEach(afterEachHook) {
+    afterEach(afterEachHook: AsyncAfterEachHook) {
       afterEachHook(document.body.firstElementChild!!.outerHTML, (str) => {
         document.body.innerHTML = str;
       });
@@ -27,7 +28,7 @@ it("from external files", async () => {
   };
   const vm: DocsifyVM = { config: {} };
 
-  window.$docsify.plugins?.forEach((krokiPlugin) => {
+  window.$docsify?.plugins?.forEach((krokiPlugin) => {
     krokiPlugin(hooks, vm);
   });
   await sleep(50);
@@ -51,9 +52,9 @@ it("from external files with a error", async () => {
 
   const vm: DocsifyVM = { config: {} };
 
-  window.$docsify.plugins?.forEach((krokiPlugin) => {
+  window.$docsify?.plugins?.forEach((krokiPlugin) => {
     krokiPlugin({
-      afterEach(afterEachHook) {
+      afterEach(afterEachHook: AsyncAfterEachHook) {
         afterEachHook(document.body.firstElementChild!!.outerHTML, (str) => {
           document.body.innerHTML = str;
         });

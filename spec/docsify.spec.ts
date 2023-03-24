@@ -1,6 +1,7 @@
 import { replace } from "../src/kroki";
 import { expect, it } from "vitest";
 import { sleep } from "./utils";
+import { AsyncAfterEachHook, DocsifyVM, Hooks } from "../src/types/docsify";
 
 const config = {
   langs: [
@@ -55,7 +56,7 @@ A -> B
   await import("../src/index");
 
   const hook = {
-    afterEach(f) {
+    afterEach(f: AsyncAfterEachHook) {
       f(document.body.firstElementChild!!.outerHTML, (str) => {
         console.log(str);
         document.body.innerHTML = str;
@@ -64,7 +65,7 @@ A -> B
   } as Hooks;
   const vm: DocsifyVM = { config: {} };
 
-  window.$docsify.plugins?.forEach((krokiPlugin) => {
+  window.$docsify?.plugins?.forEach((krokiPlugin) => {
     krokiPlugin(hook, vm);
   });
 
