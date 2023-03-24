@@ -127,27 +127,10 @@ function create<K extends keyof HTMLElementTagNameMap>(
 
 export const defaultConfig: DocsifyKrokiOption = {
   langs: [
-    "plantuml",
-    "mermaid",
-    "svgbob",
-    "vega",
-    "vegalite",
-    "wavedrom",
-    "nomnoml",
-    "graphviz",
-    "erd",
-    "ditaa",
-    "c4plantuml",
-    "packetdiag",
-    "nwdiag",
-    "actdiag",
-    "seqdiag",
-    "bytefield",
-    "bpmn",
-    "blockdiag",
-    "rackdiag",
-    "pikchr",
-    "excalidraw",
+    "actdiag", "blockdiag", "bpmn", "bytefield", "c4plantuml", "d2",
+    "dbml", "ditaa", "erd", "excalidraw", "graphviz", "mermaid",
+    "nomnoml", "nwdiag", "packetdiag", "pikchr", "plantuml", "rackdiag",
+    "seqdiag", "structurizr", "svgbob", "vega", "vegalite", "wavedrom", "wireviz"
   ],
   serverPath: "//kroki.io/",
 };
