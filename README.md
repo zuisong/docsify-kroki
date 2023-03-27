@@ -2,7 +2,7 @@
 
 ![npm](https://img.shields.io/npm/v/docsify-kroki)
 ![Codecov](https://img.shields.io/codecov/c/github/zuisong/docsify-kroki)
-![GitHub branch checks state](https://img.shields.io/github/checks-status/zuisong/docsify-kroki/master)
+![GitHub branch checks state](https://img.shields.io/github/checks-status/zuisong/docsify-kroki/main)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/docsify-kroki)
 ![npm bundle size(ziped)](https://img.shields.io/bundlephobia/minzip/docsify-kroki)
 ![GitHub top language](https://img.shields.io/github/languages/top/zuisong/docsify-kroki)

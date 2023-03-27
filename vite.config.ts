@@ -3,6 +3,11 @@ import { resolve } from "path";
 import { Options } from "@babel/preset-env";
 import { getBabelOutputPlugin } from "@rollup/plugin-babel";
 export default defineConfig({
+  esbuild: {
+    minifyWhitespace: false,
+    minifyIdentifiers: true,
+    minifySyntax: true,
+  },
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
@@ -10,6 +15,7 @@ export default defineConfig({
       formats: ["es", "cjs"],
       fileName: "docsify-kroki",
     },
+    minify: "esbuild",
     sourcemap: true,
     rollupOptions: {
       plugins: [

@@ -171,10 +171,10 @@ export const docsifyKrokiPlugin: DocsifyPlugin = (hook, vm) => {
 };
 
 function strFromU8(dat: Uint8Array): string {
-  let result = "";
   const s = 2 ** 14;
+  const chunks = [];
   for (let i = 0; i < dat.length; i += s) {
-    result += String.fromCharCode(...dat.subarray(i, i + s));
+    chunks.push(String.fromCharCode(...dat.subarray(i, i + s)));
   }
-  return result;
+  return chunks.join('');
 }

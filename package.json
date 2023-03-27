@@ -61,12 +61,12 @@
     "@types/babel__core": "^7.20.0",
     "@types/babel__preset-env": "^7.9.2",
     "@types/randomstring": "^1.1.8",
-    "@vitest/coverage-c8": "^0.29.7",
+    "@vitest/coverage-c8": "^0.29.8",
     "happy-dom": "^8.9.0",
     "randomstring": "^1.2.3",
     "vi-fetch": "^0.8.0",
     "vite": "^4.2.1",
-    "vitest": "^0.29.7"
+    "vitest": "^0.29.8"
   },
   "browserslist": [
     "defaults or supports es6-module-dynamic-import",
