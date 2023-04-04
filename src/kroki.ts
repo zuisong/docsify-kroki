@@ -56,7 +56,8 @@ export async function replace(
   const spanElement: HTMLSpanElement = create("span", content);
   const fetaures: Promise<void>[] = [];
 
-  for (const LANG of config.langs) {
+  // deno-lint-ignore no-extra-non-null-assertion
+  for (const LANG of config.langs!!) {
     const selector = `pre[data-lang="${LANG}"]`;
     const codeElements = Array.from(spanElement.querySelectorAll(selector));
 

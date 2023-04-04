@@ -5,5 +5,5 @@ declare global {
 }
 export interface DocsifyKrokiOption {
   serverPath?: string;
-  langs: string[];
+  langs?: string[];
 }
