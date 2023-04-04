@@ -1,7 +1,7 @@
 # docsify-kroki
 
 ![npm](https://img.shields.io/npm/v/docsify-kroki)
-![Codecov](https://img.shields.io/codecov/c/github/zuisong/docsify-kroki)
+[![codecov](https://codecov.io/gh/zuisong/docsify-kroki/branch/main/graph/badge.svg?token=WGS18HO5N6)](https://codecov.io/gh/zuisong/docsify-kroki)
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/zuisong/docsify-kroki/main)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/docsify-kroki)
 ![npm bundle size(ziped)](https://img.shields.io/bundlephobia/minzip/docsify-kroki)
