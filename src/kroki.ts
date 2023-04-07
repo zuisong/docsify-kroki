@@ -3,7 +3,9 @@ import { AsyncAfterEachHook, DocsifyPlugin } from "./types/docsify.ts";
 import { DocsifyKrokiOption } from "./types/docsify-kroki.ts";
 
 export function urlSafeBase64Encode(str: string) {
-  return btoa(encodeURI(str));
+  // see https://github.com/microsoft/TypeScript/issues/45566
+  // deno-lint-ignore no-window-prefix
+  return window.btoa(encodeURI(str));
 }
 
 function textEncode(str: string) {
