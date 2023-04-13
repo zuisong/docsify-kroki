@@ -1,10 +1,10 @@
+// deno-lint-ignore-file no-window-prefix
 import { zlibSync } from "fflate";
 import { AsyncAfterEachHook, DocsifyPlugin } from "./types/docsify.ts";
 import { DocsifyKrokiOption } from "./types/docsify-kroki.ts";
 
 export function urlSafeBase64Encode(str: string) {
   // see https://github.com/microsoft/TypeScript/issues/45566
-  // deno-lint-ignore no-window-prefix
   return window.btoa(encodeURI(str));
 }
 
@@ -40,7 +40,7 @@ export async function plant(
   const urlPrefix = `${config?.serverPath + type}/svg/`;
   const data: Uint8Array = textEncode(content);
   const compressed: string = strFromU8(zlibSync(data, { level: 9 }));
-  const result: string = btoa(compressed)
+  const result: string = window.btoa(compressed)
     .replace(/\+/g, "-")
     .replace(/\//g, "_");
   const svgUrl: string = urlPrefix + result;

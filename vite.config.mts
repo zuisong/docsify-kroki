@@ -8,7 +8,7 @@ export default defineConfig({
     lib: {
       entry: "./src/index.ts",
       name: "docsify-kroki",
-      formats: ["es", "umd"],
+      formats: ["es", "cjs"],
       fileName: "docsify-kroki",
     },
     target: "es2016",
