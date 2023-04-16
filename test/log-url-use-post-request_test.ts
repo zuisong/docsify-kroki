@@ -1,11 +1,11 @@
-import * as asserts from "deno_std/testing/asserts.ts";
-import { afterAll, afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
-import { sleep } from "$/test/utils.ts";
-import { generate } from "$/test/deps/randomstring.ts";
-import { MockFetch } from "deno_mock_fetch";
-import { init } from "$/test/common/jdsom-env-init.ts";
 import {} from "$/src/types/docsify-kroki.ts";
-import { DocsifyVM, Hooks } from "../src/types/docsify.ts";
+import { DocsifyVM, Hooks } from "$/src/types/docsify.ts";
+import { init } from "$/test/common/jdsom-env-init.ts";
+import { generate } from "$/test/deps/randomstring.ts";
+import { sleep } from "$/test/utils.ts";
+import { MockFetch } from "deno_mock_fetch";
+import * as asserts from "deno_std/testing/asserts.ts";
+import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 
 let mockFetch: MockFetch;
 

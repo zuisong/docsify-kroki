@@ -1,5 +1,7 @@
-export function generate(n: number) {
-  return Array(n * 100).fill(0)
-    .map((it) => Math.random().toString)
-    .join();
+export function generate(n: number): string {
+  return Array(n)
+    .fill(undefined)
+    .map((_) => 26 * Math.random() + 65)
+    .map((x) => String.fromCharCode(x))
+    .join("");
 }

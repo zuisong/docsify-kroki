@@ -1,7 +1,7 @@
 // deno-lint-ignore-file no-window-prefix
 import { zlibSync } from "fflate";
-import { AsyncAfterEachHook, DocsifyPlugin } from "./types/docsify.ts";
-import { DocsifyKrokiOption } from "./types/docsify-kroki.ts";
+import { AsyncAfterEachHook, DocsifyPlugin } from "$/src/types/docsify.ts";
+import { DocsifyKrokiOption } from "$/src/types/docsify-kroki.ts";
 
 export function urlSafeBase64Encode(str: string) {
   // see https://github.com/microsoft/TypeScript/issues/45566
