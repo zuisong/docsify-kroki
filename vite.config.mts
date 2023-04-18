@@ -11,7 +11,7 @@ export default defineConfig({
       formats: ["es", "cjs"],
       fileName: "docsify-kroki",
     },
-    target: "es2016",
+    target: "es6",
     minify: true,
     sourcemap: true,
   },
