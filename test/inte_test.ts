@@ -502,7 +502,7 @@ rackdiag {
 <p data-lang="wavedrom"><object type="image/svg+xml" data="//kroki.io/wavedrom/svg/eNpdTs0KwjAMvu8pQs8jdKiXgQfBJ_AqO8S1zLG6KZuusu7dTaBDXSCE5PvJN0FfVy25HM4JwAQt3WwOqnSNSmGpkV5yvKNU4FYwp7_0Iw305Ue6x81258MePUOGGfxDXS0ZXtWlM2-ZA9VOpuCqWNme7ONp-yE6R1uNGaIOGeolxb_oUDZtNzprKsvCKGKJRNeZRE-K-QOPW0Gr"></object></p>
 <hr>
 <h2 id="nomnoml"><a href="#/?id=nomnoml" data-id="nomnoml" class="anchor"><span>nomnoml</span></a></h2>
-<p data-lang="nomnoml"><object type="image/svg+xml" data="//kroki.io/nomnoml/svg/eNpdjzELgzAQhff8ikxFC0q3goJLpw6F7iHDqVFTopHLhSL442sQaVq44Xj33Xt34qkRSK1qUTfrJyr4faIVQbdJWs7aGOhVkq6Mc1ErwFZmmZgB0ZKMtKISnfWGj9bTIJlkTJwMlVA7QmioegCCbxXKoBabxZ4q2dFk_JLnVzFq1wxaddvgZY1ZJuWczKov_qOiH_8lp6d-q8i44ucArgSOdMD2D91b90kac9Hu0YVrj5wPhatoxQ=="></object></p>
+<p data-lang="nomnoml"><object type="image/svg+xml" data="//kroki.io/nomnoml/svg/eNpdjzELgzAQhff8ioxaULoVrLh06lDoHjKcGjUlGrlcKEJ-fBWRpoUbHu--d48TT41AKqhF3ayfqOD3iQKCbpP0OmtjoFdJGhjnolaArcwyMQOiJRl5RSU66w0fradBMsmYKKF2hNBQ9QAE3yqUZbGG9z7JDpHxc55fxKhdM2jVrYuXNWaZlHMyq774j4t-_Lecnvp1osMVP21gIHCkN2z_zb11n6QxF2UPVR4lH_bvZbY="></object></p>
 <hr>
 <h2 id="graphviz"><a href="#/?id=graphviz" data-id="graphviz" class="anchor"><span>graphviz</span></a></h2>
 <p data-lang="graphviz"><object type="image/svg+xml" data="//kroki.io/graphviz/svg/eNp9kMsKwjAQRff5iiEfoOhWXFkUnwh-QEnToY1NTZg-NtJ_F5s-ooVuBu5l7pnLsFglJGwKAbwZQFFFTkpdFSVSaFsbQIsINWyBn8lkim9ac7ItV926F3gg1UhdAmCvNEYoyl5PGIkMR4rHCYzMkJZ_OICTqEWvmhnoegZ6RcqFij0qv5kYF8_Ct-6VtVjiz3W-S8nkODiugZvT94wdhga7y3EIH4wWr8SpL6JhDfsAqKRwrw=="></object></p>
@@ -537,7 +537,7 @@ rackdiag {
 <hr>
 
 <h2 id="seqdiag"><a href="#/?id=seqdiag" data-id="seqdiag" class="anchor"><span>seqdiag</span></a></h2>
-<p data-lang="seqdiag"><object type="image/svg+xml" data="//kroki.io/seqdiag/svg/eNorTi1MyUxMV6jmUlBIKsovL04tUlDQtVMoT00CMsuAvOicxKTUHAVbBSV31xAFfagG_eKydP2kxOJUMxOlWGugZoQGkPaCovzk1OLifGTtzvl5QOkShZLUCiCRr5CZm5ieiq5ZLafEWlcXoR8kC3MXVA6u2JqrFgCt8T9b"></object></p>
+<p data-lang="seqdiag"><object type="image/svg+xml" data="//kroki.io/seqdiag/svg/eNorTi1MyUxMV6jmUlBIKsovL04tUlDQtVMoT00CMsuAvOicxKTUHAVbBSV31xAFfagG_eKydP2kxOJUMxOlWGugZoQGkPaCovzk1OLifGTtzvl5QOkShZLUCiCRr5CZm5ieiq7ZRlcXoRkkBXMUSAKuzJqrFgA13z1R"></object></p>
 
 `;
   console.log(result);
