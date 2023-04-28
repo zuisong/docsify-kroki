@@ -1,4 +1,4 @@
-## Example
+# Example
 
 ## Embedding code in markdown example
 

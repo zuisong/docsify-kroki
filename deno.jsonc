@@ -1,9 +1,9 @@
 {
-  "$schema": "https://github.com/denoland/deno/raw/main/cli/schemas/config-file.v1.json",
+  "$schema": "https://ghproxy.com/https://raw.githubusercontent.com/denoland/deno/main/cli/schemas/config-file.v1.json",
   "imports": {
     "vite-deno-import-map-plugin": "https://github.com/zuisong/vite-deno-import-map-plugin/raw/0.2.0/vite-deno-import-map-plugin.ts",
-    "deno_std/": "https://deno.land/std@0.184.0/",
-    "https://deno.land/std@0.170.0/": "https://deno.land/std@0.184.0/",
+    "deno_std/": "https://deno.land/std@0.185.0/",
+    "https://deno.land/std@0.170.0/": "https://deno.land/std@0.185.0/",
     "fflate": "https://esm.sh/fflate@0.7.4?pin=v116&target=es2022&dev",
     "deno_mock_fetch": "https://deno.land/x/deno_mock_fetch@1.0.1/mod.ts",
     "$/": "./"
@@ -51,30 +51,24 @@
     }
   },
   "fmt": {
-    "files": {
-      "include": [
-        "src/",
-        "test/",
-        "vite.config.mts",
-        "deno.jsonc",
-        "README.md",
-        "import_map.json"
-      ],
-      "exclude": [
-        "src/testdata/"
-      ]
-    },
-    "options": {
-      "useTabs": false,
-      "semiColons": true
-    }
+    "include": [
+      "src/",
+      "test/",
+      "vite.config.mts",
+      "deno.jsonc",
+      "README.md",
+      "import_map.json"
+    ],
+    "exclude": [
+      "src/testdata/"
+    ],
+    "useTabs": false,
+    "semiColons": true
   },
   "test": {
-    "files": {
-      "include": [
-        "test/"
-      ],
-      "exclude": []
-    }
+    "include": [
+      "test/"
+    ],
+    "exclude": []
   }
 }
