@@ -4,7 +4,7 @@ import { sleep } from "$/test/utils.ts";
 
 import { MockFetch } from "deno_mock_fetch";
 
-import { init } from "$/test/common/jdsom-env-init.ts";
+import { init } from "$/test/common/dom-env-init.ts";
 import type { DocsifyVM, Hooks } from "$/src/types/docsify.ts";
 
 let mockFetch: MockFetch;

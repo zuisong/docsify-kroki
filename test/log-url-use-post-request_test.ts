@@ -1,6 +1,6 @@
 import {} from "$/src/types/docsify-kroki.ts";
 import { DocsifyVM, Hooks } from "$/src/types/docsify.ts";
-import { init } from "$/test/common/jdsom-env-init.ts";
+import { init } from "$/test/common/dom-env-init.ts";
 import { generate } from "$/test/deps/randomstring.ts";
 import { sleep } from "$/test/utils.ts";
 import { MockFetch } from "deno_mock_fetch";

@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { sleep } from "$/test/utils.ts";
 import * as asserts from "deno_std/testing/asserts.ts";
-import { init, tearDown } from "$/test/common/jdsom-env-init.ts";
+import { init, tearDown } from "$/test/common/dom-env-init.ts";
 import { replace } from "$/src/kroki.ts";
 import type {} from "$/src/types/docsify-kroki.ts";
 import { AsyncAfterEachHook, DocsifyVM, Hooks } from "../src/types/docsify.ts";
