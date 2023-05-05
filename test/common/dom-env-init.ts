@@ -1,5 +1,5 @@
 import { delay } from "deno_std/async/delay.ts";
-import { Window } from "npm:happy-dom-deno";
+import { Window } from "npm:@zuisong/happy-dom-deno@9.10.9";
 
 export async function init() {
   const win = new Window();

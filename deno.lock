@@ -38,17 +38,11 @@
   },
   "npm": {
     "specifiers": {
-      "happy-dom-deno": "happy-dom-deno@9.9.2",
+      "@zuisong/happy-dom-deno@9.10.9": "@zuisong/happy-dom-deno@9.10.9",
       "json5": "json5@2.2.3",
       "vite": "vite@4.3.4"
     },
     "packages": {
-      "@babel/runtime@7.21.5": {
-        "integrity": "sha512-8jI69toZqqcsnqGGqwGS4Qb1VwLOEp4hz+CXPywcvjs60u3B4Pom/U/7rm4W8tMOYEB+E9wgD0mW1l3r8qlI9Q==",
-        "dependencies": {
-          "regenerator-runtime": "regenerator-runtime@0.13.11"
-        }
-      },
       "@esbuild/android-arm64@0.17.18": {
         "integrity": "sha512-/iq0aK0eeHgSC3z55ucMAHO05OIqmQehiGay8eP5l/5l+iEr4EIbh4/MI8xD9qRFjqzgkc0JkX0LculNC9mXBw==",
         "dependencies": {}
@@ -137,49 +131,15 @@
         "integrity": "sha512-qU25Ma1I3NqTSHJUOKi9sAH1/Mzuvlke0ioMJRthLXKm7JiSKVwFghlGbDLOO2sARECGhja4xYfRAZNPAkooYg==",
         "dependencies": {}
       },
-      "@types/acorn@4.0.6": {
-        "integrity": "sha512-veQTnWP+1D/xbxVrPC3zHnCZRjSrKfhbMUlEA43iMZLu7EsnTtkJklIuwrCPbOi8YkvDQAiW05VQQFvvz9oieQ==",
+      "@zuisong/happy-dom-deno@9.10.9": {
+        "integrity": "sha512-n0m1fVy42X0LSDioGxXy1EaGDhuhrSELSKzY02iteOXpW9BsZ+gilagU7IcgXyib1SW5hKgBRblJiezfMA57uQ==",
         "dependencies": {
-          "@types/estree": "@types/estree@0.0.41"
+          "css.escape": "css.escape@1.5.1",
+          "he": "he@1.2.0",
+          "iconv-lite": "iconv-lite@0.6.3",
+          "whatwg-encoding": "whatwg-encoding@2.0.0",
+          "whatwg-mimetype": "whatwg-mimetype@3.0.0"
         }
-      },
-      "@types/estree@0.0.41": {
-        "integrity": "sha512-rIAmXyJlqw4KEBO7+u9gxZZSQHaCNnIzYrnNmYVpgfJhxTqO0brCX0SYpqUTkVI5mwwUwzmtspLBGBKroMeynA==",
-        "dependencies": {}
-      },
-      "acorn-class-fields@0.3.7_acorn@7.4.1": {
-        "integrity": "sha512-jdUWSFce0fuADUljmExz4TWpPkxmRW/ZCPRqeeUzbGf0vFUcpQYbyq52l75qGd0oSwwtAepeL6hgb/naRgvcKQ==",
-        "dependencies": {
-          "acorn": "acorn@7.4.1",
-          "acorn-private-class-elements": "acorn-private-class-elements@0.2.7_acorn@7.4.1"
-        }
-      },
-      "acorn-jsx@5.3.2_acorn@7.4.1": {
-        "integrity": "sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==",
-        "dependencies": {
-          "acorn": "acorn@7.4.1"
-        }
-      },
-      "acorn-private-class-elements@0.2.7_acorn@7.4.1": {
-        "integrity": "sha512-+GZH2wOKNZOBI4OOPmzpo4cs6mW297sn6fgIk1dUI08jGjhAaEwvC39mN2gJAg2lmAQJ1rBkFqKWonL3Zz6PVA==",
-        "dependencies": {
-          "acorn": "acorn@7.4.1"
-        }
-      },
-      "acorn-static-class-features@0.2.4_acorn@7.4.1": {
-        "integrity": "sha512-5X4mpYq5J3pdndLmIB0+WtFd/mKWnNYpuTlTzj32wUu/PMmEGOiayQ5UrqgwdBNiaZBtDDh5kddpP7Yg2QaQYA==",
-        "dependencies": {
-          "acorn": "acorn@7.4.1",
-          "acorn-private-class-elements": "acorn-private-class-elements@0.2.7_acorn@7.4.1"
-        }
-      },
-      "acorn-walk@8.2.0": {
-        "integrity": "sha512-k+iyHEuPgSw6SbuDpGQM+06HQUa04DZ3o+F6CSzXMvvI5KMvnaEqXe+YVe555R9nn6GPt404fos4wcgpw12SDA==",
-        "dependencies": {}
-      },
-      "acorn@7.4.1": {
-        "integrity": "sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==",
-        "dependencies": {}
       },
       "css.escape@1.5.1": {
         "integrity": "sha512-YUifsXXuknHlUsmlgyY0PKzgPOr7/FjCePfHNt0jxm83wHZi44VDMQ7/fGNkjY3/jV1MC+1CmZbaHzugyeRtpg==",
@@ -212,33 +172,9 @@
           "@esbuild/win32-x64": "@esbuild/win32-x64@0.17.18"
         }
       },
-      "estime@1.3.0_acorn@7.4.1": {
-        "integrity": "sha512-aDHlBDMpfvNuNs7Bv+XI1IxNGFp2qT8PXQfYXmh9e3jEiXNOqFjjRpwpgtC2tU6j2Zr9fxI2EvttgOyJt+3IZg==",
-        "dependencies": {
-          "@babel/runtime": "@babel/runtime@7.21.5",
-          "@types/acorn": "@types/acorn@4.0.6",
-          "@types/estree": "@types/estree@0.0.41",
-          "acorn": "acorn@7.4.1",
-          "acorn-class-fields": "acorn-class-fields@0.3.7_acorn@7.4.1",
-          "acorn-jsx": "acorn-jsx@5.3.2_acorn@7.4.1",
-          "acorn-static-class-features": "acorn-static-class-features@0.2.4_acorn@7.4.1",
-          "acorn-walk": "acorn-walk@8.2.0"
-        }
-      },
       "fsevents@2.3.2": {
         "integrity": "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==",
         "dependencies": {}
-      },
-      "happy-dom-deno@9.9.2": {
-        "integrity": "sha512-9xJhcJsD9Wp0U+qYvxnyKs/HlEnCqD/IR5dBR5L8dVlJ9hddm6w2v9FpeGbQV2JTV/eKi2b7EWdTQktYnDa4Jg==",
-        "dependencies": {
-          "css.escape": "css.escape@1.5.1",
-          "estime": "estime@1.3.0_acorn@7.4.1",
-          "he": "he@1.2.0",
-          "iconv-lite": "iconv-lite@0.6.3",
-          "whatwg-encoding": "whatwg-encoding@2.0.0",
-          "whatwg-mimetype": "whatwg-mimetype@3.0.0"
-        }
       },
       "he@1.2.0": {
         "integrity": "sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==",
@@ -270,12 +206,8 @@
           "source-map-js": "source-map-js@1.0.2"
         }
       },
-      "regenerator-runtime@0.13.11": {
-        "integrity": "sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==",
-        "dependencies": {}
-      },
-      "rollup@3.21.3": {
-        "integrity": "sha512-VnPfEG51nIv2xPLnZaekkuN06q9ZbnyDcLkaBdJa/W7UddyhOfMP2yOPziYQfeY7k++fZM8FdQIummFN5y14kA==",
+      "rollup@3.21.4": {
+        "integrity": "sha512-N5LxpvDolOm9ueiCp4NfB80omMDqb45ShtsQw2+OT3f11uJ197dv703NZvznYHP6RWR85wfxanXurXKG3ux2GQ==",
         "dependencies": {
           "fsevents": "fsevents@2.3.2"
         }
@@ -294,7 +226,7 @@
           "esbuild": "esbuild@0.17.18",
           "fsevents": "fsevents@2.3.2",
           "postcss": "postcss@8.4.23",
-          "rollup": "rollup@3.21.3"
+          "rollup": "rollup@3.21.4"
         }
       },
       "whatwg-encoding@2.0.0": {
