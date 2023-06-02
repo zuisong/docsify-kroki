@@ -1,6 +1,6 @@
 {
   "name": "docsify-kroki",
-  "version": "1.0.22",
+  "version": "1.1.0",
   "description": "kroki plugin of docsify",
   "main": "dist/docsify-kroki.js",
   "scripts": {
