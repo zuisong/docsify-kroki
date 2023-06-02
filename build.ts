@@ -1,8 +1,8 @@
 import { bundle } from "https://bundle.deno.dev/https://deno.land/x/emit@0.23.1/mod.ts";
 import json5 from "json5";
-import { emptyDir } from "deno_std/fs/empty_dir.ts";
 
-await emptyDir("./dist");
+await Deno.remove("dist", { recursive: true }).catch((e) => e);
+await Deno.mkdir("dist").catch((e) => e);
 
 const { code } = await bundle(
   new URL("./src/index.ts", import.meta.url),

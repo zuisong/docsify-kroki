@@ -29,8 +29,8 @@
     "files": {
       "include": [
         "src/",
-        "build.ts",
-        "dev_deps.ts"
+        "*.ts",
+        "*.md"
       ],
       "exclude": [
         "dist/",
@@ -52,15 +52,10 @@
   "fmt": {
     "include": [
       "src/",
-      "test/",
-      "vite.config.mts",
-      "deno.jsonc",
-      "README.md",
-      "import_map.json"
+      "*.ts",
+      "*.json*"
     ],
-    "exclude": [
-      "src/testdata/"
-    ],
+    "exclude": [],
     "useTabs": false,
     "semiColons": true
   },
