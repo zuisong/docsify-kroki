@@ -1,13 +1,13 @@
 # docsify-kroki
 
-![npm](https://img.shields.io/npm/v/docsify-kroki)
+[![npm](https://img.shields.io/npm/v/docsify-kroki)](https://www.npmjs.com/package/docsify-kroki)
 [![codecov](https://codecov.io/gh/zuisong/docsify-kroki/branch/main/graph/badge.svg?token=WGS18HO5N6)](https://codecov.io/gh/zuisong/docsify-kroki)
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/zuisong/docsify-kroki/main)
-![npm bundle size](https://img.shields.io/bundlephobia/min/docsify-kroki)
-![npm bundle size(ziped)](https://img.shields.io/bundlephobia/minzip/docsify-kroki)
+[![npm bundle size](https://img.shields.io/bundlephobia/min/docsify-kroki)](https://bundlephobia.com/package/docsify-kroki)
+[![npm bundle size(ziped)](https://img.shields.io/bundlephobia/minzip/docsify-kroki)](https://bundlephobia.com/package/docsify-kroki)
 ![GitHub top language](https://img.shields.io/github/languages/top/zuisong/docsify-kroki)
-![GitHub last commit](https://img.shields.io/github/last-commit/zuisong/docsify-kroki)
-![npm download count](https://img.shields.io/npm/dm/docsify-kroki)
+[![GitHub last commit](https://img.shields.io/github/last-commit/zuisong/docsify-kroki)](https://github.com/zuisong/docsify-kroki/commits/main)
+[![npm download count](https://img.shields.io/npm/dm/docsify-kroki)](https://npmtrends.com/docsify-kroki)
 
 ## Install
 
