@@ -3,8 +3,7 @@ import { sleep } from "$/test/utils.ts";
 import * as asserts from "deno_std/testing/asserts.ts";
 import { init, tearDown } from "$/test/common/dom-env-init.ts";
 import { replace } from "$/src/kroki.ts";
-import type {} from "$/src/types/docsify-kroki.ts";
-import { AsyncAfterEachHook, DocsifyVM, Hooks } from "../src/types/docsify.ts";
+import { AsyncAfterEachHook, DocsifyVM, Hooks } from "$/src/types/docsify.ts";
 
 beforeEach(() => {
   init();
@@ -39,7 +38,7 @@ const config = {
   serverPath: "//kroki.io/",
 };
 
-it("render plantuml", async function () {
+it("render plantuml", async () => {
   let res = await replace(
     `
 <pre data-lang="plantuml"><code class="lang-plantuml">
@@ -57,7 +56,7 @@ A -> B
   );
 });
 
-it("render plantuml 1", async function () {
+it("render plantuml 1", async () => {
   document.body.innerHTML = `
 <pre data-lang="plantuml"><code class="lang-plantuml">
 @startuml

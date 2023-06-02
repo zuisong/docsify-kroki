@@ -1,5 +1,5 @@
 import * as asserts from "deno_std/testing/asserts.ts";
-import { afterEach, beforeEach, describe, it } from "deno_std/testing/bdd.ts";
+import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { sleep } from "$/test/utils.ts";
 
 import { MockFetch } from "deno_mock_fetch";

@@ -1,5 +1,6 @@
 // deno-lint-ignore-file no-window-prefix
-import { zlibSync } from "fflate";
+//for tree shaking
+import { zlibSync } from "https://esm.sh/v124/fflate@0.8.0?exports=zlibSync";
 import { AsyncAfterEachHook, DocsifyPlugin } from "$/src/types/docsify.ts";
 import { DocsifyKrokiOption } from "$/src/types/docsify-kroki.ts";
 
@@ -14,21 +15,21 @@ function textEncode(str: string) {
 
 const contentType = "image/svg+xml";
 
-function plantWithPost(
+async function plantWithPost(
   content: string,
   type: string,
   config: DocsifyKrokiOption,
 ): Promise<string> {
   const krokiServerRenderUrl = `${config?.serverPath + type}/svg/`;
-  return fetch(krokiServerRenderUrl, {
+  const resp = await fetch(krokiServerRenderUrl, {
     method: "POST",
     body: content,
-  })
-    .then((resp) => resp.text())
-    .then((svg) => `
+  });
+  const svg = await resp.text();
+  return `
     <object data="data:${contentType};base64,${urlSafeBase64Encode(svg)}"
     type="${contentType}"></object>
-    `);
+    `;
 }
 
 // deno-lint-ignore require-await
@@ -107,13 +108,7 @@ export async function replace(
     }
   }
 
-  for (const p of fetaures) {
-    try {
-      await p;
-    } catch (e) {
-      console.error("error", e);
-    }
-  }
+  await Promise.allSettled(fetaures);
 
   return spanElement.innerHTML;
 }

@@ -3,7 +3,6 @@
   "version": "1.0.22",
   "description": "kroki plugin of docsify",
   "main": "dist/docsify-kroki.js",
-  "module": "dist/docsify-kroki.mjs",
   "scripts": {
     "build": "deno task build",
     "prepublishOnly": "npm run build"

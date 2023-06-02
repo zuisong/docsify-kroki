@@ -1,12 +1,11 @@
 {
   "$schema": "https://ghproxy.com/https://raw.githubusercontent.com/denoland/deno/main/cli/schemas/config-file.v1.json",
   "imports": {
-    "vite-deno-import-map-plugin": "https://github.com/zuisong/vite-deno-import-map-plugin/raw/0.2.0/vite-deno-import-map-plugin.ts",
-    "deno_std/": "https://deno.land/std@0.189.0/",
-    "https://deno.land/std@0.170.0/": "https://deno.land/std@0.189.0/",
-    "fflate": "https://esm.sh/fflate@0.8.0?target=es2022&dev",
+    "deno_std/": "https://deno.land/std@0.190.0/",
     "deno_mock_fetch": "https://deno.land/x/deno_mock_fetch@1.0.1/mod.ts",
-    "$/": "./"
+    "$/": "./",
+    "@babel/standalone": "https://esm.sh/v124/@babel/standalone@7.21.9?bundle",
+    "json5": "https://esm.sh/v124/json5@2.2.3"
   },
   "compilerOptions": {
     "allowJs": true,
@@ -20,8 +19,8 @@
   },
   "lock": true,
   "tasks": {
-    "build": " deno task clean && deno task fmt && deno task test-cov && deno task vite-build ",
-    "vite-build": "deno run --node-modules-dir=false -A npm:vite build",
+    "build": " deno task clean && deno task fmt && deno task test-cov && deno task build-ts ",
+    "build-ts": "deno run -A build.ts",
     "clean": "rm -rf dist/ coverage/",
     "fmt": "deno fmt",
     "test-cov": "deno test --coverage=coverage/json --node-modules-dir=false --no-check -A && deno coverage coverage/json --lcov --output=coverage/lcov.info"
