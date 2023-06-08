@@ -1,9 +1,12 @@
 {
   "version": "2",
   "remote": {
-    "https://bundle.deno.dev/https://deno.land/x/emit@0.23.1/mod.ts": "c7078122d3d1d94d52e53ec107821df7d827937379b9c76c85351bb9fddc1703",
+    "https://bundle.deno.dev/https://deno.land/x/emit@0.24.0/mod.ts": "6f33e1834ace77dbe2b60e5adb7cca7718b46e2de3b958f80e5817a10b281968",
+    "https://deno.land/std@0.190.0/_util/asserts.ts": "178dfc49a464aee693a7e285567b3d0b555dc805ff490505a8aae34f9cfb1462",
     "https://deno.land/std@0.190.0/async/delay.ts": "73aa04cec034c84fc748c7be49bb15cac3dd43a57174bfdb7a4aec22c248f0dd",
     "https://deno.land/std@0.190.0/fmt/colors.ts": "d67e3cd9f472535241a8e410d33423980bec45047e343577554d3356e1f0ef4e",
+    "https://deno.land/std@0.190.0/json/common.ts": "ecd5e87d45b5f0df33238ed8b1746e1444da7f5c86ae53d0f0b04280f41a25bb",
+    "https://deno.land/std@0.190.0/jsonc/parse.ts": "2910e33bc7c3b243e3b6f3a39ce4d6ca84337b277a8df6f2ad2d9e4adbcddc08",
     "https://deno.land/std@0.190.0/testing/_diff.ts": "1a3c044aedf77647d6cac86b798c6417603361b66b54c53331b312caeb447aea",
     "https://deno.land/std@0.190.0/testing/_format.ts": "a69126e8a469009adf4cf2a50af889aca364c349797e63174884a52ff75cf4c7",
     "https://deno.land/std@0.190.0/testing/_test_suite.ts": "30f018feeb3835f12ab198d8a518f9089b1bcb2e8c838a8b615ab10d5005465c",
@@ -16,22 +19,12 @@
     "https://deno.land/x/deno_mock_fetch@1.0.1/mock-scope.ts": "f7235b1efa7371b0698f0b5122eb82d042063411429585e4cdf740f2ae60af94",
     "https://deno.land/x/deno_mock_fetch@1.0.1/mock-utils.ts": "3a7b12704a75eee2e9721221c3da80bd70ab4f00fdbd1b786fb240f1be20b497",
     "https://deno.land/x/deno_mock_fetch@1.0.1/mod.ts": "7ea9e35228454b578ff47d42602eba53de0174ffa4ca5567308b11384b55ddd7",
-    "https://esm.sh/v124/@babel/parser@7.22.0/typings/babel-parser.d.ts": "fa1f44a7b4a6065568a6c77fc47bc0978929e0c3d68902b451aee6323e7a0563",
-    "https://esm.sh/v124/@babel/standalone@7.21.9/deno/standalone.bundle.mjs": "6eb39b449436e9e5859173f931832574555fdbe07fa2d6f7ba41dbc714556b4d",
-    "https://esm.sh/v124/@babel/standalone@7.21.9?bundle": "42748c4ccf3fb12929506d24065bde4e74ce1ccb7a36a3cb091f06c197fb87a5",
-    "https://esm.sh/v124/@babel/types@7.22.0/lib/index-legacy.d.ts": "adf30452e3cecedb0de6500915f0f02edfbab1e57546dc36586b02d52b65525d",
-    "https://esm.sh/v124/@types/babel__core@7.20.1/index.d.ts": "7ff803cbbd4465ac5d6eded74a81f6ddcd051f9af85578ddfe06673d518724ca",
-    "https://esm.sh/v124/@types/babel__generator@7.6.4/index.d.ts": "7b17019939163a2413d43a6acdbc3a3c05b7464dba778959c03054d7d8e383fb",
-    "https://esm.sh/v124/@types/babel__standalone@7.1.4/index.d.ts": "e236b2c2e4de4968df67327e4d4b59ac1403985a63618d02c1579b82f6c4d2e4",
-    "https://esm.sh/v124/@types/babel__template@7.4.1/index.d.ts": "be44453ce411a1b641fffaf7d5b23f0ca6f7447e322b3127c950af0637b1bfbb",
-    "https://esm.sh/v124/fflate@0.8.0/X-dHMvemxpYlN5bmM/deno/fflate.mjs": "d1d6756f25a4a5e4e6bc285812db904389c8ebe30eca2c393641e4bed702791a",
-    "https://esm.sh/v124/fflate@0.8.0/lib/index.d.ts": "cb25d68883acc2f10a19f3289541aedec1d08576e7bb7391ea8c51f120adeec5",
-    "https://esm.sh/v124/fflate@0.8.0?exports=zlibSync": "0d76944a9dfb5e7cbc199ae8a9c7bf7b8409c1e57e7c6ebad021b81eb718ece2",
-    "https://esm.sh/v124/json5@2.2.3": "c6f0a2ae33b69823321a350c1dee71dd2dab734ba825a1edbf47dfcdb3f7c3e7",
-    "https://esm.sh/v124/json5@2.2.3/deno/json5.mjs": "62c96803b4328e76691cb23acb0316c5713eabff412bff38bc90a78d1904ad50",
-    "https://esm.sh/v124/json5@2.2.3/lib/index.d.ts": "e348b9a09bd59183c26189aef66a7007fa9e48dfe3557d98dea33809d839fc3a",
-    "https://esm.sh/v124/json5@2.2.3/lib/parse.d.ts": "88a3a6f8c2a1640d8d5fd30d8d86462f8babd86a1e52fab0e8b7f7c141fb348e",
-    "https://esm.sh/v124/json5@2.2.3/lib/stringify.d.ts": "345f76c854da724803c96f727a3f9c75e26cf95c6e7b8c1064dbc4e7727b74e6"
+    "https://esm.sh/@swc/wasm-web@1.3.62": "a2dd3d01f2934cccec83c3d6ee920eb53e2239aed962eed9703ddadeb8959e3d",
+    "https://esm.sh/v125/@swc/wasm-web@1.3.62/denonext/wasm-web.mjs": "e7d2afdab970263561077f2e01f6da7d1cf11d059efe2547e8e6e2df844605e7",
+    "https://esm.sh/v125/@swc/wasm-web@1.3.62/wasm-web.d.ts": "43e8a733603eac0449a98197d52f748423a92fe84baf9973ac8cef7cd7a8a8a4",
+    "https://esm.sh/v125/fflate@0.8.0/X-dHMvemxpYlN5bmM/denonext/fflate.mjs": "4e194cb78f6fb08e23f7588dedd8909aa62f57826a4332e25a6e9e3bc7bb6698",
+    "https://esm.sh/v125/fflate@0.8.0/lib/index.d.ts": "cb25d68883acc2f10a19f3289541aedec1d08576e7bb7391ea8c51f120adeec5",
+    "https://esm.sh/v125/fflate@0.8.0?exports=zlibSync": "d52fb6f477520b60109e8eb7b5c179fe8fea2473f442eed0ef3339f6a4bd8d33"
   },
   "npm": {
     "specifiers": {

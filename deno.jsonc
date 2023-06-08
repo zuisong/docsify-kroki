@@ -3,9 +3,9 @@
   "imports": {
     "deno_std/": "https://deno.land/std@0.190.0/",
     "deno_mock_fetch": "https://deno.land/x/deno_mock_fetch@1.0.1/mod.ts",
-    "$/": "./",
-    "@babel/standalone": "https://esm.sh/v124/@babel/standalone@7.21.9?bundle",
-    "json5": "https://esm.sh/v124/json5@2.2.3"
+    "zlibSync": "https://esm.sh/v125/fflate@0.8.0?exports=zlibSync",
+    "swc": "https://esm.sh/@swc/wasm-web",
+    "$/": "./"
   },
   "compilerOptions": {
     "allowJs": true,

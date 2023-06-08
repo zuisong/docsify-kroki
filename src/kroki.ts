@@ -1,6 +1,6 @@
 // deno-lint-ignore-file no-window-prefix
 //for tree shaking
-import { zlibSync } from "https://esm.sh/v124/fflate@0.8.0?exports=zlibSync";
+import { zlibSync } from "zlibSync";
 import { AsyncAfterEachHook, DocsifyPlugin } from "$/src/types/docsify.ts";
 import { DocsifyKrokiOption } from "$/src/types/docsify-kroki.ts";
 
