@@ -19,7 +19,7 @@
   },
   "lock": true,
   "tasks": {
-    "build": " deno task clean && deno task fmt && deno task test-cov && deno task build-ts ",
+    "build": "deno task clean && deno task fmt && deno task test-cov && deno task build-ts",
     "build-ts": "deno run -A build.ts",
     "clean": "rm -rf dist/ coverage/",
     "fmt": "deno fmt",

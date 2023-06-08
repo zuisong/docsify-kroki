@@ -1,3 +1,4 @@
+import { transform } from "npm:@swc/wasm";
 import { bundle } from "https://bundle.deno.dev/https://deno.land/x/emit@0.24.0/mod.ts";
 import * as JSONC from "deno_std/jsonc/parse.ts";
 await Deno.remove("dist", { recursive: true }).catch((e) => e);
@@ -10,9 +11,6 @@ const { code } = await bundle(
   },
 );
 
-import initSwc, { transform } from "swc";
-
-await initSwc();
 const minifiedCode = await transform(code, {
   minify: true,
   env: {
