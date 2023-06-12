@@ -1,5 +1,5 @@
 import { transform } from "npm:@swc/wasm";
-import { bundle } from "https://bundle.deno.dev/https://deno.land/x/emit@0.24.0/mod.ts";
+import { bundle } from "$/deps/deno_emit.ts";
 import * as JSONC from "deno_std/jsonc/parse.ts";
 await Deno.remove("dist", { recursive: true }).catch((e) => e);
 await Deno.mkdir("dist").catch((e) => e);
@@ -29,5 +29,5 @@ const minifiedCode = await transform(code, {
 
 Deno.writeTextFileSync(
   "./dist/docsify-kroki.js",
-  `${minifiedCode.code}\n`,
+  minifiedCode.code,
 );

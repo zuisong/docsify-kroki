@@ -2,7 +2,7 @@ import * as asserts from "deno_std/testing/asserts.ts";
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { sleep } from "$/test/utils.ts";
 
-import { MockFetch } from "deno_mock_fetch";
+import { MockFetch } from "$/deps/deno_mock_fetch.ts";
 
 import { init } from "$/test/common/dom-env-init.ts";
 import type { DocsifyVM, Hooks } from "$/src/types/docsify.ts";

@@ -1,9 +1,9 @@
 import {} from "$/src/types/docsify-kroki.ts";
 import { DocsifyVM, Hooks } from "$/src/types/docsify.ts";
 import { init } from "$/test/common/dom-env-init.ts";
-import { generate } from "$/test/deps/randomstring.ts";
+import { generateRandomString } from "$/test/common/randomstring.ts";
 import { sleep } from "$/test/utils.ts";
-import { MockFetch } from "deno_mock_fetch";
+import { MockFetch } from "$/deps/deno_mock_fetch.ts";
 import * as asserts from "deno_std/testing/asserts.ts";
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 
@@ -20,7 +20,7 @@ afterEach(() => {
 
 it("from external files with a error", async () => {
   mockFetch.intercept("https://long-text.txt", { method: "GET" }).response(
-    generate(10000),
+    generateRandomString(10000),
   );
 
   const krokiReturnBody = "kroki with long url";

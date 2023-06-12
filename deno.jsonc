@@ -1,10 +1,8 @@
 {
   "$schema": "https://ghproxy.com/https://raw.githubusercontent.com/denoland/deno/main/cli/schemas/config-file.v1.json",
   "imports": {
-    "deno_std/": "https://deno.land/std@0.190.0/",
-    "deno_mock_fetch": "https://deno.land/x/deno_mock_fetch@1.0.1/mod.ts",
+    "deno_std/": "https://deno.land/std@0.191.0/",
     "zlibSync": "https://esm.sh/v125/fflate@0.8.0?exports=zlibSync",
-    "swc": "https://esm.sh/@swc/wasm-web",
     "$/": "./"
   },
   "compilerOptions": {
