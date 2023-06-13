@@ -1,5 +1,4 @@
 {
-  "$schema": "https://ghproxy.com/https://raw.githubusercontent.com/denoland/deno/main/cli/schemas/config-file.v1.json",
   "imports": {
     "deno_std/": "https://deno.land/std@0.191.0/",
     "zlibSync": "https://esm.sh/v125/fflate@0.8.0?exports=zlibSync",
@@ -23,18 +22,15 @@
     "fmt": "deno fmt",
     "test-cov": "deno test --coverage=coverage/json --node-modules-dir=false --no-check -A && deno coverage coverage/json --lcov --output=coverage/lcov.info"
   },
+  "exclude": [
+    "dist/"
+  ],
   "lint": {
-    "files": {
-      "include": [
-        "src/",
-        "*.ts",
-        "*.md"
-      ],
-      "exclude": [
-        "dist/",
-        "notion-kroki.user.js"
-      ]
-    },
+    "include": [
+      "src/**",
+      "*.ts",
+      "*.md"
+    ],
     "rules": {
       "tags": [
         "recommended"
@@ -49,18 +45,17 @@
   },
   "fmt": {
     "include": [
-      "src/",
+      "src/**",
+      "test/**",
       "*.ts",
       "*.json*"
     ],
-    "exclude": [],
     "useTabs": false,
     "semiColons": true
   },
   "test": {
     "include": [
       "test/"
-    ],
-    "exclude": []
+    ]
   }
 }
