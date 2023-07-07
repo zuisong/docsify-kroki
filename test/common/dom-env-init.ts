@@ -1,5 +1,5 @@
 import { delay } from "deno_std/async/delay.ts";
-import { GlobalWindow } from "npm:happy-dom@9.20.3";
+import { GlobalWindow } from "npm:happy-dom@10";
 
 export async function init() {
   const win = new GlobalWindow();
