@@ -1,2 +1,2 @@
-//@deno-types="https://deno.land/x/deno_mock_fetch@1.0.1/mod.ts"
-export * from "https://bundle.deno.dev/https://deno.land/x/deno_mock_fetch@1.0.1/mod.ts"
+import fetchMock from "https://esm.sh/v128/fetch-mock@9.11.0/esm/client.js?target=denonext&bundle"
+export { fetchMock }

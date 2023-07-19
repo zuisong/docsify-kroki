@@ -1,7 +1,7 @@
 {
   "imports": {
-    "deno_std/": "https://deno.land/std@0.193.0/",
-    "zlibSync": "https://esm.sh/v125/fflate@0.8.0?exports=zlibSync",
+    "deno_std/": "https://deno.land/std@0.194.0/",
+    "zlibSync": "https://esm.sh/v128/fflate@0.8.0?exports=zlibSync",
     "$/": "./"
   },
   "compilerOptions": {
@@ -28,6 +28,7 @@
   "lint": {
     "include": [
       "src/**",
+      "test/**",
       "*.ts",
       "*.md"
     ],
@@ -45,8 +46,8 @@
   },
   "fmt": {
     "include": [
-      "src/**",
-      "test/**",
+      "src/",
+      "test/",
       "*.ts",
       "*.json*"
     ],

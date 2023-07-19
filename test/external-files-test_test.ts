@@ -2,31 +2,28 @@ import * as asserts from "deno_std/testing/asserts.ts";
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { sleep } from "$/test/utils.ts";
 
-import { MockFetch } from "$/deps/deno_mock_fetch.ts";
+import { fetchMock } from "$/deps/deno_mock_fetch.ts";
 
 import { init } from "$/test/common/dom-env-init.ts";
 import type { DocsifyVM, Hooks } from "$/src/types/docsify.ts";
 
-let mockFetch: MockFetch;
 beforeEach(() => {
-  mockFetch = new MockFetch();
   init();
 });
 
 afterEach(() => {
-  mockFetch.close();
+  fetchMock.restore();
 });
 
 it("from external files", async () => {
-  mockFetch.intercept("https://api.com/v1/apples", { method: "GET" })
-    .response(
-      `graph TD
+  fetchMock.mock({ method: "GET", url: "https://api.com/v1/apples" }, {
+    body: `graph TD
   A[ Anyone ] -->|Can help | B( Go to github.com/yuzutech/kroki )
   B --> C{ How to contribute? }
   C --> D[ Reporting bugs ]
 `,
-      { status: 200 },
-    );
+    status: 200,
+  });
 
   const imageSrc = `<img src="https://api.com/v1/apples" alt="kroki-mermaid">`;
 
@@ -56,10 +53,10 @@ it("from external files", async () => {
 });
 
 it("from external files with a error", async () => {
-  mockFetch.intercept("https://httpbin.errordomain/status/404", {
+  fetchMock.mock({
+    url: "https://httpbin.errordomain/status/404",
     method: "GET",
-  })
-    .throwError(new Error("from external files with a error link"));
+  }, Promise.reject(new Error("from external files with a error link")));
 
   const imageSrc = `<img src="https://httpbin.errordomain/status/404"
   alt="kroki-mermaid">`;
