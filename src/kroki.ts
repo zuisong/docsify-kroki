@@ -1,12 +1,9 @@
-// deno-lint-ignore-file no-window-prefix
-//for tree shaking
-import { zlibSync } from "zlibSync";
 import { AsyncAfterEachHook, DocsifyPlugin } from "$/src/types/docsify.ts";
 import { DocsifyKrokiOption } from "$/src/types/docsify-kroki.ts";
+import { zlib } from "$/src/zlib.ts";
 
 export function urlSafeBase64Encode(str: string) {
-  // see https://github.com/microsoft/TypeScript/issues/45566
-  return window.btoa(encodeURI(str));
+  return btoa(encodeURI(str));
 }
 
 function textEncode(str: string) {
@@ -32,7 +29,6 @@ async function plantWithPost(
     `;
 }
 
-// deno-lint-ignore require-await
 export async function plant(
   content: string,
   type: string,
@@ -40,8 +36,8 @@ export async function plant(
 ): Promise<string> {
   const urlPrefix = `${config?.serverPath + type}/svg/`;
   const data: Uint8Array = textEncode(content);
-  const compressed: string = strFromU8(zlibSync(data, { level: 9 }));
-  const result: string = window.btoa(compressed)
+  const compressed: string = strFromU8(await zlib(data));
+  const result: string = btoa(compressed)
     .replace(/\+/g, "-")
     .replace(/\//g, "_");
   const svgUrl: string = urlPrefix + result;
@@ -59,15 +55,13 @@ export async function replace(
   const spanElement: HTMLSpanElement = create("span", content);
   const fetaures: Promise<void>[] = [];
 
-  // deno-lint-ignore no-extra-non-null-assertion
-  for (const LANG of config.langs!!) {
+  for (const LANG of config.langs!) {
     const selector = `pre[data-lang="${LANG}"]`;
     const codeElements = Array.from(spanElement.querySelectorAll(selector));
 
     for (const element of codeElements) {
       if (element instanceof HTMLElement) {
-        // deno-lint-ignore no-extra-non-null-assertion
-        const promise = plant(element.textContent!!, LANG, config).then(
+        const promise = plant(element.textContent!, LANG, config).then(
           (graphStr) => {
             const planted: HTMLParagraphElement = create(
               "p",
@@ -89,8 +83,7 @@ export async function replace(
         const img = element as HTMLImageElement;
         const parent = element.parentNode;
 
-        // deno-lint-ignore no-extra-non-null-assertion
-        const promise = fetch(img.getAttribute("src")!!)
+        const promise = fetch(img.getAttribute("src")!)
           .then((it) => it.text())
           .then((code) => plant(code, LANG, config))
           .then((graphStr) => {

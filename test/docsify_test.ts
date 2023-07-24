@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { sleep } from "$/test/utils.ts";
-import * as asserts from "deno_std/testing/asserts.ts";
+import * as asserts from "deno_std/assert/mod.ts";
 import { init, tearDown } from "$/test/common/dom-env-init.ts";
 import { replace } from "$/src/kroki.ts";
 import { AsyncAfterEachHook, DocsifyVM, Hooks } from "$/src/types/docsify.ts";
@@ -39,7 +39,7 @@ const config = {
 };
 
 it("render plantuml", async () => {
-  let res = await replace(
+  const res = await replace(
     `
 <pre data-lang="plantuml"><code class="lang-plantuml">
 @startuml
@@ -52,7 +52,7 @@ A -> B
 
   asserts.assertEquals(
     res,
-    '<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eNrjciguSSwqKc3N4XJU0LVTcOJySM1LAXEBa80H2A=="></object></p>',
+    '<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eJziciguSSwqKc3N4XJU0LVTcOJySM1LAXEBAAAA__8DAGvNB9g="></object></p>',
   );
 });
 
@@ -68,7 +68,7 @@ A -> B
 
   const hook = {
     afterEach(f: AsyncAfterEachHook) {
-      f(document.body.firstElementChild!!.outerHTML, (str) => {
+      f(document.body.firstElementChild!.outerHTML, (str) => {
         console.log(str);
         document.body.innerHTML = str;
       });
@@ -85,6 +85,6 @@ A -> B
 
   asserts.assertEquals(
     document.body?.innerHTML.trim(),
-    '<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eNrjciguSSwqKc3N4XJU0LVTcOJySM1LAXEBa80H2A=="></object></p>',
+    '<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eJziciguSSwqKc3N4XJU0LVTcOJySM1LAXEBAAAA__8DAGvNB9g="></object></p>',
   );
 });

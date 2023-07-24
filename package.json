@@ -47,9 +47,5 @@
   "bugs": {
     "url": "https://github.com/zuisong/docsify-kroki/issues"
   },
-  "homepage": "https://github.com/zuisong/docsify-kroki#readme",
-  "browserslist": [
-    "defaults or supports es6-module-dynamic-import",
-    "not ie 6-11"
-  ]
+  "homepage": "https://github.com/zuisong/docsify-kroki#readme"
 }

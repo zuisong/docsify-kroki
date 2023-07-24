@@ -11,13 +11,15 @@ const { code } = await bundle(
   },
 );
 
-const minifiedCode = await transform(code, {
+const { code: transformCode } = await transform(code, {
   minify: true,
   env: {
-    targets: {
-      chrome: "68",
-      firefox: "68",
-    },
+    targets: [
+      "chrome >= 80",
+      "firefox >= 80",
+      // "supports es6-module-dynamic-import",
+      // "not ie 6-11",
+    ],
   },
   jsc: {
     minify: {
@@ -27,7 +29,7 @@ const minifiedCode = await transform(code, {
   },
 });
 
-Deno.writeTextFileSync(
-  "./dist/docsify-kroki.js",
-  minifiedCode.code,
-);
+import { minify } from "esm.sh/terser@5.19.2?bundle";
+const { code: minifyCode } = await minify(transformCode, {});
+
+Deno.writeTextFileSync("./dist/docsify-kroki.js", minifyCode!);

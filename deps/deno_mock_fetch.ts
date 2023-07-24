@@ -1,2 +1,2 @@
-import fetchMock from "https://esm.sh/v128/fetch-mock@9.11.0/esm/client.js?target=denonext&bundle"
+import fetchMock from "esm.sh/fetch-mock@9.11.0/esm/client.js?target=denonext&bundle"
 export { fetchMock }

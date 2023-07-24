@@ -1,7 +1,7 @@
 {
   "imports": {
-    "deno_std/": "https://deno.land/std@0.194.0/",
-    "zlibSync": "https://esm.sh/v128/fflate@0.8.0?exports=zlibSync",
+    "deno_std/": "https://deno.land/std@0.195.0/",
+    "esm.sh/": "https://esm.sh/v129/",
     "$/": "./"
   },
   "compilerOptions": {
@@ -27,8 +27,10 @@
   ],
   "lint": {
     "include": [
-      "src/**",
-      "test/**",
+      "src/",
+      "test/",
+      "*.ts",
+      "*.json*",
       "*.ts",
       "*.md"
     ],
@@ -49,10 +51,14 @@
       "src/",
       "test/",
       "*.ts",
-      "*.json*"
+      "*.json*",
+      "*.ts",
+      "*.md"
     ],
-    "useTabs": false,
-    "semiColons": true
+    "useTabs": false
+    // "semiColons": false,
+    // "singleQuote": true,
+    // "indentWidth": 2
   },
   "test": {
     "include": [

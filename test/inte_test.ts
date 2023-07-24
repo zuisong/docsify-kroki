@@ -1,5 +1,5 @@
 import { beforeEach, it } from "deno_std/testing/bdd.ts";
-import * as asserts from "deno_std/testing/asserts.ts";
+import * as asserts from "deno_std/assert/mod.ts";
 import { init } from "$/test/common/dom-env-init.ts";
 import { defaultConfig, plant, replace } from "$/src/kroki.ts";
 
@@ -483,61 +483,61 @@ rackdiag {
 <hr>
 <h2 id="plantuml"><a href="#/?id=plantuml" data-id="plantuml" class="anchor"><span>plantuml</span></a></h2>
 
-<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eNpzKC5JLCopzc3hctS1c-JySM1LAXIAV58HhA=="></object></p>
+<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eJxyKC5JLCopzc3hctS1c-JySM1LAXIAAAAA__8DAFefB4Q="></object></p>
 <hr>
 <h2 id="svgbob"><a href="#/?id=svgbob" data-id="svgbob" class="anchor"><span>svgbob</span></a></h2>
 
-<p data-lang="svgbob"><object type="image/svg+xml" data="//kroki.io/svgbob/svg/eNqFj0sOgDAIRPeegl01Edyb1IsYw0Xm8A6oib_oLEqbNx1AHjLtW5GuV2v4cnceByE41CWfyRdUiOp0grtlK7Ts4odhHAeBI0m5BJoWxug0u5l5HLLECDcVtTbNL-yqaJnly1miZY4DQa34TUXE0svbr5fbbvs6VtbNPic="></object></p>
+<p data-lang="svgbob"><object type="image/svg+xml" data="//kroki.io/svgbob/svg/eJyET1sOgDAI-_cU_G1LBP9N5kWM4SI9vB1Gja_YDzbSUorIHaZ9Fim9WsfO3Vl2Jp-yEvxMfkGFqE757lS2xw9wYBjHQeAIJl0MTRNtdJrdzLwVWbpHPA5ZDvELd4VHeIm9n0htZcSBoFb8uqLZUsvfr5bXbvc6VgAAAP__AwDWzT4n"></object></p>
 <hr>
 <h2 id="mermaid"><a href="#/?id=mermaid" data-id="mermaid" class="anchor"><span>mermaid</span></a></h2>
-<p data-lang="mermaid"><object type="image/svg+xml" data="//kroki.io/mermaid/svg/eNpNzr0OwiAcBPDdp7hRh9o30PTDj1ndmg6UEiBV_gRBU63vLnQwzr-7y0nHrMKlXgBFg8KMZARaZNlmqpiBEleLCeUSB4InSO1V6NacbvkYXsELrvLB0aCxigtl6qF640jPlOZkvNNdjG3xiV7NXjc4CUvOayPRBXlH-7Ndg7NiLonuBfunfbzXP4izudd-Aa8aOC8="></object></p>
+<p data-lang="mermaid"><object type="image/svg+xml" data="//kroki.io/mermaid/svg/eJxMzr0OwiAcBPDdp7hRh9o30PTDj1ndmg6UEiBV_gRBU63vLnQwzr-7y0nHrMKlXgBFg8KMZARaZNlmqpiBEleLCeUSB4InSO1V6NacbvkYXsELrvLB0aCxigtl6qF640jPlOZkvNNdjG3xiV7NXjc4CUvOayPRBXlH-7Ndg7NiLonuBfunfbzXP4izudd-AQAA__8DAK8aOC8="></object></p>
 <hr>
 <h2 id="vega"><a href="#/?id=vega" data-id="vega" class="anchor"><span>vega</span></a></h2>
-<p data-lang="vega"><object type="image/svg+xml" data="//kroki.io/vega/svg/eNqNVUuSmzAQ3fsUlJLlxMb2uDLjKi_yzy4HSM1CBgFKBKJAOHa5fPeoG4QkPp7xBtN6_X2vxXURBOR9HWUsp2QfkEypst6vVieW0mXKVdYcl1yuWgBaV6fd8k8tC_IArv94rDLt-BiG-J4xnmZKGzadoaRxzItUW3YPCzDEVEGm3_p_EEB6-JGC5gzyK3oUDEOj-URFw-oeji4kooqlsroA_hN5CAjNZVNg0qebcR0CP3vA3W4W-MUDPm5ngV894PN6FvjNAz7NA7_7Nc6n_uEB18-zwJ9-6o-3DveCT3h7aVmpeVpQYSc9JkZKoXg5oEafXPvkRIvCZ4qdWKEgKKlYpPa6jprJE6ugqqbUSsDQ-tnkxOth0rFR2s91vN7IfEMRFY5yRv2cEWDbUZcS7UdaxNYay5xy6OpqdGsUGpCEMxGDpR-4nURFixTDtfvR2-02hMtQL4SBa4IglKoa1jbSHo2qvgyqflN9Hf-2uoJHEA2yjSvuNng4T3p2p6m5rrimCCcmlZI5ZGyLs8Pt23DhgiXAowV3PbnJclr9neDOcASasDNIKp3dTqAbgO2WFZGMUam9wLRNaRW6Jm08Y5RhE_eZRkdzCU46o6D0kvousJ0O3PB6h7XWbTPnZ9YxNBvRiwgd-6XxOk64EBjQeJNaMSaO8DIdJ8P1fTVMxWI3QPevfQ61bVhV7Oyw-mbWqNBXl589aoH-6I60ZoIXGNJCO_H60HE_77bb7cxEpic7q6X2onVu1GUvKiuWcOl-n-7JZRyu040-k0lSM9i5Dxs_Gk4aA855j-fxq6QRV1CHveDbu1qxGhcbr_HgcDgE_bfClaUbEdzMydqO1VzjE5qBu2FxWyz-A2qSNnk="></object></p>
+<p data-lang="vega"><object type="image/svg+xml" data="//kroki.io/vega/svg/eJyUVcuOmzAU3fMVyO2SEiYZ1JlIWfTdXT-gysLABdwajMCkQRH_Xts8jEmcppsQrs99nnPNxXFd9LaJcygw2rso57xq9pvNCTLsZ4TnbeQTthkAyro5hf6vhpXIk65_SMJz4fgcBOo9B5LlXBi2o6HCSULKTFhCz5GGBHOZ6af477oX9SusJS5A5uc4oqBCK_MJ0xaaGa5cUIw5ZKzuJP4D8lyEC9aWKulL71mAHw1gGFqBnwzg884K_GwAX5-swC8G8MUO_GrWaE_9zQA-vVqB383U7_sRd1RP-XYcWGlIVmLa3CGGMcpJtaJGnFzm5EiIwmQKTlByGRTVEPO9qKMBdoJaVtVWQgkqtHi2BTJ6uOnYcuG3dLz0yN5QjCnc6eesALod3lXKHuEy0daEFZjIri6TbieFuiglQBNpmQeuJ1HjMlPhhv2Y7XobAj8INVwQJEPxuoWhEe921d2q6ofqG_nX1ZUkhjHbdcXjBq_nic_LaQquawJKVChinLNCZhyK08Od21jCKaTcAHcTWCcrcP37BncTR1ITegZpLbLrCYwD0N1CGbNEKXUWmLBxocKlSRjPKsq6iftMK8fpErzprAQlltR06Ux4d51rzdrgtrX5TesY9DN-4aqXxug4JZSqgJM3ajgAjeTL7Ti5Wt9_hqkhWQZwls-1tidWOZwXrD7MGqbi6jKzxwPQHF2EG6CkBBM6iteEXvfzZrfbof-ZrFVLw0W7uFH9WVRaLIEfPiiX63CjbsQZS9MG5M6925rR1KRVQJv39Tx-VDgmvDMueEWjiNbw-Rp3D4eDO38rlrL0Vm7TyVO_ODjaNCPvBqd3nL8AAAD__wMAapI2eQ=="></object></p>
 <hr>
 <h2 id="vegalite"><a href="#/?id=vegalite" data-id="vegalite" class="anchor"><span>vegalite</span></a></h2>
-<p data-lang="vegalite"><object type="image/svg+xml" data="//kroki.io/vegalite/svg/eNrtVklz2yAUvvtXMEyPrvc0Tm7d02NnevPkgBGSXoPABezWzvi_94EkLMlpWveQZSYHIXjf2xeJ2x4h9JXluSgYvSQ0d25lL4fDjcjYIAOXr5cD0MOSIVBfS3BiuJkNvlutaN_LJ8JyAysHSEAdV9rATivHpNwSrhVnTih8EsJzZpwlLmeO2Fz_JAmkqTBCOeK2K2GJTpGEyoSDHaiMWM6ksIPKDHPeR-8ynjZMroXF8yKcCbmlIYK3tE_oEneT-d6LNaB3NXR21oXe19Bs2oU-1NDFuAt9rKH5EfQp2jpS-LmGxhdd6CoqPO9CX6LCyT4g17gGJpqXSY65KDOEQMHMjZflYLgUIYuBLhTXCeY3ZjNQt60jElIQMvHyyyga6L5Wnqx0AYrJNmi18Z6otZQtOvsFvlpNA14V8BtPTpm0osnv660LBr6j7gIdOIyotNNAytSE3UGAWth53pOC-7FmCo0wB5tD5kptvinvCKUliAb_6hbXUpuH96uTyZ0wGnFn1qLpcUu1FJlQ3quj8pVVoF_vD7rale9K9UuXPn6XNtJd4YapzDMs5qM-Gb_BZTLDZTrBZTYa-Y_O02vq4zDCDytwFCzDX9vJnZ1qU4RPKk26ujtNj_uXpn8eTe9yI_Degcr_FM9iin1-Prq-byomo3Igntos_Hd0h2HZgAG8gJ0-LnEmvkUn_mUocA3OUBTSEuON17turDGXFFQiVugE3hoPY1O1UQuMJva9fe834ft4Og=="></object></p>
+<p data-lang="vegalite"><object type="image/svg+xml" data="//kroki.io/vegalite/svg/eJzsVktz2yAQvvtXMEyPqt9pnNz6To-d6c3jA5ZWEg0CF7Ba26P_3gVb2JJSt-6hTWZyEIL92CffSux6hNAXJs6hYPSW0NzalbkdDErIWD_jNl8v-1wN9hu89KXgFgbltP_VKEkjp5-AiTVfWY4CtHGnNN8qaZkQGxIrGTMLEp-ExDnT1hCbM0tMrr6ThKcpaJCW2M0KDFEpitAYWL7lMiMmZgJM_-CGWRfjDue4KplYg8H13K8J2VGfwWsaEbrE2XhWRU3oTQ1dXbWhtzU0nbShdzV0M2pD72to1oE-BF8dgx9raHTThu6Cwes29CkYHFceWeDoN9F8X-RQi91BkxZM3zvdmOtYAK0tUpCxSrC-oZpeumksUZByEInTXwZVL3dn5cRSFVwy0QSN0i4SuRaiIWc_uGk5cKZ4fO_EKRMGoiaWqIJx-QvQcivg4OcEqcK8OipQw7dwaXLf1kyiE2Z5Ca0MHSkfSKWhiA5_G1ashNL_Pq5WJbegFeJWr-E04oZpARnI5KHj258C_Xw-6d7p-2D6maXkv7NUdNigmczchvlsGJHRKxzGUxwmYxymw-HiUZK6m4b_YfkdBcvw13Yxs1OlC_9JpQmNzpJePJP-qZDe5hrw3iE6RxrymU-Q59fDxbmuGA_3DfHYeuGvszs2S8k1xwvY5e0SeuJLCOJPmgJHHwxFJSXKY3KdXEMtKZcJrDAIvDUe2-ZAowYYXFS9qvcTAAD__wMA4ft4Og=="></object></p>
 <hr>
 <h2 id="wavedrom"><a href="#/?id=wavedrom" data-id="wavedrom" class="anchor"><span>wavedrom</span></a></h2>
-<p data-lang="wavedrom"><object type="image/svg+xml" data="//kroki.io/wavedrom/svg/eNpdTs0KwjAMvu8pQs8jdKiXgQfBJ_AqO8S1zLG6KZuusu7dTaBDXSCE5PvJN0FfVy25HM4JwAQt3WwOqnSNSmGpkV5yvKNU4FYwp7_0Iw305Ue6x81258MePUOGGfxDXS0ZXtWlM2-ZA9VOpuCqWNme7ONp-yE6R1uNGaIOGeolxb_oUDZtNzprKsvCKGKJRNeZRE-K-QOPW0Gr"></object></p>
+<p data-lang="wavedrom"><object type="image/svg+xml" data="//kroki.io/wavedrom/svg/eJxcTs0KwjAMvu8pQs8jtKiXgQfBJ_AqO8S1zLG6Kauusu7dbbDDn0AIyfeTb4KhqTuyBRwzgAk6upgCRGVbkcNSIz34eEWuEFvAnH_T9-Tow090j6v1xoct-gjpyIg_xNmQjqs49frJ01FjeTIuyj_bg7ndzeCSc7KVqBBlUCiXFL-iXdV2_WiNrk0UJpF6R5eKo2fl_AIAAP__AwCPW0Gr"></object></p>
 <hr>
 <h2 id="nomnoml"><a href="#/?id=nomnoml" data-id="nomnoml" class="anchor"><span>nomnoml</span></a></h2>
-<p data-lang="nomnoml"><object type="image/svg+xml" data="//kroki.io/nomnoml/svg/eNpdjzELgzAQhff8ioxaULoVrLh06lDoHjKcGjUlGrlcKEJ-fBWRpoUbHu--d48TT41AKqhF3ayfqOD3iQKCbpP0OmtjoFdJGhjnolaArcwyMQOiJRl5RSU66w0fradBMsmYKKF2hNBQ9QAE3yqUZbGG9z7JDpHxc55fxKhdM2jVrYuXNWaZlHMyq774j4t-_Lecnvp1osMVP21gIHCkN2z_zb11n6QxF2UPVR4lH_bvZbY="></object></p>
+<p data-lang="nomnoml"><object type="image/svg+xml" data="//kroki.io/nomnoml/svg/eJxcjzELgzAQhff8ioxaULoVrLh06lDoHjKcGjUlGrlcKEJ-fBWRpoUbHu--d48TT41AKqhF3ayfqOD3iQKCbpP0OmtjoFdJGhjnolaArcwyMQOiJRl5RSU66w0fradBMsmYKKF2hNBQ9QAE3yqUZbGG9z7JDpHxc55fxKhdM2jVrYuXNWaZlHMyq774j4t-_Lecnvp1osMVP21gIHCkN2z_zb11n6QxF2UPVR4lHwAAAP__AwD272W2"></object></p>
 <hr>
 <h2 id="graphviz"><a href="#/?id=graphviz" data-id="graphviz" class="anchor"><span>graphviz</span></a></h2>
-<p data-lang="graphviz"><object type="image/svg+xml" data="//kroki.io/graphviz/svg/eNp9kMsKwjAQRff5iiEfoOhWXFkUnwh-QEnToY1NTZg-NtJ_F5s-ooVuBu5l7pnLsFglJGwKAbwZQFFFTkpdFSVSaFsbQIsINWyBn8lkim9ac7ItV926F3gg1UhdAmCvNEYoyl5PGIkMR4rHCYzMkJZ_OICTqEWvmhnoegZ6RcqFij0qv5kYF8_Ct-6VtVjiz3W-S8nkODiugZvT94wdhga7y3EIH4wWr8SpL6JhDfsAqKRwrw=="></object></p>
+<p data-lang="graphviz"><object type="image/svg+xml" data="//kroki.io/graphviz/svg/eJx8kM0OgjAQhO88xaYPoJEr8QTR-BsTH4CUsoFKsc3yczF9dxMELBI5zmTm2814qcyImxwieHkAVZN8pFBNVSPFprMBFE9QwRbYiXQhWdCZs7TY9HGncEdqkfoGwE4qTJDXg54xMhF_KQ4n0qJAWv_gAI685YOyC1B_AXpBKrlMHSq76hRXj8q1bo0xWOPkOgtz0iWy6Qf2zzz-fJ7wfBjLe634MwtGhPWs9wYAAP__AwCopHCv"></object></p>
 <hr>
 <h2 id="erd"><a href="#/?id=erd" data-id="erd" class="anchor"><span>erd</span></a></h2>
-<p data-lang="erd"><object type="image/svg+xml" data="//kroki.io/erd/svg/eNqLDkgtKs7Pi-XSykvMTeXKSM1MzyjhKodQ2kmZRSUZ8Tn5yYklmfl58ZkpXFzRPlAeUAuQn5xZUslVXJJYksqVnF-aV1JUycUFMVJBS1fXUAGmGgCFAiQX"></object></p>
+<p data-lang="erd"><object type="image/svg+xml" data="//kroki.io/erd/svg/eJw0jEEKgCAQRff_FK0NF92jRXsJMZMcKAd0Irx9grX6PPjvmSXkwmmFSu4KiIGOKHj6jBtlifZk74Q4WdoBM3_UlMaepKKIkwDPd5JcgZ4clNbT8L9fAAAA__8DAIUCJBc="></object></p>
 <hr>
 <h2 id="ditaa"><a href="#/?id=ditaa" data-id="ditaa" class="anchor"><span>ditaa</span></a></h2>
-<p data-lang="ditaa"><object type="image/svg+xml" data="//kroki.io/ditaa/svg/eNpTAANtXSjQ5oII1EAoIAMhEFqcWoQigKoCwwwQiAOyi1ILS1OLS-AKQaAMyIZrgOuCmwk3GCziXZSfnYkiglAD1YlmFpKzFOLACKZeITMvLSexJBUmCzQOYSJcTxmyiVjMx-1Wl8ySxETcbsXhWJSwgbgZ6rqCovzk1OJiVGmYuWi6YOZqcwEAkm5T1w=="></object></p>
+<p data-lang="ditaa"><object type="image/svg+xml" data="//kroki.io/ditaa/svg/eJyUkLEOwjAQQ_d8hfeIv2BjZq0UoUOKQBSS0Ok-HlLSy11Rh1odGse2ngJU-UOTd_MZjCbuxjlTMoZN_G1UDd__RK835SLBqsmpgrQYWrw4pzTeonF6pjVXWwoLw_wtecTH9R4KOTHUonQmvej3sB5jCWGbdQPWvA06MOOZxgvlbK95zfuTF7wPAAAA__8DAJJuU9c="></object></p>
 <hr>
 <h2 id="c4plantuml"><a href="#/?id=c4plantuml" data-id="c4plantuml" class="anchor"><span>c4plantuml</span></a></h2>
-<p data-lang="c4plantuml"><object type="image/svg+xml" data="//kroki.io/c4plantuml/svg/eNp9UktuwjAQ3ecUU1ZUoqx6AApi0QUVKnQdGTNJLBwPsieC3r5j4_ARlF38_H5-yiSw8ty1tngxTttuizB7L2fkGI883seLgg1bhNVvYGwhX8HWqNqrFiry8CmQd8gwVW5nXJ25RbFEH8gNdReYWvQjGPSMWYYGgn1ATwCqgBuEjbBGcDDcwD5ZKJswUFpT5ziMB6_FKWQYcXEsQzqK3T9tUpK1dAjnuABMoBvUu5hq_I199i_nRx62ythLwPwtnuF0jrZrqWxSqvRcGO0pUMUwP-pGuRoBrwWX6r21q2RIFJ9F__2g-orJYwBlbT-SFiCtEokiJN8qNuRS-W-0V7PfbfQTMAhNWOVU6d0V9fapK3TbkPvHtbLmC03dbMjfjf9EnR6xWC9PFo-U5x1yu4nI5Qf8Ayot7V4="></object></p>
+<p data-lang="c4plantuml"><object type="image/svg+xml" data="//kroki.io/c4plantuml/svg/eJx8Ur1uwjAQ3vMUVyYqUaY-AAUxdKBChc6RMZfEwrGR7yLo2_dinBAEZYvP39998YxYBW5qm70Yp22zR1i85wvvGM88PbYXGRu2CJtfYqwhXcHeqDKoGgof4FNGwSHDXLmDcWXCZtkaA3k31g2xrzFMYNQhFmk0ktkHdADwBXCFsBPUBE6GKzhGCWXjDJTWvnFM09FrdjEZ7y6KOcWjyP2TJjpZ60_U2xGwB12hPrSuJtzIJ_18eeZxrYy9Gizf2jNQL7uVyCa6Ss6V0cGTLxiWZ10pVyLgkHCN3km7QopE0Vl13w-ib9gHJFDWdiVpGUDaXuzlR9SKjXcx_DfaQe13Hf0QksAElc-VPgygt6tu0O0p5W_bSpwvNGW18-Gu_CfsuMRqu75IPGL2PaR0M6HLA_wDAAD__wMAKi3tXg=="></object></p>
 <hr>
 <h2 id="rackdiag"><a href="#/?id=rackdiag" data-id="rackdiag" class="anchor"><span>rackdiag</span></a></h2>
-<p data-lang="rackdiag"><object type="image/svg+xml" data="//kroki.io/rackdiag/svg/eNrjKkpMzk7JTExXqOZSUDA0C7UGUVYKoQHBCtFGobEgrrGVgouTQnBqUVlqEYhvYqUQnpqEJGCKLmCGLmBupeCTn5ii4JSYk5iXDBGzAIoZKwSXZ5YkZ1hz1QIA5sIliw=="></object></p>
+<p data-lang="rackdiag"><object type="image/svg+xml" data="//kroki.io/rackdiag/svg/eJxcyL0OQDAYRuG9V_Hegn-pTYwGSdMYxPCpBiEkjTCIe6exSKeT8zBDau4nGnAxwItlZsMhK4HGl63dgKPIIbQ5tLEfctS6-0HkQuxCwlFu1COnhVb1WfpaAHFOuxozdj8AAAD__wMA5sIliw=="></object></p>
 <hr>
 
 <h2 id="packetdiag"><a href="#/?id=packetdiag" data-id="packetdiag" class="anchor"><span>packetdiag</span></a></h2>
-<p data-lang="packetdiag"><object type="image/svg+xml" data="//kroki.io/packetdiag/svg/eNptkU9Pg0AQxe9-ijnqYRN2QVowHkyNf2LSErAxpjFmZaewoexWWORg_O4OkDQ9cH2_mXkzb44yr9ApLQv4vQDI7aHXypVwC764IcFYhZ8l6qJ0pC1II9Fj_DqGzHZNjpDYxg2VPGQ-j-EeW6eNdNqaE_IFC31qwO8ODbWsu_oLm4GEAYto1F1eGdsfUBU1GnfGo5BFEQ2VTsJmv29xsvJoA4_6Umyx-UE1iWEM2_QRdo110iGtKxbex4QW5LF6mUXLGJLsaRaRc5q9ziHu0Tnv61lEITw8zyPBuKBV3rRRth8lsWQ8oGxWJeZV29WjGAQUMJlvm2KII7HauCkPHtLlETlcbo5DxC1IoyCRSmlTXI0VkWBC0EQ1ZLajh56-59MWf_9OCoi9"></object></p>
+<p data-lang="packetdiag"><object type="image/svg+xml" data="//kroki.io/packetdiag/svg/eJxskU9Pg0AQxe9-ijnqYRN2QVowHkyNf2LSErAxpjFmZaewoexWWORg_O4OkDQ9cH2_mXkzb44yr9ApLQv4vQDI7aHXypVwC764IcFYhZ8l6qJ0pC1II9Fj_DqGzHZNjpDYxg2VPGQ-j-EeW6eNdNqaE_IFC31qwO8ODbWsu_oLm4GEAYto1F1eGdsfUBU1GnfGo5BFEQ2VTsJmv29xsvJoA4_6Umyx-UE1iWEM2_QRdo110iGtKxbex4QW5LF6mUXLGJLsaRaRc5q9ziHu0Tnv61lEITw8zyPBuKBV3rRRth8lsWQ8oGxWJeZV29WjGAQUMJlvm2KII7HauCkPHtLlETlcbo5DxC1IoyCRSmlTXI0VkWBC0EQ1ZLajh56-59MWf_8AAAD__wMATgqIvQ=="></object></p>
 <hr>
 
 <h2 id="nwdiag"><a href="#/?id=nwdiag" data-id="nwdiag" class="anchor"><span>nwdiag</span></a></h2>
-<p data-lang="nwdiag"><object type="image/svg+xml" data="//kroki.io/nwdiag/svg/eNrLK0_JTExXqOZSUMhLLSnPL8pWSMmtAvMVFBJTUopSi4sVbBWUjAwN9CpAUN_IRIkLLFuemmRgqBCNRZGhUqw1XIkRViVGECW1SPZm5pWkFuUl5mBabmhuhLDcGpftMFV4bIcpgdquoJACNATOMoK4qJYLAIvESVY="></object></p>
+<p data-lang="nwdiag"><object type="image/svg+xml" data="//kroki.io/nwdiag/svg/eJx8zk0KgzAQhuF9TvGRA7RmKHQhPUnpImWCiBohChHFu_tHVPCHbBLyMO9Yz6lO0AnAmtqXLgMX7fwGNLMzVYUPJKno0UznSS8p5l9v_pHC9wQp-YtXQqeEFtLvuqmtjbM6P8bVm7Z4fFUP6qYeCAXC45D1RstGvRgAAAD__wMAi8RJVg=="></object></p>
 <hr>
 
 <h2 id="actdiag"><a href="#/?id=actdiag" data-id="actdiag" class="anchor"><span>actdiag</span></a></h2>
-<p data-lang="actdiag"><object type="image/svg+xml" data="//kroki.io/actdiag/svg/eNpVTjkOwkAM7POK0fa8AEFDQUGNKBCFCdbKItmVjDkklL-zRwKks-em1i5CHu8GeKoYY7FGG8OD1fIpPXluEtlRYNxvrEWa_zN3WMHtE-YKVP3HL3NIvwQP45e507JoSt6fZsuGPECpr1wVDlPjTuNVxspp1s-9GZHcAIvzhOEDAD5DgA=="></object></p>
+<p data-lang="actdiag"><object type="image/svg+xml" data="//kroki.io/actdiag/svg/eJxUTjkOwkAM7POK0fa8AEFDQUGNKBCFCdbKItmVjDkklL-zRwKks-em1i5CHu8GeKoYY7FGG8OD1fIpPXluEtlRYNxvrEWa_zN3WMHtE-YKVP3HL3NIvwQP45e507JoSt6fZsuGPECpr1wVDlPjTuNVxspp1s-9GZHcAIvzhOEDAAD__wMAAD5DgA=="></object></p>
 <hr>
 
 <h2 id="blockdiag"><a href="#/?id=blockdiag" data-id="blockdiag" class="anchor"><span>blockdiag</span></a></h2>
-<p data-lang="blockdiag"><object type="image/svg+xml" data="//kroki.io/blockdiag/svg/eNpdzDEKQjEQhOHeU4zpPYFoYesRxGJ9DiEkZmUjShDvrosi4ZXDfPynolM-J4l4LoC9aU5YbRFZaXJj8xF2juDK5NLCepTpS-60Dkrry8_9_w-TFjVsEKKRtbMUfYSjB-bRwV5TzT80ZAegJjXSyesNptc71w=="></object></p>
+<p data-lang="blockdiag"><object type="image/svg+xml" data="//kroki.io/blockdiag/svg/eJxczDEKQjEQhOHeU4zpPYFoYesRxGJ9DiEkZmUjShDvrosi4ZXDfPynolM-J4l4LoC9aU5YbRFZaXJj8xF2juDK5NLCepTpS-60Dkrry8_9_w-TFjVsEKKRtbMUfYSjB-bRwV5TzT80ZAegJjXSyesNAAD__wMAptc71w=="></object></p>
 <hr>
 
 <h2 id="seqdiag"><a href="#/?id=seqdiag" data-id="seqdiag" class="anchor"><span>seqdiag</span></a></h2>
-<p data-lang="seqdiag"><object type="image/svg+xml" data="//kroki.io/seqdiag/svg/eNorTi1MyUxMV6jmUlBIKsovL04tUlDQtVMoT00CMsuAvOicxKTUHAVbBSV31xAFfagG_eKydP2kxOJUMxOlWGugZoQGkPaCovzk1OLifGTtzvl5QOkShZLUCiCRr5CZm5ieiq7ZRlcXoRkkBXMUSAKuzJqrFgA13z1R"></object></p>
+<p data-lang="seqdiag"><object type="image/svg+xml" data="//kroki.io/seqdiag/svg/eJxczrEKg0AMBuDdp_hxP24pXa7tUkpfoFvpcNeGQ7BNvYgK4rsbEVRcQsKfD36h6lP4iD4DQuJWKAHmgpaCro1ez9IHKnFGfr89YGUGVppogxc6HvKXU7yCif8Tv0mEt_zKP41r1NTpYBRfH2mPT8as2G1KTcHy5rJhBAAA__8DADXfPVE="></object></p>
 
 `;
   console.log(result);
@@ -545,7 +545,7 @@ rackdiag {
 });
 
 it("plant", async () => {
-  let md = `
+  const md = `
 @startuml
 !include C4_Context.puml
 
@@ -568,7 +568,7 @@ Rel(banking_system, mainframe, "Uses")
   console.log(result);
 
   const expectResult =
-    `<object type="image/svg+xml" data="//kroki.io/plantuml/svg/eNp9UktuwjAQ3ecUU1ZUoqx6AApi0QUVKnQdGTNJLBwPsieC3r5j4_ARlF38_H5-SjEJrDx3rS1ejNO22yLM3ssZOcYjj_fxomDDFmH1GxhbyFewNar2qoWKPHwK5B0yTJXbGVdnblEs0QdyQ90Fphb9CAY9Y5ahgWAf0BOAKuAGYSOsERwMN7BPFsomDJTW1DkO48FrcQoZRlwcy5COYvdPm5RkLR3COS4AE-gG9S6mGn9jn_3L-ZGHrTL2EjB_i2c4naPtWiqblCo9F0Z7ClQxzI-6Ua5GwGvBpXpv7SoZEsVn0X8_qL5i8hhAWduPpAVIq0SiCMm3ig25VP4b7dXsdxv9BAxCE1Y5VXp3Rb196grdNuT-ca2s-UJTNxvyd-M_UadHLNbLk8Uj5XmH3G4i8vgDAvwBDXntsg==" />`;
+    `<object type="image/svg+xml" data="//kroki.io/plantuml/svg/eJx8Ur1uwjAQ3vMUVyYqUaY-AAUxdKBChc6RMZfEwrGR7yLo2_dinBAEZYvP3999cTYjVoGb2mYvxmnb7BEW7_nCO8YzT4_tRcaGLcLmlxhrSFewN6oMqobCB_iUUXDIMFfuYFyZsFm2xkDejXVD7GsMExh1iEUajWT2AR0AfAFcIewENYGT4QqOUULZOAOltW8c03T0ml1MxruLYk7xKHL_pIlO1voT9XYE7EFXqA-tqwk38kk_X555XCtjrwbLt_YM1MtuJbKJrpJzZXTw5AuG5VlXypUIOCRco3fSrpAiUXRW3feD6Bv2AQmUtV1JWgaQthd7-RG1YuNdDP-NdlD7XUc_hCQwQeVzpQ8D6O2qG3R7SvnbthLnC01Z7Xy4K_8JOy6x2q4vEo-YfQ8p3Uzo7QME-AMAAP__AwANee2y" />`;
 
   asserts.assertEquals(result, expectResult);
 });

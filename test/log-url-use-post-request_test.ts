@@ -4,7 +4,7 @@ import { init } from "$/test/common/dom-env-init.ts";
 import { generateRandomString } from "$/test/common/randomstring.ts";
 import { sleep } from "$/test/utils.ts";
 import { fetchMock } from "$/deps/deno_mock_fetch.ts";
-import * as asserts from "deno_std/testing/asserts.ts";
+import * as asserts from "deno_std/assert/mod.ts";
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 
 beforeEach(() => {
@@ -40,7 +40,7 @@ it("from external files with a error", async () => {
   window.$docsify?.plugins?.forEach((krokiPlugin) => {
     krokiPlugin({
       afterEach(param) {
-        param(document.body.firstElementChild!!.outerHTML, (str) => {
+        param(document.body.firstElementChild!.outerHTML, (str) => {
           document.body.innerHTML = str;
         });
       },

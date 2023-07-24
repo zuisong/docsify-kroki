@@ -1,4 +1,4 @@
-import * as asserts from "deno_std/testing/asserts.ts";
+import * as asserts from "deno_std/assert/mod.ts";
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { sleep } from "$/test/utils.ts";
 
@@ -32,8 +32,7 @@ it("from external files", async () => {
 
   const hooks: Hooks = {
     afterEach(afterEachHook) {
-      // deno-lint-ignore no-extra-non-null-assertion
-      afterEachHook(document.body.firstElementChild!!.outerHTML, (str) => {
+      afterEachHook(document.body.firstElementChild!.outerHTML, (str) => {
         document.body.innerHTML = str;
       });
     },
@@ -48,7 +47,7 @@ it("from external files", async () => {
   // wait for fetch data
   asserts.assertEquals(
     document.body?.innerHTML.trim(),
-    '<p data-lang="mermaid"><object type="image/svg+xml" data="//kroki.io/mermaid/svg/eNodjLsOgjAUhnee4h91QN5AAyXR2bgRBto0bYOe09TTGBTf3eL8XVyaosetr4B2QEsLk8WIuj6uaiJ4e49Y0e1wZgjDBfFZHww_miW_s1jjmznxHLAvh27roD648GuzDZOkoIt2wrdw9ef9gKuNnCSQg87uibH6ASlWKgI="></object></p>',
+    '<p data-lang="mermaid"><object type="image/svg+xml" data="//kroki.io/mermaid/svg/eJwcjLsOgjAUhnee4h91QN5AAyXR2bgRBto0bYOe09TTGBTf3eL8XVyaosetr4B2QEsLk8WIuj6uaiJ4e49Y0e1wZgjDBfFZHww_miW_s1jjmznxHLAvh27roD648GuzDZOkoIt2wrdw9ef9gKuNnCSQg87uibH6AQAA__8DAClWKgI="></object></p>',
   );
 });
 
@@ -56,7 +55,7 @@ it("from external files with a error", async () => {
   fetchMock.mock({
     url: "https://httpbin.errordomain/status/404",
     method: "GET",
-  }, Promise.reject(new Error("from external files with a error link")));
+  }, () => Promise.reject(new Error("from external files with a error link")));
 
   const imageSrc = `<img src="https://httpbin.errordomain/status/404"
   alt="kroki-mermaid">`;
@@ -69,8 +68,7 @@ it("from external files with a error", async () => {
   window.$docsify?.plugins?.forEach((krokiPlugin) => {
     krokiPlugin({
       afterEach(afterEachHook) {
-        // deno-lint-ignore no-extra-non-null-assertion
-        afterEachHook(document.body.firstElementChild!!.outerHTML, (str) => {
+        afterEachHook(document.body.firstElementChild!.outerHTML, (str) => {
           document.body.innerHTML = str;
         });
       },
