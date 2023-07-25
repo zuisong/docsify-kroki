@@ -1,3 +1,9 @@
+export async function initPolyfill() {
+  await import(
+    "https://unpkg.com/compression-streams-polyfill@0.1.4/umd/index.js"
+  );
+}
+
 export async function zlib(data: Uint8Array): Promise<Uint8Array> {
   const compressionStream = new CompressionStream("deflate");
 
@@ -10,10 +16,7 @@ export async function zlib(data: Uint8Array): Promise<Uint8Array> {
   })
     .pipeThrough<Uint8Array>(compressionStream);
 
-  const chunks = [];
-  for await (const chunk of stream) {
-    chunks.push(chunk);
-  }
+  const chunks = await readData(stream);
 
   return mergeUint8Arrays(chunks);
 }
@@ -31,4 +34,18 @@ function mergeUint8Arrays(arrays: Uint8Array[]): Uint8Array {
   }
 
   return merged;
+}
+
+async function readData(stream: ReadableStream<Uint8Array>) {
+  const reader = stream.getReader();
+  const chunks = [];
+  while (true) {
+    const { done, value } = await reader.read();
+    if (value) {
+      chunks.push(value);
+    }
+    if (done) {
+      return chunks;
+    }
+  }
 }

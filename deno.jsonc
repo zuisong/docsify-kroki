@@ -17,7 +17,7 @@
   "lock": true,
   "tasks": {
     "build": "deno task clean && deno task fmt && deno task test-cov && deno task build-ts",
-    "build-ts": "deno run -A build.ts",
+    "build-ts": "deno run -A rollup.config.ts",
     "clean": "rm -rf dist/ coverage/",
     "fmt": "deno fmt",
     "test-cov": "deno test --coverage=coverage/json --node-modules-dir=false --no-check -A && deno coverage coverage/json --lcov --output=coverage/lcov.info"
@@ -56,9 +56,6 @@
       "*.md"
     ],
     "useTabs": false
-    // "semiColons": false,
-    // "singleQuote": true,
-    // "indentWidth": 2
   },
   "test": {
     "include": [
