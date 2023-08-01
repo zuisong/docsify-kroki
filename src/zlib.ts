@@ -1,12 +1,20 @@
-export async function initPolyfill() {
-  if (typeof CompressionStream === typeof undefined) {
-    await import(
-      "https://unpkg.com/compression-streams-polyfill@0.1.4/umd/index.js"
-    );
+import { zlibSync } from "esm.sh/fflate@0.8.0?exports=zlibSync";
+
+export async function zlib_fflate(data: Uint8Array): Promise<Uint8Array> {
+  return zlibSync(data, { level: 6 });
+}
+
+export function zlib(data: Uint8Array): Promise<Uint8Array> {
+  if (typeof CompressionStream !== typeof undefined) {
+    return zlib_CompressStream(data);
+  } else {
+    return zlib_fflate(data);
   }
 }
 
-export async function zlib(data: Uint8Array): Promise<Uint8Array> {
+export async function zlib_CompressStream(
+  data: Uint8Array,
+): Promise<Uint8Array> {
   const compressionStream = new CompressionStream("deflate");
 
   // 创建一个Readable Stream

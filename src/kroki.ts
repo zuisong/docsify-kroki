@@ -1,8 +1,8 @@
 import type { AsyncAfterEachHook, DocsifyPlugin } from "./types/docsify.ts";
 import type { DocsifyKrokiOption } from "./types/docsify-kroki.ts";
-import { initPolyfill, zlib } from "$/src/zlib.ts";
+import { zlib } from "$/src/zlib.ts";
 
-export function urlSafeBase64Encode(str: string) {
+function urlSafeBase64Encode(str: string) {
   return btoa(encodeURI(str));
 }
 
@@ -101,7 +101,11 @@ export async function replace(
     }
   }
 
-  await Promise.allSettled(fetaures);
+  await Promise.allSettled(fetaures).then((result) => {
+    result.filter((it) => it.status == "rejected").forEach((it) =>
+      console.error(it)
+    );
+  });
 
   return spanElement.innerHTML;
 }
@@ -152,7 +156,6 @@ export const docsifyKrokiPlugin: DocsifyPlugin = (hook, vm) => {
   hook.afterEach?.(
     ((content, next) => {
       (async () => {
-        await initPolyfill();
         const newContent = await replace(content, {
           ...defaultConfig,
           ...(vm?.config?.kroki) ?? {},

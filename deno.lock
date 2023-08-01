@@ -36,11 +36,12 @@
     "https://esm.sh/v129/@rollup/plugin-alias@5.0.0/denonext/plugin-alias.mjs": "430818aff5dedaff8ca49ae0551c151059934c94afe3891653f6a3d129c9f69b",
     "https://esm.sh/v129/fetch-mock@9.11.0/denonext/esm/client.bundle.js": "733d96fab847969631d5c5cc1173bbca7824d3dc1e918e6697ba78a32c4e215c",
     "https://esm.sh/v129/fetch-mock@9.11.0/esm/client.js?target=denonext&bundle": "aa23b0ec36a5959ae157930a8dff7c407961c3dccaa4812333a09c0adc247f4e",
+    "https://esm.sh/v129/fflate@0.8.0/X-dHMvemxpYlN5bmM/denonext/fflate.mjs": "4e194cb78f6fb08e23f7588dedd8909aa62f57826a4332e25a6e9e3bc7bb6698",
+    "https://esm.sh/v129/fflate@0.8.0?exports=zlibSync": "a58f639162aeb75459d3c6025ea4083c182b1ad7151827321a82e4acececbfc0",
     "https://esm.sh/v129/rollup@3.26.3/denonext/rollup.bundle.mjs": "e94c21abd19ef4a8b8bff96ced9d3919f725deb5aca8807fd8d1015d9d26bb9d",
     "https://esm.sh/v129/rollup@3.26.3?bundle": "721bae241aa7f88057da2b72971f7ff477eab101a0754c2d7b5e76c5f013b5dd",
     "https://esm.sh/v129/terser@5.19.2/denonext/terser.bundle.mjs": "2e547946f90b000cad740ae1a241a2cc19efc7432e45590d9f1c428193a89f66",
-    "https://esm.sh/v129/terser@5.19.2?bundle": "4260ebb3fd4cbef89387dc27321268e9bdfbf8ef3045e108b08ca3d765a3f7bd",
-    "https://unpkg.com/compression-streams-polyfill@0.1.4/umd/index.js": "a1eb7c3f6d919886b80d3f97034fd2af50b9e8c40b20fcbda738c0197895c48b"
+    "https://esm.sh/v129/terser@5.19.2?bundle": "4260ebb3fd4cbef89387dc27321268e9bdfbf8ef3045e108b08ca3d765a3f7bd"
   },
   "npm": {
     "specifiers": {
