@@ -1,26 +1,7 @@
 import type { Plugin } from "esm.sh/rollup@3.26.3?bundle";
-
-import { dirname } from "node:path";
+import { dirname, join } from "node:path";
 import { pathToFileURL } from "node:url";
-
-//////***** */
-export type MediaType =
-  | "Cjs"
-  | "Cts"
-  | "Dcts"
-  | "Dmts"
-  | "Dts"
-  | "JavaScript"
-  | "Json"
-  | "JSX"
-  | "Mjs"
-  | "Mts"
-  | "SourceMap"
-  | "TsBuildInfo"
-  | "TSX"
-  | "TypeScript"
-  | "Unknown"
-  | "Wasm";
+import resolve from "esm.sh/@jridgewell/resolve-uri@3.1.1";
 
 export interface ESModule {
   dependencies?: {
@@ -37,7 +18,6 @@ export interface ESModule {
   kind: "esm";
   local: string;
   map: string | null;
-  mediaType: MediaType;
   size: number;
   specifier: string;
 }
@@ -69,7 +49,6 @@ export type ModuleCache = Map<string, Module>;
 
 const URL_NAMESPACE = "@url/";
 const FILE_IMPORT = /^(\.?\/)/;
-const HTTP_IMPORT_REGEX = /from ("|')(https?:\/\/.+)("|')/g;
 const HANDLED_SPECIFIERS = /^(https?|file|\.\/|\/)/;
 
 function toURLNamespace(specifier: URL) {
@@ -89,16 +68,20 @@ function toURL(specifier?: string, file?: string): URL | undefined {
     return undefined;
   }
 
-  if (FILE_IMPORT.exec(parsedSpecifier)) {
-    return fileURL
-      ? new URL(
-        (fileURL + parsedSpecifier.replace("./", "/")).replaceAll("//", "/"),
-      )
-      : pathToFileURL(parsedSpecifier);
+  if (
+    FILE_IMPORT.exec(parsedSpecifier) && !fileURL?.protocol?.startsWith("http")
+  ) {
+    if (!fileURL) {
+      return pathToFileURL(parsedSpecifier);
+    }
+
+    return new URL(
+      join(fileURL.toString(), parsedSpecifier),
+    );
   }
 
   try {
-    return new URL(parsedSpecifier);
+    return new URL(resolve(parsedSpecifier, fileURL?.toString()));
   } catch (_) {
     return undefined;
   }
@@ -121,22 +104,6 @@ export default function httpsResolve(): Plugin {
 
   return {
     name: "url-resolve",
-    transform(code: string) {
-      if (code.indexOf("from 'http") === -1) {
-        return;
-      }
-
-      // We want to prepend any https imports with "deno:" so it can be picked
-      // up by resolvedId(), else it skips it entirely and is loaded as native esm.
-      const replaced = code.replaceAll(
-        HTTP_IMPORT_REGEX,
-        (str) => {
-          return str.replace("from '", "from '" + URL_NAMESPACE);
-        },
-      );
-
-      return replaced;
-    },
 
     async resolveId(importee: string, importer: string | undefined) {
       const importURL = toURL(importee, importer);
@@ -168,8 +135,6 @@ export default function httpsResolve(): Plugin {
     },
   };
 }
-
-/* */
 
 export function createDeno(
   { cacheCache, infoCache, moduleCache, tempDirectory }: PluginConfig,

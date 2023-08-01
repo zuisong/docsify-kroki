@@ -1,9 +1,10 @@
 {
   "imports": {
     "deno_std/": "https://deno.land/std@0.196.0/",
-    "esm.sh/": "https://esm.sh/v129/",
+    "esm.sh/": "https://esm.sh/v130/",
     "$/": "./"
   },
+  "scopes": {},
   "compilerOptions": {
     "allowJs": true,
     "strict": true,

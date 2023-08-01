@@ -1,5 +1,6 @@
 import { zlibSync } from "esm.sh/fflate@0.8.0?exports=zlibSync";
 
+// deno-lint-ignore require-await
 export async function zlib_fflate(data: Uint8Array): Promise<Uint8Array> {
   return zlibSync(data, { level: 6 });
 }
