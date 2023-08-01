@@ -1,7 +1,9 @@
 export async function initPolyfill() {
-  await import(
-    "https://unpkg.com/compression-streams-polyfill@0.1.4/umd/index.js"
-  );
+  if (typeof CompressionStream === typeof undefined) {
+    await import(
+      "https://unpkg.com/compression-streams-polyfill@0.1.4/umd/index.js"
+    );
+  }
 }
 
 export async function zlib(data: Uint8Array): Promise<Uint8Array> {

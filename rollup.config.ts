@@ -3,7 +3,7 @@ import {
   type RollupOptions,
   type SourceMapInput,
 } from "esm.sh/rollup@3.26.3?bundle";
-import { transform } from "npm:@swc/wasm@1.3.71";
+import { transform } from "npm:@swc/wasm@1.3.73";
 import { minify } from "esm.sh/terser@5.19.2?bundle";
 import { default as alias } from "esm.sh/@rollup/plugin-alias@5.0.0";
 const __dirname = new URL(".", import.meta.url).pathname;
@@ -38,7 +38,8 @@ const config: RollupOptions = {
             },
           },
           env: {
-            targets: ["supports es6-module-dynamic-import"],
+            // mode: "usage",
+            targets: ["chrome >= 70"],
           },
           sourceMaps: true,
         }),

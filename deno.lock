@@ -45,7 +45,7 @@
   "npm": {
     "specifiers": {
       "@happy-dom/global-registrator@10.5.2": "@happy-dom/global-registrator@10.5.2",
-      "@swc/wasm@1.3.71": "@swc/wasm@1.3.71"
+      "@swc/wasm@1.3.73": "@swc/wasm@1.3.73"
     },
     "packages": {
       "@happy-dom/global-registrator@10.5.2": {
@@ -54,8 +54,8 @@
           "happy-dom": "happy-dom@10.5.2"
         }
       },
-      "@swc/wasm@1.3.71": {
-        "integrity": "sha512-SF2xKebLgcKDvr30NeBlPYANSttfx2bFHenUfEOzkPe2clnvbOiED/FRj8dTd53GNXhUmmhksfZHAMgInKpBsg==",
+      "@swc/wasm@1.3.73": {
+        "integrity": "sha512-jpYN+J0WQkzET0Y9tk8fTgVr4JFzFoy9bmd4WdbfgCYEgiva3ANcRUMtyLZDXFZz5RpracHeRx1Q/7DzZAhuSA==",
         "dependencies": {}
       },
       "css.escape@1.5.1": {
