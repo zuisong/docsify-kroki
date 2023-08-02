@@ -4,7 +4,7 @@ import { init } from "$/test/common/dom-env-init.ts";
 import { generateRandomString } from "$/test/common/randomstring.ts";
 import { sleep } from "$/test/utils.ts";
 import { fetchMock } from "$/test/deno_mock_fetch.ts";
-import * as asserts from "deno_std/assert/mod.ts";
+import * as asserts from "$/test/common/asserts.ts";
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 
 beforeEach(() => {

@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { sleep } from "$/test/utils.ts";
-import * as asserts from "deno_std/assert/mod.ts";
+import * as asserts from "$/test/common/asserts.ts";
 import { init, tearDown } from "$/test/common/dom-env-init.ts";
 import { replace } from "$/src/kroki.ts";
 import { AsyncAfterEachHook, DocsifyVM, Hooks } from "$/src/types/docsify.ts";

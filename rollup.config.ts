@@ -7,10 +7,10 @@ import {
 import { transform } from "npm:@swc/wasm@1.3.73";
 import { minify } from "esm.sh/terser@5.19.2?bundle";
 import httpsResolve from "$/rollup-plugin-url-resolve.ts";
-import { Any } from "$/test/common/dom-env-init.ts";
 
 import * as JSONC from "deno_std/jsonc/mod.ts";
 import { importMapResolve } from "$/rollup-plugin-import-maps.ts";
+import { Any } from "$/test/utils.ts";
 
 const { imports, scopes } = JSONC.parse(
   Deno.readTextFileSync("./deno.jsonc"),

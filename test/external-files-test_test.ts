@@ -1,4 +1,4 @@
-import * as asserts from "deno_std/assert/mod.ts";
+import * as asserts from "$/test/common/asserts.ts";
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { sleep } from "$/test/utils.ts";
 

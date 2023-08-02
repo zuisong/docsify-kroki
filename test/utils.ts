@@ -3,3 +3,5 @@ export function sleep(ms: number): Promise<void> {
     setTimeout(res, ms);
   });
 }
+
+export type Any = Parameters<typeof console.log>[0];

@@ -1,5 +1,5 @@
 import { beforeEach, it } from "deno_std/testing/bdd.ts";
-import * as asserts from "deno_std/assert/mod.ts";
+import * as asserts from "$/test/common/asserts.ts";
 import { init } from "$/test/common/dom-env-init.ts";
 import { defaultConfig, plant, replace } from "$/src/kroki.ts";
 
