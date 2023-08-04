@@ -1,7 +1,7 @@
 import path from "node:path";
-import { type Plugin } from "esm.sh/rollup@3.26.3?bundle";
+import { importMapsResolve, rollup } from "$/deps.ts";
 import { fileURLToPath, pathToFileURL, URL } from "node:url";
-import * as importMapsResolve from "esm.sh/@import-maps/resolve@2.0.0";
+
 const {
   parse,
   resolve,
@@ -56,7 +56,9 @@ function normalizeBaseUrl(baseUrl: string | URL) {
   return convertToUrl(baseUrl);
 }
 
-export const importMapResolve = (options: ImportMapResolveOptions): Plugin => {
+export const importMapResolve = (
+  options: ImportMapResolveOptions,
+): rollup.Plugin => {
   const baseUrl = normalizeBaseUrl(options?.baseUrl ?? "./");
   const importMap = parse(options?.importMap || {}, baseUrl);
 

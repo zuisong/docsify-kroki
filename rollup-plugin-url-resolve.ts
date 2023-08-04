@@ -1,7 +1,6 @@
-import type { Plugin } from "esm.sh/rollup@3.26.3?bundle";
+import { resolve, rollup } from "$/deps.ts";
 import { dirname, join } from "node:path";
 import { pathToFileURL } from "node:url";
-import resolve from "esm.sh/@jridgewell/resolve-uri@3.1.1";
 
 export interface ESModule {
   dependencies?: {
@@ -87,7 +86,7 @@ function toURL(specifier?: string, file?: string): URL | undefined {
   }
 }
 
-export default function httpsResolve(): Plugin {
+export default function httpsResolve(): rollup.Plugin {
   const cacheCache = new Map<string, true>();
   const moduleCache = new Map<string, Module>();
   const infoCache = new Map<string, ModuleInfo>();

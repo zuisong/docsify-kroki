@@ -6,10 +6,6 @@ function urlSafeBase64Encode(str: string) {
   return btoa(encodeURI(str));
 }
 
-function textEncode(str: string) {
-  return new TextEncoder().encode(str);
-}
-
 const contentType = "image/svg+xml";
 
 async function plantWithPost(
@@ -35,8 +31,7 @@ export async function plant(
   config: DocsifyKrokiOption,
 ): Promise<string> {
   const urlPrefix = `${config?.serverPath + type}/svg/`;
-  const data: Uint8Array = textEncode(content);
-  const compressed: string = strFromU8(await zlib(data));
+  const compressed: string = await zlib(content);
   const result: string = btoa(compressed)
     .replace(/\+/g, "-")
     .replace(/\//g, "_");
@@ -165,12 +160,3 @@ export const docsifyKrokiPlugin: DocsifyPlugin = (hook, vm) => {
     }) as AsyncAfterEachHook,
   );
 };
-
-function strFromU8(dat: Uint8Array): string {
-  const s = 2 ** 14;
-  const chunks = [];
-  for (let i = 0; i < dat.length; i += s) {
-    chunks.push(String.fromCharCode(...dat.subarray(i, i + s)));
-  }
-  return chunks.join("");
-}

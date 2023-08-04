@@ -1,22 +1,15 @@
-import {
-  type Plugin,
-  rollup,
-  type RollupOptions,
-  type SourceMapInput,
-} from "esm.sh/rollup@3.26.3?bundle";
-import { transform } from "npm:@swc/wasm@1.3.73";
-import { minify } from "esm.sh/terser@5.19.2?bundle";
 import httpsResolve from "$/rollup-plugin-url-resolve.ts";
 
 import * as JSONC from "deno_std/jsonc/mod.ts";
 import { importMapResolve } from "$/rollup-plugin-import-maps.ts";
 import { Any } from "$/test/utils.ts";
+import { minify, rollup, swc_wasm } from "$/deps.ts";
 
 const { imports, scopes } = JSONC.parse(
   Deno.readTextFileSync("./deno.jsonc"),
 ) as Any;
 
-const config: RollupOptions = {
+const config: rollup.RollupOptions = {
   input: { "docsify-kroki": `./src/index.ts` },
   output: {
     sourcemap: true,
@@ -27,11 +20,11 @@ const config: RollupOptions = {
     httpsResolve(),
     importMapResolve({
       importMap: { imports, scopes },
-    }) satisfies Plugin,
+    }),
     {
       name: "swc",
       transform: (code) =>
-        transform(code, {
+        swc_wasm.transform(code, {
           minify: true,
           jsc: {
             externalHelpers: false,
@@ -58,12 +51,12 @@ const config: RollupOptions = {
         minify(rawCode, {
           sourceMap: true,
           mangle: true,
-        }) as Promise<{ code: string; map?: SourceMapInput }>,
+        }) as Promise<{ code: string; map?: rollup.SourceMapInput }>,
     },
-  ],
+  ] satisfies rollup.Plugin[],
   external: [],
 };
 
-const bundle = await rollup(config);
+const bundle = await rollup.rollup(config);
 const output = config.output!;
 await bundle.write(Array.isArray(output) ? output[0] : output);

@@ -1,19 +1,33 @@
 import { zlibSync } from "esm.sh/fflate@0.8.0?exports=zlibSync";
 
+function textEncode(str: string) {
+  return new TextEncoder().encode(str);
+}
+
+function strFromU8(dat: Uint8Array): string {
+  const s = 2 ** 14;
+  const chunks = [];
+  for (let i = 0; i < dat.length; i += s) {
+    chunks.push(String.fromCharCode(...dat.subarray(i, i + s)));
+  }
+  return chunks.join("");
+}
+
 // deno-lint-ignore require-await
-export async function zlib_fflate(data: Uint8Array): Promise<Uint8Array> {
+async function zlib_fflate(data: Uint8Array): Promise<Uint8Array> {
   return zlibSync(data, { level: 6 });
 }
 
-export function zlib(data: Uint8Array): Promise<Uint8Array> {
-  if (typeof CompressionStream !== typeof undefined) {
-    return zlib_CompressStream(data);
-  } else {
-    return zlib_fflate(data);
-  }
+export async function zlib(str: string): Promise<string> {
+  const data = textEncode(str);
+  const res = (typeof CompressionStream !== typeof undefined)
+    ? zlib_CompressStream(data)
+    : zlib_fflate(data);
+
+  return strFromU8(await res);
 }
 
-export async function zlib_CompressStream(
+async function zlib_CompressStream(
   data: Uint8Array,
 ): Promise<Uint8Array> {
   const compressionStream = new CompressionStream("deflate");

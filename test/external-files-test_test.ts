@@ -2,10 +2,9 @@ import * as asserts from "$/test/common/asserts.ts";
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { sleep } from "$/test/utils.ts";
 
-import { fetchMock } from "$/test/deno_mock_fetch.ts";
-
 import { init } from "$/test/common/dom-env-init.ts";
 import type { DocsifyVM, Hooks } from "$/src/types/docsify.ts";
+import { fetchMock } from "$/deps.ts";
 
 beforeEach(() => {
   init();
@@ -16,7 +15,7 @@ afterEach(() => {
 });
 
 it("from external files", async () => {
-  fetchMock.mock({ method: "GET", url: "https://api.com/v1/apples" }, {
+  fetchMock.mock("https://api.com/v1/apples", {
     body: `graph TD
   A[ Anyone ] -->|Can help | B( Go to github.com/yuzutech/kroki )
   B --> C{ How to contribute? }
@@ -52,10 +51,10 @@ it("from external files", async () => {
 });
 
 it("from external files with a error", async () => {
-  fetchMock.mock({
-    url: "https://httpbin.errordomain/status/404",
-    method: "GET",
-  }, () => Promise.reject(new Error("from external files with a error link")));
+  fetchMock.mock(
+    "https://httpbin.errordomain/status/404",
+    () => Promise.reject(new Error("from external files with a error link")),
+  );
 
   const imageSrc = `<img src="https://httpbin.errordomain/status/404"
   alt="kroki-mermaid">`;
