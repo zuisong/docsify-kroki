@@ -1,7 +1,7 @@
 import { beforeEach, it } from "deno_std/testing/bdd.ts";
-import * as asserts from "$/test/common/asserts.ts";
 import { init } from "$/test/common/dom-env-init.ts";
 import { defaultConfig, plant, replace } from "$/src/kroki.ts";
+import { assertEquals } from "deno_std/assert/assert_equals.ts";
 
 beforeEach(() => {
   init();
@@ -541,7 +541,7 @@ rackdiag {
 
 `;
   console.log(result);
-  asserts.assertEquals(result, expectResult);
+  assertEquals(result, expectResult);
 });
 
 it("plant", async () => {
@@ -570,5 +570,5 @@ Rel(banking_system, mainframe, "Uses")
   const expectResult =
     `<object type="image/svg+xml" data="//kroki.io/plantuml/svg/eJx8Ur1uwjAQ3vMUVyYqUaY-AAUxdKBChc6RMZfEwrGR7yLo2_dinBAEZYvP3999cTYjVoGb2mYvxmnb7BEW7_nCO8YzT4_tRcaGLcLmlxhrSFewN6oMqobCB_iUUXDIMFfuYFyZsFm2xkDejXVD7GsMExh1iEUajWT2AR0AfAFcIewENYGT4QqOUULZOAOltW8c03T0ml1MxruLYk7xKHL_pIlO1voT9XYE7EFXqA-tqwk38kk_X555XCtjrwbLt_YM1MtuJbKJrpJzZXTw5AuG5VlXypUIOCRco3fSrpAiUXRW3feD6Bv2AQmUtV1JWgaQthd7-RG1YuNdDP-NdlD7XUc_hCQwQeVzpQ8D6O2qG3R7SvnbthLnC01Z7Xy4K_8JOy6x2q4vEo-YfQ8p3Uzo7QME-AMAAP__AwANee2y" />`;
 
-  asserts.assertEquals(result, expectResult);
+  assertEquals(result, expectResult);
 });

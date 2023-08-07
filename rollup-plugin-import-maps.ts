@@ -2,10 +2,7 @@ import path from "node:path";
 import { importMapsResolve, rollup } from "$/deps.ts";
 import { fileURLToPath, pathToFileURL, URL } from "node:url";
 
-const {
-  parse,
-  resolve,
-} = importMapsResolve;
+const { parse, resolve } = importMapsResolve;
 interface ImportMapResolveOptions {
   /**
    * Base URL used when resolving any relative-URL-like address in the import map. The "address" is

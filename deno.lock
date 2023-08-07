@@ -23,8 +23,6 @@
     "https://esm.sh/v130/fetch-mock@9.11.0/esm/client.js?target=denonext&bundle": "324064832d198fc7f5d07c61611ffdef9ccdf0fe9535cc29e5ac7936d8203c3a",
     "https://esm.sh/v130/fflate@0.8.0/X-dHMvemxpYlN5bmM/denonext/fflate.mjs": "4e194cb78f6fb08e23f7588dedd8909aa62f57826a4332e25a6e9e3bc7bb6698",
     "https://esm.sh/v130/fflate@0.8.0?exports=zlibSync": "6fc223fe0cd5f3e3a87be61e4fc850cfd6ae08a790eddb1b256f5aa830467bfe",
-    "https://esm.sh/v130/hungry-fetch@0.9.2/denonext/hungry-fetch.bundle.mjs": "e5cbb03f10b5140e03fea423dd146492ec3f11fee3fd5ff0522778940c4237d5",
-    "https://esm.sh/v130/hungry-fetch@0.9.2?bundle": "9cc58eeb05c75e41febbd47aa024671efddfd1db091e750970ff4c83c4f1a24e",
     "https://esm.sh/v130/rollup@3.27.1/denonext/rollup.bundle.mjs": "9f8bf99d4d1f6cd9ef4fde8d3ffaad41c507190d47c27a9c5a26caae1d2470e4",
     "https://esm.sh/v130/rollup@3.27.1?bundle": "aed767c9898dae1c655e4b66c70cb273e616f9f30e1be5114a7f983f78f4fff4",
     "https://esm.sh/v130/terser@5.19.2/denonext/terser.bundle.mjs": "2e547946f90b000cad740ae1a241a2cc19efc7432e45590d9f1c428193a89f66",

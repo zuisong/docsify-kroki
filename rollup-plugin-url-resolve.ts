@@ -68,15 +68,14 @@ function toURL(specifier?: string, file?: string): URL | undefined {
   }
 
   if (
-    FILE_IMPORT.exec(parsedSpecifier) && !fileURL?.protocol?.startsWith("http")
+    FILE_IMPORT.exec(parsedSpecifier) &&
+    !fileURL?.protocol?.startsWith("http")
   ) {
     if (!fileURL) {
       return pathToFileURL(parsedSpecifier);
     }
 
-    return new URL(
-      join(fileURL.toString(), parsedSpecifier),
-    );
+    return new URL(join(fileURL.toString(), parsedSpecifier));
   }
 
   try {
@@ -107,9 +106,7 @@ export default function httpsResolve(): rollup.Plugin {
     async resolveId(importee: string, importer: string | undefined) {
       const importURL = toURL(importee, importer);
 
-      if (
-        !importURL || importURL.protocol === "file:"
-      ) {
+      if (!importURL || importURL.protocol === "file:") {
         return null;
       }
 
@@ -135,9 +132,12 @@ export default function httpsResolve(): rollup.Plugin {
   };
 }
 
-export function createDeno(
-  { cacheCache, infoCache, moduleCache, tempDirectory }: PluginConfig,
-) {
+export function createDeno({
+  cacheCache,
+  infoCache,
+  moduleCache,
+  tempDirectory,
+}: PluginConfig) {
   async function cache(name: string | URL): Promise<void> {
     const nameStr = name.toString();
 
@@ -149,10 +149,7 @@ export function createDeno(
     }
 
     const p = new Deno.Command(Deno.execPath(), {
-      args: [
-        "cache",
-        nameStr,
-      ],
+      args: ["cache", nameStr],
       cwd: tempDirectory,
       stdout: "inherit",
     });
@@ -188,11 +185,7 @@ export function createDeno(
     }
 
     const p = new Deno.Command(Deno.execPath(), {
-      args: [
-        "info",
-        nameStr,
-        "--json",
-      ],
+      args: ["info", nameStr, "--json"],
       stdout: "piped",
       stderr: "piped",
       cwd: tempDirectory,

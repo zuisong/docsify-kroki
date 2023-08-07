@@ -1,9 +1,9 @@
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { sleep } from "$/test/utils.ts";
-import * as asserts from "$/test/common/asserts.ts";
 import { init, tearDown } from "$/test/common/dom-env-init.ts";
 import { replace } from "$/src/kroki.ts";
 import { AsyncAfterEachHook, DocsifyVM, Hooks } from "$/src/types/docsify.ts";
+import { assertEquals } from "deno_std/assert/assert_equals.ts";
 
 beforeEach(() => {
   init();
@@ -50,7 +50,7 @@ A -> B
     config,
   );
 
-  asserts.assertEquals(
+  assertEquals(
     res,
     '<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eJziciguSSwqKc3N4XJU0LVTcOJySM1LAXEBAAAA__8DAGvNB9g="></object></p>',
   );
@@ -83,7 +83,7 @@ A -> B
   // wait for fetch data
   await sleep(100);
 
-  asserts.assertEquals(
+  assertEquals(
     document.body?.innerHTML.trim(),
     '<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eJziciguSSwqKc3N4XJU0LVTcOJySM1LAXEBAAAA__8DAGvNB9g="></object></p>',
   );

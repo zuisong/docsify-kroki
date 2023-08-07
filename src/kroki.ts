@@ -58,10 +58,7 @@ export async function replace(
       if (element instanceof HTMLElement) {
         const promise = plant(element.textContent!, LANG, config).then(
           (graphStr) => {
-            const planted: HTMLParagraphElement = create(
-              "p",
-              graphStr,
-            );
+            const planted: HTMLParagraphElement = create("p", graphStr);
             planted.dataset.lang = LANG;
             element.parentNode?.replaceChild(planted, element);
           },
@@ -82,10 +79,7 @@ export async function replace(
           .then((it) => it.text())
           .then((code) => plant(code, LANG, config))
           .then((graphStr) => {
-            const planted: HTMLParagraphElement = create(
-              "p",
-              graphStr,
-            );
+            const planted: HTMLParagraphElement = create("p", graphStr);
             if (parent) {
               planted.dataset.lang = LANG;
               parent.replaceChild(planted, element);
@@ -97,9 +91,9 @@ export async function replace(
   }
 
   await Promise.allSettled(fetaures).then((result) => {
-    result.filter((it) => it.status == "rejected").forEach((it) =>
-      console.error(it)
-    );
+    result
+      .filter((it) => it.status == "rejected")
+      .forEach((it) => console.error(it));
   });
 
   return spanElement.innerHTML;
@@ -153,7 +147,7 @@ export const docsifyKrokiPlugin: DocsifyPlugin = (hook, vm) => {
       (async () => {
         const newContent = await replace(content, {
           ...defaultConfig,
-          ...(vm?.config?.kroki) ?? {},
+          ...(vm?.config?.kroki ?? {}),
         });
         next(newContent);
       })();

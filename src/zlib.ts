@@ -20,16 +20,14 @@ async function zlib_fflate(data: Uint8Array): Promise<Uint8Array> {
 
 export async function zlib(str: string): Promise<string> {
   const data = textEncode(str);
-  const res = (typeof CompressionStream !== typeof undefined)
+  const res = typeof CompressionStream !== typeof undefined
     ? zlib_CompressStream(data)
     : zlib_fflate(data);
 
   return strFromU8(await res);
 }
 
-async function zlib_CompressStream(
-  data: Uint8Array,
-): Promise<Uint8Array> {
+async function zlib_CompressStream(data: Uint8Array): Promise<Uint8Array> {
   const compressionStream = new CompressionStream("deflate");
 
   // 创建一个Readable Stream
@@ -38,8 +36,7 @@ async function zlib_CompressStream(
       controller.enqueue(data);
       controller.close();
     },
-  })
-    .pipeThrough<Uint8Array>(compressionStream);
+  }).pipeThrough<Uint8Array>(compressionStream);
 
   const chunks = await readData(stream);
 
@@ -47,9 +44,7 @@ async function zlib_CompressStream(
 }
 
 function mergeUint8Arrays(arrays: Uint8Array[]): Uint8Array {
-  const totalSize = arrays
-    .map((it) => it.length)
-    .reduce((a, b) => a + b, 0);
+  const totalSize = arrays.map((it) => it.length).reduce((a, b) => a + b, 0);
 
   const merged = new Uint8Array(totalSize);
   let offset = 0;

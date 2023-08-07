@@ -23,9 +23,7 @@ export interface Hooks {
   // For asynchronous tasks, the hook function accepts a next callback as a second argument.
   // Call this function with the final markdown value when ready.
   // To prevent errors from affecting docsify and other plugins, wrap async code in a try/catch/finally block.
-  afterEach?(
-    afterEachHook: AsyncAfterEachHook,
-  ): void;
+  afterEach?(afterEachHook: AsyncAfterEachHook): void;
 
   // Invoked on each page load after new HTML has been appended to the DOM
   doneEach?(doneEachHook: () => void): void;
