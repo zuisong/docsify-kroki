@@ -1,5 +1,5 @@
 import { delay } from "deno_std/async/delay.ts";
-import { GlobalRegistrator } from "npm:@happy-dom/global-registrator@10.5.2";
+import { GlobalRegistrator } from "npm:@happy-dom/global-registrator@10.8.0";
 import { Any } from "$/test/utils.ts";
 
 export async function init() {

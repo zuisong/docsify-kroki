@@ -1,6 +1,5 @@
-import { resolve, rollup } from "$/deps.ts";
-import { dirname, join } from "node:path";
-import { pathToFileURL } from "node:url";
+import { rollup } from "$/deps.ts";
+import { dirname, join } from "deno_std/path/mod.ts";
 
 export interface ESModule {
   dependencies?: {
@@ -72,14 +71,14 @@ function toURL(specifier?: string, file?: string): URL | undefined {
     !fileURL?.protocol?.startsWith("http")
   ) {
     if (!fileURL) {
-      return pathToFileURL(parsedSpecifier);
+      return new URL(import.meta.resolve(parsedSpecifier));
     }
 
     return new URL(join(fileURL.toString(), parsedSpecifier));
   }
 
   try {
-    return new URL(resolve(parsedSpecifier, fileURL?.toString()));
+    return new URL(parsedSpecifier, fileURL?.toString());
   } catch (_) {
     return undefined;
   }
