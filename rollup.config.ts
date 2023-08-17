@@ -12,9 +12,11 @@ const { imports, scopes } = JSONC.parse(
 const config: rollup.RollupOptions = {
   input: { "docsify-kroki": `./src/index.ts` },
   output: {
+    inlineDynamicImports: true,
     sourcemap: true,
+    exports: "none",
     dir: "dist",
-    format: "module",
+    format: "es",
   },
   plugins: [
     httpsResolve(),
@@ -40,7 +42,7 @@ const config: rollup.RollupOptions = {
           },
           env: {
             // mode: "usage",
-            targets: ["chrome >= 70"],
+            targets: ["chrome >= 80", "firefox >= 80"],
           },
           sourceMaps: true,
         }),
