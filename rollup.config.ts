@@ -1,7 +1,7 @@
 import httpsResolve from "$/rollup-plugin-url-resolve.ts";
 
 import * as JSONC from "deno_std/jsonc/mod.ts";
-import { importMapResolve } from "$/rollup-plugin-import-maps.ts";
+import { importMapResolvePlugin } from "$/rollup-plugin-import-maps.ts";
 import { Any } from "$/test/utils.ts";
 import { minify, rollup, swc_wasm } from "$/deps.ts";
 
@@ -18,7 +18,7 @@ const config: rollup.RollupOptions = {
   },
   plugins: [
     httpsResolve(),
-    importMapResolve({
+    importMapResolvePlugin({
       importMap: { imports, scopes },
     }),
     {

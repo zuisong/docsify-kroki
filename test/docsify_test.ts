@@ -52,7 +52,7 @@ A -> B
 
   assertEquals(
     res,
-    '<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eJziciguSSwqKc3N4XJU0LVTcOJySM1LAXEBAAAA__8DAGvNB9g="></object></p>',
+    '<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eNrjciguSSwqKc3N4XJU0LVTcOJySM1LAXEBa80H2A=="></object></p>',
   );
 });
 
@@ -85,6 +85,6 @@ A -> B
 
   assertEquals(
     document.body?.innerHTML.trim(),
-    '<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eJziciguSSwqKc3N4XJU0LVTcOJySM1LAXEBAAAA__8DAGvNB9g="></object></p>',
+    '<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eNrjciguSSwqKc3N4XJU0LVTcOJySM1LAXEBa80H2A=="></object></p>',
   );
 });

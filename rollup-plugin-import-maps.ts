@@ -1,8 +1,8 @@
-import path from "node:path";
 import { importMapsResolve, rollup } from "$/deps.ts";
-import { fileURLToPath, pathToFileURL, URL } from "node:url";
+import { isAbsolute } from "deno_std/path/is_absolute.ts";
+import { toFileUrl } from "deno_std/path/to_file_url.ts";
+import { resolve } from "deno_std/path/resolve.ts";
 
-const { parse, resolve } = importMapsResolve;
 interface ImportMapResolveOptions {
   /**
    * Base URL used when resolving any relative-URL-like address in the import map. The "address" is
@@ -31,8 +31,8 @@ function convertToUrl(pathOrUrl: string) {
   // be parsed as a URL first. If the given value is an absolute Windows path, then new URL(baseUrl)
   // succeeds with a URL that has a protocol equal to the Windows drive letter, which is not what we
   // want.
-  if (path.isAbsolute(pathOrUrl)) {
-    return pathToFileURL(pathOrUrl);
+  if (isAbsolute(pathOrUrl)) {
+    return toFileUrl(pathOrUrl);
   }
 
   // Next see if the given value is a valid URL. If so, use it as is.
@@ -41,7 +41,7 @@ function convertToUrl(pathOrUrl: string) {
   } catch {
     // Assume it's some sort of relative file system path. pathToFileURL will automatically resolve
     // it absolutely for us.
-    return pathToFileURL(pathOrUrl);
+    return new URL(import.meta.resolve(pathOrUrl));
   }
 }
 
@@ -53,11 +53,11 @@ function normalizeBaseUrl(baseUrl: string | URL) {
   return convertToUrl(baseUrl);
 }
 
-export const importMapResolve = (
+export const importMapResolvePlugin = (
   options: ImportMapResolveOptions,
 ): rollup.Plugin => {
   const baseUrl = normalizeBaseUrl(options?.baseUrl ?? "./");
-  const importMap = parse(options?.importMap || {}, baseUrl);
+  const importMap = importMapsResolve.parse(options?.importMap || {}, baseUrl);
 
   return {
     name: "import-map-resolve",
@@ -71,7 +71,11 @@ export const importMapResolve = (
       // module is a top-level entry point into the module graph, so set the script URL to the base
       // URL of the import map.
       const scriptUrl = importer ? convertToUrl(importer) : baseUrl;
-      const { resolvedImport, matched } = resolve(source, importMap, scriptUrl);
+      const { resolvedImport, matched } = importMapsResolve.resolve(
+        source,
+        importMap,
+        scriptUrl,
+      );
 
       // console.log('source', source, 'importer', importer, 'resolvedImport', resolvedImport?.href, 'matched', matched);
 
@@ -80,7 +84,10 @@ export const importMapResolve = (
       }
 
       if (resolvedImport?.protocol === "file:") {
-        return { id: fileURLToPath(resolvedImport!.href), external: false };
+        return {
+          id: resolve(resolvedImport!.pathname),
+          external: false,
+        };
       } else {
         return { id: resolvedImport!.href, external: false };
       }

@@ -1,6 +1,6 @@
 {
   "imports": {
-    "deno_std/": "https://deno.land/std@0.197.0/",
+    "deno_std/": "https://deno.land/std@0.198.0/",
     "esm.sh/": "https://esm.sh/v130/",
     "$/": "./"
   },
@@ -15,7 +15,7 @@
       "deno.ns"
     ]
   },
-  "lock": true,
+  "lock": false,
   "tasks": {
     "build": "deno task clean && deno task fmt && deno task test-cov && deno task build-ts",
     "build-ts": "deno run -A rollup.config.ts",

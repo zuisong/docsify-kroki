@@ -42,6 +42,6 @@ A -> B
 
   assertEquals(
     document.body?.innerHTML.trim(),
-    '<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eJzjciguSSwqKc3N4XJU0LVTcOJySM1LAXEBa80H2A=="></object></p>',
+    '<p data-lang="plantuml"><object type="image/svg+xml" data="//kroki.io/plantuml/svg/eNrjciguSSwqKc3N4XJU0LVTcOJySM1LAXEBa80H2A=="></object></p>',
   );
 });
