@@ -1,3 +1,5 @@
+import { zlibSync } from "esm.sh/fflate@0.8.0";
+
 function textEncode(str: string) {
   return new TextEncoder().encode(str);
 }
@@ -12,7 +14,6 @@ function strFromU8(dat: Uint8Array): string {
 }
 
 async function zlib_fflate(data: Uint8Array): Promise<Uint8Array> {
-  const { zlibSync } = await import("esm.sh/fflate@0.8.0?exports=zlibSync");
   return zlibSync(data, { level: 9 });
 }
 

@@ -1,6 +1,6 @@
 import type { AsyncAfterEachHook, DocsifyPlugin } from "./types/docsify.ts";
 import type { DocsifyKrokiOption } from "./types/docsify-kroki.ts";
-import { zlib } from "$/src/zlib.ts";
+import { zlib } from "./zlib.ts";
 
 function urlSafeBase64Encode(str: string) {
   return btoa(encodeURI(str));

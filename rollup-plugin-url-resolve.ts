@@ -1,5 +1,6 @@
 import { rollup } from "$/deps.ts";
-import { dirname, join } from "deno_std/path/mod.ts";
+import { dirname } from "deno_std/path/dirname.ts";
+import { join } from "deno_std/path/join.ts";
 
 export interface ESModule {
   dependencies?: {

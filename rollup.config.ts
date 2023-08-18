@@ -3,7 +3,7 @@ import httpsResolve from "$/rollup-plugin-url-resolve.ts";
 import * as JSONC from "deno_std/jsonc/mod.ts";
 import { importMapResolvePlugin } from "$/rollup-plugin-import-maps.ts";
 import { Any } from "$/test/utils.ts";
-import { minify, rollup, swc_wasm } from "$/deps.ts";
+import { rollup, swc_wasm } from "$/deps.ts";
 
 const { imports, scopes } = JSONC.parse(
   Deno.readTextFileSync("./deno.jsonc"),
@@ -11,6 +11,7 @@ const { imports, scopes } = JSONC.parse(
 
 const config: rollup.RollupOptions = {
   input: { "docsify-kroki": `./src/index.ts` },
+  treeshake: "smallest",
   output: {
     inlineDynamicImports: true,
     sourcemap: true,
@@ -27,17 +28,9 @@ const config: rollup.RollupOptions = {
       name: "swc",
       transform: (code) =>
         swc_wasm.transform(code, {
-          minify: true,
           jsc: {
-            externalHelpers: false,
-            minify: {
-              compress: true,
-              mangle: true,
-            },
             parser: {
               syntax: "typescript",
-              decorators: true,
-              dynamicImport: true,
             },
           },
           env: {
@@ -48,12 +41,11 @@ const config: rollup.RollupOptions = {
         }),
     },
     {
-      name: "terser",
-      renderChunk: (rawCode) =>
-        minify(rawCode, {
+      name: "swc-minify",
+      renderChunk: (code) =>
+        swc_wasm.minifySync(code, {
           sourceMap: true,
-          mangle: true,
-        }) as Promise<{ code: string; map?: rollup.SourceMapInput }>,
+        }),
     },
   ] satisfies rollup.Plugin[],
   external: [],
