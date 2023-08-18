@@ -15,7 +15,7 @@
       "deno.ns"
     ]
   },
-  // "lock": false,
+  "lock": false,
   "tasks": {
     "build": "deno task clean && deno task fmt && deno task test-cov && deno task build-ts",
     "build-ts": "deno run -A rollup.config.ts",

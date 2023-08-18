@@ -1,9 +1,8 @@
 import httpsResolve from "$/rollup-plugin-url-resolve.ts";
-
 import * as JSONC from "deno_std/jsonc/mod.ts";
 import { importMapResolvePlugin } from "$/rollup-plugin-import-maps.ts";
 import { Any } from "$/test/utils.ts";
-import { rollup, swc_wasm } from "$/deps.ts";
+import { esbuild, rollup } from "$/deps.ts";
 
 const { imports, scopes } = JSONC.parse(
   Deno.readTextFileSync("./deno.jsonc"),
@@ -25,26 +24,21 @@ const config: rollup.RollupOptions = {
       importMap: { imports, scopes },
     }),
     {
-      name: "swc",
+      name: "esbuild",
       transform: (code) =>
-        swc_wasm.transform(code, {
-          jsc: {
-            parser: {
-              syntax: "typescript",
-            },
-          },
-          env: {
-            // mode: "usage",
-            targets: ["chrome >= 80", "firefox >= 80"],
-          },
-          sourceMaps: true,
-        }),
-    },
-    {
-      name: "swc-minify",
-      renderChunk: (code) =>
-        swc_wasm.minifySync(code, {
-          sourceMap: true,
+        esbuild.transform<esbuild.TransformOptions>(code, {
+          format: "esm",
+          loader: "ts",
+          treeShaking: true,
+          target: ["chrome80", "firefox80"],
+          sourcemap: true,
+          minify: true,
+          minifySyntax: true,
+          minifyWhitespace: true,
+          minifyIdentifiers: true,
+          keepNames: false,
+          lineLimit: 200,
+          mangleQuoted: true,
         }),
     },
   ] satisfies rollup.Plugin[],
