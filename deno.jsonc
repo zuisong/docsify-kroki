@@ -1,7 +1,7 @@
 {
   "imports": {
-    "deno_std/": "https://deno.land/std@0.198.0/",
-    "esm.sh/": "https://esm.sh/v130/",
+    "deno_std/": "https://deno.land/std@0.199.0/",
+    "esm.sh/": "https://esm.sh/v131/",
     "$/": "./"
   },
   "scopes": {},

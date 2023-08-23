@@ -2,6 +2,7 @@ import { importMapsResolve, rollup } from "$/deps.ts";
 import { isAbsolute } from "deno_std/path/is_absolute.ts";
 import { toFileUrl } from "deno_std/path/to_file_url.ts";
 import { resolve } from "deno_std/path/resolve.ts";
+import { URL as nodeURL } from "node:url";
 
 interface ImportMapResolveOptions {
   /**
@@ -26,7 +27,7 @@ interface ImportMapResolveOptions {
  * @returns A file {@link URL} if {@link pathOrUrl} is a file system path or the given
  * {@link pathOrUrl} converted as is to a {@link URL}.
  */
-function convertToUrl(pathOrUrl: string) {
+function convertToUrl(pathOrUrl: string): URL {
   // Need to first do file system path-based checks instead of simply seeing if the given value can
   // be parsed as a URL first. If the given value is an absolute Windows path, then new URL(baseUrl)
   // succeeds with a URL that has a protocol equal to the Windows drive letter, which is not what we
@@ -56,7 +57,7 @@ function normalizeBaseUrl(baseUrl: string | URL) {
 export const importMapResolvePlugin = (
   options: ImportMapResolveOptions,
 ): rollup.Plugin => {
-  const baseUrl = normalizeBaseUrl(options?.baseUrl ?? "./");
+  const baseUrl = normalizeBaseUrl(options?.baseUrl ?? "./") as nodeURL;
   const importMap = importMapsResolve.parse(options?.importMap || {}, baseUrl);
 
   return {
@@ -74,7 +75,7 @@ export const importMapResolvePlugin = (
       const { resolvedImport, matched } = importMapsResolve.resolve(
         source,
         importMap,
-        scriptUrl,
+        scriptUrl as nodeURL,
       );
 
       // console.log('source', source, 'importer', importer, 'resolvedImport', resolvedImport?.href, 'matched', matched);

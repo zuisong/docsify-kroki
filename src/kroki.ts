@@ -2,9 +2,7 @@ import type { AsyncAfterEachHook, DocsifyPlugin } from "./types/docsify.ts";
 import type { DocsifyKrokiOption } from "./types/docsify-kroki.ts";
 import { zlib } from "./zlib.ts";
 
-function urlSafeBase64Encode(str: string) {
-  return btoa(encodeURI(str));
-}
+const urlSafeBase64Encode = (str: string) => btoa(encodeURI(str));
 
 const contentType = "image/svg+xml";
 
@@ -51,8 +49,9 @@ export async function replace(
   const fetaures: Promise<void>[] = [];
 
   for (const LANG of config.langs!) {
-    const selector = `pre[data-lang="${LANG}"]`;
-    const codeElements = Array.from(spanElement.querySelectorAll(selector));
+    const codeElements = Array.from(
+      spanElement.querySelectorAll(`pre[data-lang="${LANG}"]`),
+    );
 
     for (const element of codeElements) {
       if (element instanceof HTMLElement) {
@@ -67,8 +66,9 @@ export async function replace(
       }
     }
 
-    const imgSelector = `img[alt="kroki-${LANG}"]`;
-    const imgElements = Array.from(spanElement.querySelectorAll(imgSelector));
+    const imgElements = Array.from(
+      spanElement.querySelectorAll(`img[alt="kroki-${LANG}"]`),
+    );
 
     for (const element of imgElements) {
       if (element instanceof HTMLImageElement) {
@@ -147,7 +147,7 @@ export const docsifyKrokiPlugin: DocsifyPlugin = (hook, vm) => {
       (async () => {
         const newContent = await replace(content, {
           ...defaultConfig,
-          ...(vm?.config?.kroki ?? {}),
+          ...(vm?.config?.kroki || {}),
         });
         next(newContent);
       })();

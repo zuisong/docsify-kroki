@@ -10,7 +10,7 @@ const { imports, scopes } = JSONC.parse(
 
 const config: rollup.RollupOptions = {
   input: { "docsify-kroki": `./src/index.ts` },
-  treeshake: "smallest",
+  treeshake: true,
   output: {
     inlineDynamicImports: true,
     sourcemap: true,
