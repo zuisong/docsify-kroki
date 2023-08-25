@@ -39,7 +39,7 @@
     "dist",
     "deno.jsonc",
     "import_map.json",
-    "vite.config.mts",
+    "*.ts",
     "README.md"
   ],
   "author": "zuisong",

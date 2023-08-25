@@ -1,5 +1,5 @@
-import type { AsyncAfterEachHook, DocsifyPlugin } from "./types/docsify.ts";
 import type { DocsifyKrokiOption } from "./types/docsify-kroki.ts";
+import { DocsifyPlugin } from "$/src/types/docsify.ts";
 import { zlib } from "./zlib.ts";
 
 const urlSafeBase64Encode = (str: string) => btoa(encodeURI(str));
@@ -142,15 +142,13 @@ export const defaultConfig: DocsifyKrokiOption = {
 };
 
 export const docsifyKrokiPlugin: DocsifyPlugin = (hook, vm) => {
-  hook.afterEach?.(
-    ((content, next) => {
-      (async () => {
-        const newContent = await replace(content, {
-          ...defaultConfig,
-          ...(vm?.config?.kroki || {}),
-        });
-        next(newContent);
-      })();
-    }) as AsyncAfterEachHook,
-  );
+  hook.afterEach?.((content: string, next: (html: string) => void) => {
+    (async () => {
+      const newContent = await replace(content, {
+        ...defaultConfig,
+        ...(vm?.config?.kroki || {}),
+      });
+      next(newContent);
+    })();
+  });
 };

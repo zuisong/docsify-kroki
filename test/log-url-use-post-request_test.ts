@@ -1,5 +1,4 @@
 import {} from "$/src/types/docsify-kroki.ts";
-import { DocsifyVM, Hooks } from "$/src/types/docsify.ts";
 import { init } from "$/test/common/dom-env-init.ts";
 import { generateRandomString, sleep } from "$/test/utils.ts";
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
@@ -26,10 +25,6 @@ it("from external files with a error", async () => {
   document.body.innerHTML = `${imageSrc}`;
   await import("$/src/index.ts");
 
-  const vm: DocsifyVM = {
-    config: { kroki: { serverPath: "https://kroki.io/" } },
-  };
-
   window.$docsify?.plugins?.forEach((krokiPlugin) => {
     krokiPlugin(
       {
@@ -38,8 +33,10 @@ it("from external files with a error", async () => {
             document.body.innerHTML = str;
           });
         },
-      } as Hooks,
-      vm,
+      },
+      {
+        config: { kroki: { serverPath: "https://kroki.io/" } },
+      },
     );
   });
 

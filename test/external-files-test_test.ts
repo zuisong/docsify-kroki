@@ -1,7 +1,6 @@
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { sleep } from "$/test/utils.ts";
 import { init } from "$/test/common/dom-env-init.ts";
-import type { DocsifyVM, Hooks } from "$/src/types/docsify.ts";
 import { fetchMock } from "$/deps.ts";
 import { assertEquals } from "deno_std/assert/assert_equals.ts";
 
@@ -28,17 +27,14 @@ it("from external files", async () => {
   document.body.innerHTML = `${imageSrc}`;
   await import("$/src/index.ts");
 
-  const hooks: Hooks = {
-    afterEach(afterEachHook) {
-      afterEachHook(document.body.firstElementChild!.outerHTML, (str) => {
-        document.body.innerHTML = str;
-      });
-    },
-  };
-  const vm: DocsifyVM = { config: {} };
-
   window.$docsify?.plugins?.forEach((krokiPlugin) => {
-    krokiPlugin(hooks, vm);
+    krokiPlugin({
+      afterEach(afterEachHook) {
+        afterEachHook(document.body.firstElementChild!.outerHTML, (str) => {
+          document.body.innerHTML = str;
+        });
+      },
+    }, { config: {} });
   });
   await sleep(50);
 
@@ -61,8 +57,6 @@ it("from external files with a error", async () => {
   document.body.innerHTML = `${imageSrc}`;
   await import("$/src/index.ts");
 
-  const vm: DocsifyVM = { config: {} };
-
   window.$docsify?.plugins?.forEach((krokiPlugin) => {
     krokiPlugin(
       {
@@ -71,8 +65,8 @@ it("from external files with a error", async () => {
             document.body.innerHTML = str;
           });
         },
-      } as Hooks,
-      vm,
+      },
+      {},
     );
   });
 

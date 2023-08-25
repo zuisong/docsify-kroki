@@ -1,4 +1,4 @@
-import { zlibSync } from "esm.sh/fflate@0.8.0?target=esnext";
+import { zlibSync } from "fflate";
 
 function textEncode(str: string) {
   return new TextEncoder().encode(str);
