@@ -1,5 +1,5 @@
 import type { DocsifyKrokiOption } from "./types/docsify-kroki.ts";
-import { DocsifyPlugin } from "$/src/types/docsify.ts";
+import { DocsifyPlugin } from "./types/docsify.ts";
 import { zlib } from "./zlib.ts";
 
 const urlSafeBase64Encode = (str: string) => btoa(encodeURI(str));

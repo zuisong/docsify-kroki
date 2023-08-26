@@ -1,9 +1,8 @@
-import {} from "$/src/types/docsify-kroki.ts";
-import { init } from "$/test/common/dom-env-init.ts";
-import { generateRandomString, sleep } from "$/test/utils.ts";
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
-import { fetchMock } from "$/deps.ts";
 import { assertEquals } from "deno_std/assert/assert_equals.ts";
+import { fetchMock } from "../deps.ts";
+import { init } from "./common/dom-env-init.ts";
+import { generateRandomString, sleep } from "./utils.ts";
 
 beforeEach(() => {
   init();
@@ -23,7 +22,7 @@ it("from external files with a error", async () => {
   const imageSrc = `<img src="https://long-text.txt" alt="kroki-mermaid">`;
 
   document.body.innerHTML = `${imageSrc}`;
-  await import("$/src/index.ts");
+  await import("../src/index.ts");
 
   window.$docsify?.plugins?.forEach((krokiPlugin) => {
     krokiPlugin(

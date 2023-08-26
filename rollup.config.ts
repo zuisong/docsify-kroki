@@ -1,8 +1,8 @@
-import httpsResolve from "$/rollup-plugin-url-resolve.ts";
 import * as JSONC from "deno_std/jsonc/mod.ts";
-import { importMapResolvePlugin } from "$/rollup-plugin-import-maps.ts";
-import { Any } from "$/test/utils.ts";
-import { esbuild, rollup } from "$/deps.ts";
+import { esbuild, rollup } from "./deps.ts";
+import { importMapResolvePlugin } from "./rollup-plugin-import-maps.ts";
+import httpsResolve from "./rollup-plugin-url-resolve.ts";
+import { Any } from "./test/utils.ts";
 
 const { imports, scopes } = JSONC.parse(
   Deno.readTextFileSync("./deno.jsonc"),

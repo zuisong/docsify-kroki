@@ -1,8 +1,8 @@
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
-import { sleep } from "$/test/utils.ts";
-import { init } from "$/test/common/dom-env-init.ts";
-import { fetchMock } from "$/deps.ts";
 import { assertEquals } from "deno_std/assert/assert_equals.ts";
+import { fetchMock } from "../deps.ts";
+import { init } from "./common/dom-env-init.ts";
+import { sleep } from "./utils.ts";
 
 beforeEach(() => {
   init();
@@ -25,7 +25,7 @@ it("from external files", async () => {
   const imageSrc = `<img src="https://api.com/v1/apples" alt="kroki-mermaid">`;
 
   document.body.innerHTML = `${imageSrc}`;
-  await import("$/src/index.ts");
+  await import("../src/index.ts");
 
   window.$docsify?.plugins?.forEach((krokiPlugin) => {
     krokiPlugin({
@@ -55,7 +55,7 @@ it("from external files with a error", async () => {
     `<img src="https://httpbin.errordomain/status/404" alt="kroki-mermaid">`;
 
   document.body.innerHTML = `${imageSrc}`;
-  await import("$/src/index.ts");
+  await import("../src/index.ts");
 
   window.$docsify?.plugins?.forEach((krokiPlugin) => {
     krokiPlugin(

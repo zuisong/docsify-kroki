@@ -1,8 +1,8 @@
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
-import { sleep } from "$/test/utils.ts";
-import { init, tearDown } from "$/test/common/dom-env-init.ts";
-import { replace } from "$/src/kroki.ts";
 import { assertEquals } from "deno_std/assert/assert_equals.ts";
+import { replace } from "../src/kroki.ts";
+import { init, tearDown } from "./common/dom-env-init.ts";
+import { sleep } from "./utils.ts";
 
 beforeEach(() => {
   init();
@@ -63,7 +63,7 @@ A -> B
 @enduml
 </code></pre>
 `;
-  await import("$/src/index.ts");
+  await import("../src/index.ts");
 
   window.$docsify?.plugins?.forEach((krokiPlugin) => {
     krokiPlugin({

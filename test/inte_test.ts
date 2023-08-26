@@ -1,7 +1,7 @@
 import { beforeEach, it } from "deno_std/testing/bdd.ts";
-import { init } from "$/test/common/dom-env-init.ts";
-import { defaultConfig, plant, replace } from "$/src/kroki.ts";
 import { assertEquals } from "deno_std/assert/assert_equals.ts";
+import { defaultConfig, plant, replace } from "../src/kroki.ts";
+import { init } from "./common/dom-env-init.ts";
 
 beforeEach(() => {
   init();

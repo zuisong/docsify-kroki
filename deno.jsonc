@@ -2,10 +2,10 @@
   "imports": {
     "deno_std/": "https://deno.land/std@0.199.0/",
     "fflate": "https://esm.sh/v131/fflate@0.8.0",
-    "esm.sh/": "https://esm.sh/v131/",
-    "$/": "./"
+    "esm.sh/": "https://esm.sh/v131/"
   },
   "scopes": {},
+  "nodeModulesDir": false,
   "compilerOptions": {
     "allowJs": true,
     "strict": true,
