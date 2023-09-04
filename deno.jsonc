@@ -1,6 +1,6 @@
 {
   "imports": {
-    "deno_std/": "https://deno.land/std@0.199.0/",
+    "deno_std/": "https://deno.land/std@0.201.0/",
     "fflate": "https://esm.sh/v131/fflate@0.8.0",
     "esm.sh/": "https://esm.sh/v131/"
   },
@@ -9,12 +9,7 @@
   "compilerOptions": {
     "allowJs": true,
     "strict": true,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "dom.asynciterable",
-      "deno.ns"
-    ]
+    "lib": ["dom", "dom.iterable", "dom.asynciterable", "deno.ns"]
   },
   "lock": false,
   "tasks": {
@@ -24,44 +19,20 @@
     "fmt": "deno fmt",
     "test-cov": "deno test --coverage=coverage/json --node-modules-dir=false --no-check -A && deno coverage coverage/json --lcov --output=coverage/lcov.info"
   },
-  "exclude": [
-    "dist/"
-  ],
+  "exclude": ["dist/"],
   "lint": {
-    "include": [
-      "src/",
-      "test/",
-      "*.ts",
-      "*.json*",
-      "*.js",
-      "*.md"
-    ],
+    "include": ["src/", "test/", "*.ts", "*.json*", "*.js", "*.md"],
     "rules": {
-      "tags": [
-        "recommended"
-      ],
-      "include": [
-        "ban-untagged-todo"
-      ],
-      "exclude": [
-        "no-unused-vars"
-      ]
+      "tags": ["recommended"],
+      "include": ["ban-untagged-todo"],
+      "exclude": ["no-unused-vars"]
     }
   },
   "fmt": {
-    "include": [
-      "src/",
-      "test/",
-      "*.ts",
-      "*.json*",
-      "*.ts",
-      "*.md"
-    ],
+    "include": ["src/", "test/", "*.ts", "*.json*", "*.ts", "*.md"],
     "useTabs": false
   },
   "test": {
-    "include": [
-      "test/"
-    ]
+    "include": ["test/"]
   }
 }

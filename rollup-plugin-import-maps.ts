@@ -1,7 +1,7 @@
-import { isAbsolute } from "deno_std/path/is_absolute.ts";
-import { toFileUrl } from "deno_std/path/to_file_url.ts";
-import { resolve } from "deno_std/path/resolve.ts";
 import { URL as nodeURL } from "node:url";
+import { isAbsolute } from "deno_std/path/is_absolute.ts";
+import { resolve } from "deno_std/path/resolve.ts";
+import { toFileUrl } from "deno_std/path/to_file_url.ts";
 import { importMapsResolve, rollup } from "./deps.ts";
 
 interface ImportMapResolveOptions {

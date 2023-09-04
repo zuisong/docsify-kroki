@@ -1,5 +1,5 @@
-import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { assertEquals } from "deno_std/assert/assert_equals.ts";
+import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { fetchMock } from "../deps.ts";
 import { init } from "./common/dom-env-init.ts";
 import { sleep } from "./utils.ts";
@@ -28,13 +28,19 @@ it("from external files", async () => {
   await import("../src/index.ts");
 
   window.$docsify?.plugins?.forEach((krokiPlugin) => {
-    krokiPlugin({
-      afterEach(afterEachHook) {
-        afterEachHook(document.body.firstElementChild!.outerHTML, (str) => {
-          document.body.innerHTML = str;
-        });
+    krokiPlugin(
+      {
+        afterEach(afterEachHook) {
+          afterEachHook(
+            document.body.firstElementChild?.outerHTML || "",
+            (str) => {
+              document.body.innerHTML = str;
+            },
+          );
+        },
       },
-    }, { config: {} });
+      { config: {} },
+    );
   });
   await sleep(50);
 
@@ -61,9 +67,12 @@ it("from external files with a error", async () => {
     krokiPlugin(
       {
         afterEach(afterEachHook) {
-          afterEachHook(document.body.firstElementChild!.outerHTML, (str) => {
-            document.body.innerHTML = str;
-          });
+          afterEachHook(
+            document.body.firstElementChild?.outerHTML || "",
+            (str) => {
+              document.body.innerHTML = str;
+            },
+          );
         },
       },
       {},

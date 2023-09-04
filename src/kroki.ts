@@ -43,19 +43,19 @@ export async function plant(
 
 export async function replace(
   content: string,
-  config: DocsifyKrokiOption,
+  config: Required<DocsifyKrokiOption>,
 ): Promise<string> {
   const spanElement: HTMLSpanElement = create("span", content);
   const fetaures: Promise<void>[] = [];
 
-  for (const LANG of config.langs!) {
+  for (const LANG of config.langs) {
     const codeElements = Array.from(
       spanElement.querySelectorAll(`pre[data-lang="${LANG}"]`),
     );
 
     for (const element of codeElements) {
       if (element instanceof HTMLElement) {
-        const promise = plant(element.textContent!, LANG, config).then(
+        const promise = plant(element.textContent || "", LANG, config).then(
           (graphStr) => {
             const planted: HTMLParagraphElement = create("p", graphStr);
             planted.dataset.lang = LANG;
@@ -75,7 +75,7 @@ export async function replace(
         const img = element as HTMLImageElement;
         const parent = element.parentNode;
 
-        const promise = fetch(img.getAttribute("src")!)
+        const promise = fetch(img.getAttribute("src") || "")
           .then((it) => it.text())
           .then((code) => plant(code, LANG, config))
           .then((graphStr) => {
@@ -92,7 +92,7 @@ export async function replace(
 
   await Promise.allSettled(fetaures).then((result) => {
     result
-      .filter((it) => it.status == "rejected")
+      .filter((it) => it.status === "rejected")
       .forEach((it) => console.error(it));
   });
 
@@ -110,7 +110,7 @@ function create<K extends keyof HTMLElementTagNameMap>(
   return node;
 }
 
-export const defaultConfig: DocsifyKrokiOption = {
+export const defaultConfig: Required<DocsifyKrokiOption> = {
   langs: [
     "actdiag",
     "blockdiag",

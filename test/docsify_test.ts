@@ -1,5 +1,5 @@
-import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { assertEquals } from "deno_std/assert/assert_equals.ts";
+import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { replace } from "../src/kroki.ts";
 import { init, tearDown } from "./common/dom-env-init.ts";
 import { sleep } from "./utils.ts";
@@ -66,14 +66,17 @@ A -> B
   await import("../src/index.ts");
 
   window.$docsify?.plugins?.forEach((krokiPlugin) => {
-    krokiPlugin({
-      afterEach(f) {
-        f(document.body.firstElementChild!.outerHTML, (str) => {
-          console.log(str);
-          document.body.innerHTML = str;
-        });
+    krokiPlugin(
+      {
+        afterEach(f) {
+          f(document.body.firstElementChild?.outerHTML || "", (str) => {
+            console.log(str);
+            document.body.innerHTML = str;
+          });
+        },
       },
-    }, {});
+      {},
+    );
   });
 
   // wait for fetch data

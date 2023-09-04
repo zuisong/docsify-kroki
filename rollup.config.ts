@@ -8,8 +8,8 @@ const { imports, scopes } = JSONC.parse(
   Deno.readTextFileSync("./deno.jsonc"),
 ) as Any;
 
-const config: rollup.RollupOptions = {
-  input: { "docsify-kroki": `./src/index.ts` },
+const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
+  input: { "docsify-kroki": "./src/index.ts" },
   treeshake: true,
   output: {
     inlineDynamicImports: true,
@@ -46,5 +46,5 @@ const config: rollup.RollupOptions = {
 };
 
 const bundle = await rollup.rollup(config);
-const output = config.output!;
-await bundle.write(Array.isArray(output) ? output[0] : output);
+const output = config.output;
+await bundle.write(output);

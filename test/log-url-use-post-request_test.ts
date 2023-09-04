@@ -1,5 +1,5 @@
-import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { assertEquals } from "deno_std/assert/assert_equals.ts";
+import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { fetchMock } from "../deps.ts";
 import { init } from "./common/dom-env-init.ts";
 import { generateRandomString, sleep } from "./utils.ts";
@@ -28,7 +28,7 @@ it("from external files with a error", async () => {
     krokiPlugin(
       {
         afterEach(param) {
-          param(document.body.firstElementChild!.outerHTML, (str) => {
+          param(document.body.firstElementChild?.outerHTML || "", (str) => {
             document.body.innerHTML = str;
           });
         },
@@ -43,6 +43,6 @@ it("from external files with a error", async () => {
 
   assertEquals(
     document.body.querySelector("object")?.getAttribute("data"),
-    `data:image/svg+xml;base64,a3Jva2klMjB3aXRoJTIwbG9uZyUyMHVybA==`,
+    "data:image/svg+xml;base64,a3Jva2klMjB3aXRoJTIwbG9uZyUyMHVybA==",
   );
 });
