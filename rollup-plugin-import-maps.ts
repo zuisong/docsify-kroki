@@ -80,17 +80,17 @@ export const importMapResolvePlugin = (
 
       // console.log('source', source, 'importer', importer, 'resolvedImport', resolvedImport?.href, 'matched', matched);
 
-      if (!matched) {
+      if (!matched || resolvedImport === null) {
         return null;
       }
 
       if (resolvedImport?.protocol === "file:") {
         return {
-          id: resolve(resolvedImport!.pathname),
+          id: resolve(resolvedImport.pathname),
           external: false,
         };
       } else {
-        return { id: resolvedImport!.href, external: false };
+        return { id: resolvedImport.href, external: false };
       }
     },
   };

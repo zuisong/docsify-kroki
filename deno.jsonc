@@ -16,7 +16,8 @@
     "build": "deno task clean && deno task fmt && deno task test-cov && deno task build-ts",
     "build-ts": "deno run -A rollup.config.ts",
     "clean": "rm -rf dist/ coverage/",
-    "fmt": "deno fmt",
+    "fmt": "deno run -A npm:@biomejs/biome format . --write",
+    "lint": "deno run -A npm:@biomejs/biome lint . --apply",
     "test-cov": "deno test --coverage=coverage/json --node-modules-dir=false --no-check -A && deno coverage coverage/json --lcov --output=coverage/lcov.info"
   },
   "exclude": ["dist/"],

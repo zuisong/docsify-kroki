@@ -1,9 +1,9 @@
 declare global {
   interface DocsifyConfig {
-    kroki?: DocsifyKrokiOption;
+    kroki?: Partial<DocsifyKrokiOption>;
   }
 }
 export interface DocsifyKrokiOption {
-  serverPath?: string;
-  langs?: string[];
+  serverPath: string;
+  langs: string[];
 }

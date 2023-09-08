@@ -1,3 +1,4 @@
+import { parseFromString } from "npm:@import-maps/resolve";
 import type { DocsifyKrokiOption } from "./types/docsify-kroki.ts";
 import { DocsifyPlugin } from "./types/docsify.ts";
 import { zlib } from "./zlib.ts";
@@ -9,9 +10,9 @@ const contentType = "image/svg+xml";
 async function plantWithPost(
   content: string,
   type: string,
-  config: DocsifyKrokiOption,
+  serverPath: string,
 ): Promise<string> {
-  const krokiServerRenderUrl = `${config?.serverPath + type}/svg/`;
+  const krokiServerRenderUrl = `${serverPath + type}/svg/`;
   const resp = await fetch(krokiServerRenderUrl, {
     method: "POST",
     body: content,
@@ -26,9 +27,9 @@ async function plantWithPost(
 export async function plant(
   content: string,
   type: string,
-  config: DocsifyKrokiOption,
+  serverPath: string,
 ): Promise<string> {
-  const urlPrefix = `${config?.serverPath + type}/svg/`;
+  const urlPrefix = `${serverPath + type}/svg/`;
   const compressed: string = await zlib(content);
   const result: string = btoa(compressed)
     .replace(/\+/g, "-")
@@ -38,12 +39,12 @@ export async function plant(
   if (svgContent.length < 4000) {
     return svgContent;
   }
-  return plantWithPost(content, type, config);
+  return plantWithPost(content, type, serverPath);
 }
 
 export async function replace(
   content: string,
-  config: Required<DocsifyKrokiOption>,
+  config: DocsifyKrokiOption,
 ): Promise<string> {
   const spanElement: HTMLSpanElement = create("span", content);
   const fetaures: Promise<void>[] = [];
@@ -55,13 +56,15 @@ export async function replace(
 
     for (const element of codeElements) {
       if (element instanceof HTMLElement) {
-        const promise = plant(element.textContent || "", LANG, config).then(
-          (graphStr) => {
-            const planted: HTMLParagraphElement = create("p", graphStr);
-            planted.dataset.lang = LANG;
-            element.parentNode?.replaceChild(planted, element);
-          },
-        );
+        const promise = plant(
+          element.textContent || "",
+          LANG,
+          config.serverPath,
+        ).then((graphStr) => {
+          const planted: HTMLParagraphElement = create("p", graphStr);
+          planted.dataset.lang = LANG;
+          element.parentNode?.replaceChild(planted, element);
+        });
         fetaures.push(promise);
       }
     }
@@ -77,7 +80,7 @@ export async function replace(
 
         const promise = fetch(img.getAttribute("src") || "")
           .then((it) => it.text())
-          .then((code) => plant(code, LANG, config))
+          .then((code) => plant(code, LANG, config.serverPath))
           .then((graphStr) => {
             const planted: HTMLParagraphElement = create("p", graphStr);
             if (parent) {
@@ -90,11 +93,9 @@ export async function replace(
     }
   }
 
-  await Promise.allSettled(fetaures).then((result) => {
-    result
-      .filter((it) => it.status === "rejected")
-      .forEach((it) => console.error(it));
-  });
+  for (const f of fetaures) {
+    await f.catch((e) => console.error(e));
+  }
 
   return spanElement.innerHTML;
 }
@@ -104,13 +105,11 @@ function create<K extends keyof HTMLElementTagNameMap>(
   tpl: string,
 ): HTMLElementTagNameMap[K] {
   const node = document.createElement(tagName);
-  if (tpl) {
-    node.innerHTML = tpl;
-  }
+  node.innerHTML = tpl;
   return node;
 }
 
-export const defaultConfig: Required<DocsifyKrokiOption> = {
+export const defaultConfig: DocsifyKrokiOption = {
   langs: [
     "actdiag",
     "blockdiag",
