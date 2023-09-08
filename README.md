@@ -91,7 +91,14 @@ window.$docsify = {
 ### langs
 
 By default, those markdown language render by kroki:
-`plantuml`,`mermaid`,`svgbob`,`vega`,`vegalite`,`wavedrom`,`nomnoml`,`graphviz`,`erd`,`ditaa`,`c4plantuml`,`packetdiag`,`nwdiag`,`actdiag`,`seqdiag`,`bytefield`,`bpmn`,`blockdiag`,`rackdiag`,`pikchr`,`excalidraw`,
+
+|              |              |             |            |            |
+| ------------ | ------------ | ----------- | ---------- | ---------- |
+| `plantuml`   | `mermaid`    | `svgbob`    | `vega`     | `vegalite` |
+| `wavedrom`   | `nomnoml`    | `graphviz`  | `erd`      | `ditaa`    |
+| `c4plantuml` | `packetdiag` | `nwdiag`    | `actdiag`  | `seqdiag`  |
+| `bytefield`  | `bpmn`       | `blockdiag` | `rackdiag` | `pikchr`   |
+
 you can add more to langs array.
 
 ### serverPath
