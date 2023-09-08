@@ -3,6 +3,7 @@ import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { fetchMock } from "../deps.ts";
 import { init } from "./common/dom-env-init.ts";
 import { sleep } from "./utils.ts";
+import { defaultConfig, replace } from "../src/kroki.ts";
 
 beforeEach(() => {
   init();
@@ -57,25 +58,12 @@ it("from external files with a error", async () => {
   );
 
   const imageSrc = `<img src="https://httpbin.errordomain/status/404" alt="kroki-mermaid">`;
+  await replace(imageSrc, defaultConfig);
+  await sleep(30);
+});
 
-  document.body.innerHTML = `${imageSrc}`;
-  await import("../src/index.ts");
-
-  window.$docsify?.plugins?.forEach((krokiPlugin) => {
-    krokiPlugin(
-      {
-        afterEach(afterEachHook) {
-          afterEachHook(
-            document.body.firstElementChild?.outerHTML || "",
-            (str) => {
-              document.body.innerHTML = str;
-            },
-          );
-        },
-      },
-      {},
-    );
-  });
-
+it("from external files empty link", async () => {
+  const imageSrc = `<img src="" alt="kroki-mermaid">`;
+  await replace(imageSrc, defaultConfig);
   await sleep(30);
 });

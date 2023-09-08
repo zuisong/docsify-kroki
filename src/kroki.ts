@@ -57,7 +57,8 @@ export async function replace(
     for (const element of codeElements) {
       if (element instanceof HTMLElement) {
         const promise = plant(
-          element.textContent || "",
+          // biome-ignore lint/style/noNonNullAssertion: <must not null>
+          element.textContent!,
           LANG,
           config.serverPath,
         ).then((graphStr) => {
@@ -78,7 +79,11 @@ export async function replace(
         const img = element as HTMLImageElement;
         const parent = element.parentNode;
 
-        const promise = fetch(img.getAttribute("src") || "")
+        const srcUrl = img.getAttribute("src");
+        if (!srcUrl) {
+          continue;
+        }
+        const promise = fetch(srcUrl)
           .then((it) => it.text())
           .then((code) => plant(code, LANG, config.serverPath))
           .then((graphStr) => {
