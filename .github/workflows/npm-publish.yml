@@ -1,5 +1,4 @@
 name: Publish Package to npmjs
-
 on:
   push:
     tags:
@@ -23,12 +22,5 @@ jobs:
 
       - uses: JS-DevTools/npm-publish@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          registry: https://npm.pkg.github.com
-          dry-run: true
-
-      - uses: JS-DevTools/npm-publish@v2
-        with:
           token: ${{ secrets.NPM_TOKEN }}
           registry: https://registry.npmjs.org/
-          dr-run: true
