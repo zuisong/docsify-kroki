@@ -1,8 +1,7 @@
 import { esbuild, rollup } from "./deps.ts";
-import { importMapResolvePlugin } from "./rollup-plugin-import-maps.ts";
 
 import packageJson from "./package.json" assert { type: "json" };
-import httpsResolve from "./rollup-plugin-url-resolve.ts";
+import denoResolve from "./rollup-plugin-deno-resolve.ts";
 
 const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
   input: { "docsify-kroki": "./src/index.ts" },
@@ -16,8 +15,7 @@ const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
     format: "es",
   },
   plugins: [
-    httpsResolve(),
-    importMapResolvePlugin(),
+    denoResolve(),
     {
       name: "esbuild",
       transform: (code) =>
@@ -28,10 +26,6 @@ const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
           target: ["chrome80", "firefox80"],
           sourcemap: true,
           minify: true,
-          minifySyntax: true,
-          minifyWhitespace: true,
-          minifyIdentifiers: true,
-          keepNames: false,
           lineLimit: 200,
           mangleQuoted: true,
         }),
