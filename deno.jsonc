@@ -13,11 +13,11 @@
   },
   "lock": false,
   "tasks": {
-    "build": "deno task clean && deno task fmt && deno task test-cov && deno task build-ts",
+    "build": "deno task clean && deno task fmt --write && deno task test-cov && deno task build-ts",
     "build-ts": "deno run -A rollup.config.ts",
     "clean": "rm -rf dist/ coverage/",
-    "fmt": "deno run -A npm:@biomejs/biome format . --write",
-    "lint": "deno run -A npm:@biomejs/biome lint . --apply",
+    "fmt": "deno run -A npm:@biomejs/biome format .",
+    "lint": "deno run -A npm:@biomejs/biome lint .",
     "test-cov": "deno test --coverage=coverage/json --node-modules-dir=false --no-check -A && deno coverage coverage/json --lcov --output=coverage/lcov.info"
   },
   "exclude": ["dist/"],

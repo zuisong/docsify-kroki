@@ -1,12 +1,8 @@
-import * as JSONC from "deno_std/jsonc/mod.ts";
 import { esbuild, rollup } from "./deps.ts";
 import { importMapResolvePlugin } from "./rollup-plugin-import-maps.ts";
-import httpsResolve from "./rollup-plugin-url-resolve.ts";
-import { Any } from "./test/utils.ts";
 
-const { imports, scopes } = JSONC.parse(
-  Deno.readTextFileSync("./deno.jsonc"),
-) as Any;
+import packageJson from "./package.json" assert { type: "json" };
+import httpsResolve from "./rollup-plugin-url-resolve.ts";
 
 const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
   input: { "docsify-kroki": "./src/index.ts" },
@@ -14,15 +10,14 @@ const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
   output: {
     inlineDynamicImports: true,
     sourcemap: true,
+    sourcemapBaseUrl: `https://unpkg.com/docsify-kroki@${packageJson.version}/dist/`,
     exports: "none",
     dir: "dist",
     format: "es",
   },
   plugins: [
     httpsResolve(),
-    importMapResolvePlugin({
-      importMap: { imports, scopes },
-    }),
+    importMapResolvePlugin(),
     {
       name: "esbuild",
       transform: (code) =>
