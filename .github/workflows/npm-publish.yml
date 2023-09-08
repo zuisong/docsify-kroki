@@ -1,0 +1,34 @@
+name: Publish Package to npmjs
+
+on:
+  push:
+    tags:
+      - v[0-9]+.*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+
+      - name: Run build
+        run: deno task build
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+
+      - uses: JS-DevTools/npm-publish@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          registry: https://npm.pkg.github.com
+          dry-run: true
+
+      - uses: JS-DevTools/npm-publish@v2
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          registry: https://registry.npmjs.org/
+          dr-run: true
