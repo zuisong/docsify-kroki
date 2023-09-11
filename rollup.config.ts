@@ -15,7 +15,7 @@ const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
     format: "es",
   },
   plugins: [
-    denoResolve(),
+    denoResolve(import.meta.url),
     {
       name: "esbuild",
       transform: (code) =>

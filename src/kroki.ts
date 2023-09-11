@@ -1,4 +1,3 @@
-import { parseFromString } from "npm:@import-maps/resolve";
 import type { DocsifyKrokiOption } from "./types/docsify-kroki.ts";
 import { DocsifyPlugin } from "./types/docsify.ts";
 import { zlib } from "./zlib.ts";
