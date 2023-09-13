@@ -2,7 +2,7 @@ import { assertEquals } from "deno_std/assert/assert_equals.ts";
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { fetchMock } from "../deps.ts";
 import { init } from "./common/dom-env-init.ts";
-import { generateRandomString, sleep } from "./utils.ts";
+import { defaultHook, generateRandomString, sleep } from "./utils.ts";
 
 beforeEach(() => {
   init();
@@ -27,6 +27,7 @@ it("from external files with a error", async () => {
   window.$docsify?.plugins?.forEach((krokiPlugin) => {
     krokiPlugin(
       {
+        ...defaultHook,
         afterEach(param) {
           param(document.body.firstElementChild?.outerHTML || "", (str) => {
             document.body.innerHTML = str;

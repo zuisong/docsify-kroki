@@ -2,7 +2,7 @@ import { assertEquals } from "deno_std/assert/assert_equals.ts";
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { fetchMock } from "../deps.ts";
 import { init } from "./common/dom-env-init.ts";
-import { sleep } from "./utils.ts";
+import { defaultHook, sleep } from "./utils.ts";
 import { defaultConfig, replace } from "../src/kroki.ts";
 
 beforeEach(() => {
@@ -31,6 +31,7 @@ it("from external files", async () => {
   window.$docsify?.plugins?.forEach((krokiPlugin) => {
     krokiPlugin(
       {
+        ...defaultHook,
         afterEach(afterEachHook) {
           afterEachHook(
             document.body.firstElementChild?.outerHTML || "",

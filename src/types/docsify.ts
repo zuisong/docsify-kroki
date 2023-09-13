@@ -6,7 +6,7 @@ declare global {
 export interface Docsify {
   plugins?: DocsifyPlugin[];
 }
-export type DocsifyHooks = Partial<{
+export type DocsifyHooks = {
   init(initHook: () => void): void;
 
   // Invoked one time when the docsify instance has mounted on the DOM
@@ -30,7 +30,7 @@ export type DocsifyHooks = Partial<{
 
   // Invoked one time after rendering the initial page
   ready(readyHook: () => void): void;
-}>;
+};
 
 export interface AsyncAfterEachHook {
   (html: string, next: (html: string) => void): void;
