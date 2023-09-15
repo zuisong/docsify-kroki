@@ -40,5 +40,5 @@ export const defaultHook: DocsifyHooks = {
   },
   ready(readyHook: VoidFunction): void {
     throw new Error("Function not implemented.");
-  }
+  },
 };

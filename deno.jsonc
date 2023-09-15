@@ -1,8 +1,8 @@
 {
   "imports": {
     "deno_std/": "https://deno.land/std@0.201.0/",
-    "fflate": "https://esm.sh/v131/fflate@0.8.0",
-    "esm.sh/": "https://esm.sh/v131/"
+    "fflate": "https://esm.sh/v132/fflate@0.8.0",
+    "esm.sh/": "https://esm.sh/v132/"
   },
   "scopes": {},
   "nodeModulesDir": false,

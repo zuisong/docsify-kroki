@@ -3,5 +3,5 @@ node_modules/
 .DS_Store
 .vscode/
 coverage/
-dist/
+# dist/
 npm/
