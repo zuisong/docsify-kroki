@@ -16,6 +16,12 @@
     }
   },
   "files": {
-    "ignore": ["**/node_modules/**", ".vscode", ".devcontainer", "dist/"]
+    "ignore": [
+      "**/node_modules/**",
+      ".vscode",
+      ".devcontainer",
+      "dist/",
+      "*.d.ts"
+    ]
   }
 }

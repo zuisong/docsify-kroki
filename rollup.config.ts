@@ -1,5 +1,4 @@
-import { esbuild, rollup } from "./deps.ts";
-
+import { esbuild, rollup, terser } from "./deps.ts";
 import packageJson from "./package.json" assert { type: "json" };
 import denoResolve from "./rollup-plugin-deno-resolve.ts";
 
@@ -18,22 +17,40 @@ const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
     denoResolve(import.meta.url),
     {
       name: "esbuild",
-      transform: (code) =>
-        esbuild.transform<esbuild.TransformOptions>(code, {
+      transform: async (code, fileName) => {
+        if (!fileName.endsWith(".ts")) {
+          return;
+        }
+        const res = await esbuild.transform<esbuild.TransformOptions>(code, {
+          sourcefile: fileName,
           format: "esm",
           loader: "ts",
           treeShaking: true,
           target: ["chrome80", "firefox80"],
           sourcemap: true,
-          minify: true,
-          lineLimit: 200,
-          mangleQuoted: true,
-        }),
+        });
+        esbuild.formatMessages(res.warnings, { kind: "warning", color: true });
+        return res;
+      },
     },
-  ] satisfies rollup.Plugin[],
+    {
+      name: "terser",
+      renderChunk: async (code) => {
+        const res = await terser.minify(code, {
+          module: true,
+          compress: true,
+          sourceMap: true,
+          mangle: true,
+          output: {
+            comments: false,
+          },
+        });
+        return { code: res.code as string, map: res.map as string };
+      },
+    },
+  ],
   external: [],
 };
 
 const bundle = await rollup.rollup(config);
-const output = config.output;
-await bundle.write(output);
+await bundle.write(config.output);
