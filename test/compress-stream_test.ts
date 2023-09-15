@@ -1,7 +1,7 @@
 import { assertEquals } from "deno_std/assert/assert_equals.ts";
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { init, tearDown } from "./common/dom-env-init.ts";
-import { type Any, sleep, defaultHook } from "./utils.ts";
+import { type Any, defaultHook, sleep } from "./utils.ts";
 
 beforeEach(() => {
   init();
@@ -28,7 +28,6 @@ A -> B
         ...defaultHook,
         afterEach(f) {
           f(document.body.firstElementChild?.outerHTML || "", (str) => {
-            console.log(str);
             document.body.innerHTML = str;
           });
         },

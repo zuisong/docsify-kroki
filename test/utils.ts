@@ -1,4 +1,8 @@
-import { AsyncAfterEachHook, DocsifyHooks } from "../src/types/docsify.ts";
+import {
+  AfterEachHook,
+  BeforeEachHook,
+  DocsifyHooks,
+} from "../src/types/docsify.ts";
 
 export function sleep(ms: number): Promise<void> {
   return new Promise((res) => {
@@ -11,31 +15,30 @@ export type Any = Parameters<typeof console.log>[0];
 export function generateRandomString(n: number): string {
   const characters =
     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-  const randomCharacters = Array(n)
-    .fill(0)
-    .map(() => characters[Math.floor(Math.random() * characters.length)]);
-  return randomCharacters.join("");
+  const length = characters.length;
+  const result = Array.from({ length: n }, () =>
+    characters.charCodeAt(Math.floor(Math.random() * length)),
+  );
+  return String.fromCharCode(...result);
 }
 
 export const defaultHook: DocsifyHooks = {
-  init: function (initHook: () => void): void {
+  init(initHook: VoidFunction): void {
     throw new Error("Function not implemented.");
   },
-  mounted: function (mountedHook: () => void): void {
+  mounted(mountedHook: VoidFunction): void {
     throw new Error("Function not implemented.");
   },
-  beforeEach: function (beforeEachHook: (markdown: string) => string): void {
+  beforeEach(beforeEachHook: BeforeEachHook): void {
     throw new Error("Function not implemented.");
   },
-  afterEach: function (
-    afterEachHook: ((html: string) => string) & AsyncAfterEachHook,
-  ): void {
+  afterEach(afterEachHook: AfterEachHook): void {
     throw new Error("Function not implemented.");
   },
-  doneEach: function (doneEachHook: () => void): void {
+  doneEach(doneEachHook: VoidFunction): void {
     throw new Error("Function not implemented.");
   },
-  ready: function (readyHook: () => void): void {
+  ready(readyHook: VoidFunction): void {
     throw new Error("Function not implemented.");
-  },
+  }
 };

@@ -13,7 +13,7 @@ afterEach(() => {
 });
 
 it("from external files with a error", async () => {
-  fetchMock.mock("https://long-text.txt", generateRandomString(10000));
+  fetchMock.mock("https://long-text.txt", generateRandomString(10_000));
 
   const krokiReturnBody = "kroki with long url";
 
@@ -21,7 +21,7 @@ it("from external files with a error", async () => {
 
   const imageSrc = `<img src="https://long-text.txt" alt="kroki-mermaid">`;
 
-  document.body.innerHTML = `${imageSrc}`;
+  document.body.innerHTML = imageSrc;
   await import("../src/index.ts");
 
   window.$docsify?.plugins?.forEach((krokiPlugin) => {
