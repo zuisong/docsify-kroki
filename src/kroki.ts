@@ -146,12 +146,9 @@ export const defaultConfig: DocsifyKrokiOption = {
 
 export const docsifyKrokiPlugin: DocsifyPlugin = (hook, vm) => {
   hook.afterEach((content: string, next: (html: string) => void) => {
-    (async () => {
-      const newContent = await replace(content, {
-        ...defaultConfig,
-        ...(vm?.config?.kroki || {}),
-      });
-      next(newContent);
-    })();
+    replace(content, {
+      ...defaultConfig,
+      ...(vm?.config?.kroki || {}),
+    }).then(next);
   });
 };

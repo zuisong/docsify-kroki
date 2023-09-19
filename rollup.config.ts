@@ -2,7 +2,7 @@ import { esbuild, rollup, terser } from "./deps.ts";
 import packageJson from "./package.json" assert { type: "json" };
 import denoResolve from "./rollup-plugin-deno-resolve.ts";
 
-const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
+const config = rollup.defineConfig({
   input: { "docsify-kroki": "./src/index.ts" },
   treeshake: true,
   output: {
@@ -17,11 +17,11 @@ const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
     denoResolve(import.meta.url),
     {
       name: "esbuild",
-      transform: async (code, fileName) => {
+      transform: (code, fileName) => {
         if (!fileName.endsWith(".ts")) {
           return;
         }
-        const res = await esbuild.transform<esbuild.TransformOptions>(code, {
+        return esbuild.transform<esbuild.TransformOptions>(code, {
           sourcefile: fileName,
           format: "esm",
           loader: "ts",
@@ -29,8 +29,6 @@ const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
           target: ["chrome80", "firefox80"],
           sourcemap: true,
         });
-        esbuild.formatMessages(res.warnings, { kind: "warning", color: true });
-        return res;
       },
     },
     {
@@ -50,7 +48,7 @@ const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
     },
   ],
   external: [],
-};
+});
 
 const bundle = await rollup.rollup(config);
-await bundle.write(config.output);
+await bundle.write(config.output as rollup.OutputOptions);

@@ -33,23 +33,18 @@ export type DocsifyHooks = {
   // Invoked one time after rendering the initial page
   ready(readyHook: VoidFunction): void;
 };
-
+type VoidFunction = () => void;
+type Any = ReturnType<typeof eval>;
+type AnyFunction<Args extends Any[], Return = Any> = (...args: Args) => Return;
 export type BeforeEachHook =
-  | ((markdown: string, next: (markdown: string) => void) => void)
-  | ((markdown: string) => string);
-
+  | AnyFunction<[string, AnyFunction<[string], void>], void>
+  | AnyFunction<[string], string>;
 export type AfterEachHook =
-  | ((html: string, next: (html: string) => void) => void)
-  | ((html: string) => string);
+  | AnyFunction<[string, AnyFunction<[string], void>], void>
+  | AnyFunction<[string], string>;
 
 declare global {
   export interface DocsifyConfig {
-    // Scrolls to the top of the screen when the route is changed.
-    auto2top?: boolean;
-
-    // Base path of the website. You can set it to another directory or another domain name.
-    basePath?: string;
-
     [key: string]: unknown;
   }
 }
