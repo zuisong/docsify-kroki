@@ -11,7 +11,7 @@
     "strict": true,
     "lib": ["dom", "dom.iterable", "dom.asynciterable", "deno.ns"]
   },
-  "lock": false,
+  // "lock": false,
   "tasks": {
     "build": "deno task clean && deno task fmt --write && deno task test-cov && deno task build-ts",
     "build-ts": "deno run -A rollup.config.ts",

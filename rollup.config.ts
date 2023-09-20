@@ -1,7 +1,8 @@
-import { esbuild, rollup, terser } from "./deps.ts";
+import * as rollup from "rollup";
 import packageJson from "./package.json" assert { type: "json" };
-import denoResolve from "./rollup-plugin-deno-resolve.ts";
-
+import denoResolve from "https://gist.github.com/zuisong/5b4ac483d9efcb01fa29389bc19fc7f5/raw/rollup-deno-plugin.ts";
+import * as terser from "terser";
+import * as esbuild from "esbuild-wasm";
 const config = rollup.defineConfig({
   input: { "docsify-kroki": "./src/index.ts" },
   treeshake: true,
@@ -17,7 +18,7 @@ const config = rollup.defineConfig({
     denoResolve(import.meta.url),
     {
       name: "esbuild",
-      transform: (code, fileName) => {
+      transform(code, fileName) {
         if (!fileName.endsWith(".ts")) {
           return;
         }
@@ -33,15 +34,12 @@ const config = rollup.defineConfig({
     },
     {
       name: "terser",
-      renderChunk: async (code) => {
+      async renderChunk(code) {
         const res = await terser.minify(code, {
           module: true,
           compress: true,
           sourceMap: true,
           mangle: true,
-          output: {
-            comments: false,
-          },
         });
         return { code: res.code as string, map: res.map as string };
       },

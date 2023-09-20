@@ -1,11 +1,11 @@
 import { delay } from "deno_std/async/delay.ts";
-import { GlobalRegistrator } from "../../deps.ts";
+import { GlobalRegistrator } from "@happy-dom/global-registrator";
 import { Any } from "../utils.ts";
 
 export async function init() {
   // deno-lint-ignore ban-ts-comment
   //@ts-ignore
-  GlobalRegistrator.registered = [];
+  GlobalRegistrator.registered = null;
   GlobalRegistrator.register();
   document.body.innerHTML = '<div class="container"></div>';
   globalThis.TextDecoder = undefined as Any;

@@ -48,6 +48,11 @@
     "url": "https://github.com/zuisong/docsify-kroki/issues"
   },
   "homepage": "https://github.com/zuisong/docsify-kroki#readme",
-  "dependencies": {
+  "devDependencies": {
+    "@jridgewell/resolve-uri": "^3.1.1",
+    "esbuild-wasm": "^0.19.3",
+    "@happy-dom/global-registrator": "^12.1.5",
+    "terser": "^5.20.0",
+    "rollup": "^3.29.2"
   }
 }
