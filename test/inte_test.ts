@@ -3,8 +3,8 @@ import { beforeEach, it } from "deno_std/testing/bdd.ts";
 import { defaultConfig, plant, replace } from "../src/kroki.ts";
 import { init } from "./common/dom-env-init.ts";
 
-beforeEach(() => {
-  init();
+beforeEach(async () => {
+  await init();
 });
 
 it("multi markdown integration test", async () => {

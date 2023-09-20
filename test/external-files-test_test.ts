@@ -5,8 +5,8 @@ import { init } from "./common/dom-env-init.ts";
 import { defaultHook, sleep } from "./utils.ts";
 import { defaultConfig, replace } from "../src/kroki.ts";
 
-beforeEach(() => {
-  init();
+beforeEach(async () => {
+  await init();
 });
 
 afterEach(() => {

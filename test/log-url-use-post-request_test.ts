@@ -4,8 +4,8 @@ import { fetchMock } from "../deps.ts";
 import { init } from "./common/dom-env-init.ts";
 import { defaultHook, generateRandomString, sleep } from "./utils.ts";
 
-beforeEach(() => {
-  init();
+beforeEach(async () => {
+  await init();
 });
 
 afterEach(() => {

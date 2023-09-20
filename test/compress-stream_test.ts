@@ -3,8 +3,8 @@ import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { init, tearDown } from "./common/dom-env-init.ts";
 import { type Any, defaultHook, sleep } from "./utils.ts";
 
-beforeEach(() => {
-  init();
+beforeEach(async () => {
+  await init();
 });
 
 afterEach(async () => {

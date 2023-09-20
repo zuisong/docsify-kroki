@@ -4,8 +4,8 @@ import { replace } from "../src/kroki.ts";
 import { init, tearDown } from "./common/dom-env-init.ts";
 import { defaultHook, sleep } from "./utils.ts";
 
-beforeEach(() => {
-  init();
+beforeEach(async () => {
+  await init();
 });
 
 afterEach(async () => {
