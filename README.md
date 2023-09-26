@@ -76,6 +76,8 @@ window.$docsify = {
       "seqdiag",
       "structurizr",
       "svgbob",
+      "symbolator",
+      "tikz",
       "vega",
       "vegalite",
       "wavedrom",
@@ -92,12 +94,14 @@ window.$docsify = {
 
 By default, those markdown language render by kroki:
 
-|              |              |             |            |            |
-| ------------ | ------------ | ----------- | ---------- | ---------- |
-| `plantuml`   | `mermaid`    | `svgbob`    | `vega`     | `vegalite` |
-| `wavedrom`   | `nomnoml`    | `graphviz`  | `erd`      | `ditaa`    |
-| `c4plantuml` | `packetdiag` | `nwdiag`    | `actdiag`  | `seqdiag`  |
-| `bytefield`  | `bpmn`       | `blockdiag` | `rackdiag` | `pikchr`   |
+|            |              |            |             |               |
+| ---------- | ------------ | ---------- | ----------- | ------------- |
+| `actdiag`  | `blockdiag`  | `bpmn`     | `bytefield` | `c4plantuml`  |
+| `d2`       | `dbml`       | `ditaa`    | `erd`       | `excalidraw`  |
+| `graphviz` | `mermaid`    | `nomnoml`  | `nwdiag`    | `packetdiag`  |
+| `pikchr`   | `plantuml`   | `rackdiag` | `seqdiag`   | `structurizr` |
+| `svgbob`   | `symbolator` | `tikz`     | `vega`      | `vegalite`    |
+| `wavedrom` | `wireviz`    |            |             |               |
 
 you can add more to langs array.
 
