@@ -13,6 +13,15 @@ const config = rollup.defineConfig({
     exports: "none",
     dir: "dist",
     format: "es",
+    banner: `
+/*!
+ * docsify-kroki
+ * v${packageJson.version}
+ * https://github.com/zuisong/docsify-kroki
+ * (c) 2020-2023 zuisong
+ * MIT license
+ */
+   `.trimStart(),
   },
   plugins: [
     denoResolve(import.meta.url),

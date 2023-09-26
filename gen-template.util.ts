@@ -14,9 +14,7 @@ const f = (lang: string) => `
 
 `;
 
-const langs = defaultConfig.langs
-
-const embeddingMarkDown = langs.map(f).join("---");
+const embeddingMarkDown = defaultConfig.langs.map(f).join("---");
 
 const readme = `
 # Example
@@ -38,6 +36,6 @@ ${embeddingMarkDown.trim()}
 \`\`\`
 
 ![kroki-excalidraw](./excalidraw.json)
-`
+`;
 
-Deno.writeTextFileSync("./docs/README.md",readme)
+Deno.writeTextFileSync("./docs/README.md", readme);
