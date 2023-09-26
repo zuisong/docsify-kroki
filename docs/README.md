@@ -20,6 +20,14 @@
 
 ---
 
+### tikz
+
+[](langs/tikz.md ':include :type=code md')
+
+[](langs/tikz.md ':include')
+
+---
+
 ### mermaid
 
 [](langs/mermaid.md ':include :type=code md')
@@ -81,6 +89,46 @@
 [](langs/ditaa.md ':include :type=code md')
 
 [](langs/ditaa.md ':include')
+
+---
+
+### d2
+
+[](langs/d2.md ':include :type=code md')
+
+[](langs/d2.md ':include')
+
+---
+
+### dbml
+
+[](langs/dbml.md ':include :type=code md')
+
+[](langs/dbml.md ':include')
+
+---
+
+### structurizr
+
+[](langs/structurizr.md ':include :type=code md')
+
+[](langs/structurizr.md ':include')
+
+---
+
+### symbolator
+
+[](langs/symbolator.md ':include :type=code md')
+
+[](langs/symbolator.md ':include')
+
+---
+
+### wireviz
+
+[](langs/wireviz.md ':include :type=code md')
+
+[](langs/wireviz.md ':include')
 
 ---
 

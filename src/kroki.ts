@@ -136,6 +136,8 @@ export const defaultConfig: DocsifyKrokiOption = {
     "seqdiag",
     "structurizr",
     "svgbob",
+    "symbolator",
+    "tikz",
     "vega",
     "vegalite",
     "wavedrom",

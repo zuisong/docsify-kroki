@@ -5,25 +5,61 @@
     <meta charset="UTF-8">
     <title>Docsify-Kroki Example</title>
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css"/>
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" />
 </head>
 
 <body>
-<div id="app"></div>
+    <div id="app"></div>
 </body>
 
 <!-- docsify -->
 <script>
     window.$docsify = {
         kroki: {
+            langs: [
+                "actdiag",
+                "blockdiag",
+                "bpmn",
+                "bytefield",
+                "c4plantuml",
+                "d2",
+                "dbml",
+                "ditaa",
+                "erd",
+                "excalidraw",
+                "graphviz",
+                "mermaid",
+                "nomnoml",
+                "nwdiag",
+                "packetdiag",
+                "pikchr",
+                "plantuml",
+                "rackdiag",
+                "seqdiag",
+                "structurizr",
+                "svgbob",
+                "symbolator",
+                "tikz",
+                "vega",
+                "vegalite",
+                "wavedrom",
+                "wireviz",
+            ],
             // put your config here
         },
+        hideCode: {
+            scroll: false, // Enable scrolling
+            height: 300 // Max height
+        }
     }
 </script>
 <script src="//unpkg.com/docsify"></script>
 
 <!-- plugins -->
+<script src="//unpkg.com/docsify-copy-code@2"></script>
+<script src="//unpkg.com/docsify-hide-code"></script>
+
 <script src="//unpkg.com/docsify-kroki"></script>
 <!-- <script src="../dist/docsify-kroki.js"></script> -->
 
