@@ -1,0 +1,15 @@
+```nomnoml
+[Pirate|eyeCount: Int|raid();pillage()|
+  [beard]--[parrot]
+  [beard]-:>[foul mouth]
+]
+
+[<abstract>Marauder]<:--[Pirate]
+[Pirate]- 0..7[mischief]
+[jollyness]->[Pirate]
+[jollyness]->[rum]
+[jollyness]->[singing]
+[Pirate]-> *[rum|tastiness: Int|swig()]
+[Pirate]->[singing]
+[singing]<->[rum]
+```
