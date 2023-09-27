@@ -18,6 +18,7 @@
     "clean": "rm -rf dist/ coverage/",
     "fmt": "deno run -A npm:@biomejs/biome format .",
     "lint": "deno run -A npm:@biomejs/biome lint .",
+    "gen-readme": " deno run gen-template.util.ts > ./docs/README.md ",
     "test-cov": "deno test --coverage=coverage/json --node-modules-dir=false --no-check -A && deno coverage coverage/json --lcov --output=coverage/lcov.info"
   },
   "exclude": ["dist/"],

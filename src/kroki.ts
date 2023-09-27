@@ -45,55 +45,55 @@ export async function replace(
   content: string,
   config: DocsifyKrokiOption,
 ): Promise<string> {
-  const spanElement: HTMLSpanElement = create("span", content);
+  const spanElement: HTMLSpanElement = create("div", content);
   const fetaures: Promise<void>[] = [];
 
   for (const LANG of config.langs) {
     const codeElements = Array.from(
-      spanElement.querySelectorAll(`pre[data-lang="${LANG}"]`),
+      spanElement.querySelectorAll<HTMLElement>(`pre[data-lang="${LANG}"]`),
     );
 
     for (const element of codeElements) {
-      if (element instanceof HTMLElement) {
-        const promise = plant(
-          // biome-ignore lint/style/noNonNullAssertion: <must not null>
-          element.textContent!,
-          LANG,
-          config.serverPath,
-        ).then((graphStr) => {
-          const planted: HTMLParagraphElement = create("p", graphStr);
-          planted.dataset.lang = LANG;
-          element.parentNode?.replaceChild(planted, element);
-        });
-        fetaures.push(promise);
-      }
+      const promise = plant(
+        // biome-ignore lint/style/noNonNullAssertion: <must not null>
+        element.textContent!,
+        LANG,
+        config.serverPath,
+      ).then((graphStr) => {
+        const planted: HTMLParagraphElement = create("p", graphStr);
+        planted.dataset.lang = LANG;
+        planted.style.maxWidth = "inherit";
+        element.parentNode?.replaceChild(planted, element);
+      });
+      fetaures.push(promise);
     }
 
     const imgElements = Array.from(
-      spanElement.querySelectorAll(`img[alt="kroki-${LANG}"]`),
+      spanElement.querySelectorAll<HTMLImageElement>(
+        `img[alt="kroki-${LANG}"]`,
+      ),
     );
 
     for (const element of imgElements) {
-      if (element instanceof HTMLImageElement) {
-        const img = element as HTMLImageElement;
-        const parent = element.parentNode;
+      const img = element as HTMLImageElement;
+      const parent = element.parentNode;
 
-        const srcUrl = img.getAttribute("src");
-        if (!srcUrl) {
-          continue;
-        }
-        const promise = fetch(srcUrl)
-          .then((it) => it.text())
-          .then((code) => plant(code, LANG, config.serverPath))
-          .then((graphStr) => {
-            const planted: HTMLParagraphElement = create("p", graphStr);
-            if (parent) {
-              planted.dataset.lang = LANG;
-              parent.replaceChild(planted, element);
-            }
-          });
-        fetaures.push(promise);
+      const srcUrl = img.getAttribute("src");
+      if (!srcUrl) {
+        continue;
       }
+      const promise = fetch(srcUrl)
+        .then((it) => it.text())
+        .then((code) => plant(code, LANG, config.serverPath))
+        .then((graphStr) => {
+          const planted: HTMLParagraphElement = create("p", graphStr);
+          if (parent) {
+            planted.dataset.lang = LANG;
+            planted.style.maxWidth = "inherit";
+            parent.replaceChild(planted, element);
+          }
+        });
+      fetaures.push(promise);
     }
   }
 

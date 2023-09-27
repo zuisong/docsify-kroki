@@ -36,6 +36,6 @@ ${embeddingMarkDown.trim()}
 \`\`\`
 
 ![kroki-excalidraw](./excalidraw.json)
-`;
+`.trim();
 
-Deno.writeTextFileSync("./docs/README.md", readme);
+console.log(readme);
