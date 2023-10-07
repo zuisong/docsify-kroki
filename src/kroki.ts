@@ -17,10 +17,7 @@ async function plantWithPost(
     body: content,
   });
   const svg = await resp.text();
-  return `
-    <object data="data:${contentType};base64,${urlSafeBase64Encode(svg)}"
-    type="${contentType}"></object>
-    `;
+  return `data:${contentType};base64,${urlSafeBase64Encode(svg)}`;
 }
 
 export async function plant(
@@ -34,11 +31,11 @@ export async function plant(
     .replace(/\+/g, "-")
     .replace(/\//g, "_");
   const svgUrl: string = urlPrefix + result;
-  const svgContent = `<object type="image/svg+xml" data="${svgUrl}" />`;
-  if (svgContent.length < 4000) {
-    return svgContent;
-  }
-  return plantWithPost(content, type, serverPath);
+  const objectData =
+    svgUrl.length < 4000
+      ? svgUrl
+      : await plantWithPost(content, type, serverPath);
+  return `<object type="${contentType}" style="max-width: 100%;" data="${objectData}" />`;
 }
 
 export async function replace(
@@ -50,21 +47,19 @@ export async function replace(
 
   for (const LANG of config.langs) {
     const codeElements = Array.from(
-      spanElement.querySelectorAll<HTMLElement>(`pre[data-lang="${LANG}"]`),
+      spanElement.querySelectorAll<HTMLPreElement>(`pre[data-lang="${LANG}"]`),
     );
 
     for (const element of codeElements) {
-      const promise = plant(
-        // biome-ignore lint/style/noNonNullAssertion: <must not null>
-        element.textContent!,
-        LANG,
-        config.serverPath,
-      ).then((graphStr) => {
-        const planted: HTMLParagraphElement = create("p", graphStr);
-        planted.dataset.lang = LANG;
-        planted.style.maxWidth = "inherit";
-        element.parentNode?.replaceChild(planted, element);
-      });
+      // biome-ignore lint/style/noNonNullAssertion: <explanation>
+      const promise = plant(element.textContent!, LANG, config.serverPath).then(
+        (graphStr) => {
+          const planted: HTMLParagraphElement = create("p", graphStr);
+          planted.dataset.lang = LANG;
+          planted.style.maxWidth = "inherit";
+          element.parentNode?.replaceChild(planted, element);
+        },
+      );
       fetaures.push(promise);
     }
 
