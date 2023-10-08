@@ -1,6 +1,6 @@
 import { delay } from "deno_std/async/delay.ts";
-import { GlobalRegistrator } from "@happy-dom/global-registrator";
 import { Any } from "../utils.ts";
+import { GlobalRegistrator } from "../../deps.ts";
 
 export async function init() {
   // deno-lint-ignore ban-ts-comment

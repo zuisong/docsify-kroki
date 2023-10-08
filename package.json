@@ -47,12 +47,5 @@
   "bugs": {
     "url": "https://github.com/zuisong/docsify-kroki/issues"
   },
-  "homepage": "https://github.com/zuisong/docsify-kroki#readme",
-  "devDependencies": {
-    "@jridgewell/resolve-uri": "^3.1.1",
-    "esbuild-wasm": "^0.19.3",
-    "@happy-dom/global-registrator": "^12.1.6",
-    "terser": "^5.20.0",
-    "rollup": "^3.29.3"
-  }
+  "homepage": "https://github.com/zuisong/docsify-kroki#readme"
 }
