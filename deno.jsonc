@@ -1,8 +1,9 @@
 {
+  "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
   "imports": {
     "deno_std/": "https://deno.land/std@0.203.0/",
-    "fflate": "https://esm.sh/v132/fflate@0.8.0",
-    "esm.sh/": "https://esm.sh/v132/"
+    "fflate": "https://esm.sh/v133/fflate@0.8.0",
+    "esm.sh/": "https://esm.sh/v133/"
   },
   "scopes": {},
   "nodeModulesDir": false,

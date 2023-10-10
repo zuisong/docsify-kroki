@@ -1,9 +1,10 @@
 import { rollup, esbuild, terser } from "./deps.ts";
-import packageJson from "./package.json" assert { type: "json" };
+import packageJson from "./package.json" with { type: "json" };
 import denoResolve from "./rollup-deno-plugin.ts";
 const config = rollup.defineConfig({
   input: { "docsify-kroki": "./src/index.ts" },
   treeshake: true,
+  strictDeprecations: true,
   output: {
     inlineDynamicImports: true,
     sourcemap: true,
