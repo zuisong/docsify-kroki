@@ -22,23 +22,4 @@ export function generateRandomString(n: number): string {
   return String.fromCharCode(...result);
 }
 
-export const defaultHook: DocsifyHooks = {
-  init(initHook: VoidFunction): void {
-    throw new Error("Function not implemented.");
-  },
-  mounted(mountedHook: VoidFunction): void {
-    throw new Error("Function not implemented.");
-  },
-  beforeEach(beforeEachHook: BeforeEachHook): void {
-    throw new Error("Function not implemented.");
-  },
-  afterEach(afterEachHook: AfterEachHook): void {
-    throw new Error("Function not implemented.");
-  },
-  doneEach(doneEachHook: VoidFunction): void {
-    throw new Error("Function not implemented.");
-  },
-  ready(readyHook: VoidFunction): void {
-    throw new Error("Function not implemented.");
-  },
-};
+export const defaultHook: DocsifyHooks = {} as DocsifyHooks;
