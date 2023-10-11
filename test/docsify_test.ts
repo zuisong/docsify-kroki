@@ -73,7 +73,6 @@ A -> B
         ...defaultHook,
         afterEach(f) {
           f(document.body.firstElementChild?.outerHTML || "", (str) => {
-            console.log(str);
             document.body.innerHTML = str;
           });
         },

@@ -87,11 +87,9 @@ export async function replace(
         .then((code) => plant(code, LANG, config.serverPath))
         .then((graphStr) => {
           const planted: HTMLParagraphElement = create("p", graphStr);
-          if (parent) {
-            planted.dataset.lang = LANG;
-            planted.style.maxWidth = "inherit";
-            parent.replaceChild(planted, element);
-          }
+          planted.dataset.lang = LANG;
+          planted.style.maxWidth = "inherit";
+          parent?.replaceChild(planted, element);
         });
       fetaures.push(promise);
     }
