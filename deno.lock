@@ -4,6 +4,7 @@
     "specifiers": {
       "npm:@biomejs/biome": "npm:@biomejs/biome@1.2.2",
       "npm:@happy-dom/global-registrator@12.9.1": "npm:@happy-dom/global-registrator@12.9.1",
+      "npm:@rollup/browser@4.1.4": "npm:@rollup/browser@4.1.4",
       "npm:esbuild-wasm@0.19.4": "npm:esbuild-wasm@0.19.4"
     },
     "npm": {
@@ -47,6 +48,10 @@
         "dependencies": {
           "happy-dom": "happy-dom@12.9.1"
         }
+      },
+      "@rollup/browser@4.1.4": {
+        "integrity": "sha512-rDpPZ0vr80RJk47OdMoe9/mz4dpWMudFGd0d8+FbiLjr8KDYeL1wWCoGkqVK3HA3KotrsSwiatKnrF2UBigGQQ==",
+        "dependencies": {}
       },
       "css.escape@1.5.1": {
         "integrity": "sha512-YUifsXXuknHlUsmlgyY0PKzgPOr7/FjCePfHNt0jxm83wHZi44VDMQ7/fGNkjY3/jV1MC+1CmZbaHzugyeRtpg==",
@@ -114,8 +119,6 @@
     "https://esm.sh/v133/fetch-mock@9.11.0/esm/client.js?target=denonext&bundle": "5a369a0e96743b6353ebe5da077dd1f936edeb4a8ec4c444c84081e9b0810325",
     "https://esm.sh/v133/fflate@0.8.0": "4fb3aca65c818d1498afe625eb1df540d00a8d24dc283b5d3751e884a2175c35",
     "https://esm.sh/v133/fflate@0.8.0/denonext/fflate.mjs": "2792676fe3ccd7b23597f69e7601ef914ccf1883465609ae2788d5dd75548937",
-    "https://esm.sh/v133/rollup@3.29.4/denonext/rollup.bundle.mjs": "98f0918f2bfd9ae488ee90ae27aec98ee87f1b166b5de6d5d7bd4bef995b809d",
-    "https://esm.sh/v133/rollup@3.29.4?bundle": "e5971e2c362d9fa984560ca71030d786741559e249a65dc73913312bca0c7e4f",
     "https://esm.sh/v133/terser@5.21.0/denonext/terser.bundle.mjs": "753bc447ff4cbbcaee9ec5bfa3dbdc85747aa4213b9379f44d56243948b6f1d3",
     "https://esm.sh/v133/terser@5.21.0?bundle": "43aaae9d249ed1acf53e2eea82a8488d8fc42b59d8fbfcdcb69fecd6250968ce"
   }

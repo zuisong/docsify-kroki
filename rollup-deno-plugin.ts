@@ -29,7 +29,7 @@ export default function denoResolve(baseUrl: string): rollup.Plugin {
     async load(id: string) {
       const url = new URL(id, baseUrl);
       if (url.protocol === "file:") {
-        return;
+        return Deno.readTextFile(url);
       }
       return await resolver.resolve(url.toString());
     },
