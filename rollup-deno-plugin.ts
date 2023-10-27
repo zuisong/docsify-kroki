@@ -1,4 +1,4 @@
-import { rollup, resolveUri } from "./deps.ts";
+import { resolveUri, rollup } from "./deps.ts";
 
 function shouldResolveUri(str: string) {
   return str.startsWith("..") || str.startsWith("./") || str.startsWith("/");

@@ -1,6 +1,8 @@
-import { rollup, esbuild, terser } from "./deps.ts";
+import { rollup, terser } from "./deps.ts";
+import { transform } from "esm.sh/@babel/standalone@7.23.2?bundle";
 import packageJson from "./package.json" with { type: "json" };
 import denoResolve from "./rollup-deno-plugin.ts";
+
 const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
   input: { "docsify-kroki": "./src/index.ts" },
   treeshake: true,
@@ -8,7 +10,8 @@ const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
   output: {
     inlineDynamicImports: true,
     sourcemap: true,
-    sourcemapBaseUrl: `https://unpkg.com/docsify-kroki@${packageJson.version}/dist/`,
+    sourcemapBaseUrl:
+      `https://unpkg.com/docsify-kroki@${packageJson.version}/dist/`,
     exports: "none",
     dir: "dist",
     format: "es",
@@ -26,18 +29,14 @@ const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
     denoResolve(import.meta.url),
     {
       name: "esbuild",
-      transform(code, fileName) {
-        if (!fileName.endsWith(".ts")) {
-          return;
-        }
-        return esbuild.transform<esbuild.TransformOptions>(code, {
-          sourcefile: fileName,
-          format: "esm",
-          loader: "ts",
-          treeShaking: true,
-          target: ["chrome80", "firefox80"],
-          sourcemap: true,
+      transform(rawCode, fileName) {
+        const { code, map } = transform(rawCode, {
+          filename: fileName,
+          presets: ["typescript"],
+          sourceMaps: true,
+          targets: ["chrome >=70"],
         });
+        return { code: code ?? rawCode, map };
       },
     },
     {

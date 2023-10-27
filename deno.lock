@@ -2,47 +2,10 @@
   "version": "3",
   "packages": {
     "specifiers": {
-      "npm:@biomejs/biome": "npm:@biomejs/biome@1.2.2",
       "npm:@happy-dom/global-registrator@12.9.1": "npm:@happy-dom/global-registrator@12.9.1",
-      "npm:@rollup/browser@4.1.4": "npm:@rollup/browser@4.1.4",
-      "npm:esbuild-wasm@0.19.4": "npm:esbuild-wasm@0.19.4"
+      "npm:@rollup/browser@4.1.4": "npm:@rollup/browser@4.1.4"
     },
     "npm": {
-      "@biomejs/biome@1.2.2": {
-        "integrity": "sha512-fXwXi56ZdaKO/N3rTmhWw41UxstoviODk+wia4WWNSlm23r8xJ/NxjaZ88scV2IsmsFHqc8rmwb2dkrStAdIEw==",
-        "dependencies": {
-          "@biomejs/cli-darwin-arm64": "@biomejs/cli-darwin-arm64@1.2.2",
-          "@biomejs/cli-darwin-x64": "@biomejs/cli-darwin-x64@1.2.2",
-          "@biomejs/cli-linux-arm64": "@biomejs/cli-linux-arm64@1.2.2",
-          "@biomejs/cli-linux-x64": "@biomejs/cli-linux-x64@1.2.2",
-          "@biomejs/cli-win32-arm64": "@biomejs/cli-win32-arm64@1.2.2",
-          "@biomejs/cli-win32-x64": "@biomejs/cli-win32-x64@1.2.2"
-        }
-      },
-      "@biomejs/cli-darwin-arm64@1.2.2": {
-        "integrity": "sha512-Fx1IURKhoqH6wPawtKLT6wcfMSjRRcNK8+VWau0iDOjXvNtjJpSmICbU89B7Vt/gZRwPqkfDMBkFwm6V5vFTSQ==",
-        "dependencies": {}
-      },
-      "@biomejs/cli-darwin-x64@1.2.2": {
-        "integrity": "sha512-JNaAFOI/ZisnmzvcFNd73geJxaFaN2L4YsWM6cgBeKyLY/ycl9C/PBTFfEmeB1c7f5XIIal8P2cj47kLJpN5Ig==",
-        "dependencies": {}
-      },
-      "@biomejs/cli-linux-arm64@1.2.2": {
-        "integrity": "sha512-JHXRnfhOLx8UO/Fcyn2c5pFRri0XKqRZm2wf5oH5GSfLVpckDw2X15dYGbu3nmfM/3pcAaTV46pUpjrCnaAieg==",
-        "dependencies": {}
-      },
-      "@biomejs/cli-linux-x64@1.2.2": {
-        "integrity": "sha512-5Zr+iM7lUKsw81p9PkXRESuH2/AhRZ6RCWkgE+FSLcxMhXy/4RDR+o2YQDsJM6cWKIzOJM05vDHTGrDq7vXE4A==",
-        "dependencies": {}
-      },
-      "@biomejs/cli-win32-arm64@1.2.2": {
-        "integrity": "sha512-HvUcG2p++RvYP0zfOqh+DgiUUH+JI/uETr0kzWlOJ9F3lsG525pkywg4RSd4OvJd7Wpd3wt3UpN/A4IEJaVmbA==",
-        "dependencies": {}
-      },
-      "@biomejs/cli-win32-x64@1.2.2": {
-        "integrity": "sha512-bfaFJwqJ9ApFga2o88OaROSd3pasYRzRGXHJWAE9VUUKdSNSTYxHOqVrNvV54yYPtL6Kt9xkuZa4HNu9it3TaA==",
-        "dependencies": {}
-      },
       "@happy-dom/global-registrator@12.9.1": {
         "integrity": "sha512-25A3ScXgaWF2VIzHrhaJ0ERp84yIEYvib5Lv8OZTwLGd5ZUnBvPBlnAblO7WmimSDhaCELljd5J28r9gnyTyKQ==",
         "dependencies": {
@@ -59,10 +22,6 @@
       },
       "entities@4.5.0": {
         "integrity": "sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==",
-        "dependencies": {}
-      },
-      "esbuild-wasm@0.19.4": {
-        "integrity": "sha512-i/9KP80bdGhWBvYjAJd8u3cwMvaAdBeuSwKcAJ2tfsMkS1q4ZqB0wecc3lELJC/pg7rysx21uw1JofkYLuexrg==",
         "dependencies": {}
       },
       "happy-dom@12.9.1": {
@@ -113,6 +72,8 @@
     "https://deno.land/std@0.203.0/fmt/colors.ts": "c51c4642678eb690dcf5ffee5918b675bf01a33fba82acf303701ae1a4f8c8d9",
     "https://deno.land/std@0.203.0/testing/_test_suite.ts": "30f018feeb3835f12ab198d8a518f9089b1bcb2e8c838a8b615ab10d5005465c",
     "https://deno.land/std@0.203.0/testing/bdd.ts": "3f446df5ef8e856a869e8eec54c8482590415741ff0b6358a00c43486cc15769",
+    "https://esm.sh/v133/@babel/standalone@7.23.2/denonext/standalone.bundle.mjs": "540cd1d819a18eff93d294bfa102f9f6134059e50314f4eeed2e4421be22fe04",
+    "https://esm.sh/v133/@babel/standalone@7.23.2?bundle": "ccbfef0a1428605446970d63066dba5619a5d3d025d48b4803829eae2a399d6b",
     "https://esm.sh/v133/@jridgewell/resolve-uri@3.1.1/denonext/resolve-uri.bundle.mjs": "279236eb66b8a7f3dc3e62c01eb3fe6193a0f1459f87749be546a848d663e74d",
     "https://esm.sh/v133/@jridgewell/resolve-uri@3.1.1?bundle": "e320701751ba8df8a8ffde8d9fd3a5c55ce22edd69176ee3174aa8b860524215",
     "https://esm.sh/v133/fetch-mock@9.11.0/denonext/esm/client.bundle.js": "733d96fab847969631d5c5cc1173bbca7824d3dc1e918e6697ba78a32c4e215c",

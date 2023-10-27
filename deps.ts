@@ -1,4 +1,3 @@
-export * as esbuild from "npm:esbuild-wasm@0.19.4";
 export * as rollup from "npm:@rollup/browser@4.1.4";
 export * as terser from "esm.sh/terser@5.21.0?bundle";
 export { default as resolveUri } from "esm.sh/@jridgewell/resolve-uri@3.1.1?bundle";

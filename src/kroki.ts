@@ -31,10 +31,9 @@ export async function plant(
     .replace(/\+/g, "-")
     .replace(/\//g, "_");
   const svgUrl: string = urlPrefix + result;
-  const objectData =
-    svgUrl.length < 4000
-      ? svgUrl
-      : await plantWithPost(content, type, serverPath);
+  const objectData = svgUrl.length < 4000
+    ? svgUrl
+    : await plantWithPost(content, type, serverPath);
   return `<object type="${contentType}" style="max-width: 100%;" data="${objectData}" />`;
 }
 

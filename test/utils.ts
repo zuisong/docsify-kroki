@@ -16,8 +16,9 @@ export function generateRandomString(n: number): string {
   const characters =
     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
   const length = characters.length;
-  const result = Array.from({ length: n }, () =>
-    characters.charCodeAt(Math.floor(Math.random() * length)),
+  const result = Array.from(
+    { length: n },
+    () => characters.charCodeAt(Math.floor(Math.random() * length)),
   );
   return String.fromCharCode(...result);
 }
