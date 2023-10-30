@@ -14,6 +14,7 @@ interface Module {
   local: string;
   specifier: string;
 }
+
 export default function denoResolve(baseUrl: string): rollup.Plugin {
   const resolver = new DenoResolve();
   return {
@@ -29,7 +30,7 @@ export default function denoResolve(baseUrl: string): rollup.Plugin {
     async load(id: string) {
       const url = new URL(id, baseUrl);
       if (url.protocol === "file:") {
-        return Deno.readTextFile(url);
+        return;
       }
       return await resolver.resolve(url.toString());
     },
