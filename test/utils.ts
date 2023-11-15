@@ -1,8 +1,4 @@
-import {
-  AfterEachHook,
-  BeforeEachHook,
-  DocsifyHooks,
-} from "../src/types/docsify.ts";
+import { DocsifyHooks } from "../src/types/docsify.ts";
 
 export function sleep(ms: number): Promise<void> {
   return new Promise((res) => {

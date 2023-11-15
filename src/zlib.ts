@@ -1,4 +1,4 @@
-import { zlibSync } from "fflate";
+import { zlibSync } from "esm.sh/fflate@0.8.0?target=es2022";
 
 function textEncode(str: string) {
   return new TextEncoder().encode(str);

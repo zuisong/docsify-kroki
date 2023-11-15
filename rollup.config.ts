@@ -1,5 +1,5 @@
 import { rollup, terser } from "./deps.ts";
-import { transform } from "esm.sh/@babel/standalone@7.23.2?bundle";
+import { transform } from "esm.sh/@babel/standalone@7.23.3?bundle";
 import packageJson from "./package.json" with { type: "json" };
 import denoResolve from "./rollup-deno-plugin.ts";
 
@@ -56,34 +56,4 @@ const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
 };
 
 const bundle = await rollup.rollup(config);
-const out = await bundle.generate(config.output);
-await bundle.close();
-
-function safeRun(f: () => void) {
-  try {
-    f();
-  } catch (e) {
-    // ignore error
-  }
-}
-
-safeRun(() => Deno.removeSync("dist", { recursive: true }));
-safeRun(() => Deno.mkdirSync("dist"));
-
-const res = out.output.map((o) => writeBundle(o, `dist/${o.fileName}`));
-
-await Promise.allSettled(res);
-
-function writeBundle(
-  o: rollup.OutputChunk | rollup.OutputAsset,
-  fileName: string,
-): Promise<void> {
-  if (o.type === "chunk") {
-    return Deno.writeTextFile(fileName, o.code);
-  } else {
-    const data = o.source;
-    return data instanceof Uint8Array
-      ? Deno.writeFile(fileName, data)
-      : Deno.writeTextFile(fileName, data);
-  }
-}
+await bundle.write(config.output);

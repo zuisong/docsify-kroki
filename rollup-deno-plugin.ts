@@ -23,8 +23,7 @@ export default function denoResolve(baseUrl: string): rollup.Plugin {
       if (shouldResolveUri(source)) {
         return resolveUri(source, importer);
       }
-      const resolvedPath = import.meta.resolve(source);
-      return resolvedPath;
+      return import.meta.resolve(source);
     },
 
     async load(id: string) {

@@ -36,10 +36,10 @@ export type DocsifyHooks = {
 type VoidFunction = () => void;
 type Any = ReturnType<typeof eval>;
 type AnyFunction<Args extends Any[], Return = Any> = (...args: Args) => Return;
-export type BeforeEachHook =
+type BeforeEachHook =
   | AnyFunction<[string, AnyFunction<[string], void>], void>
   | AnyFunction<[string], string>;
-export type AfterEachHook =
+type AfterEachHook =
   | AnyFunction<[string, AnyFunction<[string], void>], void>
   | AnyFunction<[string], string>;
 
