@@ -23,18 +23,21 @@ const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
  * (c) 2020-2023 zuisong
  * MIT license
  */
-   `.trimStart(),
+   `.trim(),
   },
   plugins: [
     denoResolve(import.meta.url),
     {
-      name: "esbuild",
+      name: "babel",
       transform(rawCode, fileName) {
         const { code, map } = transform(rawCode, {
           filename: fileName,
-          presets: ["typescript"],
+          presets: [
+            ["typescript"],
+            ["env", { modules: false }],
+          ],
           sourceMaps: true,
-          targets: ["chrome >=70"],
+          targets: { chrome: "60", firefox: "60", safari: "12" },
         });
         return { code: code ?? rawCode, map };
       },
