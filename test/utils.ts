@@ -1,9 +1,9 @@
 import { DocsifyHooks } from "../src/types/docsify.ts";
 
 export function sleep(ms: number): Promise<void> {
-  return new Promise((res) => {
-    setTimeout(res, ms);
-  });
+  const res = Promise.withResolvers<void>();
+  setTimeout(res.resolve, ms);
+  return res.promise;
 }
 
 export type Any = Parameters<typeof console.log>[0];
