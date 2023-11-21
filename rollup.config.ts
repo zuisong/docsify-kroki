@@ -1,7 +1,7 @@
 import { rollup, terser } from "./deps.ts";
-import { transform } from "esm.sh/@babel/standalone@7.23.3?bundle";
 import packageJson from "./package.json" with { type: "json" };
 import denoResolve from "./rollup-deno-plugin.ts";
+import * as swc from "npm:/@swc/wasm@1.3.97";
 
 const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
   input: { "docsify-kroki": "./src/index.ts" },
@@ -23,23 +23,20 @@ const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
  * (c) 2020-2023 zuisong
  * MIT license
  */
-   `.trim(),
+`.trim(),
   },
   plugins: [
     denoResolve(import.meta.url),
     {
-      name: "babel",
-      transform(rawCode, fileName) {
-        const { code, map } = transform(rawCode, {
-          filename: fileName,
-          presets: [
-            ["typescript"],
-            ["env", { modules: false }],
-          ],
+      name: "swc",
+      transform(rawCode, filename) {
+        return swc.transform(rawCode, {
+          filename,
+          jsc: { parser: { syntax: "typescript" } },
+          env: { targets: { chrome: "60", firefox: "60", safari: "12" } },
           sourceMaps: true,
-          targets: { chrome: "60", firefox: "60", safari: "12" },
+          minify: true,
         });
-        return { code: code ?? rawCode, map };
       },
     },
     {
@@ -55,7 +52,6 @@ const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
       },
     },
   ],
-  external: [],
 };
 
 const bundle = await rollup.rollup(config);

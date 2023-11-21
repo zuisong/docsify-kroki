@@ -2,8 +2,8 @@
   "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
   "imports": {
     "esm.sh/": "https://esm.sh/v134/",
-    "deno_std/": "https://deno.land/std@0.206.0/",
-    "rollup": "npm:@rollup/wasm-node@4.4.1",
+    "deno_std/": "https://deno.land/std@0.207.0/",
+    "rollup": "npm:@rollup/wasm-node@4.5.0",
     "@happy-dom/global-registrator": "npm:@happy-dom/global-registrator@12.10.3"
   },
   "scopes": {},
