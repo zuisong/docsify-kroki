@@ -1,5 +1,4 @@
-import { delay } from "deno_std/async/delay.ts";
-import { Any } from "../utils.ts";
+import { Any, delay } from "../utils.ts";
 import { GlobalRegistrator } from "../../deps.ts";
 
 export async function init() {

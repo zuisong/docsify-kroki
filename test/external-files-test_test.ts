@@ -2,7 +2,7 @@ import { assertEquals } from "deno_std/assert/assert_equals.ts";
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { fetchMock } from "../deps.ts";
 import { init } from "./common/dom-env-init.ts";
-import { defaultHook, sleep } from "./utils.ts";
+import { defaultHook, delay } from "./utils.ts";
 import { defaultConfig, replace } from "../src/kroki.ts";
 
 beforeEach(async () => {
@@ -44,7 +44,7 @@ it("from external files", async () => {
       { config: {} },
     );
   });
-  await sleep(50);
+  await delay(50);
 
   // wait for fetch data
   assertEquals(
@@ -64,11 +64,11 @@ it("from external files with a error", async () => {
   const imageSrc =
     `<img src="https://httpbin.errordomain/status/404" alt="kroki-mermaid">`;
   await replace(imageSrc, defaultConfig);
-  await sleep(30);
+  await delay(30);
 });
 
 it("from external files empty link", async () => {
   const imageSrc = `<img src="" alt="kroki-mermaid">`;
   await replace(imageSrc, defaultConfig);
-  await sleep(30);
+  await delay(30);
 });

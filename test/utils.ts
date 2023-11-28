@@ -1,11 +1,5 @@
 import { DocsifyHooks } from "../src/types/docsify.ts";
-
-export function sleep(ms: number): Promise<void> {
-  const res = Promise.withResolvers<void>();
-  setTimeout(res.resolve, ms);
-  return res.promise;
-}
-
+export { delay } from "deno_std/async/delay.ts";
 export type Any = Parameters<typeof console.log>[0];
 
 export function generateRandomString(n: number): string {

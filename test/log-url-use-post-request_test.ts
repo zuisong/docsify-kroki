@@ -2,7 +2,7 @@ import { assertEquals } from "deno_std/assert/assert_equals.ts";
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { fetchMock } from "../deps.ts";
 import { init } from "./common/dom-env-init.ts";
-import { defaultHook, generateRandomString, sleep } from "./utils.ts";
+import { defaultHook, delay, generateRandomString } from "./utils.ts";
 
 beforeEach(async () => {
   await init();
@@ -40,7 +40,7 @@ it("from external files with a error", async () => {
     );
   });
 
-  await sleep(30);
+  await delay(30);
 
   assertEquals(
     document.body.querySelector("object")?.getAttribute("data"),

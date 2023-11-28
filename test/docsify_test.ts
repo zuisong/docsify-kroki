@@ -2,7 +2,7 @@ import { assertEquals } from "deno_std/assert/assert_equals.ts";
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { replace } from "../src/kroki.ts";
 import { init, tearDown } from "./common/dom-env-init.ts";
-import { defaultHook, sleep } from "./utils.ts";
+import { defaultHook, delay } from "./utils.ts";
 
 beforeEach(async () => {
   await init();
@@ -82,7 +82,7 @@ A -> B
   });
 
   // wait for fetch data
-  await sleep(100);
+  await delay(100);
 
   assertEquals(
     document.body?.innerHTML.trim(),
