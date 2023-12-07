@@ -3,7 +3,7 @@
   "imports": {
     "esm.sh/": "https://esm.sh/v135/",
     "deno_std/": "https://deno.land/std@0.208.0/",
-    "rollup": "npm:@rollup/wasm-node@4.6.0",
+    "rollup": "npm:@rollup/wasm-node@4.6.1",
     "@happy-dom/global-registrator": "npm:@happy-dom/global-registrator@12.10.3"
   },
   "scopes": {},

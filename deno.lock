@@ -3,8 +3,8 @@
   "packages": {
     "specifiers": {
       "npm:@happy-dom/global-registrator@12.10.3": "npm:@happy-dom/global-registrator@12.10.3",
-      "npm:@rollup/wasm-node@4.6.0": "npm:@rollup/wasm-node@4.6.0",
-      "npm:@swc/wasm@1.3.99": "npm:@swc/wasm@1.3.99"
+      "npm:@rollup/wasm-node@4.6.1": "npm:@rollup/wasm-node@4.6.1",
+      "npm:@swc/wasm@1.3.100": "npm:@swc/wasm@1.3.100"
     },
     "npm": {
       "@happy-dom/global-registrator@12.10.3": {
@@ -13,14 +13,14 @@
           "happy-dom": "happy-dom@12.10.3"
         }
       },
-      "@rollup/wasm-node@4.6.0": {
-        "integrity": "sha512-8uWEACE/DodiN8Bjqlo2IvqphQ2taMCT9S02Ol6ra64a5PsD/s7KGSZXwqQgcY5N/ntRhlUO5ryQ/C6oT4TIXA==",
+      "@rollup/wasm-node@4.6.1": {
+        "integrity": "sha512-Mh6TSuMLoK9n3uLKa5r1NdX+BGZJyl5L+dx/MH9K2l9Dzk/R0w1XQMs1aP/quv3KB/kn6UIUbJmXNReIW5032Q==",
         "dependencies": {
           "fsevents": "fsevents@2.3.3"
         }
       },
-      "@swc/wasm@1.3.99": {
-        "integrity": "sha512-9TYR7Gdh5fWi019r5TaerZfdKCjSdgf+IM7XMJnSH7ZAWjTNw0TmXVxSOY+7xXHHFbY0+lzje1qJ+lfgdvZYag==",
+      "@swc/wasm@1.3.100": {
+        "integrity": "sha512-rCi5+dUBta1jgrT5xGeAIY8yeJ/o/8PSFmcpsTVe2I2aSXkcHX2c1G1/tS86O65rMlwEiBmGvm1txEMG89me6Q==",
         "dependencies": {}
       },
       "css.escape@1.5.1": {
@@ -89,7 +89,7 @@
     "https://esm.sh/v135/fetch-mock@9.11.0/esm/client.js": "cfe4fc6e3863f334cc39b3ff6d2ab05b3f02b1f890d6cadac0ba8773807d958b",
     "https://esm.sh/v135/fflate@0.8.0/es2022/fflate.mjs": "006dba61c4aa84e3839b3871cd20b65d7048803008e55f39b8ba608d0a8e0b09",
     "https://esm.sh/v135/fflate@0.8.0?target=es2022": "fb461e015d18bb5498b62fd5dd80a5fa2d901e3a1053c6177ab6964f5404c9cf",
-    "https://esm.sh/v135/terser@5.24.0/denonext/terser.bundle.mjs": "4eeac48cb5c312c89d3d0363249c798549c79b073e667b0961eb6f72297f5898",
-    "https://esm.sh/v135/terser@5.24.0?bundle": "f4e8a7c0db5c07c3653639e854ea4b3852c2721d4dca551763cec7d09dfae6bc"
+    "https://esm.sh/v135/terser@5.25.0/denonext/terser.bundle.mjs": "59843c1ab5b541765555c42772d2cd05f2c4db161157562cf8e5a5123846de82",
+    "https://esm.sh/v135/terser@5.25.0?bundle": "6e764a380ef0341f7fd3f432b07068df73a2eb577623d047cb398904b0a37a2e"
   }
 }
