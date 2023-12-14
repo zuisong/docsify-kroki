@@ -2,8 +2,8 @@
   "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
   "imports": {
     "esm.sh/": "https://esm.sh/v135/",
-    "deno_std/": "https://deno.land/std@0.208.0/",
-    "rollup": "npm:@rollup/wasm-node@4.6.1",
+    "deno_std/": "https://deno.land/std@0.209.0/",
+    "rollup": "npm:@rollup/wasm-node@4.9.0",
     "@happy-dom/global-registrator": "npm:@happy-dom/global-registrator@12.10.3"
   },
   "scopes": {},
@@ -21,7 +21,7 @@
     "fmt": "deno fmt",
     "lint": "deno lint",
     "gen-readme": " deno run gen-template.util.ts > ./docs/README.md ",
-    "test-cov": "deno test --coverage=coverage/json --node-modules-dir=false --no-check -A && deno coverage coverage/json --lcov --output=coverage/lcov.info"
+    "test-cov": "deno test --coverage -A && deno coverage coverage --lcov --output=coverage/lcov.info"
   },
   "exclude": ["dist/"],
   "lint": {
