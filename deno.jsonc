@@ -2,9 +2,9 @@
   "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
   "imports": {
     "esm.sh/": "https://esm.sh/v135/",
-    "deno_std/": "https://deno.land/std@0.209.0/",
-    "rollup": "npm:@rollup/wasm-node@4.9.0",
-    "@happy-dom/global-registrator": "npm:@happy-dom/global-registrator@12.10.3"
+    "deno_std/": "https://deno.land/std@0.211.0/",
+    "rollup": "npm:@rollup/wasm-node@4.9.4",
+    "@happy-dom/global-registrator": "npm:@happy-dom/global-registrator@13"
   },
   "scopes": {},
   "nodeModulesDir": false,

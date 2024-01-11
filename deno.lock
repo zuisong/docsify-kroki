@@ -2,26 +2,31 @@
   "version": "3",
   "packages": {
     "specifiers": {
-      "npm:@happy-dom/global-registrator@12.10.3": "npm:@happy-dom/global-registrator@12.10.3",
-      "npm:@rollup/wasm-node@4.9.0": "npm:@rollup/wasm-node@4.9.0",
+      "npm:@happy-dom/global-registrator@13": "npm:@happy-dom/global-registrator@13.0.0",
+      "npm:@rollup/wasm-node@4.9.4": "npm:@rollup/wasm-node@4.9.4",
       "npm:@swc/wasm@1.3.100": "npm:@swc/wasm@1.3.100",
       "npm:@types/node": "npm:@types/node@18.16.19"
     },
     "npm": {
-      "@happy-dom/global-registrator@12.10.3": {
-        "integrity": "sha512-miSMqJS1B1Je9/z9ClgJafGX1ioM/rvxWFWqjOy8I82RSoa2/k4//iPfI+dOxT2d9f5KEaHZycw+3FH9TzjmSQ==",
+      "@happy-dom/global-registrator@13.0.0": {
+        "integrity": "sha512-AHP/MLx/p+dgEk7hDY1TBXoBHw0SiD+G1NCq8S3bkoKIO8ge53FqZc4iuFskjyfuKilpqxUBB4KMpmPrMj7qIA==",
         "dependencies": {
-          "happy-dom": "happy-dom@12.10.3"
+          "happy-dom": "happy-dom@13.0.0"
         }
       },
-      "@rollup/wasm-node@4.9.0": {
-        "integrity": "sha512-spVhSzlFgxz88VwlNU1WiWivBluzAgngKwYhRvNifzjglTqgkXdO6zmfwu2Q7MLLd+m7ol8lnWyQCq1U1xxjaw==",
+      "@rollup/wasm-node@4.9.4": {
+        "integrity": "sha512-K9ZPYMCxP7sBElj5du0En/zpbhXTQxpWI7RlF+8bNpLUozhzg2Pcx2h3cBCzV7xtiUt0dc+pF2Ib3/Sg8R0JMA==",
         "dependencies": {
+          "@types/estree": "@types/estree@1.0.5",
           "fsevents": "fsevents@2.3.3"
         }
       },
       "@swc/wasm@1.3.100": {
         "integrity": "sha512-rCi5+dUBta1jgrT5xGeAIY8yeJ/o/8PSFmcpsTVe2I2aSXkcHX2c1G1/tS86O65rMlwEiBmGvm1txEMG89me6Q==",
+        "dependencies": {}
+      },
+      "@types/estree@1.0.5": {
+        "integrity": "sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==",
         "dependencies": {}
       },
       "@types/node@18.16.19": {
@@ -40,8 +45,8 @@
         "integrity": "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==",
         "dependencies": {}
       },
-      "happy-dom@12.10.3": {
-        "integrity": "sha512-JzUXOh0wdNGY54oKng5hliuBkq/+aT1V3YpTM+lrN/GoLQTANZsMaIvmHiHe612rauHvPJnDZkZ+5GZR++1Abg==",
+      "happy-dom@13.0.0": {
+        "integrity": "sha512-R0j/6qco6wmihOKmelRGt6Coao9gDNEkhcZ8fB73zzr7qo8EaM+BBSmfe2f2hBhC81dykLVVZ1ONcI+zSRoWMQ==",
         "dependencies": {
           "css.escape": "css.escape@1.5.1",
           "entities": "entities@4.5.0",
@@ -78,23 +83,23 @@
     }
   },
   "remote": {
-    "https://deno.land/std@0.209.0/assert/_constants.ts": "8a9da298c26750b28b326b297316cdde860bc237533b07e1337c021379e6b2a9",
-    "https://deno.land/std@0.209.0/assert/_diff.ts": "2c9371f17cf08cbb843c924bc31ca77af422ec4fe162f73d42c651d547573fa8",
-    "https://deno.land/std@0.209.0/assert/_format.ts": "335ce8e15c65b679ad142dbc9e5e97e5d58602c39dd3c9175cef6c85fe22d6d5",
-    "https://deno.land/std@0.209.0/assert/assert_equals.ts": "991b0c2b437a015d623654f758e48bfd931068211a52e8131b397cdf005c595f",
-    "https://deno.land/std@0.209.0/assert/assertion_error.ts": "26ed1863d905005f00785c89750c001c3522c5417e4f58f95044b8143cfc1593",
-    "https://deno.land/std@0.209.0/assert/equal.ts": "6f81c8a3b12c08bdc3510c8a1293b4db1c083692219d7e3828d2234b448d3d3d",
-    "https://deno.land/std@0.209.0/async/delay.ts": "d414b6ff5b597a3b8a90b1b860b675062a106ad0e311816256f4696aa40ec1a1",
-    "https://deno.land/std@0.209.0/fmt/colors.ts": "34b3f77432925eb72cf0bfb351616949746768620b8e5ead66da532f93d10ba2",
-    "https://deno.land/std@0.209.0/testing/_test_suite.ts": "30f018feeb3835f12ab198d8a518f9089b1bcb2e8c838a8b615ab10d5005465c",
-    "https://deno.land/std@0.209.0/testing/bdd.ts": "c41f019786c4a9112aadb7e5a7bbcc711f58429ac5904b3855fa248ba5fa0ba6",
+    "https://deno.land/std@0.211.0/assert/_constants.ts": "a271e8ef5a573f1df8e822a6eb9d09df064ad66a4390f21b3e31f820a38e0975",
+    "https://deno.land/std@0.211.0/assert/_diff.ts": "6a2d68f2c42d73a1e31818a4195f40598d672c7f02ac75c7f1b1e6789852c2bc",
+    "https://deno.land/std@0.211.0/assert/_format.ts": "0ba808961bf678437fb486b56405b6fefad2cf87b5809667c781ddee8c32aff4",
+    "https://deno.land/std@0.211.0/assert/assert_equals.ts": "b3b33ae8a85ae22a0754c61a7486d4ae870e8938830a94f5cacecba3a9b0442a",
+    "https://deno.land/std@0.211.0/assert/assertion_error.ts": "9f689a101ee586c4ce92f52fa7ddd362e86434ffdf1f848e45987dc7689976b8",
+    "https://deno.land/std@0.211.0/assert/equal.ts": "fae5e8a52a11d3ac694bbe1a53e13a7969e3f60791262312e91a3e741ae519e2",
+    "https://deno.land/std@0.211.0/async/delay.ts": "eab3187eee39ccc8cc76d411fb21fb1801250ddb1090e486d5aec2ace5403391",
+    "https://deno.land/std@0.211.0/fmt/colors.ts": "be082d6a6bbb2980ae7b2bf8c23c6bb2811ba90a06a9bcb861344a71784c5a99",
+    "https://deno.land/std@0.211.0/testing/_test_suite.ts": "f10a8a6338b60c403f07a76f3f46bdc9f1e1a820c0a1decddeb2949f7a8a0546",
+    "https://deno.land/std@0.211.0/testing/bdd.ts": "3cbd17bd35f629a76ce63446238dfb4632240dd46b3b205027c45fa3dd67e554",
     "https://esm.sh/v135/@jridgewell/resolve-uri@3.1.1": "1cece3c73bc8b5c594f8fbf00fb83b7ac29a16a1a991caa2dd3c67f3e9d70212",
     "https://esm.sh/v135/@jridgewell/resolve-uri@3.1.1/denonext/resolve-uri.mjs": "239f11fbc4483ded7e3bc97eeaf942760d5e83d2e15cb8199e48ea61b6b49948",
     "https://esm.sh/v135/fetch-mock@9.11.0/denonext/esm/client.js": "71c42552497d42d0762e5feaef0f905a8fa098c961f1af63efb71a4b4942e150",
     "https://esm.sh/v135/fetch-mock@9.11.0/esm/client.js": "cfe4fc6e3863f334cc39b3ff6d2ab05b3f02b1f890d6cadac0ba8773807d958b",
     "https://esm.sh/v135/fflate@0.8.0/es2022/fflate.mjs": "006dba61c4aa84e3839b3871cd20b65d7048803008e55f39b8ba608d0a8e0b09",
     "https://esm.sh/v135/fflate@0.8.0?target=es2022": "fb461e015d18bb5498b62fd5dd80a5fa2d901e3a1053c6177ab6964f5404c9cf",
-    "https://esm.sh/v135/terser@5.25.0/denonext/terser.bundle.mjs": "59843c1ab5b541765555c42772d2cd05f2c4db161157562cf8e5a5123846de82",
-    "https://esm.sh/v135/terser@5.25.0?bundle": "6e764a380ef0341f7fd3f432b07068df73a2eb577623d047cb398904b0a37a2e"
+    "https://esm.sh/v135/terser@5.26.0/denonext/terser.bundle.mjs": "9ef20854b2cf5dfc63a53eb2ca90b30c6c1848b948100a0192b63202637f358a",
+    "https://esm.sh/v135/terser@5.26.0?bundle": "ceff160b2a2d6b6635fa7dce9fee74ec8f06e6a8fcde86d78e3ad895662e7c30"
   }
 }
