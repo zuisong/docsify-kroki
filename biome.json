@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.4.0/schema.json",
+  "$schema": "https://biomejs.dev/schemas/1.5.2/schema.json",
   "organizeImports": {
     "enabled": true
   },
@@ -11,6 +11,9 @@
         "noForEach": "off"
       }
     }
+  },
+  "formatter": {
+    "enabled": false
   },
   "files": {
     "ignore": ["dist/", "coverage/"]

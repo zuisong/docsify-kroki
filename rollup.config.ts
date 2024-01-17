@@ -1,7 +1,7 @@
+import * as swc from "npm:/@swc/wasm@1.3.100";
 import { rollup, terser } from "./deps.ts";
 import packageJson from "./package.json" with { type: "json" };
 import denoResolve from "./rollup-deno-plugin.ts";
-import * as swc from "npm:/@swc/wasm@1.3.100";
 
 const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
   input: { "docsify-kroki": "./src/index.ts" },

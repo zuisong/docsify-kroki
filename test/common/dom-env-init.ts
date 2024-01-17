@@ -1,5 +1,5 @@
-import { Any, delay } from "../utils.ts";
 import { GlobalRegistrator } from "../../deps.ts";
+import { Any, delay } from "../utils.ts";
 
 export async function init() {
   // deno-lint-ignore ban-ts-comment

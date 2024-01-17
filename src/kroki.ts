@@ -142,7 +142,7 @@ export const docsifyKrokiPlugin: DocsifyPlugin = (hook, vm) => {
   hook.afterEach((content: string, next: (html: string) => void) => {
     replace(content, {
       ...defaultConfig,
-      ...(vm?.config?.kroki || {}),
+      ...vm?.config?.kroki,
     }).then(next);
   });
 };

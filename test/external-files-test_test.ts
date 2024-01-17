@@ -1,9 +1,9 @@
 import { assertEquals } from "deno_std/assert/assert_equals.ts";
 import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { fetchMock } from "../deps.ts";
+import { defaultConfig, replace } from "../src/kroki.ts";
 import { init } from "./common/dom-env-init.ts";
 import { defaultHook, delay } from "./utils.ts";
-import { defaultConfig, replace } from "../src/kroki.ts";
 
 beforeEach(async () => {
   await init();
