@@ -1,4 +1,4 @@
-import * as swc from "npm:/@swc/wasm@1.3.100";
+import * as swc from "swc";
 import { rollup, terser } from "./deps.ts";
 import packageJson from "./package.json" with { type: "json" };
 import denoResolve from "./rollup-deno-plugin.ts";

@@ -5,12 +5,9 @@ function shouldResolveUri(str: string) {
 }
 interface ModuleInfo {
   modules: Module[];
-  roots: string[];
 }
 
 interface Module {
-  root: string[];
-  emit: string | null;
   local: string;
   specifier: string;
 }
@@ -29,24 +26,24 @@ export default function denoResolve(baseUrl: string): rollup.Plugin {
     async load(id: string) {
       const url = new URL(id, baseUrl);
       if (url.protocol === "file:") {
-        return;
+        return Deno.readTextFile(url);
       }
-      return await resolver.resolve(url.toString());
+      return await resolver.resolve(url);
     },
   };
 }
 
 class DenoResolve {
   private moduleCache = new Map<string, Module>();
-  async resolve(url: string): Promise<string> {
+  async resolve(url: URL): Promise<string> {
     const module = await this.module(url);
     if (!module) {
       throw new Error(`invariant: ${url} not found`);
     }
-    return await Deno.readTextFile(module.emit || module.local);
+    return await Deno.readTextFile(module.local);
   }
-  private async module(nameStr: string): Promise<Module | undefined> {
-    const foundModule = this.moduleCache.get(nameStr);
+  private async module(nameStr: URL): Promise<Module | undefined> {
+    const foundModule = this.moduleCache.get(nameStr.toString());
     if (foundModule) {
       return foundModule;
     }
@@ -54,11 +51,11 @@ class DenoResolve {
     for (const module of moduleInfo.modules) {
       this.moduleCache.set(module.specifier, module);
     }
-    return this.moduleCache.get(nameStr);
+    return this.moduleCache.get(nameStr.toString());
   }
-  private async info(nameStr: string, cwd?: string) {
+  private async info(nameStr: URL, cwd?: string) {
     const p = new Deno.Command(Deno.execPath(), {
-      args: ["info", nameStr, "--json"],
+      args: ["info", nameStr.toString(), "--json"],
       cwd: cwd,
     });
     const output = await p.output();
