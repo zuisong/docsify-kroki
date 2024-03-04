@@ -2,10 +2,35 @@
   "version": "3",
   "packages": {
     "specifiers": {
+      "jsr:@std/assert": "jsr:@std/assert@0.218.2",
+      "jsr:@std/assert@^0.218.2": "jsr:@std/assert@0.218.2",
+      "jsr:@std/async": "jsr:@std/async@0.218.2",
+      "jsr:@std/fmt@^0.218.2": "jsr:@std/fmt@0.218.2",
+      "jsr:@std/testing": "jsr:@std/testing@0.218.2",
       "npm:@happy-dom/global-registrator@13.2.1": "npm:@happy-dom/global-registrator@13.2.1",
-      "npm:@rollup/wasm-node@4.9.6": "npm:@rollup/wasm-node@4.9.6",
-      "npm:@swc/wasm@1.3.107": "npm:@swc/wasm@1.3.107",
+      "npm:@rollup/wasm-node@4.12.0": "npm:@rollup/wasm-node@4.12.0",
+      "npm:@swc/wasm@1.4.2": "npm:@swc/wasm@1.4.2",
       "npm:@types/node": "npm:@types/node@18.16.19"
+    },
+    "jsr": {
+      "@std/assert@0.218.2": {
+        "integrity": "7f0a5a1a8cf86607cd6c2c030584096e1ffad27fc9271429a8cb48cfbdee5eaf",
+        "dependencies": [
+          "jsr:@std/fmt@^0.218.2"
+        ]
+      },
+      "@std/async@0.218.2": {
+        "integrity": "4528bfe132189719bfbf34756df70d870b5a845d49dce17466b5297546ad8ff9",
+        "dependencies": [
+          "jsr:@std/assert@^0.218.2"
+        ]
+      },
+      "@std/fmt@0.218.2": {
+        "integrity": "99526449d2505aa758b6cbef81e7dd471d8b28ec0dcb1491d122b284c548788a"
+      },
+      "@std/testing@0.218.2": {
+        "integrity": "49410b23584c924533786e6c117d71486c1daa65f4911fd6cfc95e4edba9de7f"
+      }
     },
     "npm": {
       "@happy-dom/global-registrator@13.2.1": {
@@ -14,15 +39,15 @@
           "happy-dom": "happy-dom@13.2.1"
         }
       },
-      "@rollup/wasm-node@4.9.6": {
-        "integrity": "sha512-B3FpAkroTE6q+MRHzv8XLBgPbxdjJiy5UnduZNQ/4lxeF1JT2O/OAr0JPpXeRG/7zpKm/kdqU/4m6AULhmnSqw==",
+      "@rollup/wasm-node@4.12.0": {
+        "integrity": "sha512-sqy3+YvV/uWX6bPZOR5PlEdH6xyMPXoelllRQ/uZ13tzy9f4pXZTbajnoWN8IHHXwTNKPiLzsePLiDEVmkxMNw==",
         "dependencies": {
           "@types/estree": "@types/estree@1.0.5",
           "fsevents": "fsevents@2.3.3"
         }
       },
-      "@swc/wasm@1.3.107": {
-        "integrity": "sha512-mfe9FszpVT+5JA5brGQ5PwkLoDXsZeh8tyO2/rKqMjKQW0tqZP/npkVgD9yUMC/eXLM2TmnjeYZAPpTreSPBBQ==",
+      "@swc/wasm@1.4.2": {
+        "integrity": "sha512-RUaujFapRSVcQAhxp1AV4+TUKK6tIYW7++rvYmfxwUjypjPE9zzJCgSylbhlhFHf6rVcx0h/+IbnrbyENITq8g==",
         "dependencies": {}
       },
       "@types/estree@1.0.5": {
@@ -60,16 +85,6 @@
     }
   },
   "remote": {
-    "https://deno.land/std@0.214.0/assert/_constants.ts": "a271e8ef5a573f1df8e822a6eb9d09df064ad66a4390f21b3e31f820a38e0975",
-    "https://deno.land/std@0.214.0/assert/_diff.ts": "dcc63d94ca289aec80644030cf88ccbf7acaa6fbd7b0f22add93616b36593840",
-    "https://deno.land/std@0.214.0/assert/_format.ts": "0ba808961bf678437fb486b56405b6fefad2cf87b5809667c781ddee8c32aff4",
-    "https://deno.land/std@0.214.0/assert/assert_equals.ts": "4497c56fe7d2993b0d447926702802fc0becb44e319079e8eca39b482ee01b4e",
-    "https://deno.land/std@0.214.0/assert/assertion_error.ts": "9f689a101ee586c4ce92f52fa7ddd362e86434ffdf1f848e45987dc7689976b8",
-    "https://deno.land/std@0.214.0/assert/equal.ts": "fae5e8a52a11d3ac694bbe1a53e13a7969e3f60791262312e91a3e741ae519e2",
-    "https://deno.land/std@0.214.0/async/delay.ts": "8e1d18fe8b28ff95885e2bc54eccec1713f57f756053576d8228e6ca110793ad",
-    "https://deno.land/std@0.214.0/fmt/colors.ts": "aeaee795471b56fc62a3cb2e174ed33e91551b535f44677f6320336aabb54fbb",
-    "https://deno.land/std@0.214.0/testing/_test_suite.ts": "f10a8a6338b60c403f07a76f3f46bdc9f1e1a820c0a1decddeb2949f7a8a0546",
-    "https://deno.land/std@0.214.0/testing/bdd.ts": "a7a9f691c6531166e4afa9d91bd5750c7418407bb310473b27eda59fd2d1f609",
     "https://esm.sh/v135/@jridgewell/resolve-uri@3.1.1": "1cece3c73bc8b5c594f8fbf00fb83b7ac29a16a1a991caa2dd3c67f3e9d70212",
     "https://esm.sh/v135/@jridgewell/resolve-uri@3.1.1/denonext/resolve-uri.mjs": "239f11fbc4483ded7e3bc97eeaf942760d5e83d2e15cb8199e48ea61b6b49948",
     "https://esm.sh/v135/fetch-mock@9.11.0/denonext/esm/client.js": "71c42552497d42d0762e5feaef0f905a8fa098c961f1af63efb71a4b4942e150",
@@ -82,8 +97,8 @@
   "workspace": {
     "dependencies": [
       "npm:@happy-dom/global-registrator@13.2.1",
-      "npm:@rollup/wasm-node@4.9.6",
-      "npm:@swc/wasm@1.3.107"
+      "npm:@rollup/wasm-node@4.12.0",
+      "npm:@swc/wasm@1.4.2"
     ]
   }
 }

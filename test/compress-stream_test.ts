@@ -1,7 +1,7 @@
-import { assertEquals } from "deno_std/assert/assert_equals.ts";
-import { afterEach, beforeEach, it } from "deno_std/testing/bdd.ts";
 import { init, tearDown } from "./common/dom-env-init.ts";
 import { type Any, defaultHook, delay } from "./utils.ts";
+import { assertEquals } from "jsr:@std/assert";
+import { afterEach, beforeEach, it } from "jsr:@std/testing/bdd";
 
 beforeEach(async () => {
   await init();
