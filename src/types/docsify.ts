@@ -52,6 +52,4 @@ export interface DocsifyVM {
   config?: DocsifyConfig;
 }
 
-export interface DocsifyPlugin {
-  (hook: DocsifyHooks, vm: DocsifyVM): void;
-}
+export type DocsifyPlugin = (hook: DocsifyHooks, vm: DocsifyVM) => void;

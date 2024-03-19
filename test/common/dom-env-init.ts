@@ -1,11 +1,9 @@
-import { GlobalRegistrator } from "../../deps.ts";
-import { Any, delay } from "../utils.ts";
+import { Window } from "happy-dom";
+import { type Any, delay } from "../utils.ts";
 
 export async function init() {
-  // deno-lint-ignore ban-ts-comment
-  //@ts-ignore
-  GlobalRegistrator.registered = null;
-  GlobalRegistrator.register();
+  const w = new Window();
+  globalThis.document = w.document as Any;
   document.body.innerHTML = '<div class="container"></div>';
   globalThis.TextDecoder = undefined as Any;
   await delay(1);
