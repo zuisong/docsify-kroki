@@ -50,16 +50,18 @@ export async function replace(
     );
 
     for (const element of codeElements) {
-      // biome-ignore lint/style/noNonNullAssertion: <explanation>
-      const promise = plant(element.textContent!, LANG, config.serverPath).then(
-        (graphStr) => {
-          const planted: HTMLParagraphElement = create("p", graphStr);
-          planted.dataset.lang = LANG;
-          planted.style.maxWidth = "inherit";
-          element.parentNode?.replaceChild(planted, element);
-        },
-      );
-      fetaures.push(promise);
+      const { textContent } = element;
+      if (textContent !== null) {
+        const promise = plant(textContent, LANG, config.serverPath).then(
+          (graphStr) => {
+            const planted: HTMLParagraphElement = create("p", graphStr);
+            planted.dataset.lang = LANG;
+            planted.style.maxWidth = "inherit";
+            element.parentNode?.replaceChild(planted, element);
+          },
+        );
+        fetaures.push(promise);
+      }
     }
 
     const imgElements = Array.from(

@@ -33,7 +33,9 @@ const config: rollup.InputOptions & { output: rollup.OutputOptions } = {
         return swc.transform(rawCode, {
           filename,
           jsc: { parser: { syntax: "typescript" } },
-          env: { targets: { chrome: "60", firefox: "60", safari: "12" } },
+          env: {
+            targets: { chrome: "60", firefox: "60", safari: "12" },
+          },
           sourceMaps: true,
           minify: true,
         });

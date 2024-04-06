@@ -8,9 +8,7 @@
   "customizations": {
     "vscode": {
       "settings": {},
-      "extensions": [
-        "denoland.vscode-deno"
-      ]
+      "extensions": ["denoland.vscode-deno"]
     }
   }
 }

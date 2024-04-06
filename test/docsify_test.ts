@@ -1,8 +1,8 @@
+import { assertEquals } from "jsr:@std/assert";
+import { afterEach, beforeEach, it } from "jsr:@std/testing/bdd";
 import { replace } from "../src/kroki.ts";
 import { init, tearDown } from "./common/dom-env-init.ts";
 import { defaultHook, delay } from "./utils.ts";
-import { assertEquals } from "jsr:@std/assert";
-import { afterEach, beforeEach, it } from "jsr:@std/testing/bdd";
 
 beforeEach(async () => {
   await init();

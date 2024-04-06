@@ -8,11 +8,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/actdiag.md ':include :type=code md')
+[](langs/actdiag.md ":include :type=code md")
 
 </details>
 
-[](langs/actdiag.md ':include')
+[](langs/actdiag.md ":include")
 
 ---
 
@@ -20,11 +20,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/blockdiag.md ':include :type=code md')
+[](langs/blockdiag.md ":include :type=code md")
 
 </details>
 
-[](langs/blockdiag.md ':include')
+[](langs/blockdiag.md ":include")
 
 ---
 
@@ -32,11 +32,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/bpmn.md ':include :type=code md')
+[](langs/bpmn.md ":include :type=code md")
 
 </details>
 
-[](langs/bpmn.md ':include')
+[](langs/bpmn.md ":include")
 
 ---
 
@@ -44,11 +44,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/bytefield.md ':include :type=code md')
+[](langs/bytefield.md ":include :type=code md")
 
 </details>
 
-[](langs/bytefield.md ':include')
+[](langs/bytefield.md ":include")
 
 ---
 
@@ -56,11 +56,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/c4plantuml.md ':include :type=code md')
+[](langs/c4plantuml.md ":include :type=code md")
 
 </details>
 
-[](langs/c4plantuml.md ':include')
+[](langs/c4plantuml.md ":include")
 
 ---
 
@@ -68,11 +68,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/d2.md ':include :type=code md')
+[](langs/d2.md ":include :type=code md")
 
 </details>
 
-[](langs/d2.md ':include')
+[](langs/d2.md ":include")
 
 ---
 
@@ -80,11 +80,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/dbml.md ':include :type=code md')
+[](langs/dbml.md ":include :type=code md")
 
 </details>
 
-[](langs/dbml.md ':include')
+[](langs/dbml.md ":include")
 
 ---
 
@@ -92,11 +92,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/ditaa.md ':include :type=code md')
+[](langs/ditaa.md ":include :type=code md")
 
 </details>
 
-[](langs/ditaa.md ':include')
+[](langs/ditaa.md ":include")
 
 ---
 
@@ -104,11 +104,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/erd.md ':include :type=code md')
+[](langs/erd.md ":include :type=code md")
 
 </details>
 
-[](langs/erd.md ':include')
+[](langs/erd.md ":include")
 
 ---
 
@@ -116,11 +116,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/excalidraw.md ':include :type=code md')
+[](langs/excalidraw.md ":include :type=code md")
 
 </details>
 
-[](langs/excalidraw.md ':include')
+[](langs/excalidraw.md ":include")
 
 ---
 
@@ -128,11 +128,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/graphviz.md ':include :type=code md')
+[](langs/graphviz.md ":include :type=code md")
 
 </details>
 
-[](langs/graphviz.md ':include')
+[](langs/graphviz.md ":include")
 
 ---
 
@@ -140,11 +140,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/mermaid.md ':include :type=code md')
+[](langs/mermaid.md ":include :type=code md")
 
 </details>
 
-[](langs/mermaid.md ':include')
+[](langs/mermaid.md ":include")
 
 ---
 
@@ -152,11 +152,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/nomnoml.md ':include :type=code md')
+[](langs/nomnoml.md ":include :type=code md")
 
 </details>
 
-[](langs/nomnoml.md ':include')
+[](langs/nomnoml.md ":include")
 
 ---
 
@@ -164,11 +164,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/nwdiag.md ':include :type=code md')
+[](langs/nwdiag.md ":include :type=code md")
 
 </details>
 
-[](langs/nwdiag.md ':include')
+[](langs/nwdiag.md ":include")
 
 ---
 
@@ -176,11 +176,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/packetdiag.md ':include :type=code md')
+[](langs/packetdiag.md ":include :type=code md")
 
 </details>
 
-[](langs/packetdiag.md ':include')
+[](langs/packetdiag.md ":include")
 
 ---
 
@@ -188,11 +188,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/pikchr.md ':include :type=code md')
+[](langs/pikchr.md ":include :type=code md")
 
 </details>
 
-[](langs/pikchr.md ':include')
+[](langs/pikchr.md ":include")
 
 ---
 
@@ -200,11 +200,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/plantuml.md ':include :type=code md')
+[](langs/plantuml.md ":include :type=code md")
 
 </details>
 
-[](langs/plantuml.md ':include')
+[](langs/plantuml.md ":include")
 
 ---
 
@@ -212,11 +212,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/rackdiag.md ':include :type=code md')
+[](langs/rackdiag.md ":include :type=code md")
 
 </details>
 
-[](langs/rackdiag.md ':include')
+[](langs/rackdiag.md ":include")
 
 ---
 
@@ -224,11 +224,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/seqdiag.md ':include :type=code md')
+[](langs/seqdiag.md ":include :type=code md")
 
 </details>
 
-[](langs/seqdiag.md ':include')
+[](langs/seqdiag.md ":include")
 
 ---
 
@@ -236,11 +236,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/structurizr.md ':include :type=code md')
+[](langs/structurizr.md ":include :type=code md")
 
 </details>
 
-[](langs/structurizr.md ':include')
+[](langs/structurizr.md ":include")
 
 ---
 
@@ -248,11 +248,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/svgbob.md ':include :type=code md')
+[](langs/svgbob.md ":include :type=code md")
 
 </details>
 
-[](langs/svgbob.md ':include')
+[](langs/svgbob.md ":include")
 
 ---
 
@@ -260,11 +260,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/symbolator.md ':include :type=code md')
+[](langs/symbolator.md ":include :type=code md")
 
 </details>
 
-[](langs/symbolator.md ':include')
+[](langs/symbolator.md ":include")
 
 ---
 
@@ -272,11 +272,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/tikz.md ':include :type=code md')
+[](langs/tikz.md ":include :type=code md")
 
 </details>
 
-[](langs/tikz.md ':include')
+[](langs/tikz.md ":include")
 
 ---
 
@@ -284,11 +284,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/vega.md ':include :type=code md')
+[](langs/vega.md ":include :type=code md")
 
 </details>
 
-[](langs/vega.md ':include')
+[](langs/vega.md ":include")
 
 ---
 
@@ -296,11 +296,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/vegalite.md ':include :type=code md')
+[](langs/vegalite.md ":include :type=code md")
 
 </details>
 
-[](langs/vegalite.md ':include')
+[](langs/vegalite.md ":include")
 
 ---
 
@@ -308,11 +308,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/wavedrom.md ':include :type=code md')
+[](langs/wavedrom.md ":include :type=code md")
 
 </details>
 
-[](langs/wavedrom.md ':include')
+[](langs/wavedrom.md ":include")
 
 ---
 
@@ -320,11 +320,11 @@
 
 <details><summary>Source Code</summary>
 
-[](langs/wireviz.md ':include :type=code md')
+[](langs/wireviz.md ":include :type=code md")
 
 </details>
 
-[](langs/wireviz.md ':include')
+[](langs/wireviz.md ":include")
 
 ---
 

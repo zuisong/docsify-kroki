@@ -1,7 +1,7 @@
-import { init, tearDown } from "./common/dom-env-init.ts";
-import { type Any, defaultHook, delay } from "./utils.ts";
 import { assertEquals } from "jsr:@std/assert";
 import { afterEach, beforeEach, it } from "jsr:@std/testing/bdd";
+import { init, tearDown } from "./common/dom-env-init.ts";
+import { type Any, defaultHook, delay } from "./utils.ts";
 
 beforeEach(async () => {
   await init();
