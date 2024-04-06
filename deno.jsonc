@@ -2,8 +2,8 @@
   "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
   "imports": {
     "esm.sh/": "https://esm.sh/v135/",
-    "rollup": "npm:@rollup/wasm-node@4.13.0",
-    "swc": "npm:@swc/wasm@1.4.2",
+    "rollup": "npm:@rollup/wasm-node@4.14.0",
+    "swc": "npm:@swc/wasm@1.4.12",
     "happy-dom": "npm:happy-dom-without-node"
   },
   "scopes": {},
