@@ -2,46 +2,54 @@
   "version": "3",
   "packages": {
     "specifiers": {
-      "jsr:@std/assert": "jsr:@std/assert@0.221.0",
-      "jsr:@std/assert@^0.221.0": "jsr:@std/assert@0.221.0",
-      "jsr:@std/async": "jsr:@std/async@0.221.0",
-      "jsr:@std/fmt@^0.221.0": "jsr:@std/fmt@0.221.0",
-      "jsr:@std/testing": "jsr:@std/testing@0.221.0",
-      "npm:@rollup/wasm-node@4.14.0": "npm:@rollup/wasm-node@4.14.0",
-      "npm:@swc/wasm@1.4.12": "npm:@swc/wasm@1.4.12",
+      "jsr:@std/assert@^0.224.0": "jsr:@std/assert@0.224.0",
+      "jsr:@std/assert@^0.225.1": "jsr:@std/assert@0.225.1",
+      "jsr:@std/async@^0.224.0": "jsr:@std/async@0.224.0",
+      "jsr:@std/fmt@^0.225.0": "jsr:@std/fmt@0.225.0",
+      "jsr:@std/internal@^0.225.0": "jsr:@std/internal@0.225.0",
+      "jsr:@std/testing@^0.224.0": "jsr:@std/testing@0.224.0",
+      "npm:@rollup/wasm-node@4.17.2": "npm:@rollup/wasm-node@4.17.2",
+      "npm:@swc/wasm@1.5.7": "npm:@swc/wasm@1.5.7",
       "npm:@types/node": "npm:@types/node@18.16.19",
-      "npm:happy-dom-without-node": "npm:happy-dom-without-node@13.4.1"
+      "npm:happy-dom-without-node": "npm:happy-dom-without-node@14.11.0"
     },
     "jsr": {
-      "@std/assert@0.221.0": {
-        "integrity": "a5f1aa6e7909dbea271754fd4ab3f4e687aeff4873b4cef9a320af813adb489a",
+      "@std/assert@0.224.0": {
+        "integrity": "8643233ec7aec38a940a8264a6e3eed9bfa44e7a71cc6b3c8874213ff401967f"
+      },
+      "@std/assert@0.225.1": {
+        "integrity": "7342fa32a6d82c2c7c98ffea566baa9a892d04b22815b9fcf62cedeee5764f9c",
         "dependencies": [
-          "jsr:@std/fmt@^0.221.0"
+          "jsr:@std/fmt@^0.225.0",
+          "jsr:@std/internal@^0.225.0"
         ]
       },
-      "@std/async@0.221.0": {
-        "integrity": "f5519861754a1bb2898d227dd8ccb545abc975534aa9063e53911d6cb4e365cf",
+      "@std/async@0.224.0": {
+        "integrity": "b6da423eeafbd0003fe88d950e069368c6a156f8b5293b7adbd9c8903a8f8d66",
         "dependencies": [
-          "jsr:@std/assert@^0.221.0"
+          "jsr:@std/assert@^0.224.0"
         ]
       },
-      "@std/fmt@0.221.0": {
-        "integrity": "379fed69bdd9731110f26b9085aeb740606b20428ce6af31ef6bd45ef8efa62a"
+      "@std/fmt@0.225.0": {
+        "integrity": "982e7d1a8b8869338cc5b58e2669f7c6889ea9822f1278494dc43edba7f4c4b4"
       },
-      "@std/testing@0.221.0": {
-        "integrity": "d9b5ed7d5dc4e8d193734a594e7f80c04a5a6f34c2493e69c6713ae7fe6f880e"
+      "@std/internal@0.225.0": {
+        "integrity": "6f501a91aa5ee992f8f9ffb45fa103bc04031df65f6a3550e1c5d7e6304cd34a"
+      },
+      "@std/testing@0.224.0": {
+        "integrity": "371b8a929aa7132240d5dd766a439be8f780ef5c176ab194e0bcab72370c761e"
       }
     },
     "npm": {
-      "@rollup/wasm-node@4.14.0": {
-        "integrity": "sha512-efST/LGEoabKrDzCgA26GJFSJ6B7y9qA6DY1lGUDamfObWtEjrsybaD0CoUZetpHaSFf/rv4ulYg80iWLyYrcQ==",
+      "@rollup/wasm-node@4.17.2": {
+        "integrity": "sha512-4F6C3XaUn02XY/GJMQTXncWrLyCkRHdRZe4OyWuQUprWKmU2u+esISOtCYdr3Bp9AqCIo/X3So2Ik7N9dNDwow==",
         "dependencies": {
           "@types/estree": "@types/estree@1.0.5",
           "fsevents": "fsevents@2.3.3"
         }
       },
-      "@swc/wasm@1.4.12": {
-        "integrity": "sha512-FtX98XZwzYMxMTxIC2en3Z0h/+GzMH99/o91CYa2qFSoZJ3Wc3RwZnkpEPD67PBxS4FHvSKSt0wsSW7mtisptg==",
+      "@swc/wasm@1.5.7": {
+        "integrity": "sha512-59MMLZGJjc//F63g1QVybHUo+ZjxIGzibiPe02po7ykGKwayQfkewBAFkENk7lkP9sSwNx4xiXf7KZB7xf2jJw==",
         "dependencies": {}
       },
       "@types/estree@1.0.5": {
@@ -60,8 +68,8 @@
         "integrity": "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==",
         "dependencies": {}
       },
-      "happy-dom-without-node@13.4.1": {
-        "integrity": "sha512-c1Yc4Fcq75EkrDw5JM1Sk6Cf4BOodgibSK/S/X9PEvejeZ0ql4G35wJHskIZFYksOEiBz39e5MIYMA8b5TszJw==",
+      "happy-dom-without-node@14.11.0": {
+        "integrity": "sha512-vV3RKQKyq92nuJPbpnmP10VmZZQfcexyfL2PRmzL++oUFk9ZDbA6H4hCBS9msUCRHSzq8tdbeK/+6OEsbzntGA==",
         "dependencies": {
           "entities": "entities@4.5.0",
           "webidl-conversions": "webidl-conversions@7.0.0",
@@ -108,8 +116,11 @@
   },
   "workspace": {
     "dependencies": [
-      "npm:@rollup/wasm-node@4.14.0",
-      "npm:@swc/wasm@1.4.12",
+      "jsr:@std/assert@^0.225.1",
+      "jsr:@std/async@^0.224.0",
+      "jsr:@std/testing@^0.224.0",
+      "npm:@rollup/wasm-node@4.17.2",
+      "npm:@swc/wasm@1.5.7",
       "npm:happy-dom-without-node"
     ]
   }

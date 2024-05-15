@@ -1,5 +1,5 @@
-import { assertEquals } from "jsr:@std/assert";
-import { beforeEach, it } from "jsr:@std/testing/bdd";
+import { assertEquals } from "@std/assert";
+import { beforeEach, it } from "@std/testing/bdd";
 import { init } from "./common/dom-env-init.ts";
 
 beforeEach(async () => {

@@ -1,5 +1,5 @@
 import type { DocsifyHooks } from "../src/types/docsify.ts";
-export { delay } from "jsr:@std/async";
+export { delay } from "@std/async";
 export type Any = Parameters<typeof console.log>[0];
 
 export function generateRandomString(n: number): string {
