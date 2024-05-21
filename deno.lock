@@ -2,12 +2,11 @@
   "version": "3",
   "packages": {
     "specifiers": {
+      "jsr:@std/assert": "jsr:@std/assert@0.225.2",
       "jsr:@std/assert@^0.224.0": "jsr:@std/assert@0.224.0",
-      "jsr:@std/assert@^0.225.1": "jsr:@std/assert@0.225.1",
-      "jsr:@std/async@^0.224.0": "jsr:@std/async@0.224.0",
-      "jsr:@std/fmt@^0.225.0": "jsr:@std/fmt@0.225.0",
-      "jsr:@std/internal@^0.225.0": "jsr:@std/internal@0.225.0",
-      "jsr:@std/testing@^0.224.0": "jsr:@std/testing@0.224.0",
+      "jsr:@std/async": "jsr:@std/async@0.224.0",
+      "jsr:@std/internal@^0.225.1": "jsr:@std/internal@0.225.1",
+      "jsr:@std/testing": "jsr:@std/testing@0.224.0",
       "npm:@rollup/wasm-node@4.17.2": "npm:@rollup/wasm-node@4.17.2",
       "npm:@swc/wasm@1.5.7": "npm:@swc/wasm@1.5.7",
       "npm:@types/node": "npm:@types/node@18.16.19",
@@ -17,11 +16,10 @@
       "@std/assert@0.224.0": {
         "integrity": "8643233ec7aec38a940a8264a6e3eed9bfa44e7a71cc6b3c8874213ff401967f"
       },
-      "@std/assert@0.225.1": {
-        "integrity": "7342fa32a6d82c2c7c98ffea566baa9a892d04b22815b9fcf62cedeee5764f9c",
+      "@std/assert@0.225.2": {
+        "integrity": "6fd566c3ea01654d29c2b633298b7fc7599716336233852eb87e9843658fa192",
         "dependencies": [
-          "jsr:@std/fmt@^0.225.0",
-          "jsr:@std/internal@^0.225.0"
+          "jsr:@std/internal@^0.225.1"
         ]
       },
       "@std/async@0.224.0": {
@@ -30,11 +28,8 @@
           "jsr:@std/assert@^0.224.0"
         ]
       },
-      "@std/fmt@0.225.0": {
-        "integrity": "982e7d1a8b8869338cc5b58e2669f7c6889ea9822f1278494dc43edba7f4c4b4"
-      },
-      "@std/internal@0.225.0": {
-        "integrity": "6f501a91aa5ee992f8f9ffb45fa103bc04031df65f6a3550e1c5d7e6304cd34a"
+      "@std/internal@0.225.1": {
+        "integrity": "7d8a812be88c2792f15ab9cf46911e521ccca50435948a8f24df5cefda96bde9"
       },
       "@std/testing@0.224.0": {
         "integrity": "371b8a929aa7132240d5dd766a439be8f780ef5c176ab194e0bcab72370c761e"
@@ -116,9 +111,9 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@std/assert@^0.225.1",
-      "jsr:@std/async@^0.224.0",
-      "jsr:@std/testing@^0.224.0",
+      "jsr:@std/assert",
+      "jsr:@std/async",
+      "jsr:@std/testing",
       "npm:@rollup/wasm-node@4.17.2",
       "npm:@swc/wasm@1.5.7",
       "npm:happy-dom-without-node"
