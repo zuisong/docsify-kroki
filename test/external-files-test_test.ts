@@ -28,7 +28,7 @@ it("from external files", async () => {
   document.body.innerHTML = `${imageSrc}`;
   await import("../src/index.ts");
 
-  window.$docsify?.plugins?.forEach((krokiPlugin) => {
+  globalThis.$docsify?.plugins?.forEach((krokiPlugin) => {
     krokiPlugin(
       {
         ...defaultHook,
@@ -56,13 +56,11 @@ it("from external files", async () => {
 });
 
 it("from external files with a error", async () => {
-  fetchMock.mock(
-    "https://httpbin.errordomain/status/404",
-    () => Promise.reject(new Error("from external files with a error link")),
+  fetchMock.mock("https://httpbin.errordomain/status/404", () =>
+    Promise.reject(new Error("from external files with a error link")),
   );
 
-  const imageSrc =
-    `<img src="https://httpbin.errordomain/status/404" alt="kroki-mermaid">`;
+  const imageSrc = `<img src="https://httpbin.errordomain/status/404" alt="kroki-mermaid">`;
   await replace(imageSrc, defaultConfig);
   await delay(30);
 });

@@ -14,7 +14,7 @@ function strFromU8(dat: Uint8Array): string {
 }
 
 async function zlib_fflate(data: Uint8Array): Promise<Uint8Array> {
-  return await zlibSync(data, { level: 9 });
+  return await Promise.resolve(zlibSync(data, { level: 9 }));
 }
 
 export async function zlib(str: string): Promise<string> {

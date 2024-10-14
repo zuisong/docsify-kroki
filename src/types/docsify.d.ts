@@ -1,12 +1,17 @@
-declare global {
-  interface Window {
-    $docsify?: Docsify;
-  }
+declare interface DocsifyConfig {
+  kroki?: Partial<DocsifyKrokiOption>;
 }
-export interface Docsify {
+declare interface DocsifyKrokiOption {
+  serverPath: string;
+  langs: string[];
+}
+
+////
+
+declare interface Docsify {
   plugins?: DocsifyPlugin[];
 }
-export type DocsifyHooks = {
+interface DocsifyHooks {
   // Invoked one time when docsify script is initialized.
   init(initHook: VoidFunction): void;
 
@@ -32,24 +37,32 @@ export type DocsifyHooks = {
 
   // Invoked one time after rendering the initial page
   ready(readyHook: VoidFunction): void;
-};
-type VoidFunction = () => void;
-export declare type Any = ReturnType<typeof eval>;
-type AnyFunction<Args extends Any[], Return = Any> = (...args: Args) => Return;
-type BeforeEachHook =
+}
+export type Any = ReturnType<typeof eval>;
+declare type AnyFunction<Args extends Any[], Return = Any> = (
+  ...args: Args
+) => Return;
+declare type BeforeEachHook =
   | AnyFunction<[string, AnyFunction<[string], void>], void>
   | AnyFunction<[string], string>;
-type AfterEachHook =
+declare type AfterEachHook =
   | AnyFunction<[string, AnyFunction<[string], void>], void>
   | AnyFunction<[string], string>;
 
-declare global {
-  export interface DocsifyConfig {
-    [key: string]: unknown;
-  }
-}
 export interface DocsifyVM {
   config?: DocsifyConfig;
 }
 
-export type DocsifyPlugin = (hook: DocsifyHooks, vm: DocsifyVM) => void;
+declare type DocsifyPlugin = (hook: DocsifyHooks, vm: DocsifyVM) => void;
+
+declare global {
+  var $docsify: Docsify;
+}
+
+declare namespace NodeJS {
+  export interface Global {
+    $docsify: Docsify;
+  }
+}
+
+export { type DocsifyHooks, type DocsifyKrokiOption, type DocsifyPlugin };

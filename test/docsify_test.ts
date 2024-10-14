@@ -67,7 +67,7 @@ A -> B
 `;
   await import("../src/index.ts");
 
-  window.$docsify?.plugins?.forEach((krokiPlugin) => {
+  globalThis.$docsify?.plugins?.forEach((krokiPlugin) => {
     krokiPlugin(
       {
         ...defaultHook,

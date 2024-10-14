@@ -51,42 +51,42 @@ Alice <-- Bob: another authentication Response
 
 ```html
 <script>
-window.$docsify = {
-  // default
-  kroki: {
-    langs: [
-      "actdiag",
-      "blockdiag",
-      "bpmn",
-      "bytefield",
-      "c4plantuml",
-      "d2",
-      "dbml",
-      "ditaa",
-      "erd",
-      "excalidraw",
-      "graphviz",
-      "mermaid",
-      "nomnoml",
-      "nwdiag",
-      "packetdiag",
-      "pikchr",
-      "plantuml",
-      "rackdiag",
-      "seqdiag",
-      "structurizr",
-      "svgbob",
-      "symbolator",
-      "tikz",
-      "vega",
-      "vegalite",
-      "wavedrom",
-      "wireviz",
-    ],
+  window.$docsify = {
     // default
-    serverPath: "//kroki.io/",
-  },
-}
+    kroki: {
+      langs: [
+        "actdiag",
+        "blockdiag",
+        "bpmn",
+        "bytefield",
+        "c4plantuml",
+        "d2",
+        "dbml",
+        "ditaa",
+        "erd",
+        "excalidraw",
+        "graphviz",
+        "mermaid",
+        "nomnoml",
+        "nwdiag",
+        "packetdiag",
+        "pikchr",
+        "plantuml",
+        "rackdiag",
+        "seqdiag",
+        "structurizr",
+        "svgbob",
+        "symbolator",
+        "tikz",
+        "vega",
+        "vegalite",
+        "wavedrom",
+        "wireviz",
+      ],
+      // default
+      serverPath: "//kroki.io/",
+    },
+  };
 </script>
 ```
 

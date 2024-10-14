@@ -1,8 +1,5 @@
-import type { DocsifyKrokiOption } from "./types/docsify-kroki.ts";
-import type { DocsifyPlugin } from "./types/docsify.ts";
+import { DocsifyKrokiOption, DocsifyPlugin } from "../src/types/docsify.d.ts";
 import { zlib } from "./zlib.ts";
-
-const urlSafeBase64Encode = (str: string) => btoa(encodeURI(str));
 
 const contentType = "image/svg+xml";
 
@@ -17,7 +14,7 @@ async function plantWithPost(
     body: content,
   });
   const svg = await resp.text();
-  return `data:${contentType};base64,${urlSafeBase64Encode(svg)}`;
+  return `data:${contentType};base64,${btoa(encodeURI(svg))}`;
 }
 
 export async function plant(
@@ -31,9 +28,10 @@ export async function plant(
     .replace(/\+/g, "-")
     .replace(/\//g, "_");
   const svgUrl: string = urlPrefix + result;
-  const objectData = svgUrl.length < 4000
-    ? svgUrl
-    : await plantWithPost(content, type, serverPath);
+  const objectData =
+    svgUrl.length < 4000
+      ? svgUrl
+      : await plantWithPost(content, type, serverPath);
   return `<object type="${contentType}" style="max-width: 100%;" data="${objectData}" />`;
 }
 

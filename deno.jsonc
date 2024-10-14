@@ -1,25 +1,21 @@
 {
-  "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
   "imports": {
     "@std/assert": "jsr:@std/assert",
     "@std/async": "jsr:@std/async",
     "@std/testing": "jsr:@std/testing",
     "esm.sh/": "https://esm.sh/v135/",
-    "happy-dom": "npm:happy-dom-without-node",
-    "rollup": "npm:@rollup/wasm-node@4.17.2",
-    "swc": "npm:@swc/wasm@1.5.7"
+    "happy-dom": "npm:happy-dom-without-node"
   },
   "scopes": {},
-  "nodeModulesDir": false,
+  "nodeModulesDir": "none",
   "compilerOptions": {
-    "allowJs": true,
     "strict": true,
+    "strictFunctionTypes": true,
     "lib": ["dom", "dom.iterable", "dom.asynciterable", "deno.ns"]
   },
-  // "lock": false,
   "tasks": {
     "build": "deno task clean && deno task fmt && deno task test-cov && deno task build-ts",
-    "build-ts": "deno run -A rollup.config.ts",
+    "build-ts": "deno run -A build.ts",
     "clean": "rm -rf dist/ coverage/",
     "fmt": "deno fmt",
     "lint": "deno lint",

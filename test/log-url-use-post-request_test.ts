@@ -24,7 +24,7 @@ it("from external files with a error", async () => {
   document.body.innerHTML = imageSrc;
   await import("../src/index.ts");
 
-  window.$docsify?.plugins?.forEach((krokiPlugin) => {
+  globalThis.$docsify?.plugins?.forEach((krokiPlugin) => {
     krokiPlugin(
       {
         ...defaultHook,
