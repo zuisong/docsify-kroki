@@ -1,20 +1,24 @@
 import { assertEquals } from "@std/assert";
 import { afterEach, beforeEach, it } from "@std/testing/bdd";
-import { fetchMock } from "../deps.ts";
+import { fetchMock as fm } from "../deps.ts";
 import { defaultConfig, replace } from "../src/kroki.ts";
 import { init } from "./common/dom-env-init.ts";
 import { defaultHook, delay } from "./utils.ts";
 
+const fetchMock = fm.createInstance();
+
 beforeEach(async () => {
   await init();
+  fetchMock.mockGlobal();
 });
 
 afterEach(() => {
-  fetchMock.restore();
+  fetchMock.removeRoutes();
+  fetchMock.unmockGlobal();
 });
 
 it("from external files", async () => {
-  fetchMock.mock(
+  fetchMock.route(
     "https://api.com/v1/apples",
     `graph TD
   A[ Anyone ] -->|Can help | B( Go to github.com/yuzutech/kroki )
@@ -56,8 +60,8 @@ it("from external files", async () => {
 });
 
 it("from external files with a error", async () => {
-  fetchMock.mock("https://httpbin.errordomain/status/404", () =>
-    Promise.reject(new Error("from external files with a error link")),
+  fetchMock.route("https://httpbin.errordomain/status/404", () =>
+    Promise.reject<string>(new Error("from external files with a error link")),
   );
 
   const imageSrc = `<img src="https://httpbin.errordomain/status/404" alt="kroki-mermaid">`;

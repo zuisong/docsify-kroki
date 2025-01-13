@@ -1,23 +1,27 @@
 import { assertEquals } from "@std/assert";
 import { afterEach, beforeEach, it } from "@std/testing/bdd";
-import { fetchMock } from "../deps.ts";
+import { fetchMock as fm } from "../deps.ts";
 import { init } from "./common/dom-env-init.ts";
 import { defaultHook, delay, generateRandomString } from "./utils.ts";
 
+const fetchMock = fm.createInstance();
+
 beforeEach(async () => {
+  fetchMock.mockGlobal();
   await init();
 });
 
 afterEach(() => {
-  fetchMock.restore();
+  fetchMock.removeRoutes();
+  fetchMock.unmockGlobal();
 });
 
 it("from external files with a error", async () => {
-  fetchMock.mock("https://long-text.txt", generateRandomString(10_000));
+  fetchMock.route("https://long-text.txt", generateRandomString(10_000));
 
   const krokiReturnBody = "kroki with long url";
 
-  fetchMock.mock("https://kroki.io/mermaid/svg/", krokiReturnBody);
+  fetchMock.route("https://kroki.io/mermaid/svg/", krokiReturnBody);
 
   const imageSrc = `<img src="https://long-text.txt" alt="kroki-mermaid">`;
 
