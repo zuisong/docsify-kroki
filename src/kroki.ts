@@ -53,8 +53,8 @@ export async function replace(
         const promise = plant(textContent, LANG, config.serverPath).then(
           (graphStr) => {
             const planted: HTMLParagraphElement = create("p", graphStr);
+            planted.setAttribute("style", "max-width: inherit;");
             planted.dataset.lang = LANG;
-            planted.style.maxWidth = "inherit";
             element.parentNode?.replaceChild(planted, element);
           },
         );
@@ -81,8 +81,8 @@ export async function replace(
         .then((code) => plant(code, LANG, config.serverPath))
         .then((graphStr) => {
           const planted: HTMLParagraphElement = create("p", graphStr);
+          planted.setAttribute("style", "max-width: inherit;");
           planted.dataset.lang = LANG;
-          planted.style.maxWidth = "inherit";
           parent?.replaceChild(planted, element);
         });
       fetaures.push(promise);

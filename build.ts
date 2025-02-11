@@ -1,4 +1,4 @@
-import * as esbuild from "npm:esbuild@0.24.2";
+import * as esbuild from "npm:esbuild@0.25.0";
 import { denoPlugins } from "jsr:@luca/esbuild-deno-loader@^0.11";
 import { emptyDir } from "jsr:@std/fs/empty-dir";
 import { resolve, toFileUrl } from "jsr:@std/path";

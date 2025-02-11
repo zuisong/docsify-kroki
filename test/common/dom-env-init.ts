@@ -1,10 +1,10 @@
-import { Window } from "../../deps.ts";
 import { type Any, delay } from "../utils.ts";
+
+import { parseHTML } from "esm.sh/linkedom?bundle";
 export async function init() {
-  const w: Window = new Window({});
-  globalThis.document = w.document as Any;
-  document.body.innerHTML = '<div class="container"></div>';
-  globalThis.TextDecoder = undefined as Any;
+  const { document } = parseHTML('<div class="container"></div>');
+
+  globalThis.document = document;
   await delay(1);
 }
 

@@ -3,8 +3,7 @@
     "@std/assert": "jsr:@std/assert",
     "@std/async": "jsr:@std/async",
     "@std/testing": "jsr:@std/testing",
-    "esm.sh/": "https://esm.sh/v135/",
-    "happy-dom": "npm:happy-dom-without-node"
+    "esm.sh/": "https://esm.sh/v135/"
   },
   "scopes": {},
   "nodeModulesDir": "none",
