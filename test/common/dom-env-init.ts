@@ -1,13 +1,13 @@
+import { Window } from "esm.sh/happy-dom-without-node?bundle";
 import { type Any, delay } from "../utils.ts";
 
-import { parseHTML } from "esm.sh/linkedom?bundle";
 export async function init() {
-  const { document } = parseHTML('<div class="container"></div>');
-
-  globalThis.document = document;
-  await delay(1);
+  const w = new Window();
+  globalThis.document = w.document as Any;
+  document.body.innerHTML = '<div class="container"></div>';
+  await delay(10);
 }
 
 export async function tearDown() {
-  await delay(100);
+  await delay(10);
 }

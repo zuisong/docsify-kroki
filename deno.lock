@@ -2,9 +2,9 @@
   "version": "4",
   "specifiers": {
     "jsr:@luca/esbuild-deno-loader@0.11": "0.11.1",
-    "jsr:@std/assert@*": "1.0.10",
-    "jsr:@std/assert@^1.0.10": "1.0.10",
-    "jsr:@std/async@*": "1.0.8",
+    "jsr:@std/assert@*": "1.0.11",
+    "jsr:@std/assert@^1.0.10": "1.0.11",
+    "jsr:@std/async@*": "1.0.11",
     "jsr:@std/bytes@^1.0.2": "1.0.4",
     "jsr:@std/encoding@^1.0.5": "1.0.5",
     "jsr:@std/fs@*": "1.0.9",
@@ -13,7 +13,7 @@
     "jsr:@std/path@^1.0.6": "1.0.8",
     "jsr:@std/path@^1.0.8": "1.0.8",
     "jsr:@std/testing@*": "1.0.9",
-    "npm:@types/node@*": "22.5.4",
+    "npm:@types/node@*": "22.12.0",
     "npm:esbuild@0.25.0": "0.25.0"
   },
   "jsr": {
@@ -25,14 +25,14 @@
         "jsr:@std/path@^1.0.6"
       ]
     },
-    "@std/assert@1.0.10": {
-      "integrity": "59b5cbac5bd55459a19045d95cc7c2ff787b4f8527c0dd195078ff6f9481fbb3",
+    "@std/assert@1.0.11": {
+      "integrity": "2461ef3c368fe88bc60e186e7744a93112f16fd110022e113a0849e94d1c83c1",
       "dependencies": [
         "jsr:@std/internal"
       ]
     },
-    "@std/async@1.0.8": {
-      "integrity": "c057c5211a0f1d12e7dcd111ab430091301b8d64b4250052a79d277383bc3ba7"
+    "@std/async@1.0.11": {
+      "integrity": "eee0d3405275506638a9c8efaa849cf0d35873120c69b7caa1309c9a9e5b6f85"
     },
     "@std/bytes@1.0.4": {
       "integrity": "11a0debe522707c95c7b7ef89b478c13fb1583a7cfb9a85674cd2cc2e3a28abc"
@@ -136,8 +136,8 @@
     "@esbuild/win32-x64@0.25.0": {
       "integrity": "sha512-ZENoHJBxA20C2zFzh6AI4fT6RraMzjYw4xKWemRTRmRVtN9c5DcH9r/f2ihEkMjOW5eGgrwCslG/+Y/3bL+DHQ=="
     },
-    "@types/node@22.5.4": {
-      "integrity": "sha512-FDuKUJQm/ju9fT/SeX/6+gBzoPzlVCzfzmGkwKvRHQVxi4BntVbyIwf6a4Xn62mrvndLiml6z/UBXIdEVjQLXg==",
+    "@types/node@22.12.0": {
+      "integrity": "sha512-Fll2FZ1riMjNmlmJOdAyY5pUbkftXslB5DgEzlIuNaiWhXd00FhWxVC/r4yV/4wBb9JfImTu+jiSvXTkJ7F/gA==",
       "dependencies": [
         "undici-types"
       ]
@@ -172,21 +172,21 @@
         "@esbuild/win32-x64"
       ]
     },
-    "undici-types@6.19.8": {
-      "integrity": "sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw=="
+    "undici-types@6.20.0": {
+      "integrity": "sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg=="
     }
   },
   "redirects": {
-    "https://esm.sh/v135/fetch-mock@12?bundle": "https://esm.sh/v135/fetch-mock@12.2.0?bundle",
-    "https://esm.sh/v135/linkedom?bundle": "https://esm.sh/v135/linkedom@0.18.9?bundle"
+    "https://esm.sh/v135/fetch-mock@12?bundle": "https://esm.sh/v135/fetch-mock@12.5.2?bundle",
+    "https://esm.sh/v135/happy-dom-without-node?bundle": "https://esm.sh/v135/happy-dom-without-node@14.12.3?bundle"
   },
   "remote": {
-    "https://esm.sh/v135/fetch-mock@12.2.0/denonext/fetch-mock.bundle.mjs": "966da33dfa564053f94b895efdbeaaad93bbbdcca8391e2c36f82d3e526e1d66",
-    "https://esm.sh/v135/fetch-mock@12.2.0?bundle": "e1fa88aceb52a896d65f02a52f67f459ab09b2dced83ac27da52d131fa6ff774",
-    "https://esm.sh/v135/fflate@0.8.0/es2022/fflate.mjs": "006dba61c4aa84e3839b3871cd20b65d7048803008e55f39b8ba608d0a8e0b09",
-    "https://esm.sh/v135/fflate@0.8.0?target=es2022": "fb461e015d18bb5498b62fd5dd80a5fa2d901e3a1053c6177ab6964f5404c9cf",
-    "https://esm.sh/v135/linkedom@0.18.9/denonext/linkedom.bundle.mjs": "0b92e3f2e656b85845909ee09a2899000c2896aad1d0048d84602bef932ab16a",
-    "https://esm.sh/v135/linkedom@0.18.9?bundle": "cd4bdb512dbf668fb27d1c3b77d2329d73801c8e4c65a64038db28d10141ad34"
+    "https://esm.sh/v135/fetch-mock@12.5.2/denonext/fetch-mock.bundle.mjs": "2605acf9d7974b709ac02b2dd0252059fd6aadc93ff3eb69af8f3cc6e4a82bd4",
+    "https://esm.sh/v135/fetch-mock@12.5.2?bundle": "c62c8b6b33b458ba9efe83b20a07ce29c9331537257cec43e754e26ac19777ae",
+    "https://esm.sh/v135/fflate@0.8.2/es2022/fflate.mjs": "11ac0d557b098e28efb1ce66ddb04fc995080b3d3f74b28be73058cfd0577603",
+    "https://esm.sh/v135/fflate@0.8.2?target=es2022": "4b5f671b4444b51aa8db58ef751e3514a7c84f87ad7c66243039a15fa12365f7",
+    "https://esm.sh/v135/happy-dom-without-node@14.12.3/denonext/happy-dom-without-node.bundle.mjs": "f225db937a9369ba9291d1153406988574afa304d2664b94a792b365ed731f71",
+    "https://esm.sh/v135/happy-dom-without-node@14.12.3?bundle": "9c2b5db850b35e882152dd68847574009a3736dfc31a52dc5d7157ae2f51a252"
   },
   "workspace": {
     "dependencies": [
