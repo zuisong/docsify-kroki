@@ -3,7 +3,7 @@
     "@std/assert": "jsr:@std/assert",
     "@std/async": "jsr:@std/async",
     "@std/testing": "jsr:@std/testing",
-    "esm.sh/": "https://esm.sh/v135/"
+    "esm.sh/": "https://esm.sh/"
   },
   "scopes": {},
   "nodeModulesDir": "none",
@@ -19,7 +19,7 @@
     "fmt": "deno fmt",
     "lint": "deno lint",
     "gen-readme": " deno run gen-template.util.ts > ./docs/README.md ",
-    "test-cov": "deno test --coverage -A && deno coverage coverage --lcov --output=coverage/lcov.info"
+    "test-cov": "deno test --coverage -A "
   },
   "exclude": ["dist/"],
   "lint": {
