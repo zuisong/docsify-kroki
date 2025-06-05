@@ -1,4 +1,4 @@
-import { Window } from "esm.sh/happy-dom-without-node?bundle";
+import { Window } from "npm:/happy-dom@15";
 import { type Any, delay } from "../utils.ts";
 
 export async function init() {
