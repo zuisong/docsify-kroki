@@ -2,6 +2,7 @@ import { assertEquals } from "@std/assert";
 import { afterEach, beforeEach, it } from "@std/testing/bdd";
 import { init, tearDown } from "./common/dom-env-init.ts";
 import { type Any, defaultHook, delay } from "./utils.ts";
+
 beforeEach(async () => {
   await init();
 });
